@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<meta name="generator" content="Alpha Anywhere HTML Editor Version 12 Build 5159-5132">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<head>
+
+
+<%a5
+Delete tmpl_DASHBOARD_GRAFI
+DIM tmpl_DASHBOARD_GRAFI as P
+tmpl_DASHBOARD_GRAFI = a5w_load_component("DashBoard_Grafico_Entidad_Riesgo") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:DashBoard_Grafico_Entidad_Riesgo)
+
+'Override settings start -----------------------------------------
+with tmpl_DASHBOARD_GRAFI
+.alias = "DASHBOARD_GRAFI"
+_dialogFilename = "DashBoard_Grafico_Entidad_Riesgo"
+end with 
+'Override settings end -----------------------------------------
+
+delete x_DASHBOARD_GRAFI
+dim x_DASHBOARD_GRAFI as p
+x_DASHBOARD_GRAFI = a5w_run_Component(tmpl_DASHBOARD_GRAFI) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:DashBoard_Grafico_Entidad_Riesgo)
+
+?x_DASHBOARD_GRAFI.Output.Head.JavaScript
+?x_DASHBOARD_GRAFI.Output.Head.CSS_Link
+
+?x_DASHBOARD_GRAFI.Output.Head.Title 
+%>
+
+
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Program Files (x86)/a5V12/css/GrBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+
+<title></title>
+</head>
+
+<%a5 ?x_DASHBOARD_GRAFI.Output.Body.Body_tag %>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--Body Tag for tmpl -->
+<body class="GrBluepage">
+<!--Alpha Five Temporary Code End -->	
+
+
+
+
+
+
+<%a5 ?x_DASHBOARD_GRAFI.Output.Body.Dialog2_HTML %>
+<%a5 ?a5dialogHelper_generateCORSHeaders() %>
+
+
+
+
+</body></html>

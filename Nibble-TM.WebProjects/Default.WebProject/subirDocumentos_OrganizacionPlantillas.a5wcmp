@@ -1,0 +1,597 @@
+{
+    "$schema": "UX",
+    "$definition": {
+        "style_name": "<ProjectStyle>",
+        "style_type": "Alpha Five",
+        "resolveAbstractClassNames": true,
+        "builderVersionNumber": 1,
+        "overrideStyleName": "Default",
+        "FontSize": "Medium",
+        "A5ContainerClassPadding": "0px",
+        "A5ContainerClassPaddingForContainerWidthMode": "4px",
+        "JavaScriptFunctionDeclarations": "\n",
+        "layoutType": "ContainerWidth",
+        "previewMode": "Default",
+        "useDragScrolling": "Auto",
+        "pageTitle": "UX",
+        "waitMsg": {
+            "message": {
+                "text": "Wait...",
+                "waitIcon": "css/A5System/Images/wait.gif"
+            },
+            "cssAnimation": {
+                "size": "32"
+            }
+        },
+        "globalSettings": {
+            "labelWidth": "1in"
+        },
+        "serverSideEvents": {
+            "onDialogInitialize": "function onDialogInitialize as v (e as p)\n'Request - The Request object. Includes Request.Variables, which should be used instead of the older e.rv construct\n'Session - The Session object. Should be used instead of the older e.session construct\n'Inside e:\n'e.tmpl = Component definition\n'e.rtc = Runtime calculations - you can use this to store data to be passed to other server side events (Note: the 'rtc' object cannot be used to persist state information - i.e. you can't set a value in rtc and then read that value in a subsequent callback. To persist state info see e._state).\n'e.arguments = SQL::Arguments object with values for each of the arguments defined in this component.  To read a value from arguments: e.arguments.find(\"argumentName\").data\n'TIP: You can also set the value of an argument. For example: e.arguments[e.arguments.ArgumentNumber(\"country\")].data = \"portugal\"\n'TIP: If you need to write code that performs actions on a SQL database you can use the 'Xbasic SQL Actions Code Generator' by right clicking and selecting the 'Genies...' menu option\n\n'You can set the initial value of any field by setting the property (see comment at end for Javascript technique to use when setting values for a large number of controls)\n'e.control.<fieldname>\n'For example:\n'e.control.firstname = \"Fred\"\n'e.control.lastname = \"Jones\"\n\n'For multi-valued controls (such as checkbox, List control configured as multi-select, etc.) you can set the value to a cr-lf list of values or use the special array() syntax.\n'Either of the following two methods will work\n'e.control.colors = \"array(red,green)\"\n'e.control.colors = comma_to_crlf(\"red,green\")\n\n'To set the value of a field in a repeating section, you must use \"_A5INSTANCE\" and the instance number as a suffix on the fieldname.\n'For example:\n'e.control.firstname_A5INSTANCE2 = \"Bob\"  'sets the value in the 2nd row of the repeating section.\n\n'To specify any javascript that you want to execute set the  e.javascript property. For example:\n'e.javascript = \"alert('hello');\"\n\n'You can set 'state' variables in this event. The value of any state variables will be available in all subsequent ajax callbacks.\n'To set a state variable:\n'e._state.myvar1 = \"value1\"\n'e._state.myvar2 = \"value2\"\n\n\n'Using Javascript to Set Control Values and the Row Count in a Repeating Section -- Recommended For Maximum Efficiency (Advanced users)\n'---------------------------------------------------------------------------------------------------------------------------\n'When setting the value of a large number of controls, you will improve performance if you generate the Javascript directly,\n'rather than setting properties in the e.control object (as described above) and then having Alpha Five generate the Javascript from this object.\n'The following example shows Javascript code that sets the number of rows in a Repeating Section and sets the value of various control\n'in the top section and Repeating Section of the Dialog:\n\n'Generate the Javascript to emit\n'dim js as c\n'js = <<%txt%\n'var rows = 7;\n'var setFocusToFirst = true;\n'var nullOutExistingData = true;\n'var repeatingSectionId = 'CONTAINER_1';\n'{dialog.object}._setRepeatingSectionRowCount(repeatingSectionId,rows,setFocusToFirst,nullOutExistingData);\n'var _d = {};\n\n'//Next command is optional. It is ONLY needed if the ._setRepeatingSectionRowCount() method has been called.\n'//The command copies default values into the _d object. Without this command, default values defined in the component will not be set.\n'//$u.o.assign(_d,DLG1_DlgObj.originalValues[0]);\n\n'_d['B'] = 'alpha'; //set the value of a control called 'B'\n'_d['E:2'] = 'beta'; //set the value of a control called 'E' in the 2nd Repeating Section row\n'_d['G:6'] = ['Red','Green']; //set the value of a checkbox called 'G' in the 6th Repeating Section row to 'Red' and 'Green'\n'{dialog.object}.prepare();\n'{dialog.object}.populate(_d);\n'{dialog.object}.refreshClientSideComputations();\n\n'%txt%\n\n'Now, emit the Javascript...\n'e.javascript = js\n\n'NOTE: In the above example, if the ._setRepeating() method is called in the 'onDialogInitialize' event, you are responsible for setting\n'values in ALL of the controls in the component. For example, if you have defined default values for some controls, and then set the values\n'of other controls using the .populate() method, only the values set in the _d object will be set. (The default values will NOT be set).\n'You can, however, put the default values into the _d object using this code:\n'$u.o.assign(_d,{dialog.object}.originalValues[0]);\n\n\n\n\n'Tip: You can use the xbasic varToJSON() function to help generate the Javascript object passed to the .populate() method.\n'For example:\n'dim j as p\n'j.firstname = \"John\"\n'j.lastname = \"Smith\"\n'j.quantity_a5instance1 = \"2\"\n'dim j.colorchoices_a5instance2[3] as c\n'j.colorchoices_a5instance2[1] = \"Red\"\n'j.colorchoices_a5instance2[2] = \"Blue\"\n'dim jsTxt as c\n'jsTxt = varToJSON(j)\n'js = \"{dialog.object}.populate(\" + jsTxt + \"); {dialog.object}.prepare();\"\n\n\n'TIP: To simulate session variables when running in Working Preview you can use this code:\n'if eval_valid(\"request.SERVER_PROTOCOL\") then \n'\tif request.SERVER_PROTOCOL = \"A5RES\" then \n'\t\t'running in working preview\n'\t\tsession.var1 = \"simulated value for var1\"\n'\tend if \n'end if \n\nend function\n",
+            "afterDialogValidate": "function afterDialogValidate as v (e as p)\n'e.dataSubmitted  - contains all values that were submitted by the component. \n'e.oldDataSubmitted - contains the original values in the controls. \n'NOTE: All values in e.dataSubmitted and e.oldDataSubmitted are character type. Use the convert_type() function to convert data to a different type.\n\n'TIP: If you need to write code that performs actions on a SQL database you can use the 'Xbasic SQL Actions Code Generator' by right clicking and selecting the 'Genies...' menu option\n\n'The list of dirty submitted fields is in: e.dirtyColumns. This is a CRLF delimited string of dirty fields (i.e. fields\n'edited by the user). For example:\n'FIRSTNAME\n'QTY_A5INSTANCE3\n\n'========================================================================================================\n'IMPORTANT: If your event handler modifies a value in the e.dataSubmitted object (and that field has NOT\n'been edited by the user), you MUST explicitly add the field to the e.dirtyColumns value yourself.\n'For example, assume that you want to set the Company field to 'Alpha' and the 'Qty' field in row 1 of a repeating section\n'regardless of whether the user edited the value or not:\n'e.dataSubmitted.COMPANY = \"alpha\"\n'e.dataSubmitted.QTY_A5INSTANCE2 = \"2\"\n'e.dirtyColumns = e.dirtyColumns + crlf()+ \"COMPANY\" + crlf() + \"QTY_A5INSTANCE2\"\n'========================================================================================================\n\n\n'--------------------Repeating Sections ----------------------------------------\n'If your dialog contains repeating sections, data in the repeating sections will be in an array.\n'For example, say that your dialog has a repeating section that includes a field called QTY:\n'e.dataSubmitted.qty[1] - contains data from first repeating section row\n'e.dataSubmitted.qty[2] - contains data from second repeating section row, etc\n'e.dataSubmitted.favoriteColors[2][3] - contains data from the second row - 'favoriteColors' is a multi-select control - returns the 3rd choice the user made\n'e.dataSubmitted.qty.size() - number of entries in the array.\n\n'In addition, the e object will contain information about the repeating sections\n'e.repeatingSectionNames - a comma delimited list of the name (container ID) or each repeating section\n'e.repeatingSectionInfo - a property array with one entry for each repeating section.\n'The e.repeatingSectionInfo[] array will have these properties for each entry:\n' - .activeRow - the row in the repeating section that had focus when the Dialog was submitted\n' - .deletedRows - a CRLF delimited list of rows that were deleted. e.g. 1 and 3\n' - .rowCount - a count of the number of non-deleted rows\n' - .totalRowCount - a count of all rows in the repeating section including rows that were deleted\n' - .fieldsInRepeating section - a CRLF delimited list of fields in the repeating section\n' - .dirtyRowsInSection - a CRLF delimited list of rows in the repeating section that were edited. (A row that was edited, then deleted will still appear in this list).\n' - .dirtyFieldsInSection - a CRLF delimited list of fields in the repeating section that were edited. for example: PARTNO_A5INSTANCE3 is the 'PARTNO' field in row 3.\n\n'-------------------------------------------------------------------------------------------\n\n'Request - The Request object. Includes Request.Variables, which should be used instead of the older e.rv construct\n'Session - The Session object. Should be used instead of the older e.session construct\n\n'Also inside e:\n'e.tmpl = Component definition\n'e.rtc = Runtime calculations - you can use this to store data to be passed to other server side events (Note: the 'rtc' object cannot be used to persist state information - i.e. you can't set a value in rtc and then read that value in a subsequent callback. To persist state info see e._state).\n'e.arguments = SQL::Arguments object with values for each of the arguments defined in this component.  To read a value from arguments: e.arguments.find(\"argumentName\").data\n\n\n'You can set these properties:\n'e.url - if you want to redirect to another page, set this property\n'e.javascript - if you want to send some javascript back to the browser, set this property.\n\n'TIP: If you want to set the form back to a 'clean' state (which will cause the Submit/Reset buttons to go back to disabled) you should send the following \n'Javascript back to the browser:\n'e.javascript = \"{dialog.object}.resetForm(false); //false suppresses the confirmation mesage\"\n\n'You can set 'state' variables in this event. The value of any state variables will be available in all subsequent ajax callbacks.\n'To set a state variable:\n'e._state.myvar1 = \"value1\"\n'e._state.myvar2 = \"value2\"\n\n'To read the value of a 'state' variable that was previously set:\n'e._state.myvar1\n\n'-------------------Closing the Window in Which the UX Component is Hosted -------------------------\n'In certain cases the UX component will have been opened in a pop-up Ajax window and you will want code in this event handler to close the pop-up window.\n'Here is how you can do this:\n'a) In the action that opens the UX in a window, set the Window title to something like this: MyWindowTitle<span id=\"mywindowid\"></span>\n'b) In this event handler set e.javascript to: \n'\tvar ele = $('mywindowid');\n'\t{dialog.object}.closeContainerWindow(ele);\n\n'NOTE: If you have used Server-side Action Scripting in this event to save the submitted data to a table, then you might want to reference\n'the rtc.flagRecordWasSaved variable (which is set by the Action Script) to decide if the window should be closed or not. In addition, since the\n'Server-side Action will have already set the value of the e.javascript variable, you will want to append your code to e.javascript, as follows:\n'e.javascript = e.javascript + crlf() + var ele = $('mywindowid'); + crlf() + {dialog.object}.closeContainerWindow(ele);\n\n\nend function\n",
+            "canAjaxCallback": "",
+            "afterAjaxCallback": ""
+        },
+        "onTimerEventInterval": 60,
+        "securityDeniedAction": "Redirect to login page",
+        "clientSideEvents": {
+            "_canAjaxCallback": "",
+            "__afterAjaxCallbackComplete": "",
+            "onAjaxCallbackFailed": "",
+            "onAjaxCallbackNotAvailable": "",
+            "onAjaxCallbackNotAllowed": "",
+            "onBeforeCreate": "",
+            "onServerSideEventHandlerError": "",
+            "onFieldValidationError": "",
+            "onInitializeComplete": "{dialog.object}.buttonClick('BUTTON_5');\n",
+            "beforePrepare": "",
+            "afterPrepare": "",
+            "afterValidate": "",
+            "onTabPaneChanged": "",
+            "beforeRptSectionRowPrepare": "",
+            "afterRptSectionRowPrepare": "",
+            "canRptSectionRowAdd": "",
+            "afterRptSectionRowAdd": "",
+            "canRptSectionRowDelete": "",
+            "afterRptSectionRowDelete": "",
+            "onStateChange": "",
+            "onDataStateChange": "",
+            "afterControlBasedOnClientSideDataCacheRefreshed": "",
+            "onControlFocus": "",
+            "onRptSectionFocus": "",
+            "onRptSectionRowChange": "",
+            "canResetForm": "",
+            "afterResetForm": "",
+            "canRecordNavigate": "",
+            "afterRecordNavigate": "",
+            "onSynchronizeDialog": "",
+            "afterPopulateFromTable": "",
+            "onRenderComplete": "",
+            "onAndroidBackButton": "",
+            "onPanelActivate": "",
+            "afterSaveToRepository": "",
+            "afterLoadFromRepository": "",
+            "afterGoogleVisualization": "",
+            "canDeleteParentRecord": "",
+            "afterDeleteParentRecord": "",
+            "onOrientationChange": "",
+            "onKeyboard": "",
+            "onCordovaReady": "",
+            "onPhoneGapReady": "",
+            "onImageError": "",
+            "onSignatureCaptureToggle": "",
+            "onSignatureCaptureAccept": "",
+            "onTimer": "",
+            "beforeOnTimer": "",
+            "canLogin": "",
+            "afterLogin": "",
+            "afterFailedLogin": "",
+            "canLogout": "",
+            "afterLogout": "",
+            "onSessionTimeoutWarning": "",
+            "onServerSideListSummaryCompute": "",
+            "beforeHTMLReportExport": "",
+            "onConnectionChange": "",
+            "appCache_cached": "",
+            "appCache_checking": "",
+            "appCache_downloading": "",
+            "appCache_error": "",
+            "appCache_noupdate": "",
+            "appCache_obsolete": "",
+            "appCache_progress": "",
+            "appCache_updateready": "",
+            "onOAuthCompleted": "",
+            "onControlBlur": "",
+            "onControlChange": "",
+            "onBeforePersistControlValuesToLocalStorage": "",
+            "onPersistControlValuesToLocalStorage": "",
+            "onRestoreVariablesFromLocalStorage": "",
+            "onRestoreComponentStateFromLocalStorage": "",
+            "localStorageEncryption": "",
+            "localStorageDecryption": "",
+            "securityNotAuthenticated": "",
+            "securityPermissionDenied": "",
+            "webSocketOnMessage": "",
+            "webSocketServerClose": "",
+            "webSocketSendMessageFail": "",
+            "onOAuthAuthorize": "",
+            "afterGoogleAddressSelect": "",
+            "onBeforeClientSideDataCacheRead": "",
+            "afterClientSideDataCacheAjaxCallback": "",
+            "onWatchEvent": ""
+        },
+        "onlyValidateChangedFields": true,
+        "edit": {
+            "field_error_style": {
+                "type": "Block",
+                "showWarning": true,
+                "icon": "<Specified by Style>",
+                "controlContainer_classname": ""
+            },
+            "row_errors_window_title": "Error",
+            "row_errors_window_style": "color: red; width: 6in; height: 2in;",
+            "fieldValidationErrorMessage": "Form has errors."
+        },
+        "submitDialogIfHasClientSideValidationErrors": true,
+        "activeLanguage": "<Default>",
+        "datePicker": {
+            "dayNames": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            "monthNames": "January,February,March,April,May,June,July,August,September,October,November,December",
+            "firstDayOfWeek": 1,
+            "todayButtonText": "Today",
+            "closeButtonText": "Close"
+        },
+        "clientSideDateFormat": "MM/dd/yyyy",
+        "fontScalingOption": "All",
+        "helpTableType": "DBF",
+        "fieldHelpWindowStyle": "modal-resizeable",
+        "customization": {
+            "resetFormMessage": "Are you sure you want to reset the form?",
+            "resetFormTitle": "Warning",
+            "resetFormIcon": "<Specified by Style>",
+            "resetFormYesButton": "Yes",
+            "resetFormNoButton": "No",
+            "windowTitleDirection": "ltr",
+            "dirtyWarning": "You must first save your changes or cancel changes by clicking the Reset button.",
+            "dirtyWarningTitle": "Notice",
+            "dirtyWarningIcon": "<Specified by Style>",
+            "deleteRecordWarningTitle": "Delete Record",
+            "deleteRecordWarningMessage": "Are you sure you want to delete this record?"
+        },
+        "dataBinding": {
+            "computeDataBindingCodeAtDesignTime": true,
+            "computeDataBindingCodeAtDesignTimePrompt": "NoPrompt",
+            "autoRefreshSchemaOnLoad": true,
+            "autoRefreshPromptFirst": "NoPrompt",
+            "precalc": {
+                "flagCodeComputed": false,
+                "code": "<[1]<sectionName=\"<Top Level>\">\n<_aliasesAtThisLevel=<<%str%\nPlantillas\n%str%>\n<maxRowsToDisplay=1>\n<cascadingDropdownsInSection=\"\">\n<alias<[1]<aliasName=\"Plantillas\">\n<tableInfoForAlias=<<%str%\nId_OrganizacionDocumentoPlantilla=N|T|T|Integer32|!!|Id_OrganizacionDocumentoPlantilla\nDescripcion=C|F|T|NationalVaryingCharacter|!!|Descripcion\nObservaciones=C|F|F|NationalVaryingCharacter|!!|Observaciones\nArchivo=C|F|T|NationalVaryingCharacter|!!|Archivo\nTamano=C|F|T|NationalVaryingCharacter|!!|Tamano\nExtension=C|F|T|NationalVaryingCharacter|!!|Extension\nDocumento=B|F|F|VaryingBinary|!!|Documento\nCodigo=C|F|T|NationalVaryingCharacter|!!|Codigo\nFechaExpedido=D|F|T|Date|!!|FechaExpedido\nFechaValidez=D|F|T|Date|!!|FechaValidez\nId_TipoDocumento=N|F|T|Integer32|!!|Id_TipoDocumento\nId_AreaTrabajo=N|F|T|Integer32|!!|Id_AreaTrabajo\nusuarioCreador=C|F|T|VaryingCharacter|!!|usuarioCreador\nfechaCreacion=T|F|T|DateTime|!!|fechaCreacion\nfechaEdicion=T|F|T|DateTime|!!|fechaEdicion\nusuarioEdicion=C|F|T|VaryingCharacter|!!|usuarioEdicion\n%str%>\n<variablesAndCorrespondingFieldNameForAlias=<<%str%\ntextbox1|Id_OrganizacionDocumentoPlantilla|T\ntextbox2|Archivo|T\ntextbox3|Extension|T\ntextbox4|Descripcion|T\nFILEUPLOAD_1|Documento|T\n%str%>\n<variableAndCorrespondingFieldArrayIndex=<<%str%\ntextbox1|1\ntextbox2|2\ntextbox3|3\ntextbox4|4\nFILEUPLOAD_1|5\n%str%>\n<indexIntoTableArray=1>\n<parentLinkFields=\"\">\n<parentLinkVariables=\"\">\n<linkFields=\"\">\n<linkFieldsForDownstreamLinks=\"\">\n<tableType=\"SQL\">\n<tableName=\"Organizacion_DocumentosPlantillas\">\n<parent=\"\">\n<readOnly=.F.>\n<sqlInsertSequence=\"\">\n<SQL_SecondPass=\"\">\n<allLinkedFields_onetomany=\"\">\n<allLinkedFields_onetoone=\"\">\n<xbToSetLinkingArguments_oneToMany=\"\">\n<xbToSetLinkingArguments_oneToOne=\"\">\n<xbToSetLinkingArguments_oneToManyFullyQualifiedFieldNames=\"\">\n<primaryKeyFields=\"Id_OrganizacionDocumentoPlantilla\">\n<primaryKeyIsAutoIncrement=.T.>\n<sequenceName=\"\">\n<_isLevelParent=.T.>\n<tableInfo=<<%str%\nId_OrganizacionDocumentoPlantilla=N|T|T|Integer32|!!|Id_OrganizacionDocumentoPlantilla\nDescripcion=C|F|T|NationalVaryingCharacter|!!|Descripcion\nObservaciones=C|F|F|NationalVaryingCharacter|!!|Observaciones\nArchivo=C|F|T|NationalVaryingCharacter|!!|Archivo\nTamano=C|F|T|NationalVaryingCharacter|!!|Tamano\nExtension=C|F|T|NationalVaryingCharacter|!!|Extension\nDocumento=B|F|F|VaryingBinary|!!|Documento\nCodigo=C|F|T|NationalVaryingCharacter|!!|Codigo\nFechaExpedido=D|F|T|Date|!!|FechaExpedido\nFechaValidez=D|F|T|Date|!!|FechaValidez\nId_TipoDocumento=N|F|T|Integer32|!!|Id_TipoDocumento\nId_AreaTrabajo=N|F|T|Integer32|!!|Id_AreaTrabajo\nusuarioCreador=C|F|T|VaryingCharacter|!!|usuarioCreador\nfechaCreacion=T|F|T|DateTime|!!|fechaCreacion\nfechaEdicion=T|F|T|DateTime|!!|fechaEdicion\nusuarioEdicion=C|F|T|VaryingCharacter|!!|usuarioEdicion\n%str%>\n<UpdateWhereClause=<<%str%\n{Descripcion}=Descripcion = convert(nvarchar(255), :old_Descripcion)\n{Archivo}=Archivo = convert(nvarchar(255), :old_Archivo) OR Archivo IS NULL AND convert(nvarchar(255), :old_Archivo) IS NULL\n{Tamano}=Tamano = convert(nvarchar(20), :old_Tamano) OR Tamano IS NULL AND convert(nvarchar(20), :old_Tamano) IS NULL\n{Extension}=Extension = convert(nvarchar(6), :old_Extension) OR Extension IS NULL AND convert(nvarchar(6), :old_Extension) IS NULL\n{Codigo}=Codigo = convert(nvarchar(30), :old_Codigo) OR Codigo IS NULL AND convert(nvarchar(30), :old_Codigo) IS NULL\n{FechaExpedido}=FechaExpedido = :old_FechaExpedido OR FechaExpedido IS NULL AND :old_FechaExpedido IS NULL\n{FechaValidez}=FechaValidez = :old_FechaValidez OR FechaValidez IS NULL AND :old_FechaValidez IS NULL\n{Id_TipoDocumento}=Id_TipoDocumento = :old_Id_TipoDocumento OR Id_TipoDocumento IS NULL AND :old_Id_TipoDocumento IS NULL\n{Id_AreaTrabajo}=Id_AreaTrabajo = :old_Id_AreaTrabajo OR Id_AreaTrabajo IS NULL AND :old_Id_AreaTrabajo IS NULL\n{usuarioCreador}=usuarioCreador = :old_usuarioCreador OR usuarioCreador IS NULL AND :old_usuarioCreador IS NULL\n{fechaCreacion}=fechaCreacion = :old_fechaCreacion OR fechaCreacion IS NULL AND :old_fechaCreacion IS NULL\n{fechaEdicion}=fechaEdicion = :old_fechaEdicion OR fechaEdicion IS NULL AND :old_fechaEdicion IS NULL\n{usuarioEdicion}=usuarioEdicion = :old_usuarioEdicion OR usuarioEdicion IS NULL AND :old_usuarioEdicion IS NULL\n%str%>\n<primaryKeyFieldTypes=\"N\">\n<primaryKeyValueSource=\"<AutoIncrementValue>\">\n<primaryKeyFieldsNative=<<%str%\nId_OrganizacionDocumentoPlantilla\n%str%>\n<tableNameNative=\"Organizacion_DocumentosPlantillas\">\n<sql<FieldArgInfo<[1]<varname=\"textbox1\">\n<fieldname=\"Id_OrganizacionDocumentoPlantilla\">\n<updateable=.T.>\n<nativeFieldName=\"Id_OrganizacionDocumentoPlantilla\">\n<fieldInfo=\"N|T|T|Integer32|!!|Id_OrganizacionDocumentoPlantilla\">\n<isObjectField=.F.>\n<indexIntoArray=1>\n<updateWhere=\"\">\n<sqlInsertSequence=\"\">\n<primaryKey=.T.>\n<fieldType=\"N\">\n<isFileUpload=.F.>\n<isImage=.F.>\n<isSignatureCapture=.F.>\n<argumentName=\":Plantillas_Id_OrganizacionDocumentoPlantilla\">\n<argumentNameForInsert=\":Plantillas_Id_OrganizacionDocumentoPlantilla\">\n<argumentName_New=\":New_Id_OrganizacionDocumentoPlantilla\">\n<argumentName_Old=\":Old_Id_OrganizacionDocumentoPlantilla\">\n<setField=\"Id_OrganizacionDocumentoPlantilla = :Plantillas_Id_OrganizacionDocumentoPlantilla\">\n<setArgument=\"convert_type(e.dataSubmitted.textbox1,\\\"N\\\")\">\n<setArgument_New=\"convert_type(e.dataSubmitted.textbox1,\\\"N\\\")\">\n<setArgument_Old=\"convert_type(e.oldDataSubmitted.textbox1,\\\"N\\\")\">\n<autoIncrement=.T.>\n<xbset=\"sqlArgs.add(\\\"Plantillas_Id_OrganizacionDocumentoPlantilla\\\",convert_type(e.dataSubmitted.textbox1,\\\"N\\\"))\">\n>\n<[2]<varname=\"textbox2\">\n<fieldname=\"Archivo\">\n<updateable=.T.>\n<nativeFieldName=\"Archivo\">\n<fieldInfo=\"C|F|T|NationalVaryingCharacter|!!|Archivo\">\n<isObjectField=.F.>\n<indexIntoArray=2>\n<updateWhere=\"Archivo = convert(nvarchar(255), :old_Archivo) OR Archivo IS NULL AND convert(nvarchar(255), :old_Archivo) IS NULL\">\n<sqlInsertSequence=\"\">\n<primaryKey=.F.>\n<fieldType=\"C\">\n<isFileUpload=.F.>\n<isImage=.F.>\n<isSignatureCapture=.F.>\n<argumentName=\":Plantillas_Archivo\">\n<argumentNameForInsert=\":Plantillas_Archivo\">\n<argumentName_New=\":New_Archivo\">\n<argumentName_Old=\":Old_Archivo\">\n<setField=\"Archivo = :Plantillas_Archivo\">\n<setArgument=\"convert_type(e.dataSubmitted.textbox2,\\\"C\\\")\">\n<setArgument_New=\"convert_type(e.dataSubmitted.textbox2,\\\"C\\\")\">\n<setArgument_Old=\"convert_type(e.oldDataSubmitted.textbox2,\\\"C\\\")\">\n<autoIncrement=.F.>\n<xbset=\"sqlArgs.add(\\\"Plantillas_Archivo\\\",convert_type(e.dataSubmitted.textbox2,\\\"C\\\"))\">\n>\n<[3]<varname=\"textbox3\">\n<fieldname=\"Extension\">\n<updateable=.T.>\n<nativeFieldName=\"Extension\">\n<fieldInfo=\"C|F|T|NationalVaryingCharacter|!!|Extension\">\n<isObjectField=.F.>\n<indexIntoArray=3>\n<updateWhere=\"Extension = convert(nvarchar(6), :old_Extension) OR Extension IS NULL AND convert(nvarchar(6), :old_Extension) IS NULL\">\n<sqlInsertSequence=\"\">\n<primaryKey=.F.>\n<fieldType=\"C\">\n<isFileUpload=.F.>\n<isImage=.F.>\n<isSignatureCapture=.F.>\n<argumentName=\":Plantillas_Extension\">\n<argumentNameForInsert=\":Plantillas_Extension\">\n<argumentName_New=\":New_Extension\">\n<argumentName_Old=\":Old_Extension\">\n<setField=\"Extension = :Plantillas_Extension\">\n<setArgument=\"convert_type(e.dataSubmitted.textbox3,\\\"C\\\")\">\n<setArgument_New=\"convert_type(e.dataSubmitted.textbox3,\\\"C\\\")\">\n<setArgument_Old=\"convert_type(e.oldDataSubmitted.textbox3,\\\"C\\\")\">\n<autoIncrement=.F.>\n<xbset=\"sqlArgs.add(\\\"Plantillas_Extension\\\",convert_type(e.dataSubmitted.textbox3,\\\"C\\\"))\">\n>\n<[4]<varname=\"textbox4\">\n<fieldname=\"Descripcion\">\n<updateable=.T.>\n<nativeFieldName=\"Descripcion\">\n<fieldInfo=\"C|F|T|NationalVaryingCharacter|!!|Descripcion\">\n<isObjectField=.F.>\n<indexIntoArray=4>\n<updateWhere=\"Descripcion = convert(nvarchar(255), :old_Descripcion)\">\n<sqlInsertSequence=\"\">\n<primaryKey=.F.>\n<fieldType=\"C\">\n<isFileUpload=.F.>\n<isImage=.F.>\n<isSignatureCapture=.F.>\n<argumentName=\":Plantillas_Descripcion\">\n<argumentNameForInsert=\":Plantillas_Descripcion\">\n<argumentName_New=\":New_Descripcion\">\n<argumentName_Old=\":Old_Descripcion\">\n<setField=\"Descripcion = :Plantillas_Descripcion\">\n<setArgument=\"convert_type(e.dataSubmitted.textbox4,\\\"C\\\")\">\n<setArgument_New=\"convert_type(e.dataSubmitted.textbox4,\\\"C\\\")\">\n<setArgument_Old=\"convert_type(e.oldDataSubmitted.textbox4,\\\"C\\\")\">\n<autoIncrement=.F.>\n<xbset=\"sqlArgs.add(\\\"Plantillas_Descripcion\\\",convert_type(e.dataSubmitted.textbox4,\\\"C\\\"))\">\n>\n<[5]<varname=\"FILEUPLOAD_1\">\n<fieldname=\"Documento\">\n<updateable=.T.>\n<nativeFieldName=\"Documento\">\n<fieldInfo=\"B|F|F|VaryingBinary|!!|Documento\">\n<isObjectField=.F.>\n<indexIntoArray=5>\n<updateWhere=\"\">\n<sqlInsertSequence=\"\">\n<primaryKey=.F.>\n<fieldType=\"B\">\n<isFileUpload=.T.>\n<isImage=.F.>\n<isSignatureCapture=.F.>\n<argumentName=\":Plantillas_FILEUPLOAD_1\">\n<argumentNameForInsert=\":Plantillas_FILEUPLOAD_1\">\n<argumentName_New=\":New_Documento\">\n<argumentName_Old=\":Old_Documento\">\n<setField=\"Documento = :Plantillas_FILEUPLOAD_1\">\n<setArgument=\"\\\"\\\"\">\n<setArgument_New=\"\\\"\\\"\">\n<setArgument_Old=\"\\\"\\\"\">\n<autoIncrement=.F.>\n<xbset=\"sqlArgs.add(\\\"Plantillas_FILEUPLOAD_1\\\",\\\"\\\")\">\n>\n>\n<flagPrimaryKeyIsAutoIncrement=.T.>\n<primaryKey_setArgumentsXbasic=\"args.add(\\\"PRIMARYKEY_Plantillas_1\\\",convert_type(autoIncrementValue,\\\"N\\\"))\">\n<primaryKey_setArgumentsXbasic_Method2=\"\">\n<primaryKey_setArgumentsXbasicMethodused=\"<AutoIncrementValue>\">\n<refreshRowSQL=\"SELECT Id_OrganizacionDocumentoPlantilla,Archivo,Extension,Descripcion,Documento FROM Organizacion_DocumentosPlantillas WHERE Id_OrganizacionDocumentoPlantilla = :PRIMARYKEY_Plantillas_1\">\n<xbasicToSetLinkArguments_OneToMany=\"alias::\">\n<primaryKeyWhereClause=\"Id_OrganizacionDocumentoPlantilla = :PRIMARYKEY_Plantillas_1\">\n<primaryKeyWhereClauseTable=\"Id_OrganizacionDocumentoPlantilla = :PRIMARYKEY_Plantillas_1\">\n<primaryKeyWhereClauseSection=\"Plantillas.Id_OrganizacionDocumentoPlantilla = :PRIMARYKEY_Plantillas_1\">\n<xbToSetPrimaryKeyArgsAfterRowRefresh=<<%str%\nargs.add(\"PRIMARYKEY_Plantillas_1\",rs.data(\"Id_OrganizacionDocumentoPlantilla\"))\n%str%>\n<javascriptToRefreshControls=<<%str%\n{dialog.object}.originalValues[0]['TEXTBOX1'] = '{js_escape(\"\"+rs.data(\"Id_OrganizacionDocumentoPlantilla\"))}';\n{dialog.object}.originalValues[0]['TEXTBOX2'] = '{js_escape(\"\"+rs.data(\"Archivo\"))}';\n{dialog.object}.originalValues[0]['TEXTBOX3'] = '{js_escape(\"\"+rs.data(\"Extension\"))}';\n{dialog.object}.originalValues[0]['TEXTBOX4'] = '{js_escape(\"\"+rs.data(\"Descripcion\"))}';\n%str%>\n>\n<isParentOfLevel=.T.>\n<sqlCRUD<sql<insert<sqlInsert_ExcludePrimaryKey=\"INSERT INTO Organizacion_DocumentosPlantillas (Archivo,Extension,Descripcion,Documento) VALUES (:Plantillas_Archivo,:Plantillas_Extension,:Plantillas_Descripcion,:Plantillas_FILEUPLOAD_1)\">\n<sqlInsert_IncludePrimaryKey=\"INSERT INTO Organizacion_DocumentosPlantillas (Id_OrganizacionDocumentoPlantilla,Archivo,Extension,Descripcion,Documento) VALUES (:Plantillas_Id_OrganizacionDocumentoPlantilla,:Plantillas_Archivo,:Plantillas_Extension,:Plantillas_Descripcion,:Plantillas_FILEUPLOAD_1)\">\n<sqlInsert_SetArgumentXbasic_ExcludePrimaryKey=<<%str%\nsqlArgs.add(\"Plantillas_Archivo\",convert_type(e.dataSubmitted.textbox2,\"C\"))\nsqlArgs.add(\"Plantillas_Extension\",convert_type(e.dataSubmitted.textbox3,\"C\"))\nsqlArgs.add(\"Plantillas_Descripcion\",convert_type(e.dataSubmitted.textbox4,\"C\"))\nsqlArgs.add(\"Plantillas_FILEUPLOAD_1\",\"\")\n%str%>\n<sqlInsert_SetArgumentXbasic_IncludePrimaryKey=<<%str%\nsqlArgs.add(\"Plantillas_Id_OrganizacionDocumentoPlantilla\",convert_type(e.dataSubmitted.textbox1,\"N\"))\nsqlArgs.add(\"Plantillas_Archivo\",convert_type(e.dataSubmitted.textbox2,\"C\"))\nsqlArgs.add(\"Plantillas_Extension\",convert_type(e.dataSubmitted.textbox3,\"C\"))\nsqlArgs.add(\"Plantillas_Descripcion\",convert_type(e.dataSubmitted.textbox4,\"C\"))\nsqlArgs.add(\"Plantillas_FILEUPLOAD_1\",\"\")\n%str%>\n<useSequences=.F.>\n<xbasicToCapturePrimaryKeys=<<%str%\nwith a_sections[is].alias[ia]\n\tdim primaryKeyValue[1] as p\nend with \n\na_sections[is].alias[ia].primaryKeyValue[1].value = rs.data(\"Id_OrganizacionDocumentoPlantilla\")\n\na_sections[is].alias[ia].primaryKeyArgsXML = args.xml\n%str%>\n<xbasicToCapturePrimaryKeysByRow=<<%str%\nwith a_sections[is].rows[ir].alias[ia]\n\tdim primaryKeyValue[1] as p\nend with \n\na_sections[is].rows[ir].alias[ia].primaryKeyValue[1].value = rs.data(\"Id_OrganizacionDocumentoPlantilla\")\n\na_sections[is].rows[ir].alias[ia].primaryKeyArgsXML = args.xml\n%str%>\n>\n<updateablefields=<<%str%\nId_OrganizacionDocumentoPlantilla\nArchivo\nExtension\nDescripcion\nDocumento%str%>\n>\n>\n>\n>\n<sql<sqlSelect=\"SELECT FIRST 1 Plantillas.Id_OrganizacionDocumentoPlantilla AS PRIMARYKEY_Plantillas_1, Plantillas.Id_OrganizacionDocumentoPlantilla AS Plantillas_Id_OrganizacionDocumentoPlantilla, Plantillas.Archivo AS Plantillas_Archivo, Plantillas.Extension AS Plantillas_Extension, Plantillas.Descripcion AS Plantillas_Descripcion, Plantillas.Documento AS Plantillas_Documento FROM Organizacion_DocumentosPlantillas Plantillas\">\n<sqlCount=\"SELECT  Count(*)  FROM Organizacion_DocumentosPlantillas Plantillas\">\n<xbasicMap_captureParentSideOfOneToManyLinks=\"\">\n<refreshRowWhereClause=\"Plantillas.Id_OrganizacionDocumentoPlantilla= :primaryKey_Plantillas_1\">\n<rawDataInSection=<<%str%\n__varPrefix__.textbox1 = {s_quote((rs.data(\"Plantillas_Id_OrganizacionDocumentoPlantilla\")))}\n__varPrefix__.textbox2 = {s_quote((rs.data(\"Plantillas_Archivo\")))}\n__varPrefix__.textbox3 = {s_quote((rs.data(\"Plantillas_Extension\")))}\n__varPrefix__.textbox4 = {s_quote((rs.data(\"Plantillas_Descripcion\")))}\n%str%>\n>\n<javascriptToRefreshAllControlsInSection=<<%str%\n{dialog.object}.originalValues[0]['TEXTBOX1'] = '{js_escape(\"\"+rs.data(\"Plantillas_Id_OrganizacionDocumentoPlantilla\"))}';\n{dialog.object}.originalValues[0]['TEXTBOX2'] = '{js_escape(\"\"+rs.data(\"Plantillas_Archivo\"))}';\n{dialog.object}.originalValues[0]['TEXTBOX3'] = '{js_escape(\"\"+rs.data(\"Plantillas_Extension\"))}';\n{dialog.object}.originalValues[0]['TEXTBOX4'] = '{js_escape(\"\"+rs.data(\"Plantillas_Descripcion\"))}';\n%str%>\n<xBasicToSetOneToManyLinkArguments=\"\">\n>\n",
+                "sectionCount": 1
+            },
+            "connectionString": "::Name::Nibble",
+            "tableType": "SQL"
+        },
+        "info": {
+            "createdBy": "ASUS",
+            "dateCreated": "2018-9-17",
+            "dateLastEdited": "2018-11-28"
+        },
+        "flagShowCommentsInTree": true,
+        "treeCommentOffset": "6",
+        "renderUXLocation": {
+            "type": "window",
+            "sizeToElement": true
+        },
+        "checkSessionEvery": 1,
+        "warningIntervalBeforeExpiration": 1,
+        "sessionTimeOutWarningMessage": "Your session will expire in {secondsToSessionEnd} seconds. Click the button to extend your session.",
+        "sessionExtendSessionButtonLabel": "Extend Session",
+        "sessionTimeoutWarningDialogTitle": "Warning",
+        "sessionHasExpiredMessage": "Your session has expired.",
+        "sessionHasExpiredButtonLabel": "OK",
+        "sessionHasExpiredAction": "Nothing",
+        "sessionHasExpiredRedirectPage": "<self>",
+        "sessionHasExpiredDialogTitle": "Notice",
+        "sessionHasExpiredOKButtonJavascript": "<ReloadThisPage>",
+        "login": {
+            "errorMessageStyle": "color: red;",
+            "logoutDoesFullPageReload": true
+        },
+        "applyResponsiveDesignSettings": true,
+        "responseDesignRulesMode": "FirstTrue",
+        "localStorage": {
+            "namespace": "<Default>",
+            "__version": 1,
+            "workingPreviewTestingMode": "Browser",
+            "variablesToNotPersist": ""
+        },
+        "securityAppliedClientSide": true,
+        "preRenderUXatDesignTime": true,
+        "preRenderComputeWhen": "Every time component is saved",
+        "page_fields": [
+            {
+                "controltype": "dialog_formcontrol",
+                "display": "{B=White,Light Blue}{Data=3c455076-81b1-4734-a08e-d920e0debfa8}{I:'$$control.edit'} [textbox1] ¶",
+                "displayODFlat": "{Data=3c455076-81b1-4734-a08e-d920e0debfa8}{I:'$$control.edit'} [textbox1]",
+                "displayOD": "{B=White,Light Blue}{Data=3c455076-81b1-4734-a08e-d920e0debfa8}{I:'$$control.edit'} [textbox1]",
+                "displayODtree": "{B=White,Light Blue}{Data=3c455076-81b1-4734-a08e-d920e0debfa8}{I:'$$control.edit'} [textbox1] ¶",
+                "idInternal": "3c455076-81b1-4734-a08e-d920e0debfa8",
+                "parentContainer": -1,
+                "inPanelCard": false,
+                "inTreeControl": false,
+                "repeatingSectionParentId": -1,
+                "indentTree": 0,
+                "v": {
+                    "controlType": "Textbox",
+                    "variableName": "textbox1",
+                    "type": "Character",
+                    "maxLength": -1,
+                    "hasWatermark": true,
+                    "watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "lookup": {
+                        "editCombo": {
+                            "openLookupOnFocus": false
+                        }
+                    },
+                    "textboxSubTheme": "",
+                    "textboxAutocorrect": true,
+                    "textboxAutoCapitalize": true,
+                    "label": "Textbox1",
+                    "class": "<Default>",
+                    "breakType": "After",
+                    "breakHeight": ".1in",
+                    "breakHorizontalSpace": ".1in",
+                    "labelClass": "<Default>",
+                    "labelPosition": "None",
+                    "labelWidth": "{Global.LabelWidth}",
+                    "labelAlignment": "Left",
+                    "repeatingSectionColumnHeading": "<FieldLabel>",
+                    "helpIcon": "images/$$generic.help.png.a5image",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "getFunction": "",
+                    "setFunction": "",
+                    "onChange_ValidationOption": "Client-side only",
+                    "dataBinding": {
+                        "updateable": true,
+                        "image": {
+                            "type": "JPG",
+                            "noImageFoundImage": "<None>",
+                            "newRecordImage": "<None>"
+                        },
+                        "ink": {
+                            "hasbackgroundimage": false,
+                            "backgroundimage": "",
+                            "inkunits": 1
+                        }
+                    },
+                    "datePicker": {
+                        "friendlyDisplay": {
+                            "enabled": false,
+                            "settingsJSON": ""
+                        },
+                        "displayTimePicker": false,
+                        "openMethod": "ClickIcon",
+                        "dateFormat": "<Default>",
+                        "iconNumber": 2,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "userMustSelectFromDatePicker": false,
+                        "multiple": {
+                            "allow": false,
+                            "separators": ".."
+                        },
+                        "hasMask": false,
+                        "format": {
+                            "mask": ""
+                        },
+                        "timePickerOptionsDefined": false,
+                        "display": false
+                    },
+                    "specialtype": "None",
+                    "specialtypeJSON": "",
+                    "precalc": {
+                        "editOptionsJSObject": "<watermark<text=\"Textbox1\">\n>\n",
+                        "javascript_Lookupfields": "if(!{dialog.componentName}_DlgObj.fieldHelpers['TEXTBOX1']){dialog.componentName}_DlgObj.fieldHelpers['TEXTBOX1'] = new A5.Edit({\n\twatermark: {\n\t\ttext: 'Textbox1'\n\t}\n});",
+                        "xbasic_LookupfieldsPopulate": "",
+                        "javascriptAbstractSetupCode": ""
+                    },
+                    "displayAsSlider": false,
+                    "listView": {
+                        "class": ""
+                    },
+                    "flags": {
+                        "clientSideDefinition": false
+                    }
+                },
+                "precalc": {
+                    "ControlHTML": "<div class=\"A5CWLayout\" style=\"width: 2in\" >\n\t<!--FldS--><input\ttype=\"text\" id=\"{grid.componentname}.V.R{grid.rownumber}.TEXTBOX1\" title=\"\"     class=\"[class.dialogInput]\" style=\"width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;\"    name=\"V.R{grid.rownumber}.TEXTBOX1\"    value=\"\"    />\n<!--FldE-->\n</div><!--breakbegin--><br  style=\"clear:both; \" /><!--breakend-->",
+                    "DesignViewHTML": "",
+                    "columnInfo": "'TEXTBOX1': {info: {controlType: 'Textbox'}, hiddenVal: false, type: 'input,label', isCalc: false, hlp: '', isArray: false, dataType: 'C'  }\n"
+                },
+                "crc": "4294938336"
+            }
+        ],
+        "builderType": "Dialog2",
+        "guid": "a6f1cce5-7a41-4a62-afae-1852ddcbf610",
+        "componentName": "SUBIRDOCUMENTOS_ORGANIZACIONPLANTILLAS",
+        "componentFilename": "C:\\Users\\ASUS\\Desktop\\Nibble-TM\\Nibble-TM.WebProjects\\Default.WebProject\\subirDocumentos_OrganizacionPlantillas.a5wcmp",
+        "_style_versionNumber": -1,
+        "_style_hasSassOverrides": false,
+        "_style_hasCSSTweaks": false,
+        "_style_hasCSS_or_subtheme_tweaks": false,
+        "useCompactTheme": false,
+        "styleTweaksCSS": "",
+        "styleTweaksSubthemes": "",
+        "controlflowdirection": "ltr",
+        "SVGLinkedFiles": "",
+        "localsvg": "",
+        "createAppCacheVersion": false,
+        "createAppCacheVersionC": "No",
+        "appcache": {
+            "pageName": "<Default>",
+            "pageTitle": "",
+            "hasHomeScreenIcons": false,
+            "homeScreenIconName": "",
+            "icons": {
+                "precomposed": false
+            },
+            "pageHeadSection": ""
+        },
+        "clientsideNumberFormatDecimal": "period",
+        "clientsideNumberFormatThousands": "comma",
+        "dataSeriesPublishToClientSide": false,
+        "showLineNumbersInControlsList": false,
+        "saveFileType": "Formatted JSON",
+        "keyboardShortcutsJSON": "",
+        "preRenderWarningMessageShow": true,
+        "autoSetPreRenderOnForAllUX": true,
+        "selected": "3c455076-81b1-4734-a08e-d920e0debfa8\n",
+        "designPaneIndex": 1,
+        "masterPaneC": "controls",
+        "serverSideEventIndex": 1,
+        "clientSideEventIndex": 10,
+        "clientSideEventIndexC": "10",
+        "lastControlSelected": "insert_dialog_textbox",
+        "__WPhostName": "Chrome",
+        "embeddedMode": false,
+        "_style_hassubthemeTweaks": false,
+        "repeatingSectionsAreDirty": true,
+        "containerSubTypeNew": "",
+        "containerSubTypeOld": "",
+        "flagDropdownCascadingChanged": false,
+        "toolBox_value": "",
+        "addinBuildNumber": "5217",
+        "addinBuildNumberHighestUsed": "5217",
+        "alphaFiveBuildNumber": "12",
+        "openedFromTemplate": false,
+        "builtWithVersionNumer": 1,
+        "_buildCount": "47",
+        "securityEnabled": false,
+        "showHideIsUsed": false,
+        "precalc": {
+            "js_editorSetInitialization": ";\n",
+            "customControl": {
+                "js_beforePrepare": "\n__replaceAtRuntime_CustomControlsSystemBeforePrepare",
+                "js_afterRender": "\n__replaceAtRuntime_CustomControlsSystemAfterRender",
+                "customControl_xbasicFunctions": ""
+            },
+            "jschart": {
+                "js_beforePrepare": "",
+                "js_afterRender": "",
+                "jschart_xbasicFunctions": ""
+            },
+            "rgraph": {
+                "libraries": ""
+            },
+            "getSetFunctions": {
+                "js_beforePrepare": ""
+            },
+            "injectibleHTML": "",
+            "containerWindowHTML": "",
+            "repeatingsectionInfoJs": "",
+            "framesInfoJS": "{dialog.object}.framesInfo = {\n\n};\n",
+            "jsActionJavascriptGlobalFunctions": "",
+            "xbActionJavascriptGlobalFunctions": "",
+            "javascriptSetupForGridLookups": "{\n}",
+            "javascript": {
+                "showWaitMessage": "",
+                "hideWaitMessage": "",
+                "embeddedUXComponents": ""
+            },
+            "fileUpload_controlInfo": "",
+            "javascript_cascadingDropdowns": "{dialog.object}._cascadingControls = [];\n{dialog.object}._cascadingControlsChildren = [];",
+            "template_html": "<!--div GLOBALERRORS-->\n<div class=\"errorTip\" style=\"margin-bottom: 2px; display: none; width: 8in; \" id=\"{dialog.componentname}.GLOBALERRORS\"></div>\n<!--End div GLOBALERRORS-->\n\n<div id=\"{dialog.componentname}.R1\">\n<div class=\"A5CWLayout\" style=\"width: 2in\" >\n\t<!--FldS--><input\ttype=\"text\" id=\"{grid.componentname}.V.R{grid.rownumber}.TEXTBOX1\" title=\"\"     class=\"GrBlueEdit\" style=\"width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;\"    name=\"V.R{grid.rownumber}.TEXTBOX1\"    value=\"\"    />\n<!--FldE-->\n</div><!--breakbegin--><br  style=\"clear:both; \" /><!--breakend-->\n\n\n</div>\n<!--div DEBUGUPDATECOMMANDS-->\n<div class=\"\" style=\"display: none; \" id=\"{dialog.componentname}.DEBUGUPDATECOMMANDS\"></div>\n<!--End div DEBUGUPDATECOMMANDS-->\n",
+            "panelDisplayNames": "",
+            "controlJavascript": "",
+            "controlJavascriptRepeatingSections": "",
+            "template_js": "",
+            "sessionVarsInShowHideExpns": "",
+            "flagHasShowTimer": false,
+            "themeSearchReplaceString": "",
+            "flagHasHTML5ImageCapture": false,
+            "flagUsesCordova": false,
+            "flagUseAmazonS3FileUpload": false,
+            "flagUseStripe": false,
+            "usesSystemSVG": false,
+            "flagUseAudioPlayer": false,
+            "flagUseInk": false,
+            "flagUsesAudioLibrary": false,
+            "flagUsesPhoneGapFileSystemFunctions": false,
+            "flagUsesGetAccurateLocation": false,
+            "editorSet_for_editor": "{dialog.object}._EDITOR_EDITORSET = {};",
+            "otherJS": "",
+            "javascript_layoutRules": "",
+            "javascript_controlNesting": "{\n\n}",
+            "appcacheEvents": "",
+            "IconMap": "{images.RowExpander.Open}=\"<Specified by Style>\"\n{images.RowExpander.Close}=\"<Specified by Style>\"\n{images.EmbeddedSearch.Search}=\"<Specified by Style>\"\n{images.EmbeddedSearch.ClearSearch}=\"<Specified by Style>\"\n{images.EmbeddedSearch.ShowHideEmbeddedSearch}=\"<Specified by Style>\"\n{images.GridRow.NewRecordRow.NoFocus}=\"<Specified by Style>\"\n{images.GridRow.NewRecordRow.HasFocus}=\"<Specified by Style>\"\n{images.GridRow.SaveRecord}=\"<Specified by Style>\"\n{images.GridRow.SaveRecord.Disabled}=\"<Specified by Style>\"\n{images.GridRow.UndoChanges}=\"<Specified by Style>\"\n{images.GridRow.UndoChanges.Disabled}=\"<Specified by Style>\"\n{images.GridRow.EditRecord}=\"<Specified by Style>\"\n{images.GridRow.EditRecord.Disabled}=\"<Specified by Style>\"\n{images.GridRow.DeleteRecord}=\"<Specified by Style>\"\n{images.GridRow.DeleteRecord.Disabled}=\"<Specified by Style>\"\n{images.GridRow.CancelEditRecord}=\"<Specified by Style>\"\n{images.GridRow.CancelEditRecord.Disabled}=\"<Specified by Style>\"\n{images.GridRow.HasError}=\"<Specified by Style>\"\n{images.QBE.OperatorIsSelected}=\"<Specified by Style>\"\n{images.QBE.OpenQBEMenu}=\"<Specified by Style>\"\n{images.QBE.ShowHideQBERow}=\"<Specified by Style>\"\n{images.PopUpWindow.Lookup.Close}=\"<Specified by Style>\"\n{images.PopUpWindow.DetailView.Close}=\"<Specified by Style>\"\n{images.CollapseContainer.Open}=\"<Specified by Style>\"\n{images.CollapseContainer.Close}=\"<Specified by Style>\"\n{images.FieldHelpIcon}=\"<Specified by Style>\"\n{images.SearchPart.SaveSearchCriteria}=\"<Specified by Style>\"\n{images.SearchPart.LoadSearchCriteria}=\"<Specified by Style>\"\n{images.SearchPart.RunSearch}=\"<Specified by Style>\"\n{images.SearchPart.ClearSearch}=\"<Specified by Style>\"\n{images.GridRow.SelectionPointer}=\"<Specified by Style>\"\n{images.Grid.SortAsc}=\"<Specified by Style>\"\n{images.Grid.SortAscDisabled}=\"<Specified by Style>\"\n{images.Grid.sortDesc}=\"<Specified by Style>\"\n{images.grid.sortDescDisabled}=\"<Specified by Style>\"\n{images.grid.firstPage}=\"<Specified by Style>\"\n{images.grid.firstPageDisabled}=\"<Specified by Style>\"\n{images.grid.prevPage}=\"<Specified by Style>\"\n{images.grid.prevPageDisabled}=\"<Specified by Style>\"\n{images.grid.nextPage}=\"<Specified by Style>\"\n{images.grid.nextPageDisabled}=\"<Specified by Style>\"\n{images.grid.lastPage}=\"<Specified by Style>\"\n{images.grid.lastPageDisabled}=\"<Specified by Style>\"\n{images.edit.dropdownArrow}=\"<Specified by Style>\"\n{images.edit.datePicker}=\"<Specified by Style>\"\n{images.edit.dateTimePicker}=\"<Specified by Style>\"\n{images.edit.timePicker}=\"<Specified by Style>\"\n{images.edit.calculator}=\"<Specified by Style>\"\n{images.edit.lookup}=\"<Specified by Style>\"\n{images.javascript.deleteRowConfirmation}=\"<Specified by Style>\"\n{images.javascript.cancelEditRowConfirmation}=\"<Specified by Style>\"\n{images.javascript.UndoEditsConfirmation}=\"<Specified by Style>\"\n{images.javascript.UndoAllEditsConfirmation}=\"<Specified by Style>\"\n{images.javascript.dirtyRecordWarning}=\"<Specified by Style>\"\n{images.dv.close}=\"<Specified by Style>\"\n{images.dv.firstRecord}=\"<Specified by Style>\"\n{images.dv.prevRecord}=\"<Specified by Style>\"\n{images.dv.nextRecord}=\"<Specified by Style>\"\n{images.dv.lastRecord}=\"<Specified by Style>\"\n{images.dv.newRecord}=\"<Specified by Style>\"\n{images.dv.cancelEdits}=\"<Specified by Style>\"\n{images.dv.deleteRecord}=\"<Specified by Style>\"\n{images.dv.saveRecord}=\"<Specified by Style>\"\n{images.dv.saveAndEnter}=\"<Specified by Style>\"\n{images.dv.switchToEdit}=\"<Specified by Style>\"\n{images.dv.switchToView}=\"<Specified by Style>\"\n{images.disabled.dv.newRecord}=\"<Specified by Style>\"\n{images.disabled.dv.cancelEdits}=\"<Specified by Style>\"\n{images.disabled.dv.deleteRecord}=\"<Specified by Style>\"\n{images.disabled.dv.saveRecord}=\"<Specified by Style>\"\n{images.disabled.dv.saveAndEnter}=\"<Specified by Style>\"\n{images.dv.cancelNewRecord}=\"<Specified by Style>\"\n{images.grid.editError}=\"<Specified by Style>\"\n{images.dialog.editError}=\"<Specified by Style>\"\n{images.tabbedUI.menuExpandLeft}=\"<Specified by Style>\"\n{images.tabbedUI.menuCollapseLeft}=\"<Specified by Style>\"\n{images.tabbedUI.menuExpandRight}=\"<Specified by Style>\"\n{images.tabbedUI.menuCollapseRight}=\"<Specified by Style>\"",
+            "absoluteLayoutSetButtonSizes": "",
+            "viewBoxesToRefresh": "",
+            "AdditionalGridStyles": "",
+            "vb_based_on_lists": "",
+            "vb_based_on_javascritFunctions": "",
+            "constrainContainerJS": "",
+            "requiredPlugins": "",
+            "hasListNavigator": false,
+            "setScreenHeightJS": "",
+            "actionsheet": {
+                "has": false
+            },
+            "kanban": {
+                "has": false
+            },
+            "transformdataviewer": {
+                "has": false,
+                "controlnames": "",
+                "controlnamesListDataSource": "{dialog.object}._listsWithDependentTFControls = {}"
+            }
+        },
+        "FieldsInRepeatingSectionsDeletedBySecurity": "",
+        "repeatingSectionsToRecalc": "",
+        "dialogObject": "if(typeof {dialog.componentName}_DlgObj == 'object') {dialog.componentName}_DlgObj._destroy();\nvar {dialog.componentName}_DlgObj = new A5.DialogComponentHelper('{dialog.componentName}',{\n\tajaxURL: '{dialog.ajaxUrl}',\n\t_embeddedMode: {dialog.embeddedMode},\n\t_livePreviewInBuilder: {livePreviewInBuilder},\n\tcomponentGUID: 'a6f1cce5-7a41-4a62-afae-1852ddcbf610',\n\tcolumnInfo: {columninfo},\n\toriginalValues: {dialog.jsOriginalValues},\n\tdefaultValues: {dialog.jsDefaultValues},\n\tdatePickerMonthNames: [{datePickerMonthNames}],\n\tdatePickerDayNames: [{datePickerDayNames}],\n\tdatePickerTodayButton: '{datePickerTodayButton}',\n\tdatePickerCloseButton: '{datePickerCloseButton}',\n\tdatePickerFirstDayOfWeek: {datePickerFirstDayOfWeek},\n\tresetFormMessage: '{resetFormMessage}',\n\tresetFormTitle: '{resetFormTitle}',\n\tresetFormIcon: '{resetFormIcon}',\n\tdirtyFormMessage: '{dirtyFormMessage}',\n\tdirtyFormTitle: '{dirtyFormTitle}',\n\tdirtyFormIcon: '{dirtyFormIcon}',\n\tdeleteRecordDialogTitle: '{deleteRecordTitle}',\n\tdeleteRecordDialogMessage: '{deleteRecordMessage}',\t\n\tssDateFormat: '{serverSideDateFormat}',\n\tstyleName: '{dialog.style}',\n\t_fieldHelpers_DIALOG2: [],\n\tparentComponentAlias: '{parentComponentAlias}',\n\tsubmitIfHasClientSideErrors: true, \n\trowErrors: {\n\t\t\t\tshowMessageBox: false,\n\t\t\t\tmessageBoxTitle: 'Error',\n\t\t\t\tstyle: 'color: red; width: 6in; height: 2in;'\n\t\t},\n\tfieldErrors: {\n\t\ttype: 'block', \n\t\tclassName: 'errorText',\n\t\tinputClassName: '[class.gridInputError]',\n\t\tedit: { \n\t\t\tcontainer: { className: '[class.gridInputContainerError]'}\n\t\t},\n\t\ticon: '{images.dialog.editError}',\n\t\tglobal: {\n\t\t\tcontId: '{dialog.componentname}.GLOBALERRORS',\n\t\t\thoverClassName: 'errorTextHighlight',\n\t\t\thoverInputClassName: 'errorInputHighlight'\n\t\t}\n\t},\n\t\tonInitializeComplete: function(e) {\n{dialog.object}.buttonClick('BUTTON_5');\n\t\t}\n\n\t});\n\n",
+        "xbasiccode": {
+            "blankInitialValueIfVarNotFound": "",
+            "setValueProperties": "value.TEXTBOX1=\"\"",
+            "setValueProperties2": "value.TEXTBOX1=\"\"",
+            "setValueUnformattedProperties": "value.TEXTBOX1=convert_type(\"\",\"C\")\n"
+        },
+        "componentType": "Dialog2",
+        "version": 1,
+        "recNav": {
+            "slider": {
+                "showSlider": false,
+                "sliderContainerId": "",
+                "showSliderMessage": true,
+                "sliderMessage": "({recordNumber} of {recordcount}) &nbsp;<b>{PrimaryKeyDescription}</b> ",
+                "sliderWidth": "6in",
+                "sliderMessagePrefix": "Record:",
+                "hideSliderMessageWhenMouseNotOverSlider": false,
+                "sliderMessagePosition": "Above",
+                "sliderOnSlideEventHandlerFunction": "",
+                "sliderOnChangeEventHadlerFunction": "",
+                "newRecordMessage": "New",
+                "noRecordsMessage": "No records"
+            },
+            "listView": {
+                "showlistView": false,
+                "listViewContainerId": "",
+                "height": "4in",
+                "width": "3in",
+                "initialMessage": "Loading data....",
+                "hasFreeformDisplay": false,
+                "freeFormTemplate": "",
+                "freeFormTemplateColumnHeading": "",
+                "fillPanelContainer": true,
+                "targetPanelOnClick": "<NextPanel>",
+                "javascript": {
+                    "onSelect": ""
+                },
+                "hasCustomListViewRecordNavigator": false,
+                "customListViewNavigatorIds": ""
+            },
+            "includePrimaryKeyDescription": false
+        },
+        "_flagStaticHTMLMode": false,
+        "__flagUseFakeRequestVariables": false,
+        "__specialMode": false,
+        "alias": "{UXPRERENDEREDALIAS}",
+        "systemXbasicFunctionDeclarations": "",
+        "localPreviewFlag": false,
+        "flagStaticHTMLMode": false,
+        "flagInitialLoadIsAjax": false,
+        "_forceInitialLoadIsAjax": false,
+        "override_settings": "",
+        "flagForcerecalc": false,
+        "flagSaveDialogCache": true,
+        "__argumentValues": "",
+        "__argumentsFromGrid": "",
+        "flagExecuteOnDialogInitializeEvent": true,
+        "flagExecuteOnDialogExecuteEvent": true,
+        "__livePreviewMode": false,
+        "iconMapOverrides": "",
+        "resolveAbstractIconNamesAtDesignTime": true,
+        "customizationString": {
+            "javascriptDialogs": "",
+            "DetailView": {
+                "toolbar": ""
+            }
+        },
+        "linkedResources": "",
+        "flagReloadComponent": false,
+        "__flagstatichtmlorphonegap": false,
+        "temp": {
+            "_onRenderComplete": ""
+        },
+        "disableAbstractEvents": false,
+        "jsRunAtBeginning": "",
+        "flagLoadDetailViewImageCaptureJS": false,
+        "forceLoadPhoneGapFileSystemFunctions": false,
+        "_flagUsesAudioLibrary": false,
+        "_flagUsesInk": false,
+        "_flagUsesControlBar": true,
+        "__staticHTML_setStaticHTMLFlag": false,
+        "sassProcessor": true,
+        "debugMode": false,
+        "__jsLibraries": "<script type=\"text/javascript\" src=\"javascript/a5.js\"></script>\n<script type=\"text/javascript\" src=\"javascript/a5_url.js\"></script>\n",
+        "A5SaveTimeStamp": "20181128213109369",
+        "Livepreview_permissions": "",
+        "_flagDoTreeview": true,
+        "serverSideActionsArray": [
+            {},
+            {},
+            {},
+            {}
+        ],
+        "minimumBuildNumber": "",
+        "style_color_palette": "",
+        "customTabOrder": "",
+        "friendlydatesCustomizationJSON": "",
+        "captureJSErrorStackTrace": false,
+        "optionalSystemLibraries": "",
+        "__LPhostName": "Internet Explorer",
+        "__idinternalCurrentControl": "3c455076-81b1-4734-a08e-d920e0debfa8",
+        "__nameCurrentControl": "textbox1",
+        "__flagHasMacro": false,
+        "livePreview_permissions_friendly": "",
+        "__componentnotfound": false,
+        "__changeAJAXURL": "",
+        "__phoneGapInstantUpdate": false,
+        "_isPartial": false,
+        "__flagCreateAppCache": false,
+        "a_UnboundActionJavascript": [
+            {
+                "idInternal": "",
+                "name": ""
+            }
+        ],
+        "unboundActionShowOnNewActionMessage": true,
+        "actionJavascriptUnboundLastEdited": "5457a6ff-7004-4b05-96a3-4413b9d8e319",
+        "has_QBE_row": false,
+        "showPulseEffect": true,
+        "useIphoneXStyling": false,
+        "iPhoneXStylingJSON": "",
+        "_style_isInherited": false,
+        "preRenderOptimization": false,
+        "prerendered": {
+            "_styledataVersion": 2,
+            "output": {
+                "Head": {
+                    "JavaScript": "*gzip:H4sIAAAAAAAAC5WMsQ6CQBAFexP/Aa/Hq+gOOjsqf2Cznq84PPGyuyD8vSQUFlaWM5NM0CipWGVrQesMi/mBZ96tq1Ri677Cc3Me1HXB79wdD+HfAU2Sfyanun/x/bIYZOTcp5uwJGi9NSJByRzBdp1GS08QRVW1NcPe4IcSfQAk7ywxxgAAAA==",
+                    "CSS_Link": "*gzip:H4sIAAAAAAAAC81YbU/jOBC+zyvtf7AKaEHa0NJuT5ACK172BYnVnYA7Pq7cxGm8uHHkOJRuxX/f8UsSJ00LLPfhFEHj8XhmnvH4sZ3DTM4ZQXKekqOOJA+yG2RZ5/jtm1hOGVogb0bGd1R6EqdeTCcxgz/pBZxx4SMxGePt3nv97IxK3TwjwssII4H0UcITAl3TzJM8D2IPB5LyxMof376hkcBTghatg1VASmn3ZBjwRGKaEIEWEeNY+oxEcpTiMKTJxO+lD1bv7PYSz3ku0aLoQx+gE5lBSI9CY/7gZfSn7h1zEYJLEKkw+U9vdWe2us9Gv6LfhPZF0PArDcknIbg44wxZWdlehDRLGZ77JmnVqCs+00oXkIWGlmMaZ4UeWjuOJgwS6Y0ZD+5GNSf/UjL7xkNS6bYofQqprCs1AgGdi6TUWmf9mQOXPbaEdU6FnK8zfcYIXspCw3tmrKy0+rxBDU9lKETNxQ3UNFqYFSRIOIqgsFXNEH8/lXW1r8WCg5pXWjOiGv6Ys9XDaOoaH+PgbiJ4noT+RhRFOMIoF2z7HZ3iCcm6m1Cc3U1lpbv/sN/djChj3X/SreHnc4onPMHMv42pJFuDk63+oD8cbvXP+oMD8383TSa7eKhNvdsZmXL399IHlHFGQ7QR7e+PplhMaAJrP/X7sAyLNaneVyC4SNK8lqAlw0po7CphY6STsyUT/TYTFXVca9Yh4WkupVovPMUBlXN/dziCxEgwgFka420rPxoC6ZmRF8k9zeiYkUsoS7Rwst7kSKOvyUhVCbAZCtSvogsZA02VSUEqMDSjoYzte2ym3zT4PRFgZuajmIYhSUao5Dvdb9GZhsVvaEWHSplCVgyFqMyjCLQg2hNIY3JGEqk4t06mdlYVmfo4l7yYZqED1BJF3R5WJnwUaCMFQdfsX4KJFdZXGNMM/ohabF2ZaX8iVNeWdjF6XIf8GDmbynvUDuApJRPZU1qux3K7W+tynZbjs9o7K1JCtV2g2B4LqqoeGH4SBFA/sGvfUMnIX4l21hBGUYv0nGYYFkXoeDXubD0ihywODg5KdkCKHvQ8hQTsYefEEOQiU0ePlFNdU3Z6YfFIPjUDkWvmsY7gb5zALrLCvd2wFVcZZy3GHT5DXr+kjhs8vuGpTY1t2JSY1spUuOeS9XEVYbihmTWCXGp9QfLqsaNFA6+3V5kthQMX86kWVrBtu0JuBK8B/98CLQIuasCZ7AKoltRQqvVWYdStCqFqvrTOW+rqNaBMfOX02VTVZs/KFCwL3EqcYxJY0pxRQTXNCqtuvxSs9acJeOWyeg18G3SJ33iqwTeiQWO5KjKoF6orUVl129rNWv6oEU/BotY8TsJnjOvVFheMgR9ndVmBs7yMpJqSlGfU5EwQBtm7J6MXzdITHOOy329O20ydJ70MjlBEacwETlsg/w4XwdhrkmLwDhegMtc6CHexN4AXh6qBC6dnj6fqTSIsKGZ1R6o4rgPBGXtOzmtpei6w9nQ+e5G1TWgNgq7n/yEGl5ieBOEUf8tm28bRrVzWvl2tPdEUlwMEtwNkrweodj/wEVwQTLS3NAn5DC3s9wWDE4c0z0yenO8HS32uBXW9aGORXq/nXvXQRr/fH1UR9ssLTDPC/nCnPP42j3l+rO4Y7Yc9p69GTHW5OQXVZXb7rAuLjaZhtjhNGPFiqZoAKxHFhVxj+EaS/EKSKVpSdmoH7raMT66ul9iiIogQXMMsbwRBMEL6nGx5YujcKbT2sJyiwuxnzvWVydXa61U7gnkOu/rL27F+Bw93sAswAl6POh21CI86uj+LCZGd5vc5FAsSHXXgtftFnLKcGGO7IPg4zikLA6gD+f3Dn+pL3mEWCAo05tj4ge+xkXZQJoIWSz+yj2o0RKnVjosgXxDZ9yzGcM++1srrAlQh2lxUWfnjFwskfA2aFAAA",
+                    "title": "*gzip:H4sIAAAAAAAAC7MpySzJSbULjbDRh7AAiMez8hEAAAA="
+                },
+                "body": {
+                    "body_tag": "*gzip:H4sIAAAAAAAAC7NJyk+pVEjOSSwutlVyL3LKKU0NSExPVbIDAHhRbAAZAAAA",
+                    "dialog2_html": "*gzip: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"
+                },
+                "ajaxResponse": "*gzip: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"
+            },
+            "iconMap": "{images.RowExpander.Open}=\"css/{grid.style}/Expand.png\"\n{images.RowExpander.Close}=\"css/{grid.style}/Collapse.png\"\n{images.EmbeddedSearch.Search}=\"css/{grid.style}/GridSearch.png\"\n{images.EmbeddedSearch.ClearSearch}=\"css/{grid.style}/GridSearchClear.png\"\n{images.EmbeddedSearch.ShowHideEmbeddedSearch}=\"css/{grid.style}/GridSearchToggle.png\"\n{images.GridRow.NewRecordRow.NoFocus}=\"css/{grid.style}/GridRowNew.png\"\n{images.GridRow.NewRecordRow.HasFocus}=\"css/{grid.style}/GridRowNewSelected.png\"\n{images.GridRow.SaveRecord}=\"css/{grid.style}/GridRowSave.png\"\n{images.GridRow.SaveRecord.Disabled}=\"css/{grid.style}/GridRowSaveDisabled.png\"\n{images.GridRow.UndoChanges}=\"css/{grid.style}/GridRowUndoEdits.png\"\n{images.GridRow.UndoChanges.Disabled}=\"css/{grid.style}/GridRowUndoEditsDisabled.png\"\n{images.GridRow.EditRecord}=\"css/{grid.style}/GridRowEdit.png\"\n{images.GridRow.EditRecord.Disabled}=\"css/{grid.style}/GridRowEditDisabled.png\"\n{images.GridRow.DeleteRecord}=\"css/{grid.style}/GridRowDelete.png\"\n{images.GridRow.DeleteRecord.Disabled}=\"css/{grid.style}/GridRecordDeleteDisabled.png\"\n{images.GridRow.CancelEditRecord}=\"css/{grid.style}/GridRowCancelEdits.png\"\n{images.GridRow.CancelEditRecord.Disabled}=\n{images.GridRow.HasError}=\"css/{grid.style}/GridRowError.png\"\n{images.QBE.OperatorIsSelected}=\n{images.QBE.OpenQBEMenu}=\"css/{grid.style}/GridQBEMenu.png\"\n{images.QBE.ShowHideQBERow}=\"css/{grid.style}/GridQBEToggle.png\"\n{images.PopUpWindow.Lookup.Close}=\"css/{grid.style}/WinClose.png\"\n{images.PopUpWindow.DetailView.Close}=\"css/{grid.style}/WinClose.png\"\n{images.CollapseContainer.Open}=\"css/{grid.style}/Expand.png\"\n{images.CollapseContainer.Close}=\"css/{grid.style}/Collapse.png\"\n{images.FieldHelpIcon}=\"css/{grid.style}/EditHelp.png\"\n{images.SearchPart.SaveSearchCriteria}=\"css/{grid.style}/GridSearchSave.png\"\n{images.SearchPart.LoadSearchCriteria}=\"css/{grid.style}/GridSearchLoad.png\"\n{images.SearchPart.RunSearch}=\"css/{grid.style}/GridSearch.png\"\n{images.SearchPart.ClearSearch}=\"css/{grid.style}/GridSearchClear.png\"\n{images.GridRow.SelectionPointer}=\"css/{grid.style}/GridRowSelected.png\"\n{images.Grid.SortAsc}=\"css/{grid.style}/GridSortAsc.png\"\n{images.Grid.SortAscDisabled}=\"css/{grid.style}/GridSortAscDisabled.png\"\n{images.Grid.sortDesc}=\"css/{grid.style}/GridSortDesc.png\"\n{images.grid.sortDescDisabled}=\"css/{grid.style}/GridSortDescDisabled.png\"\n{images.grid.firstPage}=\"css/{grid.style}/GridPageFirst.png\"\n{images.grid.firstPageDisabled}=\"css/{grid.style}/GridPageFirstDisabled.png\"\n{images.grid.prevPage}=\"css/{grid.style}/GridPagePrev.png\"\n{images.grid.prevPageDisabled}=\"css/{grid.style}/GridPagePrevDisabled.png\"\n{images.grid.nextPage}=\"css/{grid.style}/GridPageNext.png\"\n{images.grid.nextPageDisabled}=\"css/{grid.style}/GridPageNextDisabled.png\"\n{images.grid.lastPage}=\"css/{grid.style}/GridPageLast.png\"\n{images.grid.lastPageDisabled}=\"css/{grid.style}/GridPageLastDisabled.png\"\n{images.edit.dropdownArrow}=\"css/{grid.style}/EditDDArrow.png\"\n{images.edit.datePicker}=\"css/{grid.style}/EditDP.png\"\n{images.edit.dateTimePicker}=\"css/{grid.style}/EditDTP.png\"\n{images.edit.timePicker}=\"css/{grid.style}/EditTP.png\"\n{images.edit.calculator}=\n{images.edit.lookup}=\"css/{grid.style}/EditLookup.png\"\n{images.javascript.deleteRowConfirmation}=\"css/{grid.style}/MessageQuestion.png\"\n{images.javascript.cancelEditRowConfirmation}=\"css/{grid.style}/MessageInfo.png\"\n{images.javascript.UndoEditsConfirmation}=\"css/{grid.style}/MessageInfo.png\"\n{images.javascript.UndoAllEditsConfirmation}=\"css/{grid.style}/MessageInfo.png\"\n{images.javascript.dirtyRecordWarning}=\"css/{grid.style}/MessageInfo.png\"\n{images.dv.close}=\"css/{grid.style}/GridRecordClose.png\"\n{images.dv.firstRecord}=\"css/{grid.style}/GridRecordFirst.png\"\n{images.dv.prevRecord}=\"css/{grid.style}/GridRecordPrev.png\"\n{images.dv.nextRecord}=\"css/{grid.style}/GridRecordNext.png\"\n{images.dv.lastRecord}=\"css/{grid.style}/GridRecordLast.png\"\n{images.dv.newRecord}=\"css/{grid.style}/GridRecordNew.png\"\n{images.dv.cancelEdits}=\"css/{grid.style}/GridRecordCancelEdits.png\"\n{images.dv.deleteRecord}=\"css/{grid.style}/GridRecordDelete.png\"\n{images.dv.saveRecord}=\"css/{grid.style}/GridRecordSave.png\"\n{images.dv.saveAndEnter}=\"css/{grid.style}/GridRecordSaveAndEnter.png\"\n{images.dv.switchToEdit}=\"css/{grid.style}/GridRecordSwitchToEdit.png\"\n{images.dv.switchToView}=\"css/{grid.style}/GridRecordSwitchToView.png\"\n{images.disabled.dv.newRecord}=\"css/{grid.style}/GridRecordNew.png\"\n{images.disabled.dv.cancelEdits}=\"css/{grid.style}/GridRecordCancelEditsDisabled.png\"\n{images.disabled.dv.deleteRecord}=\"css/{grid.style}/GridRecordDeleteDisabled.png\"\n{images.disabled.dv.saveRecord}=\"css/{grid.style}/GridRecordSaveDisabled.png\"\n{images.disabled.dv.saveAndEnter}=\"css/{grid.style}/GridRecordSaveAndEnterDisabled.png\"\n{images.dv.cancelNewRecord}=\"css/{grid.style}/GridRecordNewCancelEdits.png\"\n{images.grid.editError}=\"css/{grid.style}/EditError.png\"\n{images.dialog.editError}=\"css/{grid.style}/EditError.png\"\n{images.tabbedUI.menuExpandLeft}=\"css/{grid.style}/PanelLeftExpand.png\"\n{images.tabbedUI.menuCollapseLeft}=\"css/{grid.style}/PanelLeftCollapse.png\"\n{images.tabbedUI.menuExpandRight}=\"css/{grid.style}/PanelRightExpand.png\"\n{images.tabbedUI.menuCollapseRight}=\"css/{grid.style}/PanelRightCollapse.png\"\n{images.dialog.repeatingSectionActiveRowIcon}=\"css/{dialog.style}/DialogRSRowSelected.png\"\n{images.dialog.repeatingSectionAddRowIcon}=\"css/{dialog.style}/DialogRSRowAdd.png\"\n{images.dialog.repeatingSectionDeleteRowIcon}=\"css/{dialog.style}/DialogRSRowDelete.png\"\n{images.dialog.repeatingSectionErrorRowIcon}=\"css/{dialog.style}/DialogRSRowError.png\"\n{images.dialog.deleteRowMessage.icon}=\"css/GrBlue/MessageQuestion.png\"\n{images.dialog.resetForm.icon}=\"css/GrBlue/MessageQuestion.png\"\n{images.dialog.dirtyForm.icon}=\"css/GrBlue/MessageInfo.png\"\n{images.dialog.editError}=\"css/GrBlue/EditError.png\"\n{images.dialog.listNav}=\"css/GrBlue/ListNav.png\"\n{images.dialog.listNavSubtle}=\"css/GrBlue/ListNavSubtle.png\"\n{images.dialog.menu}=\"images/menuPanel24x24.png.a5image\"\n{images.dialog.refresh}=\"images/$$generic.refresh.color.png.a5image\"\n{images.dialog.refreshDisabled}=\"images/disabled/$$generic.refresh.color.png.a5image\""
+        }
+    }
+}

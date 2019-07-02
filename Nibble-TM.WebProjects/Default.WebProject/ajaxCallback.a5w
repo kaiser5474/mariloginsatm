@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta content=”text/html; charset=unicode” httpequiv=
+Content-Type>
+<meta name=GENERATOR content=”MSHTML
+9.00.8112.16421">
+<script type=”text/javascript” src=”javascript/
+a5.js”></script>
+<script type=”text/javascript” src=”javascript/
+a5_url.js”></script>
+<script>
+function doAjaxCallback() {
+A5.ajax.callback('ajaxCallback.ajax.a5w', 'data1=value of data1');
+}
+</script>
+</head>
+<body>
+<button onclick = ”doAjaxCallback();”>
+Click this button to do an Ajax callback
+</button>
+</body>
+</html>

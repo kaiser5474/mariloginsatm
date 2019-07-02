@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+
+
+<%a5
+Delete tmpl_DASHBOARDALERTA
+DIM tmpl_DASHBOARDALERTA as P
+tmpl_DASHBOARDALERTA = a5w_load_component("DashBoardAlertas") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:DashBoardAlertas)
+
+'Override settings start -----------------------------------------
+with tmpl_DASHBOARDALERTA
+.alias = "DASHBOARDALERTA"
+_dialogFilename = "DashBoardAlertas"
+end with 
+'Override settings end -----------------------------------------
+
+delete x_DASHBOARDALERTA
+dim x_DASHBOARDALERTA as p
+x_DASHBOARDALERTA = a5w_run_Component(tmpl_DASHBOARDALERTA) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:DashBoardAlertas)
+
+?x_DASHBOARDALERTA.Output.Head.JavaScript
+?x_DASHBOARDALERTA.Output.Head.CSS_Link
+
+?x_DASHBOARDALERTA.Output.Head.Title 
+%>
+
+
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Program Files (x86)/a5V12/css/GrBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+
+<meta name="generator" content="Alpha Anywhere HTML Editor Version 12 Build 4077-4809">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<title></title>
+</head>
+
+<%a5 ?x_DASHBOARDALERTA.Output.Body.Body_tag %>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--Body Tag for tmpl -->
+<body class="GrBluePage"><!--Alpha Five Temporary Code End -->	
+
+
+<p>
+<%a5 ?x_DASHBOARDALERTA.Output.Body.Dialog2_HTML %>
+<%a5 ?a5dialogHelper_generateCORSHeaders() %></p>
+
+</body></html>

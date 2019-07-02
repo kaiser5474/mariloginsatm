@@ -1,0 +1,641 @@
+{
+    "$schema": "UX",
+    "$definition": {
+        "style_name": "<ProjectStyle>",
+        "style_type": "Alpha Five",
+        "resolveAbstractClassNames": true,
+        "builderVersionNumber": 1,
+        "overrideStyleName": "Default",
+        "FontSize": "Medium",
+        "LocalCss": "<style type=\"text/css\">\n\n</style>",
+        "A5ContainerClassPadding": "0px",
+        "A5ContainerClassPaddingForContainerWidthMode": "4px",
+        "layoutType": "ContainerWidth",
+        "previewMode": "Default",
+        "useDragScrolling": "Auto",
+        "pageTitle": "UX",
+        "waitMsg": {
+            "message": {
+                "text": "Wait...",
+                "waitIcon": "css/A5System/Images/wait.gif"
+            },
+            "cssAnimation": {
+                "size": "32"
+            }
+        },
+        "globalSettings": {
+            "labelWidth": "1in"
+        },
+        "serverSideEvents": {
+            "onDialogInitialize": "function onDialogInitialize as v (e as p)\n'Request - The Request object. Includes Request.Variables, which should be used instead of the older e.rv construct\n'Session - The Session object. Should be used instead of the older e.session construct\n'Inside e:\n'e.tmpl = Component definition\n'e.rtc = Runtime calculations - you can use this to store data to be passed to other server side events (Note: the 'rtc' object cannot be used to persist state information - i.e. you can't set a value in rtc and then read that value in a subsequent callback. To persist state info see e._state).\n'e.arguments = SQL::Arguments object with values for each of the arguments defined in this component.  To read a value from arguments: e.arguments.find(\"argumentName\").data\n'TIP: You can also set the value of an argument. For example: e.arguments[args.ArgumentNumber(\"country\")].data = \"portugal\"\n\n\tdim saludo as c\n\tdim st as Y\n\tst = time()\n\tshortTime_extract(st,\"h\") \n\t'shortTime_extract(st,\"m\") \n\t'shortTime_extract(st,\"s\")\n\t\n\t\n\n\tif shortTime_extract(st,\"h\") >= 0 then\n\t\tsaludo = \"Buenos Días \" + session.NombreUsuarioConectado\n\tend if\n\t\n\tif \tshortTime_extract(st,\"h\") > 12  then\n\t\tsaludo = \"Buenas Tardes \" + session.NombreUsuarioConectado\n\tend if\n\t\n\tif \tshortTime_extract(st,\"h\") > 18 then\n\t\tsaludo = \"Buenas Noches \" + session.NombreUsuarioConectado\n\tend if\n\ne.control.textbox1 = saludo\ne._state.textbox1 = session.NombreUsuarioConectado\n\n\tdim cn as sql::connection\n\tcn.open(\"::Name::Nibble\")\n\t\n\tdim sql2 as c\n\tdim user2 as c\n\tuser2 = session.Userid\n\tdim args2 as sql::Arguments\n\t\n\tdim ip as c\n\tip=request.remote_addr\n\t\n\targs2.Add(\"user\", user2)\n\targs2.Add(\"ip\", ip)\n\t\n\tsql2 = \"insert into UsuariosIngresan (Usuario , fechaIngreso, IP) values (:user , GETDATE(), :ip)\"\n\tcn.Execute(sql2, args2)\t\n\n'You can set the initial value of any field by setting the property (see comment at end for Javascript technique to use when setting values for a large number of controls)\n'e.control.<fieldname>\n'For example:\n\n'e.control.label1 = session.NombreUsuarioConectado\n\n'For multi-valued controls (such as checkbox, List control configured as multi-select, etc.) you can set the value to a cr-lf list of values or use the special array() syntax.\n'Either of the following two methods will work\n'e.control.colors = \"array(red,green)\"\n'e.control.colors = comma_to_crlf(\"red,green\")\n\n'To set the value of a field in a repeating section, you must use \"_A5INSTANCE\" and the instance number as a suffix on the fieldname.\n'For example:\n'e.control.firstname_A5INSTANCE2 = \"Bob\"  'sets the value in the 2nd row of the repeating section.\n\n'To specify any javascript that you want to execute set the  e.javascript property. For example:\n'e.javascript = \"alert('hello');\"\n\n'You can set 'state' variables in this event. The value of any state variables will be available in all subsequent ajax callbacks.\n'To set a state variable:\n\n'e._state.myvar2 = \"value2\"\n\n\n'Using Javascript to Set Control Values and the Row Count in a Repeating Section -- Recommended For Maximum Efficiency (Advanced users)\n'---------------------------------------------------------------------------------------------------------------------------\n'When setting the value of a large number of controls, you will improve performance if you generate the Javascript directly,\n'rather than setting properties in the e.control object (as described above) and then having Alpha Five generate the Javascript from this object.\n'The following example shows Javascript code that sets the number of rows in a Repeating Section and sets the value of various control\n'in the top section and Repeating Section of the Dialog:\n\n'Generate the Javascript to emit\n'dim js as c\n'js = <<%txt%\n'var rows = 7;\n'var setFocusToFirst = true;\n'var nullOutExistingData = true;\n'var repeatingSectionId = 'CONTAINER_1';\n'{dialog.object}._setRepeatingSectionRowCount(repeatingSectionId,rows,setFocusToFirst,nullOutExistingData);\n'var _d = {};\n\n'//Next command is optional. It is ONLY needed if the ._setRepeatingSectionRowCount() method has been called.\n'//The command copies default values into the _d object. Without this command, default values defined in the component will not be set.\n'//$u.o.assign(_d,DLG1_DlgObj.originalValues[0]);\n\n'_d['B'] = 'alpha'; //set the value of a control called 'B'\n'_d['E:2'] = 'beta'; //set the value of a control called 'E' in the 2nd Repeating Section row\n'_d['G:6'] = ['Red','Green']; //set the value of a checkbox called 'G' in the 6th Repeating Section row to 'Red' and 'Green'\n'{dialog.object}.prepare();\n'{dialog.object}.populate(_d);\n'{dialog.object}.refreshClientSideComputations();\n\n'%txt%\n\n'Now, emit the Javascript...\n'e.javascript = js\n\n'NOTE: In the above example, if the ._setRepeating() method is called in the 'onDialogInitialize' event, you are responsible for setting\n'values in ALL of the controls in the component. For example, if you have defined default values for some controls, and then set the values\n'of other controls using the .populate() method, only the values set in the _d object will be set. (The default values will NOT be set).\n'You can, however, put the default values into the _d object using this code:\n'$u.o.assign(_d,{dialog.object}.originalValues[0]);\n\n\n\n\n'Tip: You can use the xbasic varToJSON() function to help generate the Javascript object passed to the .populate() method.\n'For example:\n'dim j as p\n'j.firstname = \"John\"\n'j.lastname = \"Smith\"\n'j.quantity_a5instance1 = \"2\"\n'dim j.colorchoices_a5instance2[3] as c\n'j.colorchoices_a5instance2[1] = \"Red\"\n'j.colorchoices_a5instance2[2] = \"Blue\"\n'dim jsTxt as c\n'jsTxt = varToJSON(j)\n'js = \"{dialog.object}.populate(\" + jsTxt + \"); {dialog.object}.prepare();\"\n\n\n'TIP: To simulate session variables when running in Working Preview you can use this code:\n'if eval_valid(\"request.SERVER_PROTOCOL\") then \n'\tif request.SERVER_PROTOCOL = \"A5RES\" then \n'\t\t'running in working preview\n'\t\tsession.var1 = \"simulated value for var1\"\n'\tend if \n'end if \n\nend function\n",
+            "canAjaxCallback": "",
+            "afterAjaxCallback": ""
+        },
+        "XbasicFunctionDeclarations": "\n",
+        "onTimerEventInterval": 60,
+        "securityDeniedAction": "Redirect to login page",
+        "clientSideEvents": {
+            "_canAjaxCallback": "",
+            "__afterAjaxCallbackComplete": "",
+            "onAjaxCallbackFailed": "",
+            "onAjaxCallbackNotAvailable": "",
+            "onAjaxCallbackNotAllowed": "",
+            "onBeforeCreate": "",
+            "onServerSideEventHandlerError": "",
+            "onFieldValidationError": "",
+            "beforePrepare": "",
+            "afterPrepare": "",
+            "afterValidate": "",
+            "onTabPaneChanged": "",
+            "beforeRptSectionRowPrepare": "",
+            "afterRptSectionRowPrepare": "",
+            "canRptSectionRowAdd": "",
+            "afterRptSectionRowAdd": "",
+            "canRptSectionRowDelete": "",
+            "afterRptSectionRowDelete": "",
+            "onStateChange": "",
+            "onDataStateChange": "",
+            "afterControlBasedOnClientSideDataCacheRefreshed": "",
+            "onControlFocus": "",
+            "onRptSectionFocus": "",
+            "onRptSectionRowChange": "",
+            "canResetForm": "",
+            "afterResetForm": "",
+            "canRecordNavigate": "",
+            "afterRecordNavigate": "",
+            "onSynchronizeDialog": "",
+            "afterPopulateFromTable": "",
+            "onRenderComplete": "",
+            "onAndroidBackButton": "",
+            "onPanelActivate": "",
+            "afterSaveToRepository": "",
+            "afterLoadFromRepository": "",
+            "afterGoogleVisualization": "",
+            "canDeleteParentRecord": "",
+            "afterDeleteParentRecord": "",
+            "onOrientationChange": "",
+            "onKeyboard": "",
+            "onCordovaReady": "",
+            "onPhoneGapReady": "",
+            "onImageError": "",
+            "onSignatureCaptureToggle": "",
+            "onSignatureCaptureAccept": "",
+            "onTimer": "",
+            "beforeOnTimer": "",
+            "canLogin": "",
+            "afterLogin": "",
+            "afterFailedLogin": "",
+            "canLogout": "",
+            "afterLogout": "",
+            "onSessionTimeoutWarning": "",
+            "onServerSideListSummaryCompute": "",
+            "beforeHTMLReportExport": "",
+            "onConnectionChange": "",
+            "appCache_cached": "",
+            "appCache_checking": "",
+            "appCache_downloading": "",
+            "appCache_error": "",
+            "appCache_noupdate": "",
+            "appCache_obsolete": "",
+            "appCache_progress": "",
+            "appCache_updateready": "",
+            "onOAuthCompleted": "",
+            "onControlBlur": "",
+            "onControlChange": "",
+            "onBeforePersistControlValuesToLocalStorage": "",
+            "onPersistControlValuesToLocalStorage": "",
+            "onRestoreVariablesFromLocalStorage": "",
+            "onRestoreComponentStateFromLocalStorage": "",
+            "localStorageEncryption": "",
+            "localStorageDecryption": "",
+            "securityNotAuthenticated": "",
+            "securityPermissionDenied": "",
+            "webSocketOnMessage": "",
+            "webSocketServerClose": "",
+            "webSocketSendMessageFail": "",
+            "onOAuthAuthorize": "",
+            "afterGoogleAddressSelect": "",
+            "onBeforeClientSideDataCacheRead": "",
+            "afterClientSideDataCacheAjaxCallback": "",
+            "onWatchEvent": ""
+        },
+        "onlyValidateChangedFields": true,
+        "edit": {
+            "field_error_style": {
+                "type": "Block",
+                "showWarning": true,
+                "icon": "<Specified by Style>",
+                "controlContainer_classname": ""
+            },
+            "row_errors_window_title": "Error",
+            "row_errors_window_style": "color: red; width: 6in; height: 2in;",
+            "fieldValidationErrorMessage": "Form has errors."
+        },
+        "submitDialogIfHasClientSideValidationErrors": true,
+        "activeLanguage": "<Default>",
+        "datePicker": {
+            "dayNames": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            "monthNames": "January,February,March,April,May,June,July,August,September,October,November,December",
+            "firstDayOfWeek": 1,
+            "todayButtonText": "Today",
+            "closeButtonText": "Close"
+        },
+        "clientSideDateFormat": "MM/dd/yyyy",
+        "fontScalingOption": "All",
+        "helpTableType": "DBF",
+        "fieldHelpWindowStyle": "modal-resizeable",
+        "customization": {
+            "resetFormMessage": "Are you sure you want to reset the form?",
+            "resetFormTitle": "Warning",
+            "resetFormIcon": "<Specified by Style>",
+            "resetFormYesButton": "Yes",
+            "resetFormNoButton": "No",
+            "windowTitleDirection": "ltr",
+            "dirtyWarning": "You must first save your changes or cancel changes by clicking the Reset button.",
+            "dirtyWarningTitle": "Notice",
+            "dirtyWarningIcon": "<Specified by Style>",
+            "deleteRecordWarningTitle": "Delete Record",
+            "deleteRecordWarningMessage": "Are you sure you want to delete this record?"
+        },
+        "dataBinding": {
+            "computeDataBindingCodeAtDesignTime": true,
+            "computeDataBindingCodeAtDesignTimePrompt": "Prompt",
+            "autoRefreshSchemaOnLoad": true,
+            "autoRefreshPromptFirst": "Prompt",
+            "precalc": {
+                "flagCodeComputed": false
+            }
+        },
+        "info": {
+            "createdBy": "ASUS",
+            "dateCreated": "2018-5-10",
+            "dateLastEdited": "2019-3-7"
+        },
+        "flagShowCommentsInTree": true,
+        "treeCommentOffset": "6",
+        "renderUXLocation": {
+            "type": "window",
+            "sizeToElement": true
+        },
+        "checkSessionEvery": 1,
+        "warningIntervalBeforeExpiration": 1,
+        "sessionTimeOutWarningMessage": "Your session will expire in {secondsToSessionEnd} seconds. Click the button to extend your session.",
+        "sessionExtendSessionButtonLabel": "Extend Session",
+        "sessionTimeoutWarningDialogTitle": "Warning",
+        "sessionHasExpiredMessage": "Your session has expired.",
+        "sessionHasExpiredButtonLabel": "OK",
+        "sessionHasExpiredAction": "Nothing",
+        "sessionHasExpiredRedirectPage": "<self>",
+        "sessionHasExpiredDialogTitle": "Notice",
+        "sessionHasExpiredOKButtonJavascript": "<ReloadThisPage>",
+        "login": {
+            "errorMessageStyle": "color: red;",
+            "logoutDoesFullPageReload": true
+        },
+        "applyResponsiveDesignSettings": true,
+        "responseDesignRulesMode": "FirstTrue",
+        "localStorage": {
+            "namespace": "<Default>",
+            "__version": 1,
+            "workingPreviewTestingMode": "Browser",
+            "variablesToNotPersist": ""
+        },
+        "securityAppliedClientSide": true,
+        "preRenderUXatDesignTime": true,
+        "preRenderComputeWhen": "Every time component is saved",
+        "page_fields": [
+            {
+                "controlType": "dialog_formcontrol",
+                "display": "{B=White,Light Blue}{Data=87ae6ce8-b169-4aaf-8e13-e8077e87ece8}{I:'$$control.text'} [textbox1]",
+                "displayODFlat": "{Data=87ae6ce8-b169-4aaf-8e13-e8077e87ece8}{I:'$$control.text'} [textbox1]",
+                "idInternal": "87ae6ce8-b169-4aaf-8e13-e8077e87ece8",
+                "parentContainer": -1,
+                "displayOD": "{B=White,Light Blue}{Data=87ae6ce8-b169-4aaf-8e13-e8077e87ece8}{I:'$$control.text'} [textbox1]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{B=White,Light Blue}{Data=87ae6ce8-b169-4aaf-8e13-e8077e87ece8}{I:'$$control.text'} [textbox1]",
+                "crc": "4294912019",
+                "v": {
+                    "controlType": "Label",
+                    "variableName": "textbox1",
+                    "type": "Character",
+                    "maxLength": -1,
+                    "watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "precalc": {
+                        "javascriptAbstractSetupCode": ""
+                    },
+                    "textboxAutocorrect": true,
+                    "textboxAutoCapitalize": true,
+                    "class": "<Default>",
+                    "style": "text-align: left; font-size: 18px; color: #ff0000; font-weight: bold;",
+                    "width": "3in",
+                    "breakType": "None",
+                    "breakHeight": ".1in",
+                    "breakHorizontalSpace": ".1in",
+                    "labelClass": "<Default>",
+                    "labelStyle": "width: 0px;",
+                    "labelPosition": "None",
+                    "labelWidth": "{Global.LabelWidth}",
+                    "labelAlignment": "Left",
+                    "repeatingSectionColumnHeading": "<FieldLabel>",
+                    "helpIcon": "images/$$generic.help.png.a5image",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "onChange_ValidationOption": "Client-side only",
+                    "dataBinding": {
+                        "updateable": true,
+                        "image": {
+                            "type": "JPG",
+                            "noImageFoundImage": "<None>",
+                            "newRecordImage": "<None>"
+                        },
+                        "ink": {
+                            "hasbackgroundimage": false,
+                            "backgroundimage": "",
+                            "inkunits": 1
+                        }
+                    },
+                    "textboxSubTheme": "",
+                    "getFunction": "",
+                    "setFunction": "",
+                    "datePicker": {
+                        "displayTimePicker": false,
+                        "openMethod": "ClickIcon",
+                        "dateFormat": "<Default>",
+                        "iconNumber": 2,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "userMustSelectFromDatePicker": false,
+                        "multiple": {
+                            "allow": false,
+                            "separators": ".."
+                        },
+                        "hasMask": false,
+                        "format": {
+                            "mask": ""
+                        },
+                        "timePickerOptionsDefined": false,
+                        "display": false
+                    },
+                    "displayAsSlider": false,
+                    "flags": {
+                        "clientSideDefinition": false
+                    }
+                },
+                "indentTree": 0,
+                "precalc": {
+                    "ControlHTML": "<div class=\"A5CWLayout\" style=\"width: 3in\" >\n\t<!--FldS--><span\tid=\"{grid.componentname}.V.R{grid.rownumber}.TEXTBOX1\" class=\"[class.dialogLabel]\" style=\"text-align: left; color: #ff0000; font-size: 18px; font-weight: bold; width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display:inline-block\" title=\"\"    ></span>\n<!--FldE-->\n</div>",
+                    "DesignViewHTML": "",
+                    "columnInfo": "'TEXTBOX1': {info: {controlType: 'Label'}, hiddenVal: false, type: 'label,label', isCalc: false, hlp: '', isArray: false, dataType: 'C'  }\n"
+                },
+                "inPanelCard": false,
+                "inTreeControl": false
+            },
+            {
+                "controlType": "layout_directive_spacer",
+                "display": "{B=White,Light Blue}{Data=a8e4ffc6-a3fa-4a58-b3f5-6cb02516cda3}{I:'$$format.border.style.dot'} [Spacer]",
+                "displayODFlat": "{Data=a8e4ffc6-a3fa-4a58-b3f5-6cb02516cda3}{I:'$$format.border.style.dot'} [Spacer]",
+                "idInternal": "a8e4ffc6-a3fa-4a58-b3f5-6cb02516cda3",
+                "parentContainer": -1,
+                "displayOD": "{B=White,Light Blue}{Data=a8e4ffc6-a3fa-4a58-b3f5-6cb02516cda3}{I:'$$format.border.style.dot'} [Spacer]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{B=White,Light Blue}{Data=a8e4ffc6-a3fa-4a58-b3f5-6cb02516cda3}{I:'$$format.border.style.dot'} [Spacer]",
+                "crc": "4294949099",
+                "v": {
+                    "spacer": {
+                        "height": "1px",
+                        "width": "3in"
+                    },
+                    "BreakType": "None",
+                    "id": "SPACER_1"
+                },
+                "indentTree": 0,
+                "precalc": {
+                    "ControlHTML": "<div class=\"A5CWLayout\" style=\"width: 3in\" >\n\t<div id=\"SPACER_1\" style=\"width: 100%; height: 1px; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; font: 0pt Arial;\">&nbsp;</div>\n</div>\n\t",
+                    "DesignViewHTML": ""
+                },
+                "inPanelCard": false,
+                "inTreeControl": false
+            },
+            {
+                "controlType": "layout_directive_button",
+                "display": "{B=White,Light Blue}{Data=d5c2e653-39c6-473d-a37e-6a41b39671c0}{I:'$$control.button'} [Button: Editar Contraseïa]",
+                "displayODFlat": "{Data=d5c2e653-39c6-473d-a37e-6a41b39671c0}{I:'$$control.button'} [Button]",
+                "idInternal": "d5c2e653-39c6-473d-a37e-6a41b39671c0",
+                "parentContainer": -1,
+                "displayOD": "{B=White,Light Blue}{Data=d5c2e653-39c6-473d-a37e-6a41b39671c0}{I:'$$control.button'} [Button]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{B=White,Light Blue}{Data=d5c2e653-39c6-473d-a37e-6a41b39671c0}{I:'$$control.button'} [Button: Editar Contraseïa]",
+                "crc": "4294920841",
+                "v": {
+                    "buttonText": "Editar Contrase&ntilde;a",
+                    "Class": "<Default>",
+                    "BreakType": "None",
+                    "breakHeight": ".1in",
+                    "breakHorizontalSpace": ".1in",
+                    "id": "BUTTON_1",
+                    "advancedButtonStyling": true,
+                    "labelClass": "<Default>",
+                    "labelPosition": "Right",
+                    "labelWidth": "{Global.LabelWidth}",
+                    "labelAlignment": "Right",
+                    "advancedButton": {
+                        "subTheme": "",
+                        "buttonClass": "",
+                        "buttonClassDisabled": "",
+                        "buttonClassHover": "",
+                        "buttonClassPressed": "",
+                        "buttonInlineStyle": "",
+                        "buttonstyle": "Image followed by text",
+                        "disabledImageName": "",
+                        "hoverImageName": "",
+                        "displayDropdownIconOnButton": false,
+                        "displayAsSplitButton": false,
+                        "hyperlinkClass": "[class.gridHyperlinkButton]",
+                        "hyperlinkImagePosition": "None",
+                        "hyperlinkInlineStyle": "",
+                        "imageClass": "",
+                        "imageInlineStyle": "",
+                        "imageName": "images/$$generic.key.png.a5image",
+                        "pressedImageName": "",
+                        "textClass": "",
+                        "textInlineStyle": "",
+                        "type": "Button"
+                    },
+                    "securityGroups": "",
+                    "showHideExpn": "",
+                    "clientSideconditionalStyle": "",
+                    "CalcExpression": "",
+                    "EnableExpression": "",
+                    "ShowExpression": "",
+                    "abstractJavascript": {
+                        "click": "/* actionJavascript:b060d97a-b1d5-4b06-b621-0eacb171ec1a       */\n{grid.componentName}_O_58598CE2146943D49A6AF3B131B72C36({grid.rownumber},'{grid.rowId}',this);"
+                    },
+                    "abstractJavascriptDeclarationsGlobal": {
+                        "click": "window['{grid.componentName}_O_58598CE2146943D49A6AF3B131B72C36'] = function(rowNum,rowId,objEle) {\n\nvar tempTbiObj = getTabbedUI();\n\n\nif(tempTbiObj == false) {\n\nvar windowName = 'WINDOW_fbbbe8c4_309d_4e04_ab72_63d27f820481_R'+rowId+'';\nvar currWindow = {Grid.object}.getWindow(windowName);\nvar go = new Object();\n\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\n\ngo.objectId = objEle.id;\ngo.dialog2Name = 'EditarUsuario';\ngo.type = 'dialog2';\ngo.alias = '{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'';\ngo.submitCurrentFieldValues = true;\ngo.sourceGridPart = 'O';\ngo.sourceGridRowNumber = '1';\ngo.workingMessage = '<img src=\\'css/A5System/Images/wait.gif\\' />Procesando...';\ngo.placeholderValues = '';\ngo.argumentBinding = '';\n\ngo._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.gridId != 'undefined') go._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.dialogId != 'undefined') {\n\tgo._thisGridAlias = {grid.object}.dialogId;\n}\n\t\n\ngo._thisGridGUID = {grid.object}.componentGUID;\ngo._gridCurrentFilter = {grid.object}._gridFilter;\n\n\ngo._gridCurrentOrder = {grid.object}._gridOrder;\ngo._gridCurrentArguments = {grid.object}._gridArguments;\ngo._gridCurrentDBType = {grid.object}._gridDBType;\ngo.overrideSettings = 'Style_name = `{Grid.style}`||Style_name = `{Grid.style}`'+'||';\ngo.a5_default_path = '{grid.defaultPath}';\ngo.windowName = windowName;\n\ngo.showWindowParameters = '';\n\nvar runMethod = 'ajax';\n\nif(runMethod == 'ajax') {\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\nif(typeof {dialog.object}._onlineStatus != 'undefined') { \n\tif({dialog.object}._onlineStatus == 'offline') { \n\t\t( function() {  }() );\n\t\t{dialog.object}._executeEvent('onAjaxCallbackNotAvailable', {xbasicFunctionName: '', ajaxEvent: 'OpenComponent'})\n\t\treturn false;\n\t}\n}\t\t\n\t\n};\n\n\nif(!currWindow) {\n\tcurrWindow = {Grid.object}.createWindow(windowName,'modeless-resizable',\n\t{\n\tbody: {\n\t\tcontent: {\n\t\t\ttype: 'blank',\n\t\t\telementId: '~'\n\t\t}\n\t},\n\theight: '2.8in',\n\twidth: '3.5in',\n\ttitle: {\n\t\thtml: '&nbsp;',\n\t\tlocation: 'top',\n\t\tdirection: 'ltr',\n\t\tshow: true\n\t},\n\tdisableMove: false,\n\ttheme: '{Grid.style}',\n\tonBeforeHide: function() {\nvar isDirty = false;\nif(typeof window['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj'] != 'undefined') {\n\tisDirty = window['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj']._isDirty;\n}\nif(isDirty) {\n\twindow['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj']._confirmAction();\n\treturn false;\n} else return true;\n}\n}\n\t);\t\t\n\tgo.dialog2Div = currWindow.getWindowId('body');\n\tA5.component.runGenericComponent(go)\n\tcurrWindow.show();\n\t\n} else {\n\n\t\tvar ele = '{Grid.componentname}_EditarUsua_legg_R'+rowId+'.GRID_PART.FORM_CONTAINER_DIV';\n\tvar pele = $(ele);\n\tif(pele) pele.innerHTML = '<img src=\\'css/A5System/Images/wait.gif\\' /> Procesando...';\n\tgo.dialog2Div = currWindow.getWindowId('body');\n\tgo.parentGridId = '{grid.componentname}';\n\t\n\tgo.specialDialogMode = 'refreshUX';\n\n\nwindow[go.alias.toUpperCase() + '_DlgObj'].synchronizeDialog(go);\n\tcurrWindow.show();\n\n\t\n\n\t\n};\n\n} else {\n\tvar go = new Object();\n\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\n\ngo.objectId = objEle.id;\ngo.dialog2Name = 'EditarUsuario';\ngo.type = 'dialog2';\ngo.alias = '{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'';\ngo.submitCurrentFieldValues = true;\ngo.sourceGridPart = 'O';\ngo.sourceGridRowNumber = '1';\ngo.workingMessage = '<img src=\\'css/A5System/Images/wait.gif\\' />Procesando...';\ngo.placeholderValues = '';\ngo.argumentBinding = '';\n\ngo._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.gridId != 'undefined') go._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.dialogId != 'undefined') {\n\tgo._thisGridAlias = {grid.object}.dialogId;\n}\n\t\n\ngo._thisGridGUID = {grid.object}.componentGUID;\ngo._gridCurrentFilter = {grid.object}._gridFilter;\n\n\ngo._gridCurrentOrder = {grid.object}._gridOrder;\ngo._gridCurrentArguments = {grid.object}._gridArguments;\ngo._gridCurrentDBType = {grid.object}._gridDBType;\ngo.overrideSettings = 'Style_name = `{Grid.style}`||Style_name = `{Grid.style}`||Style_name = `{Grid.style}`'+'||';\ngo.a5_default_path = '{grid.defaultPath}';\n\n\n\tvar paneName = 'PANE_' + Date.parse(new Date().toString());\n\tvar randString = 'sdrnm';\n\t\n\tif(typeof {grid.object}.gridId != 'undefined'){\n\t\tvar rowKey = {Grid.object}._getCurrentKey(rowNum);\n\t\tif(rowKey!=''){\n\t\t\trowKey = rowKey.replace(/\\|/g,'XYX');\n\t\t\trowKey = rowKey.replace(/[^a-zA-Z$0-9]+/g,''); \n\t\t\t\tgo.alias = '{Grid.componentname}_Grid1_sdrnm'+rowKey+'';\n\t\t\t}else{\n\t\t\t \tgo.alias = '{Grid.componentname}_Grid1_sdrnm_R'+randString+'';\n\t\t\t}\n\t\t} else {\n\t\t\tgo.alias = '{Grid.componentname}_Grid1_sdrnm_'+randString;\n\t\t}\n\t\n\t\n\tpaneName = go.alias.toUpperCase();\n\t\n\t//so each instance is in its own tabbedUI pane\n\tif(typeof go.pkValue != 'undefined') { \n\t\tpaneName = paneName + go.pkValue;\n\t} else {\n\t\tpaneName = paneName + go.placeholderValues;\n\t}\n\t\n\t\n\tpaneName = paneName.toUpperCase();\n\n\t//if a UX opened in a new pane must give it a unique alias\t\n\tgo.alias = go.alias + randId();\n\t\n\tvar paneTitle = 'Cambiar Contrase&ntilde;a';\n\ttempTbiObj.add({title: paneTitle , name : paneName, type:'dialog2', data: go   });\n\n}\n\n}"
+                    },
+                    "precalc": {
+                        "javascriptClientSideWatches": "",
+                        "javascriptAbstractSetupCode": "$e.add('{dialog.componentName}.V.R{dialog.rownumber}.BUTTON_1',A5.d.evnts.click,function(e) {\n{grid.componentName}_O_58598CE2146943D49A6AF3B131B72C36({grid.rownumber},'{grid.rowId}',this);\n},this,false,'{dialog.componentName}.V.R{dialog.rownumber}.BUTTON_1');\n",
+                        "javascriptAdvancedButton": "",
+                        "javascriptAdvancedButton_control": "{dialog.object}._buttons['BUTTON_1'] = new A5.Button({\n\tlayout: 'icon text',\n\tstyle: 'box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;',\n\thtml: 'Editar Contrase&ntilde;a',\n\ticon: 'images/$$generic.key.png.a5image',\n\tdisabledIcon: 'images/disabled/$$generic.key.png.a5image',\n\tonClick: function() { \n\n},\n\ttheme: '{grid.style}'\n});",
+                        "javascriptAdvancedButton_bind": "{dialog.object}._buttons['BUTTON_1'].bind('{DIALOG.COMPONENTNAME}.V.R{DIALOG.ROWNUMBER}.BUTTON_1');"
+                    },
+                    "javascript": {
+                        "onclick": ""
+                    }
+                },
+                "indentTree": 0,
+                "precalc": {
+                    "ControlHTML": "<div class=\"A5CWLayout\" style=\"width: \" >\n\t<!--LblS--><label id=\"{grid.componentname}.LBL.R{grid.rownumber}.BUTTON_1\" for=\"{dialog.componentName}.V.R{dialog.rownumber}.BUTTON_1\" title=\"\" class=\"[class.dialogFieldLabel]\" style=\"text-align: Right; float: right; width: __global.labelWidth__; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;\">&nbsp;</label>\n<!--LblE--><div style=\"margin-right: __global.labelWidth__ ;\">\t<button type=\"button\" id=\"{dialog.componentName}.V.R{dialog.rownumber}.BUTTON_1\"    ></button>\n\t\n\t</div><!--FldE-->\n</div>",
+                    "DesignViewHTML": ""
+                },
+                "inPanelCard": false,
+                "inTreeControl": false
+            }
+        ],
+        "builderType": "Dialog2",
+        "guid": "35831977-8559-4663-b5c8-05b01bfefe50",
+        "componentName": "SALUDO",
+        "componentFilename": "C:\\Users\\ASUS\\Desktop\\Nibble-TM\\Nibble-TM.WebProjects\\Default.WebProject\\saludo.a5wcmp",
+        "_style_versionNumber": -1,
+        "_style_hasSassOverrides": false,
+        "_style_hasCSSTweaks": false,
+        "_style_hasCSS_or_subtheme_tweaks": false,
+        "useCompactTheme": false,
+        "styleTweaksCSS": "",
+        "styleTweaksSubthemes": "",
+        "controlflowdirection": "ltr",
+        "SVGLinkedFiles": "",
+        "localsvg": "",
+        "createAppCacheVersion": false,
+        "createAppCacheVersionC": "No",
+        "appcache": {
+            "pageName": "<Default>",
+            "pageTitle": "",
+            "hasHomeScreenIcons": false,
+            "homeScreenIconName": "",
+            "icons": {
+                "precomposed": false
+            },
+            "pageHeadSection": ""
+        },
+        "clientsideNumberFormatDecimal": "period",
+        "clientsideNumberFormatThousands": "comma",
+        "dataSeriesPublishToClientSide": false,
+        "showLineNumbersInControlsList": false,
+        "saveFileType": "Formatted JSON",
+        "keyboardShortcutsJSON": "",
+        "preRenderWarningMessageShow": true,
+        "autoSetPreRenderOnForAllUX": true,
+        "selected": "87ae6ce8-b169-4aaf-8e13-e8077e87ece8\n",
+        "designPaneIndex": 1,
+        "masterPaneC": "EventsServerSide",
+        "serverSideEventIndex": 1,
+        "clientSideEventIndex": 10,
+        "clientSideEventIndexC": "10",
+        "lastControlSelected": "insert_layout_directive_spacer",
+        "__WPhostName": "Chrome",
+        "embeddedMode": false,
+        "_style_hassubthemeTweaks": false,
+        "repeatingSectionsAreDirty": true,
+        "containerSubTypeNew": "",
+        "containerSubTypeOld": "",
+        "flagDropdownCascadingChanged": false,
+        "toolBox_value": "",
+        "addinBuildNumber": "5237",
+        "addinBuildNumberHighestUsed": "5237",
+        "alphaFiveBuildNumber": "12",
+        "openedFromTemplate": false,
+        "builtWithVersionNumer": 1,
+        "_buildCount": "28",
+        "securityEnabled": false,
+        "showHideIsUsed": false,
+        "precalc": {
+            "js_editorSetInitialization": ";\n",
+            "customControl": {
+                "js_beforePrepare": "\n__replaceAtRuntime_CustomControlsSystemBeforePrepare",
+                "js_afterRender": "\n__replaceAtRuntime_CustomControlsSystemAfterRender",
+                "customControl_xbasicFunctions": ""
+            },
+            "jschart": {
+                "js_beforePrepare": "",
+                "js_afterRender": "",
+                "jschart_xbasicFunctions": ""
+            },
+            "rgraph": {
+                "libraries": ""
+            },
+            "getSetFunctions": {
+                "js_beforePrepare": ""
+            },
+            "injectibleHTML": "",
+            "containerWindowHTML": "",
+            "repeatingsectionInfoJs": "",
+            "framesInfoJS": "{dialog.object}.framesInfo = {\n\n};\n",
+            "jsActionJavascriptGlobalFunctions": "window['{grid.componentName}_O_58598CE2146943D49A6AF3B131B72C36'] = function(rowNum,rowId,objEle) {\nvar tempTbiObj = getTabbedUI();\nif(tempTbiObj == false) {\nvar windowName = 'WINDOW_fbbbe8c4_309d_4e04_ab72_63d27f820481_R'+rowId+'';\nvar currWindow = {Grid.object}.getWindow(windowName);\nvar go = new Object();\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\ngo.objectId = objEle.id;\ngo.dialog2Name = 'EditarUsuario';\ngo.type = 'dialog2';\ngo.alias = '{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'';\ngo.submitCurrentFieldValues = true;\ngo.sourceGridPart = 'O';\ngo.sourceGridRowNumber = '1';\ngo.workingMessage = '<img src=\\'css/A5System/Images/wait.gif\\' />Procesando...';\ngo.placeholderValues = '';\ngo.argumentBinding = '';\ngo._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.gridId != 'undefined') go._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.dialogId != 'undefined') {\n\tgo._thisGridAlias = {grid.object}.dialogId;\n}\ngo._thisGridGUID = {grid.object}.componentGUID;\ngo._gridCurrentFilter = {grid.object}._gridFilter;\ngo._gridCurrentOrder = {grid.object}._gridOrder;\ngo._gridCurrentArguments = {grid.object}._gridArguments;\ngo._gridCurrentDBType = {grid.object}._gridDBType;\ngo.overrideSettings = 'Style_name = `{Grid.style}`||Style_name = `{Grid.style}`'+'||';\ngo.a5_default_path = '{grid.defaultPath}';\ngo.windowName = windowName;\ngo.showWindowParameters = '';\nvar runMethod = 'ajax';\nif(runMethod == 'ajax') {\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\nif(typeof {dialog.object}._onlineStatus != 'undefined') { \n\tif({dialog.object}._onlineStatus == 'offline') { \n\t\t( function() {  }() );\n\t\t{dialog.object}._executeEvent('onAjaxCallbackNotAvailable', {xbasicFunctionName: '', ajaxEvent: 'OpenComponent'})\n\t\treturn false;\n\t}\n}\t\t\n};\nif(!currWindow) {\n\tcurrWindow = {Grid.object}.createWindow(windowName,'modeless-resizable',\n\t{\n\tbody: {\n\t\tcontent: {\n\t\t\ttype: 'blank',\n\t\t\telementId: '~'\n\t\t}\n\t},\n\theight: '2.8in',\n\twidth: '3.5in',\n\ttitle: {\n\t\thtml: '&nbsp;',\n\t\tlocation: 'top',\n\t\tdirection: 'ltr',\n\t\tshow: true\n\t},\n\tdisableMove: false,\n\ttheme: '{Grid.style}',\n\tonBeforeHide: function() {\nvar isDirty = false;\nif(typeof window['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj'] != 'undefined') {\n\tisDirty = window['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj']._isDirty;\n}\nif(isDirty) {\n\twindow['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj']._confirmAction();\n\treturn false;\n} else return true;\n}\n}\n\t);\t\t\n\tgo.dialog2Div = currWindow.getWindowId('body');\n\tA5.component.runGenericComponent(go)\n\tcurrWindow.show();\n} else {\n\t\tvar ele = '{Grid.componentname}_EditarUsua_legg_R'+rowId+'.GRID_PART.FORM_CONTAINER_DIV';\n\tvar pele = $(ele);\n\tif(pele) pele.innerHTML = '<img src=\\'css/A5System/Images/wait.gif\\' /> Procesando...';\n\tgo.dialog2Div = currWindow.getWindowId('body');\n\tgo.parentGridId = '{grid.componentname}';\n\tgo.specialDialogMode = 'refreshUX';\nwindow[go.alias.toUpperCase() + '_DlgObj'].synchronizeDialog(go);\n\tcurrWindow.show();\n};\n} else {\n\tvar go = new Object();\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\ngo.objectId = objEle.id;\ngo.dialog2Name = 'EditarUsuario';\ngo.type = 'dialog2';\ngo.alias = '{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'';\ngo.submitCurrentFieldValues = true;\ngo.sourceGridPart = 'O';\ngo.sourceGridRowNumber = '1';\ngo.workingMessage = '<img src=\\'css/A5System/Images/wait.gif\\' />Procesando...';\ngo.placeholderValues = '';\ngo.argumentBinding = '';\ngo._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.gridId != 'undefined') go._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.dialogId != 'undefined') {\n\tgo._thisGridAlias = {grid.object}.dialogId;\n}\ngo._thisGridGUID = {grid.object}.componentGUID;\ngo._gridCurrentFilter = {grid.object}._gridFilter;\ngo._gridCurrentOrder = {grid.object}._gridOrder;\ngo._gridCurrentArguments = {grid.object}._gridArguments;\ngo._gridCurrentDBType = {grid.object}._gridDBType;\ngo.overrideSettings = 'Style_name = `{Grid.style}`||Style_name = `{Grid.style}`||Style_name = `{Grid.style}`'+'||';\ngo.a5_default_path = '{grid.defaultPath}';\n\tvar paneName = 'PANE_' + Date.parse(new Date().toString());\n\tvar randString = 'sdrnm';\n\tif(typeof {grid.object}.gridId != 'undefined'){\n\t\tvar rowKey = {Grid.object}._getCurrentKey(rowNum);\n\t\tif(rowKey!=''){\n\t\t\trowKey = rowKey.replace(/\\|/g,'XYX');\n\t\t\trowKey = rowKey.replace(/[^a-zA-Z$0-9]+/g,''); \n\t\t\t\tgo.alias = '{Grid.componentname}_Grid1_sdrnm'+rowKey+'';\n\t\t\t}else{\n\t\t\t \tgo.alias = '{Grid.componentname}_Grid1_sdrnm_R'+randString+'';\n\t\t\t}\n\t\t} else {\n\t\t\tgo.alias = '{Grid.componentname}_Grid1_sdrnm_'+randString;\n\t\t}\n\tpaneName = go.alias.toUpperCase();\n\t//so each instance is in its own tabbedUI pane\n\tif(typeof go.pkValue != 'undefined') { \n\t\tpaneName = paneName + go.pkValue;\n\t} else {\n\t\tpaneName = paneName + go.placeholderValues;\n\t}\n\tpaneName = paneName.toUpperCase();\n\t//if a UX opened in a new pane must give it a unique alias\t\n\tgo.alias = go.alias + randId();\n\tvar paneTitle = 'Cambiar Contrase&ntilde;a';\n\ttempTbiObj.add({title: paneTitle , name : paneName, type:'dialog2', data: go   });\n}\n}",
+            "xbActionJavascriptGlobalFunctions": "",
+            "javascriptSetupForGridLookups": "{\n}",
+            "javascript": {
+                "showWaitMessage": "",
+                "hideWaitMessage": "",
+                "embeddedUXComponents": ""
+            },
+            "fileUpload_controlInfo": "",
+            "javascript_cascadingDropdowns": "{dialog.object}._cascadingControls = [];\n{dialog.object}._cascadingControlsChildren = [];",
+            "template_html": "<!--div GLOBALERRORS-->\n<div class=\"errorTip\" style=\"margin-bottom: 2px; display: none; width: 8in; \" id=\"{dialog.componentname}.GLOBALERRORS\"></div>\n<!--End div GLOBALERRORS-->\n\n<div id=\"{dialog.componentname}.R1\">\n<div class=\"A5CWLayout\" style=\"width: 3in\" >\n\t<!--FldS--><span\tid=\"{grid.componentname}.V.R{grid.rownumber}.TEXTBOX1\" class=\"GrBlueGridData\" style=\"text-align: left; color: #ff0000; font-size: 18px; font-weight: bold; width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display:inline-block\" title=\"\"    ></span>\n<!--FldE-->\n</div>\n<div class=\"A5CWLayout\" style=\"width: 3in\" >\n\t<div id=\"SPACER_1\" style=\"width: 100%; height: 1px; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; font: 0pt Arial;\">&nbsp;</div>\n</div>\n\t\n<div class=\"A5CWLayout\" style=\"width: \" >\n\t<!--LblS--><label id=\"{grid.componentname}.LBL.R{grid.rownumber}.BUTTON_1\" for=\"{dialog.componentName}.V.R{dialog.rownumber}.BUTTON_1\" title=\"\" class=\"GrBlueDialogLabel\" style=\"text-align: Right; float: right; width: __global.labelWidth__; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;\">&nbsp;</label>\n<!--LblE--><div style=\"margin-right: __global.labelWidth__ ;\">\t<button type=\"button\" id=\"{dialog.componentName}.V.R{dialog.rownumber}.BUTTON_1\"    ></button>\n\t\n\t</div><!--FldE-->\n</div>\n\n\n</div>\n<!--div DEBUGUPDATECOMMANDS-->\n<div class=\"\" style=\"display: none; \" id=\"{dialog.componentname}.DEBUGUPDATECOMMANDS\"></div>\n<!--End div DEBUGUPDATECOMMANDS-->\n",
+            "panelDisplayNames": "",
+            "controlJavascript": "",
+            "controlJavascriptRepeatingSections": "",
+            "template_js": "",
+            "sessionVarsInShowHideExpns": "",
+            "flagHasShowTimer": false,
+            "themeSearchReplaceString": "",
+            "flagHasHTML5ImageCapture": false,
+            "flagUsesCordova": false,
+            "flagUseAmazonS3FileUpload": false,
+            "flagUseStripe": false,
+            "usesSystemSVG": false,
+            "flagUseAudioPlayer": false,
+            "flagUseInk": false,
+            "flagUsesAudioLibrary": false,
+            "flagUsesPhoneGapFileSystemFunctions": false,
+            "flagUsesGetAccurateLocation": false,
+            "editorSet_for_editor": "{dialog.object}._EDITOR_EDITORSET = {};",
+            "otherJS": "",
+            "javascript_layoutRules": "",
+            "javascript_controlNesting": "{\n\n}",
+            "appcacheEvents": "",
+            "IconMap": "{images.RowExpander.Open}=\"<Specified by Style>\"\n{images.RowExpander.Close}=\"<Specified by Style>\"\n{images.EmbeddedSearch.Search}=\"<Specified by Style>\"\n{images.EmbeddedSearch.ClearSearch}=\"<Specified by Style>\"\n{images.EmbeddedSearch.ShowHideEmbeddedSearch}=\"<Specified by Style>\"\n{images.GridRow.NewRecordRow.NoFocus}=\"<Specified by Style>\"\n{images.GridRow.NewRecordRow.HasFocus}=\"<Specified by Style>\"\n{images.GridRow.SaveRecord}=\"<Specified by Style>\"\n{images.GridRow.SaveRecord.Disabled}=\"<Specified by Style>\"\n{images.GridRow.UndoChanges}=\"<Specified by Style>\"\n{images.GridRow.UndoChanges.Disabled}=\"<Specified by Style>\"\n{images.GridRow.EditRecord}=\"<Specified by Style>\"\n{images.GridRow.EditRecord.Disabled}=\"<Specified by Style>\"\n{images.GridRow.DeleteRecord}=\"<Specified by Style>\"\n{images.GridRow.DeleteRecord.Disabled}=\"<Specified by Style>\"\n{images.GridRow.CancelEditRecord}=\"<Specified by Style>\"\n{images.GridRow.CancelEditRecord.Disabled}=\"<Specified by Style>\"\n{images.GridRow.HasError}=\"<Specified by Style>\"\n{images.QBE.OperatorIsSelected}=\"<Specified by Style>\"\n{images.QBE.OpenQBEMenu}=\"<Specified by Style>\"\n{images.QBE.ShowHideQBERow}=\"<Specified by Style>\"\n{images.PopUpWindow.Lookup.Close}=\"<Specified by Style>\"\n{images.PopUpWindow.DetailView.Close}=\"<Specified by Style>\"\n{images.CollapseContainer.Open}=\"<Specified by Style>\"\n{images.CollapseContainer.Close}=\"<Specified by Style>\"\n{images.FieldHelpIcon}=\"<Specified by Style>\"\n{images.SearchPart.SaveSearchCriteria}=\"<Specified by Style>\"\n{images.SearchPart.LoadSearchCriteria}=\"<Specified by Style>\"\n{images.SearchPart.RunSearch}=\"<Specified by Style>\"\n{images.SearchPart.ClearSearch}=\"<Specified by Style>\"\n{images.GridRow.SelectionPointer}=\"<Specified by Style>\"\n{images.Grid.SortAsc}=\"<Specified by Style>\"\n{images.Grid.SortAscDisabled}=\"<Specified by Style>\"\n{images.Grid.sortDesc}=\"<Specified by Style>\"\n{images.grid.sortDescDisabled}=\"<Specified by Style>\"\n{images.grid.firstPage}=\"<Specified by Style>\"\n{images.grid.firstPageDisabled}=\"<Specified by Style>\"\n{images.grid.prevPage}=\"<Specified by Style>\"\n{images.grid.prevPageDisabled}=\"<Specified by Style>\"\n{images.grid.nextPage}=\"<Specified by Style>\"\n{images.grid.nextPageDisabled}=\"<Specified by Style>\"\n{images.grid.lastPage}=\"<Specified by Style>\"\n{images.grid.lastPageDisabled}=\"<Specified by Style>\"\n{images.edit.dropdownArrow}=\"<Specified by Style>\"\n{images.edit.datePicker}=\"<Specified by Style>\"\n{images.edit.dateTimePicker}=\"<Specified by Style>\"\n{images.edit.timePicker}=\"<Specified by Style>\"\n{images.edit.calculator}=\"<Specified by Style>\"\n{images.edit.lookup}=\"<Specified by Style>\"\n{images.javascript.deleteRowConfirmation}=\"<Specified by Style>\"\n{images.javascript.cancelEditRowConfirmation}=\"<Specified by Style>\"\n{images.javascript.UndoEditsConfirmation}=\"<Specified by Style>\"\n{images.javascript.UndoAllEditsConfirmation}=\"<Specified by Style>\"\n{images.javascript.dirtyRecordWarning}=\"<Specified by Style>\"\n{images.dv.close}=\"<Specified by Style>\"\n{images.dv.firstRecord}=\"<Specified by Style>\"\n{images.dv.prevRecord}=\"<Specified by Style>\"\n{images.dv.nextRecord}=\"<Specified by Style>\"\n{images.dv.lastRecord}=\"<Specified by Style>\"\n{images.dv.newRecord}=\"<Specified by Style>\"\n{images.dv.cancelEdits}=\"<Specified by Style>\"\n{images.dv.deleteRecord}=\"<Specified by Style>\"\n{images.dv.saveRecord}=\"<Specified by Style>\"\n{images.dv.saveAndEnter}=\"<Specified by Style>\"\n{images.dv.switchToEdit}=\"<Specified by Style>\"\n{images.dv.switchToView}=\"<Specified by Style>\"\n{images.disabled.dv.newRecord}=\"<Specified by Style>\"\n{images.disabled.dv.cancelEdits}=\"<Specified by Style>\"\n{images.disabled.dv.deleteRecord}=\"<Specified by Style>\"\n{images.disabled.dv.saveRecord}=\"<Specified by Style>\"\n{images.disabled.dv.saveAndEnter}=\"<Specified by Style>\"\n{images.dv.cancelNewRecord}=\"<Specified by Style>\"\n{images.grid.editError}=\"<Specified by Style>\"\n{images.dialog.editError}=\"<Specified by Style>\"\n{images.tabbedUI.menuExpandLeft}=\"<Specified by Style>\"\n{images.tabbedUI.menuCollapseLeft}=\"<Specified by Style>\"\n{images.tabbedUI.menuExpandRight}=\"<Specified by Style>\"\n{images.tabbedUI.menuCollapseRight}=\"<Specified by Style>\"",
+            "absoluteLayoutSetButtonSizes": "",
+            "viewBoxesToRefresh": "",
+            "AdditionalGridStyles": "",
+            "requiredPlugins": "",
+            "hasListNavigator": false,
+            "vb_based_on_lists": "",
+            "vb_based_on_javascritFunctions": "",
+            "constrainContainerJS": "",
+            "hasFormViewControls": false,
+            "setScreenHeightJS": "",
+            "actionsheet": {
+                "has": false
+            },
+            "kanban": {
+                "has": false
+            },
+            "transformdataviewer": {
+                "has": false,
+                "controlnames": "",
+                "controlnamesListDataSource": "{dialog.object}._listsWithDependentTFControls = {}"
+            }
+        },
+        "FieldsInRepeatingSectionsDeletedBySecurity": "",
+        "repeatingSectionsToRecalc": "",
+        "dialogObject": "if(typeof {dialog.componentName}_DlgObj == 'object') {dialog.componentName}_DlgObj._destroy();\nvar {dialog.componentName}_DlgObj = new A5.DialogComponentHelper('{dialog.componentName}',{\n\tajaxURL: '{dialog.ajaxUrl}',\n\t_embeddedMode: {dialog.embeddedMode},\n\t_livePreviewInBuilder: {livePreviewInBuilder},\n\tcomponentGUID: '35831977-8559-4663-b5c8-05b01bfefe50',\n\tcolumnInfo: {columninfo},\n\toriginalValues: {dialog.jsOriginalValues},\n\tdefaultValues: {dialog.jsDefaultValues},\n\tdatePickerMonthNames: [{datePickerMonthNames}],\n\tdatePickerDayNames: [{datePickerDayNames}],\n\tdatePickerTodayButton: '{datePickerTodayButton}',\n\tdatePickerCloseButton: '{datePickerCloseButton}',\n\tdatePickerFirstDayOfWeek: {datePickerFirstDayOfWeek},\n\tresetFormMessage: '{resetFormMessage}',\n\tresetFormTitle: '{resetFormTitle}',\n\tresetFormIcon: '{resetFormIcon}',\n\tdirtyFormMessage: '{dirtyFormMessage}',\n\tdirtyFormTitle: '{dirtyFormTitle}',\n\tdirtyFormIcon: '{dirtyFormIcon}',\n\tdeleteRecordDialogTitle: '{deleteRecordTitle}',\n\tdeleteRecordDialogMessage: '{deleteRecordMessage}',\t\n\tssDateFormat: '{serverSideDateFormat}',\n\tstyleName: '{dialog.style}',\n\t_fieldHelpers_DIALOG2: [],\n\tparentComponentAlias: '{parentComponentAlias}',\n\tsubmitIfHasClientSideErrors: true, \n\trowErrors: {\n\t\t\t\tshowMessageBox: false,\n\t\t\t\tmessageBoxTitle: 'Error',\n\t\t\t\tstyle: 'color: red; width: 6in; height: 2in;'\n\t\t},\n\tfieldErrors: {\n\t\ttype: 'block', \n\t\tclassName: 'errorText',\n\t\tinputClassName: '[class.gridInputError]',\n\t\tedit: { \n\t\t\tcontainer: { className: '[class.gridInputContainerError]'}\n\t\t},\n\t\ticon: '{images.dialog.editError}',\n\t\tglobal: {\n\t\t\tcontId: '{dialog.componentname}.GLOBALERRORS',\n\t\t\thoverClassName: 'errorTextHighlight',\n\t\t\thoverInputClassName: 'errorInputHighlight'\n\t\t}\n\t}\n\n\t});\n\n",
+        "xbasiccode": {
+            "blankInitialValueIfVarNotFound": "",
+            "setValueProperties": "value.TEXTBOX1=\"\"",
+            "setValueProperties2": "value.TEXTBOX1=\"\"",
+            "setValueUnformattedProperties": "value.TEXTBOX1=convert_type(\"\",\"C\")\n"
+        },
+        "componentType": "Dialog2",
+        "version": 1,
+        "recNav": {
+            "slider": {
+                "showSlider": false
+            }
+        },
+        "_flagStaticHTMLMode": false,
+        "__flagUseFakeRequestVariables": false,
+        "__specialMode": false,
+        "alias": "{UXPRERENDEREDALIAS}",
+        "systemXbasicFunctionDeclarations": "",
+        "localPreviewFlag": false,
+        "flagStaticHTMLMode": false,
+        "flagInitialLoadIsAjax": false,
+        "_forceInitialLoadIsAjax": false,
+        "override_settings": "",
+        "flagForcerecalc": false,
+        "flagSaveDialogCache": true,
+        "__argumentValues": "",
+        "__argumentsFromGrid": "",
+        "flagExecuteOnDialogInitializeEvent": true,
+        "flagExecuteOnDialogExecuteEvent": true,
+        "__livePreviewMode": false,
+        "iconMapOverrides": "",
+        "resolveAbstractIconNamesAtDesignTime": true,
+        "customizationString": {
+            "javascriptDialogs": "",
+            "DetailView": {
+                "toolbar": ""
+            }
+        },
+        "linkedResources": "",
+        "flagReloadComponent": false,
+        "__flagstatichtmlorphonegap": false,
+        "temp": {
+            "_onRenderComplete": ""
+        },
+        "disableAbstractEvents": false,
+        "jsRunAtBeginning": "",
+        "flagLoadDetailViewImageCaptureJS": false,
+        "forceLoadPhoneGapFileSystemFunctions": false,
+        "_flagUsesAudioLibrary": false,
+        "_flagUsesInk": false,
+        "_flagUsesControlBar": true,
+        "__staticHTML_setStaticHTMLFlag": false,
+        "sassProcessor": true,
+        "debugMode": false,
+        "__jsLibraries": "<script type=\"text/javascript\" src=\"javascript/a5.js\"></script>\n<script type=\"text/javascript\" src=\"javascript/a5_url.js\"></script>\n",
+        "A5SaveTimeStamp": "20190307121013215",
+        "a_actionJavascript": [
+            {
+                "actionGuid": "b060d97a-b1d5-4b06-b621-0eacb171ec1a      ",
+                "scriptMetaData": "<a_ajs<[1]<display=\"{I:'$$web.component.dialog'}{F=Tahoma,10}{C=Dark Blue,White}{B=Blue White,Dark Blue}Open a UX component      {T=4}{I:'a5_vertical_line'}\">\n<action=\"Open a UX component      \">\n<icon=\"$$web.component.dialog\">\n<isCommentedOut=.F.>\n<comment=\"\">\n<builder=\"a5ajs_openGenericComponent(v,wf,pv,dlg_mode,\\\"dialog2\\\")\">\n<metaData=<<%str1%\n<targetGridDefinition=<<%str%\n<gridName=\"EditarUsuario\">\n<gridAlias=\"<DefaultAlias>\">\n<argumentBindings=\"\">\n<overrideSettings=\"\">\n<useSameStyleAsParentGrid=.T.>\n<customSettingOverridesJSON=\"\">\n<order=\"\">\n<localArguments=\"\">\n<placeHolderValues=\"\">\n%str%>\n<flagShowSynchronizePrompts=.T.>\n<parentNavigator=\"\">\n<dynamicPanelTitle=\"\">\n<waitMessagePanel=\"\">\n<dynamicPanelCanClose=.F.>\n<grid<gridName=\"EditarUsuario\">\n<alias=\"<DefaultAlias>\">\n<userFilter=\"\">\n<baseFilter=\"\">\n<link=\"\">\n<order=\"\">\n<argumentDefinitions=\"\">\n<argumentBindings=\"\">\n<useMasterStyle=.T.>\n<overrideSettings=\"\">\n<customSettingOverridesJSON=\"\">\n<debugMode=.F.>\n<timer=.F.>\n<queryEcho=.F.>\n<workingMessage=\"<img src=\\\"css/A5System/Images/wait.gif\\\" /> Computing Grid. Please wait...\">\n<beforeExecuteClientSideFunctionName=\"\">\n>\n<refreshUXOnSynchronize=.T.>\n<refreshUXJavascriptFunction=\"\">\n<allowAutoCloseIfDirty=.F.>\n<dialog<showWaitMessageOnRefresh=.F.>\n<waitMessageText=\"Wait...\">\n<waitMessageIcon=\"css/A5System/Images/wait.gif\">\n<useCachedDialog=.T.>\n>\n<specialMode=\"PopulateDialog\">\n<populateDialog=.F.>\n<getPrimaryKeyFrom=\"ControlsOnCurrentComponent\">\n<primaryKeyValue=\"\">\n<controlsContainingPrimaryKey=\"\">\n<variableContainingPrimaryKey=\"\">\n<targetType=\"TabbedUI Pane\">\n<targetDIVid=\"\">\n<targetDIVcanHide=.T.>\n<targetDIVHideHyperlink=\"Close\">\n<targetDIVStyle=\"\">\n<targetPanel=\"\">\n<dockWindow=.F.>\n<dockLocation=\"Bottom\">\n<windowNameExplicit=\"<Default>\">\n<ajaxWindowType=\"Modal-Popup\">\n<ajaxWindowPositionAttribute=\"\">\n<ajaxWindowPositionAttributeEnglish=\"\">\n<ajaxWindowPositionAttributeDD=\"\">\n<ajaxWindowPositionAttributeEnglishDD=\"\">\n<ajaxWindowModalLockClassName=\"<Default>\">\n<ajaxWindowTitle=\"\">\n<ajaxPaneTitle=\"Cambiar Contrase&ntilde;a\">\n<ajaxPaneAlwaysUseNewPane=.T.>\n<ajaxWindowReuseExistingWindow=.F.>\n<ajaxWindowHeight=\"2.8in\">\n<ajaxWindowWidth=\"3.5in\">\n<ajaxWindowisResizable=.T.>\n<ajaxWindowWorkingMessage=\"Procesando...\">\n<ajaxWindowWorkingMessageIcon=\"css/A5System/Images/wait.gif\">\n<ajaxWindowWorkingMessageUseCSSAnimation=.F.>\n<ajaxWindowWorkingMessageCSSAnimationSettings<size=\"32\">\n>\n<ajaxWindowTitlePosition=\"Top\">\n<ajaxWindowTitleDirection=\"ltr\">\n<ajaxWindowTitleHasClose=.T.>\n<ajaxWindowTitleShow=.T.>\n<ajaxWindowDisableMove=.F.>\n<ajaxWindowRefreshGridOnClose=\"None\">\n<window<hasCustomButtons=.F.>\n<buttonCount=0>\n<customButtonsInLineStyle=\"\">\n<tbar<show=.F.>\n<html=\"\">\n<style=\"\">\n>\n<header<show=.F.>\n<html=\"\">\n<style=\"\">\n>\n<footer<show=.F.>\n<html=\"\">\n<style=\"\">\n>\n<bbar<show=.F.>\n<html=\"\">\n<style=\"\">\n>\n<onInitialize=\"\">\n<onBeforeShow=\"\">\n<onShow=\"\">\n<onBeforeHide=\"\">\n<onHide=\"\">\n<onFocus=\"\">\n<onMove=\"\">\n<onResize=\"\">\n<animation<hasAnimation=.F.>\n<show<method=\"Fade\">\n<speed=\"Slow\">\n>\n<hide<method=\"None\">\n<speed=\"Fast\">\n>\n>\n<backgroundStyle=\"\">\n<centerContentsVertical=.F.>\n<centerContentsHorizontal=.F.>\n<pointer<has=.F.>\n<location=\"Auto\">\n>\n<warnOnCloseIfChildGridIsDirty=.T.>\n<subtheme=\"\">\n<buttons>\n>\n<parentTabPaneRefreshGridOnClose=.F.>\n<javascriptTabPane<onBeforeChange=\"\">\n<onChange=\"\">\n<onRightClick=\"\">\n<onInitial=\"\">\n<onBeforeRemove=\"\">\n<onRemove=\"\">\n>\n<ajaxFailedMessage=\"\">\n<offlineJavascript=\"\">\n<ajaxcallbacktimeout=\"<Default>\">\n<optimization<method=\"AjaxCallback\">\n<jsfunction=\"\">\n>\n%str1%>\n<javascriptAttribute=\"{grid.componentName}_O_58598CE2146943D49A6AF3B131B72C36({grid.rownumber},'{grid.rowId}',this);\">\n<Javascriptdeclarations_row=\"\">\n<Javascriptdeclarations_global=<<%str%\nwindow['{grid.componentName}_O_58598CE2146943D49A6AF3B131B72C36'] = function(rowNum,rowId,objEle) {\n\nvar tempTbiObj = getTabbedUI();\n\n\nif(tempTbiObj == false) {\n\nvar windowName = 'WINDOW_fbbbe8c4_309d_4e04_ab72_63d27f820481_R'+rowId+'';\nvar currWindow = {Grid.object}.getWindow(windowName);\nvar go = new Object();\n\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\n\ngo.objectId = objEle.id;\ngo.dialog2Name = 'EditarUsuario';\ngo.type = 'dialog2';\ngo.alias = '{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'';\ngo.submitCurrentFieldValues = true;\ngo.sourceGridPart = 'O';\ngo.sourceGridRowNumber = '1';\ngo.workingMessage = '<img src=\\'css/A5System/Images/wait.gif\\' />Procesando...';\ngo.placeholderValues = '';\ngo.argumentBinding = '';\n\ngo._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.gridId != 'undefined') go._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.dialogId != 'undefined') {\n\tgo._thisGridAlias = {grid.object}.dialogId;\n}\n\t\n\ngo._thisGridGUID = {grid.object}.componentGUID;\ngo._gridCurrentFilter = {grid.object}._gridFilter;\n\n\ngo._gridCurrentOrder = {grid.object}._gridOrder;\ngo._gridCurrentArguments = {grid.object}._gridArguments;\ngo._gridCurrentDBType = {grid.object}._gridDBType;\ngo.overrideSettings = 'Style_name = `{Grid.style}`||Style_name = `{Grid.style}`'+'||';\ngo.a5_default_path = '{grid.defaultPath}';\ngo.windowName = windowName;\n\ngo.showWindowParameters = '';\n\nvar runMethod = 'ajax';\n\nif(runMethod == 'ajax') {\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\nif(typeof {dialog.object}._onlineStatus != 'undefined') { \n\tif({dialog.object}._onlineStatus == 'offline') { \n\t\t( function() {  }() );\n\t\t{dialog.object}._executeEvent('onAjaxCallbackNotAvailable', {xbasicFunctionName: '', ajaxEvent: 'OpenComponent'})\n\t\treturn false;\n\t}\n}\t\t\n\t\n};\n\n\nif(!currWindow) {\n\tcurrWindow = {Grid.object}.createWindow(windowName,'modeless-resizable',\n\t{\n\tbody: {\n\t\tcontent: {\n\t\t\ttype: 'blank',\n\t\t\telementId: '~'\n\t\t}\n\t},\n\theight: '2.8in',\n\twidth: '3.5in',\n\ttitle: {\n\t\thtml: '&nbsp;',\n\t\tlocation: 'top',\n\t\tdirection: 'ltr',\n\t\tshow: true\n\t},\n\tdisableMove: false,\n\ttheme: '{Grid.style}',\n\tonBeforeHide: function() {\nvar isDirty = false;\nif(typeof window['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj'] != 'undefined') {\n\tisDirty = window['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj']._isDirty;\n}\nif(isDirty) {\n\twindow['{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'_DlgObj']._confirmAction();\n\treturn false;\n} else return true;\n}\n}\n\t);\t\t\n\tgo.dialog2Div = currWindow.getWindowId('body');\n\tA5.component.runGenericComponent(go)\n\tcurrWindow.show();\n\t\n} else {\n\n\t\tvar ele = '{Grid.componentname}_EditarUsua_legg_R'+rowId+'.GRID_PART.FORM_CONTAINER_DIV';\n\tvar pele = $(ele);\n\tif(pele) pele.innerHTML = '<img src=\\'css/A5System/Images/wait.gif\\' /> Procesando...';\n\tgo.dialog2Div = currWindow.getWindowId('body');\n\tgo.parentGridId = '{grid.componentname}';\n\t\n\tgo.specialDialogMode = 'refreshUX';\n\n\nwindow[go.alias.toUpperCase() + '_DlgObj'].synchronizeDialog(go);\n\tcurrWindow.show();\n\n\t\n\n\t\n};\n\n} else {\n\tvar go = new Object();\n\ngo.ajaxFailedMessage = '';\ngo.ajaxCallbackTimeout = {dialog.object}.ajaxCallbackTimeout;\n\ngo.objectId = objEle.id;\ngo.dialog2Name = 'EditarUsuario';\ngo.type = 'dialog2';\ngo.alias = '{GRID.COMPONENTNAME}_EDITARUSUA_LEGG_R'+rowId+'';\ngo.submitCurrentFieldValues = true;\ngo.sourceGridPart = 'O';\ngo.sourceGridRowNumber = '1';\ngo.workingMessage = '<img src=\\'css/A5System/Images/wait.gif\\' />Procesando...';\ngo.placeholderValues = '';\ngo.argumentBinding = '';\n\ngo._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.gridId != 'undefined') go._thisGridAlias = {grid.object}.gridId;\nif(typeof {grid.object}.dialogId != 'undefined') {\n\tgo._thisGridAlias = {grid.object}.dialogId;\n}\n\t\n\ngo._thisGridGUID = {grid.object}.componentGUID;\ngo._gridCurrentFilter = {grid.object}._gridFilter;\n\n\ngo._gridCurrentOrder = {grid.object}._gridOrder;\ngo._gridCurrentArguments = {grid.object}._gridArguments;\ngo._gridCurrentDBType = {grid.object}._gridDBType;\ngo.overrideSettings = 'Style_name = `{Grid.style}`||Style_name = `{Grid.style}`||Style_name = `{Grid.style}`'+'||';\ngo.a5_default_path = '{grid.defaultPath}';\n\n\n\tvar paneName = 'PANE_' + Date.parse(new Date().toString());\n\tvar randString = 'sdrnm';\n\t\n\tif(typeof {grid.object}.gridId != 'undefined'){\n\t\tvar rowKey = {Grid.object}._getCurrentKey(rowNum);\n\t\tif(rowKey!=''){\n\t\t\trowKey = rowKey.replace(/\\|/g,'XYX');\n\t\t\trowKey = rowKey.replace(/[^a-zA-Z$0-9]+/g,''); \n\t\t\t\tgo.alias = '{Grid.componentname}_Grid1_sdrnm'+rowKey+'';\n\t\t\t}else{\n\t\t\t \tgo.alias = '{Grid.componentname}_Grid1_sdrnm_R'+randString+'';\n\t\t\t}\n\t\t} else {\n\t\t\tgo.alias = '{Grid.componentname}_Grid1_sdrnm_'+randString;\n\t\t}\n\t\n\t\n\tpaneName = go.alias.toUpperCase();\n\t\n\t//so each instance is in its own tabbedUI pane\n\tif(typeof go.pkValue != 'undefined') { \n\t\tpaneName = paneName + go.pkValue;\n\t} else {\n\t\tpaneName = paneName + go.placeholderValues;\n\t}\n\t\n\t\n\tpaneName = paneName.toUpperCase();\n\n\t//if a UX opened in a new pane must give it a unique alias\t\n\tgo.alias = go.alias + randId();\n\t\n\tvar paneTitle = 'Cambiar Contrase&ntilde;a';\n\ttempTbiObj.add({title: paneTitle , name : paneName, type:'dialog2', data: go   });\n\n}\n\n}\n%str%>\n<xbasicFunctions=\"\">\n>\n>\n<flagRunSynchronously=.F.>\n"
+            }
+        ],
+        "_flagDoTreeview": true,
+        "minimumBuildNumber": "",
+        "customTabOrder": "",
+        "captureJSErrorStackTrace": false,
+        "__LPhostName": "Internet Explorer",
+        "__flagHasMacro": false,
+        "__changeAJAXURL": "",
+        "__phoneGapInstantUpdate": false,
+        "_isPartial": false,
+        "__flagCreateAppCache": false,
+        "__idinternalCurrentControl": "87ae6ce8-b169-4aaf-8e13-e8077e87ece8",
+        "__nameCurrentControl": "textbox1",
+        "showJavascriptActions": false,
+        "showResponsiveLayoutHelp": false,
+        "style_color_palette": "",
+        "showPulseEffect": true,
+        "friendlydatesCustomizationJSON": "",
+        "optionalSystemLibraries": "",
+        "useIphoneXStyling": false,
+        "iPhoneXStylingJSON": "",
+        "_style_isInherited": false,
+        "preRenderOptimization": false,
+        "__componentnotfound": false,
+        "prerendered": {
+            "_styledataVersion": 2,
+            "output": {
+                "Head": {
+                    "JavaScript": "*gzip:H4sIAAAAAAAAC5WMsQ6CQBAFexP/Aa/Hq+gOOjsqf2Cznq84PPGyuyD8vSQUFlaWM5NM0CipWGVrQesMi/mBZ96tq1Ri677Cc3Me1HXB79wdD+HfAU2Sfyanun/x/bIYZOTcp5uwJGi9NSJByRzBdp1GS08QRVW1NcPe4IcSfQAk7ywxxgAAAA==",
+                    "CSS_Link": "*gzip:H4sIAAAAAAAAC81YbU/jOBC+zyvtf7AKaEHa0BKuEqTAioV9QWJ1J+COjys3cRovbhw5DqVb8d93/JLESdMCy304RdB4PJ6ZZzx+bOcol3NGkJxn5LgnyYPsh3neO3n7JpFThhbIm5HxHZWexJmX0EnC4E96IWdcBEhMxnh78F4/O6NKt8iJ8HLCSCgDlPKUQNc09yQvwsTDoaQ8tfLHt29oLPCUoEXnYBWQUto9HYY8lZimRKBFzDiWASOxHGU4img6CQbZg9U7u73Ec15ItCj70J/QicwgpEehMX/wcvpT9465iMAliFSY/Ke3ujNf3WejX9FvQvsiaPSVRuSTEFyccYasrGovIppnDM8Dk7R61BWfaaULyEJLyzGN81IPrR1HUwaJ9MaMh3ejhpN/KZl94xGpdTuUPkVUNpVagYDORVpprbP+zIHLHjvCOqdCzteZPmMEL2Wh5T03VlZafd6glqcqFKLm4gZqGi3MChIkGsVQ2KpmSHCQyaba13LBQc0rrRlRjWDM2ephNHONj3F4NxG8SKNgI45jHGNUCLb9jk7xhOT9TSjO/qay0j94OOhvxpSx/j/Z1vDzOcUTnmIW3CZUkq390y1/3x8Ot/wzf//Q/N/N0skuHmpT73ZGptyDvewB5ZzRCG3EBwejKRYTmsLazwIflmG5JtX7CgQXaVY0ErRkWAmNXSVsjXRytmTC7zJRU8e1Zh0SfSykVOuFZzikch7sDkeQGAkGMMsSvG3lx0MgPTPyIr2nOR0zcglliRZO1tscafQ1GakqATZDofpVdCEToKkqKUgFhmY0kol9T8z0mwa/JwLMzAKU0Cgi6QhVfKf7LTrTsPgNrehQKVPIyqEQlXkUgZZEewppTM9IKhXnNsnUzqoi0wAXkpfTLHSAWqKo28PKRIBCbaQk6Ib9SzCxwvoKY5rBH1GHrSsz7U+E6trSLkaP65CfIGdTeY+6ATylZCJ7Ssv1WG13a12u03J81ntnTUqosQuU22NJVfUDw0/DEOoHdu0bKhn5K9XOWsI47pCe0xzDoogcr8adrUfkkMXh4WHFDkjRg56niIA97JwYwkLk6uiRcapryk4vLB7Jp2Ygcs08NhH8jVPYRVa4txu24irjrMO4w2fI8yvquMHjG57Z1NiGTYlprUyFey5ZH1cZhhuaWSPIpdYXJK8ZO1q08Hp7tdlKuO9i/qiFNWzbrpEbwWvA/7dAy4DLGnAmuwSqJQ2Uar3VGHWrRqiaL63zjrp6DSgTXzV9NlWN2bMyBcsCtxLnmASWNGfUUE2zxqrbLwVr/WkCXrmsXgPfBl3hN54a8I1ov7VcFRk0C9WVqKy6be1mLX80iKdkUWsep9Ezxg0aiwvGwI+zuqzAWV5GUk9JxnNqciYIg+zdk9GLZukJjnHZ7zenbabOk14ORyiiNGYCZx2Qf4eLYOw1yTB4hwtQlWsdhLvYW8DLQ9W+C2dgj6fqTSIsKGZNR6o4rkPBGXtOzhtpei6w7nQ+e5F1TWgDgq7n/yEGl5ieBOEUf8dm28XRnVzWvV2tPdGUlwMEtwNkrweocT8IEFwQTLS3NI34DC3s9wWDE0e0yE2enO8HS32uBXW96GKRwWDgXvXQhu/7ozpCv7rAtCP0hzvV8bd9zAsSdcfoPuw5fQ1iasrNKagps9tnU1huNC2z5WnCiBdL1QRYiSgv5BrDN5IWF5JM0ZKyUztwt2V8cnW9xBY1QUTgGmZ5IwzDEdLnZMsTQ+dOobWH1RSVZj9zrq9MrtbeoN4RzHPU11/eTvQ7eLiDXYAR8Hrc66lFeNzT/XlCiOy1v8+hRJD4uAev/S/iIyuIMbYLgg/jgrIohDqQ3/0D9SXvKA8FBRpzbPzA99hIeygXYYelH/kHNRqi1GonZZAviOx7nmC4Z19r5XUBqhBXfIWss3RUvVSiP34BkrFiH70UAAA=",
+                    "title": "*gzip:H4sIAAAAAAAAC7MpySzJSbULjbDRh7AAiMez8hEAAAA="
+                },
+                "body": {
+                    "body_tag": "*gzip:H4sIAAAAAAAAC7NJyk+pVEjOSSwutlVyL3LKKU0NSExPVbIDAHhRbAAZAAAA",
+                    "dialog2_html": "*gzip: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"
+                },
+                "ajaxResponse": "*gzip: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"
+            },
+            "iconMap": "{images.RowExpander.Open}=\"css/{grid.style}/Expand.png\"\n{images.RowExpander.Close}=\"css/{grid.style}/Collapse.png\"\n{images.EmbeddedSearch.Search}=\"css/{grid.style}/GridSearch.png\"\n{images.EmbeddedSearch.ClearSearch}=\"css/{grid.style}/GridSearchClear.png\"\n{images.EmbeddedSearch.ShowHideEmbeddedSearch}=\"css/{grid.style}/GridSearchToggle.png\"\n{images.GridRow.NewRecordRow.NoFocus}=\"css/{grid.style}/GridRowNew.png\"\n{images.GridRow.NewRecordRow.HasFocus}=\"css/{grid.style}/GridRowNewSelected.png\"\n{images.GridRow.SaveRecord}=\"css/{grid.style}/GridRowSave.png\"\n{images.GridRow.SaveRecord.Disabled}=\"css/{grid.style}/GridRowSaveDisabled.png\"\n{images.GridRow.UndoChanges}=\"css/{grid.style}/GridRowUndoEdits.png\"\n{images.GridRow.UndoChanges.Disabled}=\"css/{grid.style}/GridRowUndoEditsDisabled.png\"\n{images.GridRow.EditRecord}=\"css/{grid.style}/GridRowEdit.png\"\n{images.GridRow.EditRecord.Disabled}=\"css/{grid.style}/GridRowEditDisabled.png\"\n{images.GridRow.DeleteRecord}=\"css/{grid.style}/GridRowDelete.png\"\n{images.GridRow.DeleteRecord.Disabled}=\"css/{grid.style}/GridRecordDeleteDisabled.png\"\n{images.GridRow.CancelEditRecord}=\"css/{grid.style}/GridRowCancelEdits.png\"\n{images.GridRow.CancelEditRecord.Disabled}=\n{images.GridRow.HasError}=\"css/{grid.style}/GridRowError.png\"\n{images.QBE.OperatorIsSelected}=\n{images.QBE.OpenQBEMenu}=\"css/{grid.style}/GridQBEMenu.png\"\n{images.QBE.ShowHideQBERow}=\"css/{grid.style}/GridQBEToggle.png\"\n{images.PopUpWindow.Lookup.Close}=\"css/{grid.style}/WinClose.png\"\n{images.PopUpWindow.DetailView.Close}=\"css/{grid.style}/WinClose.png\"\n{images.CollapseContainer.Open}=\"css/{grid.style}/Expand.png\"\n{images.CollapseContainer.Close}=\"css/{grid.style}/Collapse.png\"\n{images.FieldHelpIcon}=\"css/{grid.style}/EditHelp.png\"\n{images.SearchPart.SaveSearchCriteria}=\"css/{grid.style}/GridSearchSave.png\"\n{images.SearchPart.LoadSearchCriteria}=\"css/{grid.style}/GridSearchLoad.png\"\n{images.SearchPart.RunSearch}=\"css/{grid.style}/GridSearch.png\"\n{images.SearchPart.ClearSearch}=\"css/{grid.style}/GridSearchClear.png\"\n{images.GridRow.SelectionPointer}=\"css/{grid.style}/GridRowSelected.png\"\n{images.Grid.SortAsc}=\"css/{grid.style}/GridSortAsc.png\"\n{images.Grid.SortAscDisabled}=\"css/{grid.style}/GridSortAscDisabled.png\"\n{images.Grid.sortDesc}=\"css/{grid.style}/GridSortDesc.png\"\n{images.grid.sortDescDisabled}=\"css/{grid.style}/GridSortDescDisabled.png\"\n{images.grid.firstPage}=\"css/{grid.style}/GridPageFirst.png\"\n{images.grid.firstPageDisabled}=\"css/{grid.style}/GridPageFirstDisabled.png\"\n{images.grid.prevPage}=\"css/{grid.style}/GridPagePrev.png\"\n{images.grid.prevPageDisabled}=\"css/{grid.style}/GridPagePrevDisabled.png\"\n{images.grid.nextPage}=\"css/{grid.style}/GridPageNext.png\"\n{images.grid.nextPageDisabled}=\"css/{grid.style}/GridPageNextDisabled.png\"\n{images.grid.lastPage}=\"css/{grid.style}/GridPageLast.png\"\n{images.grid.lastPageDisabled}=\"css/{grid.style}/GridPageLastDisabled.png\"\n{images.edit.dropdownArrow}=\"css/{grid.style}/EditDDArrow.png\"\n{images.edit.datePicker}=\"css/{grid.style}/EditDP.png\"\n{images.edit.dateTimePicker}=\"css/{grid.style}/EditDTP.png\"\n{images.edit.timePicker}=\"css/{grid.style}/EditTP.png\"\n{images.edit.calculator}=\n{images.edit.lookup}=\"css/{grid.style}/EditLookup.png\"\n{images.javascript.deleteRowConfirmation}=\"css/{grid.style}/MessageQuestion.png\"\n{images.javascript.cancelEditRowConfirmation}=\"css/{grid.style}/MessageInfo.png\"\n{images.javascript.UndoEditsConfirmation}=\"css/{grid.style}/MessageInfo.png\"\n{images.javascript.UndoAllEditsConfirmation}=\"css/{grid.style}/MessageInfo.png\"\n{images.javascript.dirtyRecordWarning}=\"css/{grid.style}/MessageInfo.png\"\n{images.dv.close}=\"css/{grid.style}/GridRecordClose.png\"\n{images.dv.firstRecord}=\"css/{grid.style}/GridRecordFirst.png\"\n{images.dv.prevRecord}=\"css/{grid.style}/GridRecordPrev.png\"\n{images.dv.nextRecord}=\"css/{grid.style}/GridRecordNext.png\"\n{images.dv.lastRecord}=\"css/{grid.style}/GridRecordLast.png\"\n{images.dv.newRecord}=\"css/{grid.style}/GridRecordNew.png\"\n{images.dv.cancelEdits}=\"css/{grid.style}/GridRecordCancelEdits.png\"\n{images.dv.deleteRecord}=\"css/{grid.style}/GridRecordDelete.png\"\n{images.dv.saveRecord}=\"css/{grid.style}/GridRecordSave.png\"\n{images.dv.saveAndEnter}=\"css/{grid.style}/GridRecordSaveAndEnter.png\"\n{images.dv.switchToEdit}=\"css/{grid.style}/GridRecordSwitchToEdit.png\"\n{images.dv.switchToView}=\"css/{grid.style}/GridRecordSwitchToView.png\"\n{images.disabled.dv.newRecord}=\"css/{grid.style}/GridRecordNew.png\"\n{images.disabled.dv.cancelEdits}=\"css/{grid.style}/GridRecordCancelEditsDisabled.png\"\n{images.disabled.dv.deleteRecord}=\"css/{grid.style}/GridRecordDeleteDisabled.png\"\n{images.disabled.dv.saveRecord}=\"css/{grid.style}/GridRecordSaveDisabled.png\"\n{images.disabled.dv.saveAndEnter}=\"css/{grid.style}/GridRecordSaveAndEnterDisabled.png\"\n{images.dv.cancelNewRecord}=\"css/{grid.style}/GridRecordNewCancelEdits.png\"\n{images.grid.editError}=\"css/{grid.style}/EditError.png\"\n{images.dialog.editError}=\"css/{grid.style}/EditError.png\"\n{images.tabbedUI.menuExpandLeft}=\"css/{grid.style}/PanelLeftExpand.png\"\n{images.tabbedUI.menuCollapseLeft}=\"css/{grid.style}/PanelLeftCollapse.png\"\n{images.tabbedUI.menuExpandRight}=\"css/{grid.style}/PanelRightExpand.png\"\n{images.tabbedUI.menuCollapseRight}=\"css/{grid.style}/PanelRightCollapse.png\"\n{images.dialog.repeatingSectionActiveRowIcon}=\"css/{dialog.style}/DialogRSRowSelected.png\"\n{images.dialog.repeatingSectionAddRowIcon}=\"css/{dialog.style}/DialogRSRowAdd.png\"\n{images.dialog.repeatingSectionDeleteRowIcon}=\"css/{dialog.style}/DialogRSRowDelete.png\"\n{images.dialog.repeatingSectionErrorRowIcon}=\"css/{dialog.style}/DialogRSRowError.png\"\n{images.dialog.deleteRowMessage.icon}=\"css/GrBlue/MessageQuestion.png\"\n{images.dialog.resetForm.icon}=\"css/GrBlue/MessageQuestion.png\"\n{images.dialog.dirtyForm.icon}=\"css/GrBlue/MessageInfo.png\"\n{images.dialog.editError}=\"css/GrBlue/EditError.png\"\n{images.dialog.listNav}=\"css/GrBlue/ListNav.png\"\n{images.dialog.listNavSubtle}=\"css/GrBlue/ListNavSubtle.png\"\n{images.dialog.menu}=\"images/menuPanel24x24.png.a5image\"\n{images.dialog.refresh}=\"images/$$generic.refresh.color.png.a5image\"\n{images.dialog.refreshDisabled}=\"images/disabled/$$generic.refresh.color.png.a5image\""
+        }
+    }
+}

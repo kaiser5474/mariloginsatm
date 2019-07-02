@@ -1,0 +1,2278 @@
+{
+    "$schema": "GRID",
+    "$definition": {
+        "_style_hasSassOverrides": false,
+        "SecurityModel": "Group Based",
+        "GUID": "d06182bd-cf9d-49b3-95d3-0222669ec6f9",
+        "DateFormatOnClient": "DD/MM/YY",
+        "clientSideDateFormat": "dd/MM/yyyy",
+        "flagTreeViewGrid": true,
+        "flagTreeViewDV": true,
+        "componentType": "Grid",
+        "Xbasic": "dim tmpl as p\ntmpl.ComponentName = \"EvaluacionDesempeno_Trabajador\"\ntmpl.ComponentType = \"Grid\"\ntmpl.AjaxOn = .t.\ntmpl.LayoutColumns = 1\ntmpl.useCompactTheme = .t.\ntmpl.queryEcho = .f.\ntmpl.connectToWebSocketServer = .f.\ntmpl.flagAddPKToORDER = .t.\ntmpl.saveFileType = \"Formatted JSON\"\ntmpl.captureJSErrorStackTrace = .f.\ntmpl.SecurityModel = \"Group Based\"\ntmpl.SecurityMode = \"\"\ntmpl.PreCalcMode = \"Standard\"\ntmpl.clientSideDateFormat = \"dd/MM/yyyy\"\ntmpl.datePicker.dayNames = \"Sun,Mon,Tue,Wed,Thu,Fri,Sat\"\ntmpl.datePicker.firstDayOfWeek = 1\ntmpl.datePicker.monthNames = \"January,February,March,April,May,June,July,August,September,October,November,December\"\ntmpl.datePicker.todayButtonText = \"Today\"\ntmpl.datePicker.closeButtonText = \"Close\"\ntmpl.publishedServerVariables = \"\"\ntmpl.customizationString.javascriptDialogs = \"\"\ntmpl.iconMapOverrides = \"\"\ntmpl.DataSourceType = \"CS\"\ntmpl.CS.database_type = \"CS\"\ntmpl.CS.type = \"connectionstring\"\ntmpl.cs.ConnectionString  = \"::name::Nibble\"\ntmpl.CS.SQL = \"SELECT N_FichaTrabajadores.Id_Trabajador, N_FichaTrabajadores.CodIdentidad, N_FichaTrabajadores.PrimerNombre, N_FichaTrabajadores.SegundoNombre, N_FichaTrabajadores.Apellido, N_Areas.Descripcion, N_FichaTrabajadores0.Id_Trabajador AS Id_TrabajadorSuperior, N_FichaTrabajadores0.PrimerNombre AS PrimerNombreSuperior, N_FichaTrabajadores1.Id_Trabajador AS Id_TrabajadorJefeDirecto, N_FichaTrabajadores1.PrimerNombre AS PrimerNombreJefeDirecto \"+chr(13)+chr(10)+\"FROM N_FichaTrabajadores N_FichaTrabajadores\"+chr(13)+chr(10)+\"\t LEFT OUTER JOIN (N_Areas N_Areas\"+chr(13)+chr(10)+\"\t\t INNER JOIN (N_Areas N_AreasSuperior\"+chr(13)+chr(10)+\"\t\t\t INNER JOIN N_FichaTrabajadores N_FichaTrabajadores0\"+chr(13)+chr(10)+\"\t\t\t\t ON  N_AreasSuperior.jefeArea = N_FichaTrabajadores0.Id_Trabajador )\"+chr(13)+chr(10)+\"\t\t\t ON  N_Areas.Id_AreaSuperior = N_AreasSuperior.Id_Areas \"+chr(13)+chr(10)+\"\t\t INNER JOIN N_FichaTrabajadores N_FichaTrabajadores1\"+chr(13)+chr(10)+\"\t\t\t ON  N_Areas.jefeArea = N_FichaTrabajadores1.Id_Trabajador )\"+chr(13)+chr(10)+\"\t\t ON  N_FichaTrabajadores.Id_AreaComercial = N_Areas.Id_Areas\"\nDIM tmpl.Arguments[0] AS P\nDIM tmpl.ArgumentsPage AS P\nwith tmpl.ArgumentsPage\n\t.PromptTextAbove = \"\"\nend with\ntmpl.CS.PrimaryKeyColumns = <<%txt%\nN_FichaTrabajadores|Id_Trabajador,CodIdentidad\nN_Areas|Id_Areas\nN_AreasSuperior|Id_Areas\nN_FichaTrabajadores0|Id_Trabajador,CodIdentidad\nN_FichaTrabajadores1|Id_Trabajador,CodIdentidad%txt%\ntmpl.CS.IdentitySequenceName  = \"\"\ntmpl.CS.primaryKeyTopAliasIsAutoIncrement  = .t.\ntmpl.grid_layout_style = 1\ntmpl.add_records_only = .f.\ntmpl.rows = 10\ntmpl.maxRowsPerPage = 200\ntmpl.rowsWhenSearchActive = -1\ntmpl.suppress_empty_rows = .t.\ntmpl.has_row_separator = .t.\ntmpl.alternate_bands = .f.\ntmpl.even_band_size = 1\ntmpl.odd_band_size = 1\ntmpl.alternate_column_bands = .f.\ntmpl.even_column_band_size = 1\ntmpl.odd_column_band_size = 1\ntmpl.conditionalStyle = \"\"\ntmpl.clientSideConditionalStyle = \"\"\ntmpl.show_title = .f.\ntmpl.title = \"\"\ntmpl.FontSize = \"Medium\"\ntmpl.No_records_message = \"No records in query\"\ntmpl.total_records_row_position = 1\ntmpl.total_records_row = \"Records:&nbsp; {Total_Records}&nbsp;\"\ntmpl.show_column_titles = 1\ntmpl.suppress_titles_if_no_records = .f.\ntmpl.show_row_labels = .t.\ntmpl.snakingLayout_suppressRepeatedLabels = .f.\ntmpl.sort_style = 3\ntmpl.reset_page_number_when_sorting = .t.\ntmpl.allowGridBodyScrolling = .f.\ntmpl.scrollableRegionHeight = \"2in\"\ntmpl.scrollableRegionWidth = \"100%\"\ntmpl.fixedWidthColumns = .f.\ntmpl.defaultColumnWidth = \"1in\"\ntmpl.columnWidthSettings = \"\"\ntmpl.EditRegion.Grid.Top = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Bottom = <<%editregion%\n{LinkedContentSection:DESEMPENO}%editregion%\ntmpl.EditRegion.Grid.Left = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Right = <<%editregion%\n%editregion%\ntmpl.HasNewRecordsTitle = .f.\ntmpl.NewRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >New Records</td></tr>\"\ntmpl.HasExistingRecordsTitle = .f.\ntmpl.ExistingRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >Existing Records</td></tr>\"\ntmpl.Highlight_row_onHover =  .t.\ntmpl.Highlight_row_onSelect =  .t.\ntmpl.HasRecordsPerPageSelector = .t.\ntmpl.RecordsPerPageChoices =   \"1,2,5,10,25,50,75,100\"\ntmpl.RecordsPerPageSelectorTemplate = \"&nbsp;&nbsp;{Grid.RecordsPerPageSelector} Records per page\"\ntmpl.has_qbe_row = .f.\ntmpl.qbe.initial_display = \"Hidden\"\ntmpl.qbe.toggleQBERowHyperlinkText = \"Show/Hide QBE Row\"\ntmpl.hasLinkedContent = .t.\ntmpl.linkedContentDefinition = <<%txt%\n<a_contentSections<[1]<definition=<<%str%\n<grids<[1]<objectType=\"Grid\">\n<gridName=\"RRHH_TrabajadorDesempeno\">\n<securityGroups=\"\">\n<showHideExpression=\"\">\n<subType=\"\">\n<linkFields=\"Id_Trabajador (N) = Trabajador_Desempeno.Id_Trabajador (N)\">\n<hideLinkFields=.F.>\n<inheritParentStyle=.T.>\n<overridesettings=\"\">\n<tabLabel=\"RRHH_TrabajadorDesempeno\">\n<workingMessage=\"\">\n>\n>\n%str%>\n<description=\"DESEMPENO\">\n>\n>\n%txt%\ntmpl.linkedContent.lockWindow = .f.\ntmpl.linkedContent.lockWindowText = \"<div style=\\\"padding: 5pt;\\\"><img style=\\\"vertical-align:middle;\\\" src=\\\"css/A5System/Images/wait.gif\\\" /> Please wait...</div>\"\ntmpl.linkedContent.lockWindowClassName = \"A5WindowLock\"\ntmpl.hasExternalNavigators = .f.\ntmpl.hasRowExpandColumn = .f.\ntmpl.hasSelectedRowColumn = .t.\ntmpl.hasCheckboxSelectColumn = .f.\ntmpl.AdditionalGridStyles = \"\"\ntmpl.LocalCss = \"\"\ntmpl.CSSLinkedFiles = \"\"\ntmpl.localsvg = \"\"\ntmpl.SVGLinkedFiles = \"\"\ntmpl.CSSIcons = \"\"\ntmpl.JavaScriptLinkedFiles = \"\"\ntmpl.useMasterTemplate = .t.\ntmpl.MasterTemplateStyle = \"Custom\"\ntmpl.MasterLayoutTemplate = \"{grid.Grid_Part}\"\ntmpl.MasterLayoutTemplateJavascript = \"\"\ntmpl.MasterLayout.PaneLabel.Search = \"Search\"\ntmpl.MasterLayout.PaneLabel.Grid = \"Grid\"\ntmpl.MasterLayout.PaneLabel.DetailView = \"Detail\"\ntmpl.MasterLayout.AccordionStyle = \"Multiple\"\ntmpl.MasterLayout.InitialOpenPanes = \"Search,Grid,DetailView\"\ntmpl.verticalAlignDataInColumns = \"Middle\"\ntmpl.CanCollapseGrid = .f.\ntmpl.CollapseBar.Title = \"Collapse Grid\"\ntmpl.CollapseBar.OpenIcon = \"\"\ntmpl.CollapseBar.ClosedIcon = \"\"\ntmpl.CollapseBar.Style = \"\"\ntmpl.Collapsebar.Class = \"\"\ntmpl.Collapsebar.ContainerStyle = \"\"\ntmpl.Collapsebar.ContainerClass = \"\"\ntmpl.Collapsebar.InitialState = \"open\"\ntmpl.languageTags_RemoveUnConsumedTags = .t.\ntmpl.activeLanguage = \"<Default>\"\ntmpl.search.highlightSearchStrings = .f.\ntmpl.autoRefreshGrid = .f.\ntmpl.autoRefreshInterval = 60\ntmpl.helpTableType = \"DBF\"\ntmpl.helpTableName = \"\"\ntmpl.helpConnectionString = \"\"\ntmpl.helpIDfield = \"\"\ntmpl.helpContentsField = \"\"\ntmpl.fieldHelpWindowStyle = \"modal-resizeable\"\ntmpl.fields = 8\nDIM tmpl.field_info[tmpl.fields] as P \nwith tmpl.field_info[1]\n\t.Fieldname = \"Id_Trabajador\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_TRABAJADOR\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.Id_Trabajador\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Trabajador\"\n\t.Column.Sort = \"N_FichaTrabajadores.Id_Trabajador\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[2]\n\t.Fieldname = \"CodIdentidad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"nvarchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"CODIDENTIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.CodIdentidad\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod Identidad\"\n\t.Column.Sort = \"N_FichaTrabajadores.CodIdentidad\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[3]\n\t.Fieldname = \"PrimerNombre\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"nvarchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"PRIMERNOMBRE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.PrimerNombre\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Primer Nombre\"\n\t.Column.Sort = \"N_FichaTrabajadores.PrimerNombre\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[4]\n\t.Fieldname = \"SegundoNombre\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"nvarchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"SEGUNDONOMBRE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.SegundoNombre\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Segundo Nombre\"\n\t.Column.Sort = \"N_FichaTrabajadores.SegundoNombre\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[5]\n\t.Fieldname = \"Apellido\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"nvarchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"APELLIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.Apellido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Apellido\"\n\t.Column.Sort = \"N_FichaTrabajadores.Apellido\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[6]\n\t.Fieldname = \"Descripcion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"DESCRIPCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_Areas.Descripcion\"\n\t.SourceAlias = \"N_Areas\"\n\t.Column.Heading = \"Area\"\n\t.Column.Sort = \"N_Areas.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[7]\n\t.Fieldname = \"PrimerNombreSuperior\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"PRIMERNOMBRESUPERIOR\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores0.PrimerNombre\"\n\t.SourceAlias = \"N_FichaTrabajadores0\"\n\t.Column.Heading = \"Primer Nombre Superior\"\n\t.Column.Sort = \"N_FichaTrabajadores0.PrimerNombre\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[8]\n\t.Fieldname = \"PrimerNombreJefeDirecto\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"PRIMERNOMBREJEFEDIRECTO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores1.PrimerNombre\"\n\t.SourceAlias = \"N_FichaTrabajadores1\"\n\t.Column.Heading = \"Primer Nombre Jefe Directo\"\n\t.Column.Sort = \"N_FichaTrabajadores1.PrimerNombre\"\n\t.Column.FirstClickDirection = \"A\"\nend with\ntmpl.RecordNavigationStyle = \"NavigationButtons\"\ntmpl.fetchMoreRecordsButton.text = \"More Records\"\ntmpl.fetchMoreRecordsButton.style = \"\"\ntmpl.RecNav.SuppressIfOnlyOnePage = .t.\ntmpl.RecNav.First_Label = \"First\"\ntmpl.RecNav.Has_First_Button = .t.\ntmpl.RecNav.Has_Last_Button = .t.\ntmpl.RecNav.Has_Next_Button = .t.\ntmpl.RecNav.Has_Prev_Button = .t.\ntmpl.RecNav.HTML_Template_source = \"Computed\"\ntmpl.RecNav.Justify = \"Left\"\ntmpl.RecNav.Last_Label = \"Last\"\ntmpl.RecNav.Next_Label = \"Next\"\ntmpl.RecNav.Number_of_page_links = 10\ntmpl.RecNav.Page_Numbering_Style = 3\ntmpl.RecNav.PagesTemplate_w_PageCount = \"{PageNumber} of {PageCount}\"\ntmpl.RecNav.PagesTemplate_wout_PageCount = \"{PageNumber}\"\ntmpl.RecNav.Position = 1\ntmpl.RecNav.suppress_recNavBar_if_no_records = .f.\ntmpl.RecNav.Prev_Label = \"Prev\"\ntmpl.RecNav.Show_disabled_controls = .t.\ntmpl.RecNav.Show_Page_Count = .t.\ntmpl.RecNav.Use_Images = .t.\ntmpl.gridToolbarTemplate = <<%html%\n%html%\ntmpl.gridToolbarTemplateEditable = <<%html%\n%html%\ntmpl.ToolbarActionButtons = <<%html%\n{ActionButton:REFRESH}\n%html%\ntmpl.style_name = \"GrBlue\"\ntmpl.resolveAbstractClassNames = .t.\ntmpl.style_type = \"Alpha Five\"\ntmpl.UseSimpleStyles = .f.\ntmpl.overrideStylesForJavascriptObjects = .f.\ntmpl.searchBehavior = \"\"\ntmpl.GUID = \"d06182bd-cf9d-49b3-95d3-0222669ec6f9\"\ntmpl.onlyIncludeSelectedFieldsInQuery = .t.\nDIM tmpl.controls[1] as P\nwith  tmpl.controls[1]\n\t.idInternal = \"59882fc8-a5c6-43d3-aab3-bc78bdea29b6\"\n\t.type = \"Button\"\n\t.Name = \"REFRESH\"\n\t.trailingSeparator = .T.\n\t.bubbleHelp = \"Refrescar\"\n\t.readDataFrom = \"GridPart\"\n\t.actionJSAttribute = <<%str%\n/* actionJavascript:a4608492-67d7-49ed-99be-c239ef83e520 */\n{grid.object}.refresh();%str%\n\t.actionJSGlobal = \"\"\n\t.actionXbasic = \"\"\n\t.actionClientSideXbasic = \"\"\n\t.buttonStyle = \"Image only\"\n\t.buttonClass = \"[class.gridButton]\"\n\t.buttonClassHover = \"[class.gridButtonHover]\"\n\t.buttonClassPressed = \"[class.gridButtonPressed]\"\n\t.buttonClassDisabled = \"[class.gridButtonDisabled]\"\n\t.buttonInlineStyle = \"\"\n\t.buttonText = \"BUTTON\"\n\t.hyperlinkClass = \"[class.gridHyperlinkButton]\"\n\t.hyperlinkInlineStyle = \"\"\n\t.hyperlinkImagePosition = \"None\"\n\t.textClass = \"\"\n\t.textInlineStyle = \"\"\n\t.imageName = \"images/$$generic.refresh.color.png.a5image\"\n\t.hoverImageName = \"\"\n\t.pressedImageName = \"\"\n\t.disabledimageName = \"\"\n\t.imageClass = \"\"\n\t.imageInlineStyle = \"\"\n\t.securityGroups = \"\"\n\t.serverSideShowHideExpression = \"\"\n\t.readDataFromForClientSideExpns = \"GridPart\"\n\t.clientSideShowHideExpression = \"\"\n\t.clientSideEnableExpression = \"\"\n\t.precalc.watchJavascriptShowHide = \"\"\n\t.precalc.watchJavascriptEnable = \"\"\n\t.precalc.watchColumnsShowHide = \"\"\n\t.precalc.watchColumnsEnable = \"\"\n\t.precalc.JStoSetupWatchEvents = \"\"\n\t.precalc.buttonObjectJavascript = <<%str%\nwindow['{grid.componentName}_BUTTONS_REFRESH'] = new A5.Button({\n\tlayout: 'icon',\n\ttip: 'Refrescar',\n\tclassName: '[class.gridButton]',\n\thoverClassName: '[class.gridButtonHover]',\n\tpressedClassName: '[class.gridButtonPressed]',\n\tdisabledClassName: '[class.gridButtonDisabled]',\n\thtml: 'BUTTON',\n\ticon: 'images/$$generic.refresh.color.png.a5image',\n\tdisabledIcon: 'images/disabled/$$generic.refresh.color.png.a5image',\n\tonClick: function() { /* actionJavascript:a4608492-67d7-49ed-99be-c239ef83e520 */\n{grid.object}.refresh();\n},\n\ttheme: '{grid.style}'\n});%str%\n\t.precalc.objectHTML = \"<button type=\\\"button\\\" id=\\\"{id}\\\"></button>&nbsp;\"\n\t.precalc.objectName = \"{grid.componentName}_BUTTONS_REFRESH\"\n\t.precalc.bindJS = \"{grid.componentName}_BUTTONS_REFRESH.bind({bindIdList});\"\nend with\ntmpl.hasGroupBreaks = .f.\ntmpl.groupBreaks.expression1 = \"\"\ntmpl.groupBreaks.direction1 = \"\"\ntmpl.groupBreaks.header1 = <<%HTML%\n<tr>\n\t<td class=\"[class.gridDataHeader]\" colspan=\"{systemcolumnCount}\">&nbsp;</td>\n\t<td class=\"[class.gridDataHeader]\" colspan=\"100\" >Enter group break HEADER text here</td>\n</tr>\n%HTML%\ntmpl.groupBreaks.footer1 = <<%HTML%\n<tr >\n\t<td class=\"[class.gridSummaryData]\" colspan=\"{systemcolumnCount}\">&nbsp;</td>\n\t<td class=\"[class.gridSummaryData]\" colspan=\"100\" >Enter group break FOOTER text here</td>\n</tr>\n%HTML%\ntmpl.groupBreaks.collapseAllGroupsOnInitialDisplay = .f.\ntmpl.timestamp = \"2018-06-18:17-28-07.355\"\ntmpl.resolveAbstractClassNamesAtDesignTime  = .f.\ntmpl.resolveAbstractIconNamesAtDesignTime = .f. \ntmpl.useLegacyDatePicker = .f.\ntmpl.javascriptUnboundActionDefinitions = <<%javascriptActions%\n%javascriptActions%\n\ntmpl.precalc.sessionVarsInShowHideExpns = <<%sessionvars%\n%sessionvars%\ntmpl.precalc.unboundActionsXbasicFunctions = \"\"\ntmpl.precalc.includeS3Javascript = .f.",
+        "datasourceType": 3,
+        "componentName": "EvaluacionDesempeno_Trabajador",
+        "query_ado": {
+            "mdb_or_cs": 1,
+            "connection_type": 1,
+            "base_on": 1,
+            "Arguments": [
+                {}
+            ]
+        },
+        "query_cs": {
+            "connection_type": 1,
+            "connection_name": "Nibble",
+            "base_on": 2,
+            "table_name": "N_FichaTrabajadores",
+            "table_alias": "N_FichaTrabajadores",
+            "sql_select": "SELECT N_FichaTrabajadores.Id_Trabajador, N_FichaTrabajadores.CodIdentidad, N_FichaTrabajadores.PrimerNombre, N_FichaTrabajadores.SegundoNombre, N_FichaTrabajadores.Apellido, N_Areas.Descripcion, N_FichaTrabajadores0.Id_Trabajador AS Id_TrabajadorSuperior, N_FichaTrabajadores0.PrimerNombre AS PrimerNombreSuperior, N_FichaTrabajadores1.Id_Trabajador AS Id_TrabajadorJefeDirecto, N_FichaTrabajadores1.PrimerNombre AS PrimerNombreJefeDirecto \nFROM N_FichaTrabajadores N_FichaTrabajadores\n\t LEFT OUTER JOIN (N_Areas N_Areas\n\t\t INNER JOIN (N_Areas N_AreasSuperior\n\t\t\t INNER JOIN N_FichaTrabajadores N_FichaTrabajadores0\n\t\t\t\t ON  N_AreasSuperior.jefeArea = N_FichaTrabajadores0.Id_Trabajador )\n\t\t\t ON  N_Areas.Id_AreaSuperior = N_AreasSuperior.Id_Areas \n\t\t INNER JOIN N_FichaTrabajadores N_FichaTrabajadores1\n\t\t\t ON  N_Areas.jefeArea = N_FichaTrabajadores1.Id_Trabajador )\n\t\t ON  N_FichaTrabajadores.Id_AreaComercial = N_Areas.Id_Areas",
+            "database_type": "CS",
+            "surrogate_primary_key": "Id_Trabajador\nCodIdentidad",
+            "FieldInfo": "<a_expn<[1]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Trabajador\">\n<basecolumn=\"Id_Trabajador\">\n<varname=\"Id_Trabajador\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores\">\n<searchSortExpression=\"N_FichaTrabajadores.Id_Trabajador\">\n<searchExpression=\"N_FichaTrabajadores.Id_Trabajador\">\n>\n<[2]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"CodIdentidad\">\n<basecolumn=\"CodIdentidad\">\n<varname=\"CodIdentidad\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores\">\n<searchSortExpression=\"N_FichaTrabajadores.CodIdentidad\">\n<searchExpression=\"N_FichaTrabajadores.CodIdentidad\">\n>\n<[3]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"PrimerNombre\">\n<basecolumn=\"PrimerNombre\">\n<varname=\"PrimerNombre\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores\">\n<searchSortExpression=\"N_FichaTrabajadores.PrimerNombre\">\n<searchExpression=\"N_FichaTrabajadores.PrimerNombre\">\n>\n<[4]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"SegundoNombre\">\n<basecolumn=\"SegundoNombre\">\n<varname=\"SegundoNombre\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores\">\n<searchSortExpression=\"N_FichaTrabajadores.SegundoNombre\">\n<searchExpression=\"N_FichaTrabajadores.SegundoNombre\">\n>\n<[5]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"Apellido\">\n<basecolumn=\"Apellido\">\n<varname=\"Apellido\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores\">\n<searchSortExpression=\"N_FichaTrabajadores.Apellido\">\n<searchExpression=\"N_FichaTrabajadores.Apellido\">\n>\n<[6]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"Descripcion\">\n<basecolumn=\"Descripcion\">\n<varname=\"Descripcion\">\n<basetable=\"N_Areas\">\n<alias_to_update=\"N_Areas\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_Areas\">\n<searchSortExpression=\"N_Areas.Descripcion\">\n<searchExpression=\"N_Areas.Descripcion\">\n>\n<[7]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_TrabajadorSuperior\">\n<basecolumn=\"Id_Trabajador\">\n<varname=\"Id_TrabajadorSuperior\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores0\">\n<searchSortExpression=\"N_FichaTrabajadores0.Id_Trabajador\">\n<searchExpression=\"N_FichaTrabajadores0.Id_Trabajador\">\n>\n<[8]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"PrimerNombreSuperior\">\n<basecolumn=\"PrimerNombre\">\n<varname=\"PrimerNombreSuperior\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores0\">\n<searchSortExpression=\"N_FichaTrabajadores0.PrimerNombre\">\n<searchExpression=\"N_FichaTrabajadores0.PrimerNombre\">\n>\n<[9]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_TrabajadorJefeDirecto\">\n<basecolumn=\"Id_Trabajador\">\n<varname=\"Id_TrabajadorJefeDirecto\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores1\">\n<searchSortExpression=\"N_FichaTrabajadores1.Id_Trabajador\">\n<searchExpression=\"N_FichaTrabajadores1.Id_Trabajador\">\n>\n<[10]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"PrimerNombreJefeDirecto\">\n<basecolumn=\"PrimerNombre\">\n<varname=\"PrimerNombreJefeDirecto\">\n<basetable=\"N_FichaTrabajadores\">\n<alias_to_update=\"N_FichaTrabajadores\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_FichaTrabajadores1\">\n<searchSortExpression=\"N_FichaTrabajadores1.PrimerNombre\">\n<searchExpression=\"N_FichaTrabajadores1.PrimerNombre\">\n>\n>\n",
+            "SurrogatePrimaryKeyData": "<arrTables<[1]<Primary_Key=<<%str%\nId_Trabajador\nCodIdentidad%str%>\n<Name=\"N_FichaTrabajadores\">\n<alias=\"N_FichaTrabajadores\">\n>\n>\n",
+            "SQLBuilder": {
+                "SQL": "SELECT N_FichaTrabajadores.Id_Trabajador, N_FichaTrabajadores.CodIdentidad, N_FichaTrabajadores.PrimerNombre, N_FichaTrabajadores.SegundoNombre, N_FichaTrabajadores.Apellido, N_Areas.Descripcion, N_FichaTrabajadores0.Id_Trabajador AS Id_TrabajadorSuperior, N_FichaTrabajadores0.PrimerNombre AS PrimerNombreSuperior, N_FichaTrabajadores1.Id_Trabajador AS Id_TrabajadorJefeDirecto, N_FichaTrabajadores1.PrimerNombre AS PrimerNombreJefeDirecto \nFROM N_FichaTrabajadores N_FichaTrabajadores\n\t LEFT OUTER JOIN (N_Areas N_Areas\n\t\t INNER JOIN (N_Areas N_AreasSuperior\n\t\t\t INNER JOIN N_FichaTrabajadores N_FichaTrabajadores0\n\t\t\t\t ON  N_AreasSuperior.jefeArea = N_FichaTrabajadores0.Id_Trabajador )\n\t\t\t ON  N_Areas.Id_AreaSuperior = N_AreasSuperior.Id_Areas \n\t\t INNER JOIN N_FichaTrabajadores N_FichaTrabajadores1\n\t\t\t ON  N_Areas.jefeArea = N_FichaTrabajadores1.Id_Trabajador )\n\t\t ON  N_FichaTrabajadores.Id_AreaComercial = N_Areas.Id_Areas",
+                "PrimaryKeyData": "<arrTables<[1]<Primary_Key=<<%str%\nId_Trabajador\nCodIdentidad%str%>\n<Name=\"N_FichaTrabajadores\">\n<alias=\"N_FichaTrabajadores\">\n>\n<[2]<Primary_Key=\"Id_Areas\">\n<Name=\"N_Areas\">\n<alias=\"N_Areas\">\n>\n<[3]<Primary_Key=\"Id_Areas\">\n<Name=\"N_Areas\">\n<alias=\"N_AreasSuperior\">\n>\n<[4]<Primary_Key=<<%str%\nId_Trabajador\nCodIdentidad%str%>\n<Name=\"N_FichaTrabajadores\">\n<alias=\"N_FichaTrabajadores0\">\n>\n<[5]<Primary_Key=<<%str%\nId_Trabajador\nCodIdentidad%str%>\n<Name=\"N_FichaTrabajadores\">\n<alias=\"N_FichaTrabajadores1\">\n>\n>\n",
+                "ColumnAliases": "Id_Trabajador|||||||N_FichaTrabajadores.Id_Trabajador\nCodIdentidad|||||||N_FichaTrabajadores.CodIdentidad\nPrimerNombre|||||||N_FichaTrabajadores.PrimerNombre\nSegundoNombre|||||||N_FichaTrabajadores.SegundoNombre\nApellido|||||||N_FichaTrabajadores.Apellido\nDescripcion|||||||N_Areas.Descripcion\nId_TrabajadorSuperior|||||||N_FichaTrabajadores0.Id_Trabajador\nPrimerNombreSuperior|||||||N_FichaTrabajadores0.PrimerNombre\nId_TrabajadorJefeDirecto|||||||N_FichaTrabajadores1.Id_Trabajador\nPrimerNombreJefeDirecto|||||||N_FichaTrabajadores1.PrimerNombre\n",
+                "ColumnTypes": "Id_Trabajador=N\nCodIdentidad=C\nPrimerNombre=C\nSegundoNombre=C\nApellido=C\nDescripcion=C\nId_TrabajadorSuperior=N\nPrimerNombreSuperior=C\nId_TrabajadorJefeDirecto=N\nPrimerNombreJefeDirecto=C\n",
+                "ColumnNativeTypes": "Id_Trabajador=\nCodIdentidad=\nPrimerNombre=\nSegundoNombre=\nApellido=\nDescripcion=\nId_TrabajadorSuperior=\nPrimerNombreSuperior=\nId_TrabajadorJefeDirecto=\nPrimerNombreJefeDirecto=\n",
+                "ColumnPortableTypes": "Id_Trabajador=Integer32\nCodIdentidad=NationalVaryingCharacter\nPrimerNombre=NationalVaryingCharacter\nSegundoNombre=NationalVaryingCharacter\nApellido=NationalVaryingCharacter\nDescripcion=NationalVaryingCharacter\nId_TrabajadorSuperior=Integer32\nPrimerNombreSuperior=NationalVaryingCharacter\nId_TrabajadorJefeDirecto=Integer32\nPrimerNombreJefeDirecto=NationalVaryingCharacter\n",
+                "CanBeUsedInWhereClauseFields": "Id_Trabajador\nCodIdentidad\nPrimerNombre\nSegundoNombre\nApellido\nDescripcion\nId_TrabajadorSuperior\nPrimerNombreSuperior\nId_TrabajadorJefeDirecto\nPrimerNombreJefeDirecto\n",
+                "lastbutton": "OK"
+            },
+            "Arguments": [
+                {}
+            ],
+            "table_type": "Table",
+            "primaryKeyTopAliasIsAutoIncrement": true
+        },
+        "query_dbf": {
+            "type": "Table",
+            "Direction": "Ascending",
+            "Arguments": [
+                {}
+            ]
+        },
+        "fields": {
+            "a_fields": [
+                {
+                    "fieldname": "Id_Trabajador",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "InLineStyle": "text-align: right;",
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "InLineStyle": "text-align: right;",
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true,
+                        "className": ""
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": ""
+                    },
+                    "column": {
+                        "heading": "Id Trabajador",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "N_FichaTrabajadores.Id_Trabajador",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "N_FichaTrabajadores.Id_Trabajador",
+                    "type": "N",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_FichaTrabajadores",
+                    "canBeUsedInWhereClause": true,
+                    "nativeType": "int",
+                    "autoincrement": true,
+                    "table": "N_FichaTrabajadores",
+                    "FieldToUpdate": "Id_Trabajador",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "Integer32",
+                    "width": 11,
+                    "varname": "Id_Trabajador",
+                    "Display": "Id_Trabajador",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_Trabajador}Id_Trabajador",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_Trabajador}Id_Trabajador",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Trabajador\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_TRABAJADOR\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.Id_Trabajador\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Trabajador\"\n\t.Column.Sort = \"N_FichaTrabajadores.Id_Trabajador\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n\n\n\n\n\n\n\n\n\n\n\n",
+                    "columnQBEOptionsJSON": ""
+                },
+                {
+                    "fieldname": "CodIdentidad",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true,
+                        "className": ""
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": ""
+                    },
+                    "column": {
+                        "heading": "Cod Identidad",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "N_FichaTrabajadores.CodIdentidad",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "N_FichaTrabajadores.CodIdentidad",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_FichaTrabajadores",
+                    "canBeUsedInWhereClause": true,
+                    "nativeType": "nvarchar",
+                    "table": "N_FichaTrabajadores",
+                    "FieldToUpdate": "CodIdentidad",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 11,
+                    "varname": "CodIdentidad",
+                    "Display": "CodIdentidad",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=CodIdentidad}CodIdentidad",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=CodIdentidad}CodIdentidad",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"CodIdentidad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"nvarchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"CODIDENTIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.CodIdentidad\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod Identidad\"\n\t.Column.Sort = \"N_FichaTrabajadores.CodIdentidad\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n\n\n\n\n\n\n\n\n\n\n\n",
+                    "columnQBEOptionsJSON": ""
+                },
+                {
+                    "fieldname": "PrimerNombre",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true,
+                        "className": ""
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": ""
+                    },
+                    "column": {
+                        "heading": "Primer Nombre",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "N_FichaTrabajadores.PrimerNombre",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "N_FichaTrabajadores.PrimerNombre",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_FichaTrabajadores",
+                    "canBeUsedInWhereClause": true,
+                    "nativeType": "nvarchar",
+                    "table": "N_FichaTrabajadores",
+                    "FieldToUpdate": "PrimerNombre",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 50,
+                    "varname": "PrimerNombre",
+                    "Display": "PrimerNombre",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=PrimerNombre}PrimerNombre",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=PrimerNombre}PrimerNombre",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"PrimerNombre\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"nvarchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"PRIMERNOMBRE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.PrimerNombre\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Primer Nombre\"\n\t.Column.Sort = \"N_FichaTrabajadores.PrimerNombre\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n\n\n\n\n\n\n\n\n\n\n\n",
+                    "columnQBEOptionsJSON": ""
+                },
+                {
+                    "fieldname": "SegundoNombre",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true,
+                        "className": ""
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": ""
+                    },
+                    "column": {
+                        "heading": "Segundo Nombre",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "N_FichaTrabajadores.SegundoNombre",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "N_FichaTrabajadores.SegundoNombre",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_FichaTrabajadores",
+                    "canBeUsedInWhereClause": true,
+                    "nativeType": "nvarchar",
+                    "table": "N_FichaTrabajadores",
+                    "FieldToUpdate": "SegundoNombre",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 50,
+                    "varname": "SegundoNombre",
+                    "Display": "SegundoNombre",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=SegundoNombre}SegundoNombre",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=SegundoNombre}SegundoNombre",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"SegundoNombre\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"nvarchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"SEGUNDONOMBRE\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.SegundoNombre\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Segundo Nombre\"\n\t.Column.Sort = \"N_FichaTrabajadores.SegundoNombre\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n\n\n\n\n\n\n\n\n\n\n\n",
+                    "columnQBEOptionsJSON": ""
+                },
+                {
+                    "fieldname": "Apellido",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true,
+                        "className": ""
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": ""
+                    },
+                    "column": {
+                        "heading": "Apellido",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "N_FichaTrabajadores.Apellido",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "N_FichaTrabajadores.Apellido",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_FichaTrabajadores",
+                    "canBeUsedInWhereClause": true,
+                    "nativeType": "nvarchar",
+                    "table": "N_FichaTrabajadores",
+                    "FieldToUpdate": "Apellido",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 50,
+                    "varname": "Apellido",
+                    "Display": "Apellido",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Apellido}Apellido",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Apellido}Apellido",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Apellido\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"nvarchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"APELLIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores.Apellido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Apellido\"\n\t.Column.Sort = \"N_FichaTrabajadores.Apellido\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n\n\n\n\n\n\n\n\n\n\n\n",
+                    "columnQBEOptionsJSON": ""
+                },
+                {
+                    "fieldname": "Descripcion",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true,
+                        "className": ""
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": ""
+                    },
+                    "column": {
+                        "heading": "Area",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "N_Areas.Descripcion",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "N_Areas.Descripcion",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_Areas",
+                    "canBeUsedInWhereClause": true,
+                    "table": "N_Areas",
+                    "FieldToUpdate": "Descripcion",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "SourceAlias": "N_Areas",
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 50,
+                    "varname": "Descripcion",
+                    "Display": "Descripcion",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Descripcion}Descripcion",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Descripcion}Descripcion",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Descripcion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"DESCRIPCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_Areas.Descripcion\"\n\t.SourceAlias = \"N_Areas\"\n\t.Column.Heading = \"Area\"\n\t.Column.Sort = \"N_Areas.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n\n\n\n\n\n\n\n\n\n\n\n",
+                    "SQL": "SELECT N_FichaTrabajadores.Id_Trabajador, N_FichaTrabajadores.CodIdentidad, N_FichaTrabajadores.PrimerNombre, N_FichaTrabajadores.SegundoNombre, N_FichaTrabajadores.Apellido, N_Areas.Descripcion \nFROM N_FichaTrabajadores N_FichaTrabajadores\n\t LEFT OUTER JOIN N_Areas N_Areas\n\t\t ON  N_FichaTrabajadores.Id_AreaComercial = N_Areas.Id_Areas",
+                    "PrimaryKeyData": "<arrTables<[1]<Primary_Key=<<%str%\nId_Trabajador\nCodIdentidad%str%>\n<Name=\"N_FichaTrabajadores\">\n<alias=\"N_FichaTrabajadores\">\n<fields=\"\">\n<readOnly=.F.>\n>\n<[2]<Primary_Key=\"Id_Areas\">\n<Name=\"N_Areas\">\n<alias=\"N_Areas\">\n<fields=\"\">\n<readOnly=.F.>\n>\n>\n<last_button=\"ok\">\n<flagTopAliasPrimaryKeyIsAutoIncrement=.T.>\n",
+                    "lastbutton": "OK",
+                    "ColumnAliases": "Id_Trabajador|||||||N_FichaTrabajadores.Id_Trabajador\nCodIdentidad|||||||N_FichaTrabajadores.CodIdentidad\nPrimerNombre|||||||N_FichaTrabajadores.PrimerNombre\nSegundoNombre|||||||N_FichaTrabajadores.SegundoNombre\nApellido|||||||N_FichaTrabajadores.Apellido\nDescripcion|||||||N_Areas.Descripcion\n",
+                    "ColumnTypes": "Id_Trabajador=N\nCodIdentidad=C\nPrimerNombre=C\nSegundoNombre=C\nApellido=C\nDescripcion=C\n",
+                    "ColumnNativeTypes": "Id_Trabajador=\nCodIdentidad=\nPrimerNombre=\nSegundoNombre=\nApellido=\nDescripcion=\n",
+                    "ColumnPortableTypes": "Id_Trabajador=Integer32\nCodIdentidad=NationalVaryingCharacter\nPrimerNombre=NationalVaryingCharacter\nSegundoNombre=NationalVaryingCharacter\nApellido=NationalVaryingCharacter\nDescripcion=NationalVaryingCharacter\n",
+                    "CanBeUsedInWhereClauseFields": "Id_Trabajador\nCodIdentidad\nPrimerNombre\nSegundoNombre\nApellido\nDescripcion\n",
+                    "columnQBEOptionsJSON": ""
+                },
+                {
+                    "fieldname": "PrimerNombreSuperior",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "className": "",
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "toolbaricons": "",
+                            "toolbardefinition": "",
+                            "editButtonText": "Edit..."
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Primer Nombre Superior",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "N_FichaTrabajadores0.PrimerNombre",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "columnQBEOptionsJSON": "",
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "N_FichaTrabajadores0.PrimerNombre",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_FichaTrabajadores0",
+                    "canBeUsedInWhereClause": true,
+                    "table": "N_FichaTrabajadores",
+                    "FieldToUpdate": "PrimerNombre",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "SourceAlias": "N_FichaTrabajadores0",
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 50,
+                    "varname": "PrimerNombreSuperior",
+                    "Display": "PrimerNombreSuperior",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=PrimerNombreSuperior}PrimerNombreSuperior",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=PrimerNombreSuperior}PrimerNombreSuperior",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"PrimerNombreSuperior\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"PRIMERNOMBRESUPERIOR\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores0.PrimerNombre\"\n\t.SourceAlias = \"N_FichaTrabajadores0\"\n\t.Column.Heading = \"Primer Nombre Superior\"\n\t.Column.Sort = \"N_FichaTrabajadores0.PrimerNombre\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n"
+                },
+                {
+                    "fieldname": "PrimerNombreJefeDirecto",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "className": "",
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "toolbaricons": "",
+                            "toolbardefinition": "",
+                            "editButtonText": "Edit..."
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Primer Nombre Jefe Directo",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "N_FichaTrabajadores1.PrimerNombre",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "columnQBEOptionsJSON": "",
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "N_FichaTrabajadores1.PrimerNombre",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_FichaTrabajadores1",
+                    "canBeUsedInWhereClause": true,
+                    "table": "N_FichaTrabajadores",
+                    "FieldToUpdate": "PrimerNombre",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "SourceAlias": "N_FichaTrabajadores1",
+                    "PortableType": "NationalVaryingCharacter",
+                    "width": 50,
+                    "varname": "PrimerNombreJefeDirecto",
+                    "Display": "PrimerNombreJefeDirecto",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=PrimerNombreJefeDirecto}PrimerNombreJefeDirecto",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=PrimerNombreJefeDirecto}PrimerNombreJefeDirecto",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"PrimerNombreJefeDirecto\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"PRIMERNOMBREJEFEDIRECTO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_FichaTrabajadores1.PrimerNombre\"\n\t.SourceAlias = \"N_FichaTrabajadores1\"\n\t.Column.Heading = \"Primer Nombre Jefe Directo\"\n\t.Column.Sort = \"N_FichaTrabajadores1.PrimerNombre\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n"
+                }
+            ]
+        },
+        "field_index": 1,
+        "DetailView": {
+            "LayoutColumns": 1,
+            "AddNewLinkLabel": "New Record",
+            "SaveRecordButtonLabel": "Save",
+            "DeleteRecordButtonLabel": "Delete",
+            "AddRecordButtonLabel": "Add",
+            "HasTitle": true,
+            "Title": "Detail View ",
+            "show_row_labels": true,
+            "edit": {
+                "Execute_Update_Commands": true,
+                "allow_update": true,
+                "allow_insert": true,
+                "allow_delete": true,
+                "validateFieldsSetting": "Dirty Fields Only",
+                "updateWhichFields": "Dirty Fields Only",
+                "Number_Of_Insert_Rows": 1,
+                "cancel_button_text": "Cancel",
+                "close_button_text": "Close",
+                "save_confirm_before_submit_message": "Update record?",
+                "delete_confirm_before_submit_message": "Delete record?",
+                "add_confirm_before_submit_message": "Add record?",
+                "check_for_write_conflicts": true,
+                "write_conflict_check_type": 2,
+                "save_original_values": true,
+                "Delete_TargetPage": "<Self>",
+                "Save_TargetPage": "<Self>",
+                "Add_TargetPage": "<Self>",
+                "field_error_style": {
+                    "type": "Icon",
+                    "icon": "images/$$generic.error.png.a5image"
+                },
+                "RefreshRowMethod": "AutoSelect",
+                "row_errors_window_title": "Errors",
+                "row_errors_window_style": "color: red; width: 6in; height: 2in;",
+                "FocusAfterFullPageRefreshForInsert": "First record",
+                "FocusAfterFullPageRefreshForUpdate": "Current page",
+                "FocusAfterFullPageRefreshForDelete": "Current page",
+                "Editable_GridRow_Options_Style": "Icons",
+                "RefreshRowOnDirty": true,
+                "RowEditStyle": "InitiallyEditable",
+                "LazyEdit": true
+            },
+            "HasCloseLink": true,
+            "CloseDetailViewLinkLabel": "Close",
+            "CanClose": true,
+            "Toolbar": {
+                "Position": "Below",
+                "showRecordNavigatorLinks": true
+            },
+            "UseSimpleStyles": true,
+            "SimpleStyleMode": "LayoutOnly",
+            "displayStyle": "OnPage",
+            "windowDragOpacity": 75,
+            "PopupWindowTitle": "Detail View",
+            "PopupWindowDirection": "ltr",
+            "OpenMethod": "Click a hyperlink field",
+            "window": {
+                "animation": {
+                    "show": {
+                        "method": "Fade",
+                        "speed": "Slow"
+                    },
+                    "hide": {
+                        "method": "None",
+                        "speed": "Fast"
+                    }
+                }
+            }
+        },
+        "EditRegion": {
+            "Grid": {
+                "Bottom": "{LinkedContentSection:DESEMPENO}"
+            }
+        },
+        "detailViewToolbar": {
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "search": {
+            "HTML_Template_source": "Computed",
+            "title": "Search ",
+            "title_when_hidden": "Click here to search...",
+            "show_title": true,
+            "search_button_label": "Search",
+            "form_method": "Get",
+            "include_sorting_listbox": true,
+            "sorting_listbox_label_position": "Left",
+            "sort": {
+                "prompt": "Sort&nbsp;by",
+                "listbox": {
+                    "fieldname_prompt": "Select Field",
+                    "order_prompt": "Select Order",
+                    "order_choices": "Ascending,Descending"
+                }
+            },
+            "include_records_per_page_listbox": true,
+            "records_per_page_label_position": "Left",
+            "records_per_page": {
+                "prompt": "Records&nbsp;per&nbsp;page",
+                "listbox": {
+                    "value_prompt": "Select Value",
+                    "choices": "1,2,5,10,25,50,75,100"
+                }
+            },
+            "orientation": "Vertical",
+            "combine_criteria_using": 1,
+            "style": 2,
+            "allow_qbf_style": true,
+            "keyword_label": "Search for?",
+            "has_Clear_link": true,
+            "Clear_link_Label": "Clear Search Criteria",
+            "Clear_link_BubbleHelp": "Clear Search",
+            "TargetPage": "<Self>",
+            "InitialState": "Open",
+            "embedInGridPosition": "Above Titles",
+            "embedded": {
+                "hasFreeformLayout": true,
+                "showHideEmbeddedSearchIcon": "images/$$filter.png.a5image",
+                "showHideEmbeddedSearchBubbleHelp": "Show/hide the Search Part",
+                "showSearchIconsInRowSelector": true,
+                "searchIconBubbleHelp": "Search for records",
+                "clearSearchIconBubbleHelp": "Clear search criteria",
+                "searchIcon": "images/$$filter.records.png.a5image",
+                "clearSearchIcon": "images/$$filter.clear.png.a5image"
+            },
+            "embeddedStyle": "Free-form region for each column",
+            "toolbarPosition": "Below",
+            "savedSearches": {
+                "loadSearchPrompt": "Saved search to load:",
+                "saveSearchPrompt": "Name:",
+                "listboxHeading": "Existing Saved Searches",
+                "promptToLoadChoices": "Click to load choices...",
+                "loadButtonLabel": "Load",
+                "saveButtonLabel": "Save",
+                "cancelButtonLabel": "Cancel",
+                "listBoxHeight": "1in",
+                "dialogWidth": "2in",
+                "executeSearchOnLoad": true,
+                "saveSearchBubbleHelp": "Save search criteria",
+                "loadSearchBubbleHelp": "Load search criteria",
+                "warningBlankName": "You have not specifed a name.",
+                "warningDuplicateName": "Search not saved. Please specify a unique name."
+            }
+        },
+        "searchToolbar": {
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "searchField_index": 1,
+        "eventIndex": 1,
+        "activeLanguage": "<Default>",
+        "LayoutColumns": 1,
+        "DetailLayoutColumns": 1,
+        "style_name": "GrBlue",
+        "PreCalcMode": "Standard",
+        "FontSize": "Medium",
+        "style_type": "Alpha Five",
+        "useCompactTheme": true,
+        "overrideStyleName": "Default",
+        "resolveAbstractClassNames": true,
+        "odd_band_size": 1,
+        "even_band_size": 1,
+        "odd_column_band_size": 1,
+        "even_column_band_size": 1,
+        "rows": 10,
+        "maxRowsPerPage": 200,
+        "rowsWhenSearchActive": -1,
+        "suppress_empty_rows": true,
+        "has_row_separator": true,
+        "show_column_titles": 1,
+        "show_row_labels": true,
+        "sort_style": 3,
+        "reset_page_number_when_sorting": true,
+        "RepeatingColumns": 1,
+        "snaking": "TBLR",
+        "total_records_row_position": 1,
+        "total_records_row": "Records:&nbsp; {Total_Records}&nbsp;",
+        "grid_layout_style": 1,
+        "grid_layout_template_computation_method": "Automatic",
+        "No_records_message": "No records in query",
+        "Show_Add_Records_Confirmation_Message": true,
+        "summary": {
+            "total": {
+                "label": "Total",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "count": {
+                "label": "Count",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "average": {
+                "label": "Average",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "min": {
+                "label": "Minimum",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "max": {
+                "label": "Maximum",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "StdDev": {
+                "label": "Std. Dev.",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "Var": {
+                "label": "Variance",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "First": {
+                "label": "First",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "Last": {
+                "label": "Last",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "RowOrder": "Total,Count,Average,Min,Max,StdDev,Var,First,Last",
+            "ShowOnLastPageOnly": true,
+            "repeatColumnHeadingAboveSummaryValues": false
+        },
+        "NewRecordsTitle": "<tr><td class=\"[class.gridData]\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" >New Records</td></tr>",
+        "ExistingRecordsTitle": "<tr><td class=\"[class.gridData]\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" >Existing Records</td></tr>",
+        "row_separator": "<tr><td class=\"{a5_style}SeparatorTD\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" ></td></tr>",
+        "highlight_row_onHover": true,
+        "highlight_row_onSelect": true,
+        "hasRecordsPerPageSelector": true,
+        "RecordsPerPageChoices": "1,2,5,10,25,50,75,100",
+        "RecordsPerPageSelectorTemplate": "&nbsp;&nbsp;{Grid.RecordsPerPageSelector} Records per page",
+        "alphabet_button": {
+            "style": "Hyperlink",
+            "has_ALL_option": true,
+            "ALL_Label": "All",
+            "alignment": "Left",
+            "SearchBarType": "Alphabet Buttons"
+        },
+        "qbe": {
+            "menu_internationalization": "None",
+            "initial_display": "Hidden",
+            "toggleQBERowHyperlinkText": "Show/Hide QBE Row"
+        },
+        "SimpleStyleMode": "FieldsOnly",
+        "RowExpand": {
+            "ExpandMethod": "Click icon",
+            "Type": "LinkedContent",
+            "WorkingMessage": "<div style=\"width: 4in; height: .5in\">\n\t<img src=\"css/A5System/Images/wait.gif\" /> Working...\n</div> \n",
+            "Mode": "Multiple"
+        },
+        "hasLinkedContent": true,
+        "linkedContentDefinition": "<a_contentSections<[1]<definition=<<%str%\n<grids<[1]<objectType=\"Grid\">\n<gridName=\"RRHH_TrabajadorDesempeno\">\n<securityGroups=\"\">\n<showHideExpression=\"\">\n<subType=\"\">\n<linkFields=\"Id_Trabajador (N) = Trabajador_Desempeno.Id_Trabajador (N)\">\n<hideLinkFields=.F.>\n<inheritParentStyle=.T.>\n<overridesettings=\"\">\n<tabLabel=\"RRHH_TrabajadorDesempeno\">\n<workingMessage=\"\">\n>\n>\n%str%>\n<description=\"DESEMPENO\">\n>\n>\n",
+        "linkedContent": {
+            "lockWindowText": "<div style=\"padding: 5pt;\"><img style=\"vertical-align:middle;\" src=\"css/A5System/Images/wait.gif\" /> Please wait...</div>",
+            "lockWindowClassName": "A5WindowLock"
+        },
+        "externalNavigatorsDefinition": "<a_externalNavigators<[1]<definition=<<%str1%\n<def<name=\"TREENAVIGATOR\">\n<loadingMessage=\"Loading...\">\n<maximumNodes=0>\n<width=\"2in\">\n<height=\"3in\">\n<style=\"\">\n<className=\"\">\n<showall<has=.T.>\n<text=\"Show All\">\n<position=\"Below\">\n<className=\"[class.gridDataLink]\">\n<style=\"\">\n>\n<filterTreeUsingGridFilter=.F.>\n<refreshTree<has=.T.>\n<text=\"Refresh\">\n>\n<dataSrc<type=\"Simple Query\">\n<queries<[1]<type=\"SQL\">\n<DBFTable=\"\">\n<DBFExpr=\"\">\n<DBFValueExpr=\"\">\n<DBFFilter=\"\">\n<DBFOrder=\"\">\n<SQLConnection=\"::Name::Nibble\">\n<SQLStatement=\"SELECT DISTINCT PrimerNombre FROM N_FichaTrabajadores ORDER BY PrimerNombre\">\n<hasGridFilter=.F.>\n<gridFilter=\"\">\n>\n<[2]<type=\"SQL\">\n<DBFTable=\"\">\n<DBFExpr=\"\">\n<DBFValueExpr=\"\">\n<DBFFilter=\"\">\n<DBFOrder=\"\">\n<SQLConnection=\"::Name::Nibble\">\n<SQLStatement=\"SELECT DISTINCT PrimerNombre FROM N_FichaTrabajadores ORDER BY PrimerNombre\">\n<hasGridFilter=.F.>\n<gridFilter=\"\">\n>\n>\n<sQuery<type=\"SQL\">\n<DBFTable=\"\">\n<DBFColumns>\n<SQLConnection=\"::Name::Nibble\">\n<SQLTable=\"N_FichaTrabajadores\">\n<SQLColumns<[1]<field=\"PrimerNombre\">\n<hasGridFilter=.F.>\n<gridFilter=\"\">\n>\n>\n<DBFQueries>\n<SQLQueries<[1]<type=\"SQL\">\n<DBFTable=\"\">\n<DBFExpr=\"\">\n<DBFValueExpr=\"\">\n<DBFFilter=\"\">\n<DBFOrder=\"\">\n<SQLConnection=\"::Name::Nibble\">\n<SQLStatement=\"SELECT DISTINCT PrimerNombre FROM N_FichaTrabajadores ORDER BY PrimerNombre\">\n<hasGridFilter=.F.>\n<gridFilter=\"\">\n>\n>\n>\n>\n<ui<queryList=<<%str%\n{B=System-Window,System-Highlight}{T=0}SQL - SELECT DISTINCT PrimerNombre FROM N_FichaTrabajadores ORDER BY PrimerNombre\n{B=System-Window,System-Highlight}{T=0.2}SQL - SELECT DISTINCT PrimerNombre FROM N_FichaTrabajadores ORDER BY PrimerNombre\n%str%>\n<dbfColumnList=\"\">\n<sqlTableList=<<%str%\na\nA5HelpTable\nA5HelpTable_Modulos\nAvisos\nb\nCatalogo_Agrupacion\nCatalogo_EntidadProveedor\nCatalogo_Idioma\nCatalogo_Kit\nCatalogo_Pieza\nCatalogo_Producto\nCatalogo_Servicio\nCatalogo_Soporte\nCatalogo_Tematica\nCONF_Contrato_Documentos\nCONF_EntidadPrincipal\nCONF_EntidadPrincipal_Sucursales\nCONF_General\nConjuntos_Productos\nContacto_Documentos\nContactos_Correos\nContactos_DatosContacto\nContrato_CondCobro\nContrato_CondEntrega\nContrato_DocAdicional\nContrato_Documento\nContrato_ServiciosTransportacion\nContrato_ServiciosTransportacion_Medios\nContrato_ServiciosTransportacion_MediosOutIn\nContrato_Suplementos\nContrato_Suplementos_CondCobro\nContrato_Suplementos_CondEntrega\nContrato_Suplementos_DocAdicional\nContrato_Suplementos_Documento\nDescuentoProveedorValor_Rango\nDescuentoProveedorVolumen_Rango\nDiccionario\nEmail_List\nEmpresa_Codificacion\nEntidad_DatosBancarios\nEntidad_DatosContacto\nEntidad_Detalles\nEntidad_Documentos\nEntidad_Juridico\nEntidad_Servicio\nEntidad_TipoPotencialidad\nEntidad_TipoRiesgo\nEstante_Cuadricula\nEvaluacionDesempeno_Categoria\nEvaluacionDesempeno_Categoria_Elemento\nEvaluacionDesempeno_Elementos\nEvaluacionDesempeno_Trabajador_Categoria\nEvaluacionDesempeno_Trabajador_Elementos\nFamilas_DatosDefinidos\nFichaTrabajadores_DatosContacto\nGaleria_Imagen\nGaleria_Kit\nGaleria_Pieza\nGaleria_Producto\nGaleria_Servicio\nGrupos_Modulos\nHes_Documentos\nHes_Imagenes\nHes_Tareas\nImagen_EntidadProveedor\nImagen_Kit\nImagen_Pieza\nImagen_Producto\nImagen_Servicio\nImagen_Soporte\nImagen_Tematica\nImagenesPrueba\nIMPO_PiezasImportar\nIMPO_ProductosImportar\nIncidentes_Documentos\nIncidentes_Imagenes\nIncidentes_Tareas\nIncoterms_CostosRiesgos\nIndicadores_Categorias\nInspecciones_Documentos\nInspecciones_Imagenes\nInspecciones_Tareas\nKits_Piezas\nLeyResolucion_Idioma\nLeyResolucion_Kit\nLeyResolucion_Pieza\nLeyResolucion_Producto\nLeyResolucion_Servicio\nLeyResolucion_Soporte\nLeyResolucion_Tematica\nLibro_Autor\nLibro_Idioma\nLibro_Kit\nLibro_Pieza\nLibro_Producto\nLibro_Servicio\nLibro_Soporte\nLibro_Tematica\nMediosTransportacion_Documentos\nMediosTransportacion_Imagenes\nMov_Cargas_Documentos\nMov_Pasajeros_Documentos\nN_Actividad\nN_Adquisicion\nN_Aplicacion\nN_Areas\nN_Autor\nN_Catalogo\nN_CategoriasOcupacionales\nN_ClasificacionCatalogo\nN_ClasificacionContacto\nN_ClasificacionContactoDocumentos\nN_ClasificacionContratoDocumentos\nN_ClasificacionDocumentosOrganizacion\nN_ClasificacionEntidad\nN_ClasificacionEntidadDocumentos\nN_ClasificacionKit\nN_ClasificacionPieza\nN_ClasificacionRecMedTransp_Documentos\nN_ClasificacionSolicitudDocumentos\nN_ClasificacionTrabajador\nN_ClasificacionTrabajadorDocumentos\nN_Codificacion\nN_CodigoIMO\nN_Conjuntos\nN_Contactos\nN_Contrato\nN_ContratoGarantia\nN_CriterioPasajero\nN_DescuentoClientes\nN_DescuentoProveedores_Valor\nN_DescuentoProveedores_Volumen\nN_Direcciones\nN_DocumentoContrato\nN_DocumentosIncidentes\nN_EmbarquesParciales\nN_Empresa\nN_Entidad\nN_EnvioDocEmbarque\nN_EPP\nN_Estado_CTRA\nN_EstadoOCompra\nN_EstadoOferta\nN_EstadoProyecto\nN_EstadoRecorrido\nN_EstadosHes\nN_EstadosIncidentes\nN_EstadosInspecciones\nN_EstadoSolicitud\nN_EstadoTarea\nN_Estante\nN_ExamenMedico\nN_Familias\nN_Familias_DatosDefinidos_Grupos\nN_FichaTrabajadores\nN_FormaCobroContrato\nN_FormaPagoOCompra\nN_Frecuencia\nN_Galeria\nN_Grupos\nN_HES\nN_Idioma\nN_Imagen\nN_Incidentes\nN_IncoTerms\nN_IndicadoresCondicionantes\nN_Inspecciones\nN_Kits\nN_LeyResolucion\nN_Libro\nN_LimiteCorreoElectronico\nN_LinerTerms\nN_Lugares\nN_Marcas\nN_MargenArticulos\nN_Materia\nN_Material\nN_MaterialCasco\nN_MediosTransportacion\nN_MediosUnitarizacion\nN_Modulos\nN_Moneda\nN_Mov_Cargas\nN_Mov_Cargas_Cargas\nN_Mov_Cargas_Tramos\nN_Mov_Pasajeros\nN_Mov_Pasajeros_Tramos\nN_Mov_Pasajeros_Tramos_Pasajeros\nN_Norma\nN_NormaVideo\nN_Objetos_Avisos\nN_Opcionales\nN_Opcionales_Agrupacion\nN_OperadoresTransporte\nN_OrganismoSuperior\nN_OrigenTransportacionDestino\nN_Pais\nN_Pancarta\nN_PasaporteTalentoHumano\nN_Piezas\nN_Posnombre\nN_PreciosEscalonadosGeneral\nN_PrioridadTarea\nN_Productos\nN_Recorrido\nN_Recorridos\nN_RegimenAduanal\nN_Revista\nN_Sectores\nN_SeguroMedioTransporte\nN_ServicioCarga\nN_Servicios\nN_SistemaIzaje\nN_Soporte\nN_SoporteMedio\nN_SubTipoModulo\nN_TasasCambio\nN_TasasCambio_Historico\nN_Tematica\nN_TipoCarga\nN_TipoCarroceria\nN_TipoCombustible\nN_TipoContacto\nN_TipoContratoTrabajador\nN_TipoEjecucion\nN_TipoEmbarcacion\nN_TipoEntidad\nN_TipoEvaluacionDesempeno\nN_TipoEvento\nN_TipoFlete\nN_TipoGarantia\nN_TipoHes\nN_TipoIncidente\nN_TipoInspeccion\nN_TipoLugarEntrega\nN_TipoMedioUnitarizacion\nN_TipoModulo\nN_TipoNivelesPrecio\nN_TipoOrganizacion\nN_TipoPago\nN_TipoPropulsion\nN_TipoProyecto\nN_TipoRangoCredito\nN_TipoSeguro\nN_TipoServicioContrato\nN_TipoServicioTransportacion\nN_TipoServicioTransportacion_OutIn\nN_TipoSubordinacion\nN_TipoTerminoPago\nN_TipoUnidadMedida\nN_Titulo\nN_Tramos\nN_Trasbordos\nN_Tratamiento\nN_UnidadesMedida\nN_UnidadesMedidaGarantias\nN_Usuarios\nN_Vacunas\nN_ViaReciboSolicitud\nN_Video\nNomenclador_AreasTrabajo\nNorma_Idioma\nNorma_Kit\nNorma_Pieza\nNorma_Producto\nNorma_Servicio\nNorma_Soporte\nNorma_Tematica\nObjetos_Elementos_Avisos\nOpcionalesGarantias\nOrganizacion_DocumentosEditables\nOrganizacion_DocumentosFinales\nOrganizacion_DocumentosPlantillas\nPais_DiasNoLaborables\nPancarta_EntidadProveedor\nPancarta_Idioma\nPancarta_Kit\nPancarta_Material\nPancarta_Pieza\nPancarta_Producto\nPancarta_Servicio\nPancarta_Soporte\nPancarta_Tematica\nPiezasGarantias\nPoyecto_Solu_Producto\nPrefacturas\nProductos_DatosDefinidos\nProductos_Kits\nProductos_MediosUnitarizacion\nProductos_Opcionales\nProductos_Piezas\nProductosGarantias\nProyecto\nProyecto_Carga\nProyecto_Cont_CondEntrega\nProyecto_Cont_CondPago\nProyecto_Cont_DocAdicional\nProyecto_Cont_Documento\nProyecto_Contrato\nProyecto_Docu_Solicitud\nProyecto_OrdenCompra\nProyecto_OrdenCompra_CondPago\nProyecto_OrdenCompra_DocAdicional\nProyecto_OrdenCompra_Historico\nProyecto_OrdenCompra_Kit\nProyecto_OrdenCompra_Medio\nProyecto_OrdenCompra_Moneda_Consolidado\nProyecto_OrdenCompra_Piez_Consolidado\nProyecto_OrdenCompra_Pieza\nProyecto_OrdenCompra_Prod_Consolidado\nProyecto_OrdenCompra_Prod_Opci_Consolidado\nProyecto_OrdenCompra_Prod_Opcional\nProyecto_OrdenCompra_Producto\nProyecto_OrdenCompra_Prov_Consolidado\nProyecto_OrdenCompra_TasaCambio\nProyecto_Responsables_Historico\nProyecto_Seguimiento\nProyecto_Solu_Carga\nProyecto_Solu_Kit\nProyecto_Solu_Medio\nProyecto_Solu_Medio_Carga\nProyecto_Solu_Medio_Recorrido\nProyecto_Solu_Medio_Recorrido_Entidad\nProyecto_Solu_Medio_Recorrido_Entidad_Servicio\nProyecto_Solu_Medio_Seguro\nProyecto_Solu_Ofer_CatalogoAdjunto\nProyecto_Solu_Ofer_CondEntrega\nProyecto_Solu_Ofer_Garantia\nProyecto_Solu_Ofer_Historico\nProyecto_Solu_Ofer_ImagenAdjunto\nProyecto_Solu_Ofer_Kit\nProyecto_Solu_Ofer_Pieza\nProyecto_Solu_Ofer_Prod_Opcional\nProyecto_Solu_Ofer_Producto\nProyecto_Solu_Ofer_Servicio\nProyecto_Solu_Ofer_TasaCambio\nProyecto_Solu_Ofer_TranMedio\nProyecto_Solu_Ofer_TranMedio_Recorrido\nProyecto_Solu_Oferta\nProyecto_Solu_Oferta_OLD\nProyecto_Solu_Opcional\nProyecto_Solu_Pieza\nProyecto_Solu_Prod_Opcional\nProyecto_Solu_Servicio\nProyecto_Solu_Solicitud\nProyecto_Solucion\nProyecto_Tarea\nRecMedTransp\nRecMedTransp_2\nRecMedTransp_Documentos\nRecMedTranspCarga\nRecMedTranspCarga_2\nRecMedTranspCarga2Img\nRecMedTranspCargaImg\nRecMedTranspPasaj\nRecMedTranspRepAct\nRecMedTranspRepActImg\nRecMedTranspRepActMedTransp\nRECMedTranspRepActMedTransp_2\nRecMedTranspTripulacion\nRecorridosMediosTransportacion_ReporteActividades_Imagenes\nRegistroContableEntidad\nRepositorio\nResponsableRecorrido\nResponsableRecorrido_2\nResponsableRecorrido2\nRevista_Articulo\nRevista_Idioma\nRevista_Kit\nRevista_Pieza\nRevista_Producto\nRevista_Servicio\nRevista_Soporte\nRevista_Tematica\nServicio_FormaPago\nServicio_SubServicio\nTablaPref\nTipoEmbarcacion_Documentos\nTipoEmbarcacionClasificacionDocumentos\nTrabajador_Desempeno\nTrabajador_Documentos\nTrabajador_EPP\nTrabajador_EPPEPP\nTrabajador_ExamenMedico\nTrabajador_Vacunas\nTrabajador_Vacunas_Dosis\nVideo_EntidadProveedor\nVideo_Idioma\nVideo_Kit\nVideo_Pieza\nVideo_Producto\nVideo_Servicio\nVideo_Soporte\nVideo_Tematica\nView_5\nView_ActividadCambioMT\nView_ActividadesMensuales\nView_ActividadIncidente\nView_ArearTrabajo\nView_Carga_Fecha\nView_Contactos_Correos\nView_Contactos_Correos_Telefonos\nView_ContactosPrimerCorreo\nView_ContratoServicioCallOutIn\nView_DatosMatriculaTripulante\nView_EntidadCantidadUsuariosTotal\nView_EntidadDocumentosPoliticaSeguridad\nView_Entidades_CantDoc\nView_Entidades_CantDoc_Total\nView_EntidadesClasificacionFormularioAnticorrocion\nView_EntidadesDocumentosCedulaPapeleta\nView_EntidadesDocumentosEvaluacionRiesgo\nView_EntidadesDocumentosInvestigacionJudicial\nView_EntidadesDocumentosInvestigacionSRI\nView_EntidadesDocumentosRepresentanteLegal\nView_EntidadesDocumentosRUC\nView_EntidadesDocumentosSolicitudInscripcion\nView_EntidadValidaciones\nView_EPP\nView_ExamenMedicoAntigenoByC\nView_ExamenMedicoANTIHbs\nView_ExamenMedicoAudiometria\nView_ExamenMedicoCoproparasitologia\nView_ExamenMedicoEspirometrias\nView_ExamenMedicoHematologiaCompleta\nView_ExamenMedicoHIV\nView_ExamenMedicoLipido\nView_ExamenMedicoPruebasHepaticas\nView_ExamenMedicoPruebasRenales\nView_ExamenMedicoRxLumbosacra\nView_ExamenMedicoRxTorax\nView_ExamenMedicoUroAnalisis\nView_ExamenMedicoVDRL\nView_ExamenMedicoVisiometria\nView_ExamenMedioGrupoSanguineo\nView_FinalPrimeraImagenActividades\nView_FinalPrimeraImagenCarga\nView_FinalSegundaImagenActividades\nView_FinalSegundaImagenCarga\nView_FinalTerceraImagen\nView_FinalTerceraImagenActividades\nView_FinalTerceraImagenCarga\nView_FirmaTrabajador\nView_HES_PasajerosViajaron\nView_HES_TripulantesViajaron\nView_ImagenCarga\nView_ImagenCargaFinal\nView_ImagenInformeSupervision\nView_Max_Mes_Recorrido\nView_MedioTransportacionArqueoInternacional\nView_MedioTransportacionArqueoNacional\nView_MedioTransportacionCascoEmitidoCONARINA\nView_MedioTransportacionDotacionMinima\nView_MedioTransportacionInternacionalCarga\nView_MedioTransportacionLiberacionPAM\nView_MedioTransportacionLicenciaRadio\nView_MedioTransportacionLineaCarga\nView_MedioTransportacionMaquinariaEmitidoCONARINA\nView_MedioTransportacionPrevencionContaminacion\nView_MedioTransportacionRampaProa\nView_MedioTransportacionRegistroPropiedad\nView_MedioTransportacionResistenciaEmitidoCONARINA\nView_Min_Mes_Recorrido\nView_ParaArreglarCedulaNula\nView_PrefacturacionFinal\nView_Prefacturas_Recorridos\nView_PrimeraImagen\nView_PrimeraImagenAct\nView_PrimeraImagenCarga\nView_Recorrido_Calado_Actividad\nView_Recorrido_Validacion_GuiaCarga\nView_Recorrido_Validacion_ReporteCargaSegura\nView_Recorrido_Validaciones\nView_Recorrido_Validaciones_PlanoEstiba\nView_Recorrido_Validaciones_SuministroAceite\nView_Recorrido_Validaciones_SuministroCombustible\nView_RecorridoMediosTransporte_Tripulacion\nView_Recorridos\nView_RecorridoTripulante\nView_RegistroContableEntidad\nView_RegistroOperaciones_Base\nView_RegistroOperaciones_Base-2\nView_RegistroOperaciones_Base-22\nView_ReporteActividadesBaseTotal-1\nView_ReporteActividadesBaseTotal-11\nView_ReporteAtividadesBase\nView_ReporteAtividadesBaseTotal\nView_ReporteAtividadesBaseTotal - SALVA\nView_ReporteAtividadesBaseTotal_CantPasajeros\nView_ReporteAtividadesBaseTotal-2\nView_ReporteAtividadesBaseTotal-22\nView_ReporteAtividadesFechasActividades\nView_ReportePosicion\nView_ReportePosicion_Pernocta\nView_ReportePosicionBase\nView_ReportePosicionBaseTotal-2\nView_ReportePosicionFechasActividades\nView_ReportePosicionGRID\nView_ReportePrefacturacionBase\nView_ReportePrefacturacionBaseTotal-2\nView_ReportePrefacturacionBaseTotal-22\nView_ReportePrefacturacionContrato\nView_ReportePrefacturacionFechaActividades-0\nView_ReportePrefacturacionFechaActividadesMax\nView_ReportePrefacturacionFechasActividades\nView_ReportePrefacturas\nView_SegundaImagen\nView_SegundaImagenActividad\nView_SegundaImagenCarga\nView_TerceraImagen\nView_TerceraImagenCarga\nView_VacunasDifteriaTetanos\nView_VacunasFiebreAmarilla\nView_VacunasHepatitis\nView_VacunasTifoidea\nWebSecurityExpired\nWebSecurityGroups\nWebSecurityMembers\nWebSecurityUsers\n%str%>\n<sqlColumnList=<<%str%\nId_Trabajador\nCodIdentidad\nId_Pais\nId_DireccionComercial\nId_AreaComercial\nId_ClasificacionTrabajador\nCategoria\nId_CategoriaOcupacional\nFechaNacimiento\nId_Tratamiento\nId_Empresa\nIdentificacion\nPrimerNombre\nSegundoNombre\nApellido\nId_Posnombre\nNombrePos\nFechaContratacion\nGrupoEscala\nObservaciones\nNoPasaporte\nFechaVencimientoPasaporte\nNoLicenciaConduccion\nFechaVencimientoLicencia\nEstadoCivil\nSexo\nId_Titulo\nFechaGraduacion\nAnosExperiencia\nArchivo\nTamano\nExtension\nActivo\nId_Usuario\nFechaCreacion\nFechaActualizacion\nElevation\nHomeAddressStreet\nHomeAddressCity\nHomeAddressState\nHomeAddressPostalCode\nHomeAddressCountry\nId_PaisHome\nEmergencyAddressStreet\nEmergencyAddressCity\nEmergencyAddressState\nEmergencyAddressPostalCode\nEmergencyAddressCountry\nId_PaisEmergency\nOtherAddressStreet\nOtherAddressCity\nOtherAddressState\nOtherAddressPostalCode\nOtherAddressCountry\nId_PaisOther\nId_PaisHomeTelephone\nHomeTelephonePrefijo\nHomeTelephoneCodigoArea\nHomeTelephoneNumber\nHomeTelephoneExtension\nId_PaisEmergencyTelephone\nEmergencyTelephonePrefijo\nEmergencyTelephoneCodigoArea\nEmergencyTelephoneNumber\nEmergencyTelephoneExtension\nId_PaisMobileTelephone\nMobileTelephonePrefijo\nMobileTelephoneCodigoArea\nMobileTelephoneNumber\nMobileTelephoneExtension\nId_PaisOtherTelephone\nOtherTelephonePrefijo\nOtherTelephoneCodigoArea\nOtherTelephoneNumber\nOtherTelephoneExtension\nId_PaisHomeFax\nHomeFaxPrefijo\nHomeFaxCodigoArea\nHomeFaxNumber\nHomeFaxExtension\nId_PaisEmergencyFax\nEmergencyFaxPrefijo\nEmergencyFaxCodigoArea\nEmergencyFaxNumber\nEmergencyFaxExtension\nId_PaisOtherFax\nOtherFaxPrefijo\nOtherFaxArea\nOtherFaxCodigoArea\nOtherFaxNumber\nOtherFaxExtension\nEmailAddress1\nEmailAddress2\nEmailAddress3\nFechaContrato\nId_TipoContrato\nFechaTerminacionContrato\nFechaPeriodoPrueba\nJornadaHoras\nId_MonedaRemuneracion\nusuarioCreador\nusuarioEditor%str%>\n<dbfSelectedColumns=\"\">\n<sqlSelectedColumns=<<%str%\n{B=System-Window,System-Highlight}{T=0}PrimerNombre\n%str%>\n>\n>\n<html=\"<div id=\\\"{grid.componentName}.EXTERNALNAVIGATOR.TREENAVIGATOR\\\" class=\\\"[class.gridPartInput]\\\" style=\\\" overflow: auto; width: 2in; height: 3in;\\\"></div><div id=\\\"{grid.componentName}.TREENAVIGATOR.TOOLBAR\\\" ><a id=\\\"{grid.componentName}.TREENAVIGATOR.SHOWALL\\\" class=\\\"[class.gridDataLink]\\\" style=\\\"\\\" href=\\\"#\\\" onclick=\\\"{grid.componentName}_EXTERNALNAVIGATOR_TREENAVIGATOR.setValue('');{grid.componentname}_GridObj.gridFilterRemove(); return false;\\\">Show All</a>&nbsp;&nbsp;&nbsp;<a id=\\\"{grid.componentName}.TREENAVIGATOR.REFRESH\\\" class=\\\"[class.gridDataLink]\\\" style=\\\"\\\" href=\\\"#\\\" onclick=\\\"{grid.componentname}_GridObj.refreshExternalTreeNavigator(); return false;\\\">Refresh</a></div>\">\n<js=<<%str%\nwindow['{grid.componentName}_EXTERNALNAVIGATOR_TREENAVIGATOR'] = new A5.Tree('{grid.componentName}.EXTERNALNAVIGATOR.TREENAVIGATOR',[],{\n\tloadingMessage: 'Loading...',\n\tseparator: '||A5TREESEP||',\n\ttheme: '{grid.style}',\n\tdynamicDataURL: {grid.componentName}_GridObj.ajaxURL,\n\tdynamicDataURLParams: $gvs('{grid.componentname}.STATEINFO'),\n\tonNodeSelect: function(dataNode){\n\t\tif(typeof dataNode.data == 'object'){\n\t\t\tif(dataNode.data.link != ''){\n\t\t\t\t{grid.componentName}_GridObj.gridLink(dataNode.data.link,'',dataNode.data.order);\n\t\t\t} else if(dataNode.data.baseFilter != ''){\n\t\t\t\t{grid.componentName}_GridObj.gridBaseFilterSet(dataNode.data.baseFilter,dataNode.data.order,dataNode.data.params);\n\t\t\t} else if(dataNode.data.userFilter != ''){\n\t\t\t\t{grid.componentName}_GridObj.gridFilterSet(dataNode.data.userFilter,dataNode.data.order,dataNode.data.params);\n\t\t\t}\n\t\t}\n\t}\n});\n\nA5.ajax.callback({grid.componentName}_GridObj.ajaxURL,'__FormID={grid.componentName}&__FormAction=GenerateTreeBranches&__treeType=externalnavigator&__treeName=TREENAVIGATOR&__treeObject={grid.componentName}_EXTERNALNAVIGATOR_TREENAVIGATOR&'+$gvs('{grid.componentName}.STATEINFO'));%str%>\n<tree<type=\"dynamic\">\n<levels<[1]<type=\"SQL\">\n<connection=\"::Name::Nibble\">\n<statement=\"SELECT PrimerNombre AS Column1 FROM N_FichaTrabajadores  GROUP BY PrimerNombre ORDER BY PrimerNombre\">\n<htmlTemplate=\"{Column1}\">\n<dataTemplate=\"\">\n>\n>\n<id=\"{grid.componentName}.EXTERNALNAVIGATOR.TREENAVIGATOR\">\n<objectName=\"{grid.componentName}_EXTERNALNAVIGATOR_TREENAVIGATOR\">\n<maximumNodes=0>\n>\n%str1%>\n<description=\"TREENAVIGATOR\">\n<type=\"Tree Control\">\n>\n>\n",
+        "hasSelectedRowColumn": true,
+        "CheckboxSelectType": "SinglePage",
+        "useMasterTemplate": true,
+        "MasterTemplateStyle": "Custom",
+        "MasterLayoutTemplate": "{grid.Grid_Part}",
+        "MasterLayout": {
+            "PaneLabel": {
+                "Search": "Search",
+                "Grid": "Grid",
+                "DetailView": "Detail"
+            },
+            "AccordionStyle": "Multiple",
+            "InitialOpenPanes": "Search,Grid,DetailView"
+        },
+        "verticalAlignDataInColumns": "Middle",
+        "CollapseBar": {
+            "Title": "Collapse Grid",
+            "InitialState": "open"
+        },
+        "honorDBFFieldRules": true,
+        "languageTags_RemoveUnConsumedTags": true,
+        "onlyIncludeSelectedFieldsInQuery": true,
+        "flagAddPKToORDER": true,
+        "saveFileType": "Formatted JSON",
+        "captureJSErrorStackTrace": false,
+        "datePicker": {
+            "dayNames": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            "monthNames": "January,February,March,April,May,June,July,August,September,October,November,December",
+            "firstDayOfWeek": 1,
+            "todayButtonText": "Today",
+            "closeButtonText": "Close"
+        },
+        "ToolbarActionButtons": "{ActionButton:REFRESH}\n",
+        "gridToolbar": {
+            "ExportButtonIcon": "images/$$application.ms.excel.png.a5image",
+            "ExportButtonHelp": "Export data in Grid to Excel",
+            "ExportButtonFormat": "Excel-XLSX",
+            "ExportButtonMaxRows": "10000",
+            "exportHiddenColumns": true,
+            "exportUseColumnHeadings": true,
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "helpTableType": "DBF",
+        "fieldHelpWindowStyle": "modal-resizeable",
+        "autoRefreshInterval": 60,
+        "genericDataStoreTableType": "DBF",
+        "RecordNavigationStyle": "NavigationButtons",
+        "fetchMoreRecordsButton": {
+            "text": "More Records"
+        },
+        "namedLayout": {
+            "selectorPosition": "AboveGrid"
+        },
+        "groupBreaks": {
+            "header1": "<tr>\n\t<td class=\"[class.gridDataHeader]\" colspan=\"{systemcolumnCount}\">&nbsp;</td>\n\t<td class=\"[class.gridDataHeader]\" colspan=\"100\" >Enter group break HEADER text here</td>\n</tr>\n",
+            "footer1": "<tr >\n\t<td class=\"[class.gridSummaryData]\" colspan=\"{systemcolumnCount}\">&nbsp;</td>\n\t<td class=\"[class.gridSummaryData]\" colspan=\"100\" >Enter group break FOOTER text here</td>\n</tr>\n"
+        },
+        "scrollableRegionHeight": "2in",
+        "scrollableRegionWidth": "100%",
+        "defaultColumnWidth": "1in",
+        "RecNav": {
+            "HTML_Template_source": "Computed",
+            "Position": 1,
+            "Show_disabled_controls": true,
+            "Use_Images": true,
+            "Show_Page_Count": true,
+            "Page_Numbering_Style": 3,
+            "PagesTemplate_w_PageCount": "{PageNumber} of {PageCount}",
+            "PagesTemplate_wout_PageCount": "{PageNumber}",
+            "Has_First_Button": true,
+            "Has_Prev_Button": true,
+            "Has_Next_Button": true,
+            "Has_Last_Button": true,
+            "Number_of_page_links": 10,
+            "First_Label": "First",
+            "Prev_Label": "Prev",
+            "Next_Label": "Next",
+            "Last_Label": "Last",
+            "Justify": "Left",
+            "SuppressIfOnlyOnePage": true,
+            "First_on_Image_name": "{css_path_reference}/{a5_style}/FirstOn.png",
+            "First_off_Image_name": "{css_path_reference}/{a5_style}/FirstOff.png",
+            "Prev_on_Image_name": "{css_path_reference}/{a5_style}/PrevOn.png",
+            "Prev_off_Image_name": "{css_path_reference}/{a5_style}/PrevOff.png",
+            "Next_on_Image_name": "{css_path_reference}/{a5_style}/NextOn.png",
+            "Next_off_Image_name": "{css_path_reference}/{a5_style}/NextOff.png",
+            "Last_on_Image_name": "{css_path_reference}/{a5_style}/LastOn.png",
+            "Last_off_Image_name": "{css_path_reference}/{a5_style}/LastOff.png"
+        },
+        "edit": {
+            "Execute_Update_Commands": true,
+            "allow_update": true,
+            "allow_insert": true,
+            "number_of_insert_rows": 3,
+            "allow_delete": true,
+            "validateFieldsSetting": "Dirty Fields Only",
+            "delete_checkbox_label": "Delete",
+            "delete_checkbox_label_position": "Left",
+            "delete_checkbox_allowDeleteAll": false,
+            "cancel_button_text": "Cancel",
+            "submit_button_text": "Submit",
+            "confirm_before_submit_message": "Submit changes?",
+            "check_for_write_conflicts": true,
+            "write_conflict_check_type": 2,
+            "save_original_values": true,
+            "TargetPage": "<Self>",
+            "field_error_style": {
+                "type": "Icon",
+                "icon": "images/$$generic.error.png.a5image"
+            },
+            "RefreshRowMethod": "AutoSelect",
+            "Editable_GridRow_Options_Style": "Icons",
+            "RefreshRowOnFocus": true,
+            "RefreshRowOnDirty": true,
+            "row_errors_window_title": "Errors",
+            "row_errors_window_style": "color: red; width: 6in; height: 2in;",
+            "RowEditStyle": "AllRows",
+            "NewRecordsEditStyle": "AlwaysShown",
+            "NewRecordsButtonLabel": "New Records",
+            "DeleteRecordControl": "Checkbox",
+            "HasRowStatusColumn": true,
+            "OneEditableRowAtATime": true,
+            "LazyEdit": true
+        },
+        "ValidationSettingsErrorTemplate": "Field '{Fieldlabel}', Value '{Value}' : {Error}",
+        "ValidationSettingsMessage": "Click the 'Back' button and correct the errors.",
+        "ValidationErrorsRowColumnTitle": "Row",
+        "ValidationErrorsErrorColumnTitle": "Error",
+        "OnlyValidateEditedFields": true,
+        "AddNewRecordRowsPosition": "Bottom",
+        "autoNumberColumnLabel": "Auto",
+        "QuickSearch": {
+            "QuickSearchPosition": "In Grid",
+            "QuickSearchAlign": "Left",
+            "ControlType": "Textbox",
+            "AutoSubmit": true,
+            "Label": "Search for:",
+            "SearchButtonLabel": "Search",
+            "AllowQBFStyleSearch": true,
+            "SearchStyle": "Wildcard",
+            "Height": 1,
+            "SelectStyle": "Single",
+            "Size": 20,
+            "MaxLength": -1,
+            "Orientation": "Horizontal",
+            "choices": {
+                "type": "Static",
+                "datasource": "DBF-Table"
+            },
+            "connection_type": "Access Database",
+            "HasShowAllButton": true,
+            "ShowAllButtonLabel": "All"
+        },
+        "info": {
+            "createdBy": "ASUS",
+            "LastUpdatedBy": "ASUS",
+            "DateUpdated": "18-06-2018 05:28:07 27 pm",
+            "DateCreated": "16-06-2018 03:34:41 60 am"
+        },
+        "BuilderVersion": 2,
+        "current_pane_tree": "Grid.Fields",
+        "hasActionButtons": true,
+        "hasAlternateLayouts": true,
+        "embeddedMode": false,
+        "_style_versionNumber": 2,
+        "AjaxOn": true,
+        "fpInstalled": "nfFVEv+J6OGimvWyu6bhfo14FkhMsmlSf4hUTWJsXcfL74GDI0/xQMH44M4hvYMMM/8N5hGLFtDm0CK6DrruJmeu8nTCEfLjScYeSGZ5Lrme8VCJzfsaGJJ9PonIe57s6O87Hlfvb/O77afVZuiH0Zyngdxon9DgAxuqzp2n3Yz3+31ouehpa9Vr+RTcF4daZfJVZUmW/jfwUGxof6xnE4tsSX3td729xYVI6vGij8KJWtWwgw5CHwZ/WVpr9EUNjw9DFh2dLSplVjvm3TgnLUGRoP6aEfv7HfxKQZpCzGKZKpqTrd2uzc79vliBnX/jM2Nyy2tFZKHCkbAYN7NAWNu1jUPcIXrNPBM59qS4TmqWCT5mzPI6CeUsIJdNXwmveU35kujSyLNRfL0/aae223cFW5d5X79J/s9vMn0CK+KNYrQ9cztfDVvqcNm4Wlb0aHFWc2Vw+Rz2KzVrJXxubklB5sU1xaTEdap+vkejHiKLJIW2F7as04tpUvP+KeX054LoeF8+eOj6MwLDDpfjZKArLoh2desqLjApaASh+M5G8BxmCLImUFig9cOjRPa+jMsDDK6GqerUO/pZK0bn7itql6Xh8LDDaDxQXOpjyyCSZRbwp0TGSRsi4ozV7utra5JdTAn85rib5TGk1Wbysn3Svk1fT3ztl095ZjjrMQKulNOvo+QhGxPxXwg8TS5WqJRU4kBtbykGwR95LC24EQECqGV5N4dWBIfKShRWkDxVHO5WMU/REe2J6t6jkPO5DaL2tux6ufYXsnlbPbvJjwRzOqV0qNEYlesmcDZXiBLpjsByqgzP8uDJhMm/YmTitjlU460IJd1Qbt2gdEr8Ux9GfatZuMNnerfkETk9NtqycDgfoLeqr9xOBhsSM9XSFUuPKFA5mRerPBHlQoFr6S6nP9NFPD34xUovEEw9WxRyuDyAIi5pnDl//oVCnkDu+KPvapby1wNWwiwAhNoEIRJup2ahBNQji7kBo04GP06P9CPufyStEcIVcVcRZ6Kh7CbX2NgKL6ZmOJDqDuXt54wgcZOKIY+hmritr32oNHBw+7AbUzMhBic1HFn7ExX++8nYKYEdwLYzhedKVriZNT8fLrfdcBeIbowAkqGcpvPW6WGARuPBIxTj3WEM8/4woeHudfpTNXPHuc0iOrBZFqKbCZOQQz7O3LQ9PnzbJ1lIby1weZQRQN9jt56286XIax57mkz9zWZm+Ba3vR15XZDgHAbtotGRLsOBnGF/iHsPGte44uZsUWX+isDBXkGt6XVR9tUGPVrL+fZKcdNjERg+GcMatl3hqLEH9OQY7DrfOsgE3Av7+DGwihQboFX9wAPZAPUeQwurAFkxGN91XKq3xWKZ6M5b0Uikl6PBb7gbP57FpYRUaLWK2o9VeFlv19K4imCuW991NTSaxXd0mvWAyFoYwKzBH48ANTlO5rGTDJwAhqg/bmBvaRlLK+E4y+prWSuKDR1GekdMP3lcnOIae22XetsCmMsk/v58Ad0/jRqX+J5c9X9zNzerImOQgmor5Xr71RxmGG2GltdkMWjVlmTTLRie1Taxw7Ac37fP3rlXxo8EnSCu3JToRs4LinJf4HZKS39nQFvBmIinKKzRk3ONV5d3Y6twCNIOEnkzYFprZyUQUr+XPG7Q+SPuqqgWcTRqNmyn8r5/c1o/7+4+X3qi7BPj9bwGG/HCkKQLF0AWBFSllTWYSPBqyD5M1Y8zrEdY4TLG12Dg2akuYZjeGvmuxUYuLIE13Mw5sPQcTaa67jGHTFK+ddjaW50G7koKYPalMNPzHGh+1ldQKdZDI3tqgaQeXrciiry9h39ebKDKbFgTE2hoCl8DygJOOdS09j7f+KZDfBCrbBunhA4QaXt/3oOguw7bgy7olhBwbDo4kqFD6MgCJ/Tr1MA2XhVeNt6IGSDI1fhF+pCMoaqMIypprzaGqg/0aGsEwya5ejPDeqkMwlHRxVX1ecYfNaFdpwtnbhDaNfTRxUrB+4mKmmURSOt4xSwjdHJA9GAtdZjSgUVY/qgkVJWzZFuWbJaBA7HSr+1hMSHyjW/JoFN3A69MMfGw6wBXqqWKuVGp+xVsJumNmrQWqko7RDvh/Bn4E7aVg6xz5BiPpldYmX9IXZjZh0sUXo/cHuWWNsdFrFbDv7ppZzvb8dsvYsANt9rxcucC6swmJbkNETC9RtXgm75w6imsYHZoXoOBKRPlPYko6kW79DImTjIHbCrSpnLMjhoRI7gqeSCQJ0EU6YIgneW5CJ3ry+pZg0AQVf2RTgU70GTcW18r/Jaw/xPgUCYK1UdLsSmaEXl06LxxqcteYho6xT7CWil3PRdwkbASMS3BFPnvCYpD7gvJgqeOyykJ9oAf4ktXZnxBVxMvpsWiYlACTwsTZEJfaQX96m1Lsw0y2DW+EkC2Dva1h1NbAnGwb4kUKZZZ2bujlPJ3Gx7ILBGezO53AY69kHH/WqGu8ftzw0aK1Q8AEbmN1oBsZ7wtCZBu/iAnpShxnGsSyp9bGVdvD8aZLH8+ItxXNiHJtwEh3OyJn0PwQ6lC6GNawzTlj3VkOgSPU3aO1y1P9k8HTMtaMhyDyLofFmT3JVxlLxblfTkM5SNQC+gHXbKn3GunpgNpQYYXJ8q8iZBrv3MZBAkRZ7R+V9RbSUoUseOWhV9EJ9F1qOpmwjYo+rbos0HAyQYnOZqby7vm5b/kLLtJSbc0TDjDGuZqv9zd39mVrGxAoq4Q32kRDGz4k6SNO4keAc5NhuKJDXgjRNL0KCQ27BSEFjF0Vg60Q1zlHTH/qFqJA9PnJ23eSfB3LWI71BINaRG+JX5PrpP3C/6rqFFjyC1osmLvr1HoOxvV63IKy1xOkQU8LsldvILNd1IJuDWdOliRpQ1K7fJJRPs4eC4Sld5kkkTPP+QXG5Fo5tZkyKe5UGlQqnGI/LJk5E3yPQA4z23k9g5KMgjdZUTK/1RBuQxeThhuJ7iAr4O10dClHVYFyfcoBvAvULIigiCbUEgU1wy0v+2bWcTGUgP57Hn/WhbnamDeS0X8fREEV04+fgFGgwVloiDjQjWcptboAPpD4Ja1LUA59RqGu6ZghK+cWl3NO6PKa24HQ9AZdOkccLwoREn9cY394njkwntLFp08zJWoXfIYFiC56r8ODhtXPOaa3IlwVwxLIxinoD1SnZF2OFaKri9I+E66rOYXvhetx/+EGN0v6Hd10Gr6+VD+13fVwMXOlX8CbaNqsVeLdCaj75fx+xxFu5+CoFDK9my55XkcFL03WHTYZsjQ3Qy8xADFGoUrbFNHyBxQl8WhhuRKjgML+toWDKulF4nROpmsragUCh9b9fb53NsXaObErL89usMkibjeJ97yLB532cZqO5zGk+Z+mXRJjRbb1D7hfJXsXK0kzzSXb7qYK/rmUT7B/Eu3Zw23do5U+oGvn317lDz6Qud1hOQ2PRUSENyOqxcwi9G1k+4fyBwI8w==",
+        "componentFilename": "C:\\Users\\ASUS\\Desktop\\Nibble-TM\\Nibble-TM.WebProjects\\Default.WebProject\\EvaluacionDesempeno_Trabajador.a5wcmp",
+        "PAliases": {
+            "alias": "[PathAlias.ADB_Path]\n",
+            "alias_expanded": "C:\\Users\\ASUS\\Desktop\\Nibble-TM\n",
+            "alias_aliasExpanded": "[PathAlias.ADB_Path]|C:\\Users\\ASUS\\Desktop\\Nibble-TM"
+        },
+        "_row_onHover": true,
+        "ADB_PATH": "C:\\Users\\ASUS\\Desktop\\Nibble-TM",
+        "EXE_PATH": "C:\\Program Files (x86)\\a5V12",
+        "VersionNumber": 4,
+        "controls": [
+            {
+                "idInternal": "59882fc8-a5c6-43d3-aab3-bc78bdea29b6",
+                "type": "Button",
+                "Name": "REFRESH",
+                "trailingSeparator": true,
+                "bubbleHelp": "Refrescar",
+                "readDataFrom": "GridPart",
+                "actionJSAttribute": "/* actionJavascript:a4608492-67d7-49ed-99be-c239ef83e520 */\n{grid.object}.refresh();",
+                "buttonStyle": "Image only",
+                "buttonClass": "[class.gridButton]",
+                "buttonClassHover": "[class.gridButtonHover]",
+                "buttonClassPressed": "[class.gridButtonPressed]",
+                "buttonClassDisabled": "[class.gridButtonDisabled]",
+                "buttonText": "BUTTON",
+                "hyperlinkClass": "[class.gridHyperlinkButton]",
+                "hyperlinkImagePosition": "None",
+                "imageName": "images/$$generic.refresh.color.png.a5image",
+                "readDataFromForClientSideExpns": "GridPart",
+                "precalc": {
+                    "buttonObjectJavascript": "window['{grid.componentName}_BUTTONS_REFRESH'] = new A5.Button({\n\tlayout: 'icon',\n\ttip: 'Refrescar',\n\tclassName: '[class.gridButton]',\n\thoverClassName: '[class.gridButtonHover]',\n\tpressedClassName: '[class.gridButtonPressed]',\n\tdisabledClassName: '[class.gridButtonDisabled]',\n\thtml: 'BUTTON',\n\ticon: 'images/$$generic.refresh.color.png.a5image',\n\tdisabledIcon: 'images/disabled/$$generic.refresh.color.png.a5image',\n\tonClick: function() { /* actionJavascript:a4608492-67d7-49ed-99be-c239ef83e520 */\n{grid.object}.refresh();\n},\n\ttheme: '{grid.style}'\n});",
+                    "objectHTML": "<button type=\"button\" id=\"{id}\"></button>&nbsp;",
+                    "objectName": "{grid.componentName}_BUTTONS_REFRESH",
+                    "bindJS": "{grid.componentName}_BUTTONS_REFRESH.bind({bindIdList});"
+                }
+            }
+        ],
+        "CurrentSelectionActionButtons": "59882fc8-a5c6-43d3-aab3-bc78bdea29b6",
+        "a_actionJavascript": [
+            {
+                "actionGuid": "a4608492-67d7-49ed-99be-c239ef83e520",
+                "scriptMetaData": "<a_ajs<[1]<display=\"{I:'a5_new_xbasic_script'}{F=Tahoma,10}{C=Dark Blue,White}{B=Blue White,Dark Blue}Inline-Javascript{T=4}{I:'a5_vertical_line'}refresh\">\n<action=\"Inline-Javascript\">\n<icon=\"a5_new_xbasic_script\">\n<isCommentedOut=.F.>\n<comment=\"refresh\">\n<builder=\"a5ajs_Inline(v,dlg_mode,wf)\">\n<metaData=<<%str%\n<inlineJavascript=\"{grid.object}.refresh();\">\n%str%>\n<javascriptAttribute=\"{grid.object}.refresh();\">\n<Javascriptdeclarations_row=\"\">\n<Javascriptdeclarations_global=\"\">\n<xbasicFunctions=\"\">\n>\n>\n<flagRunSynchronously=.F.>\n"
+            }
+        ],
+        "A5SaveTimeStamp": "20180618172807310",
+        "alternateLayouts": [
+            {
+                "layoutType": "SingleColumn",
+                "layoutName": "aa",
+                "rowTemplate": "{Id_Trabajador}{CodIdentidad}",
+                "titleTemplate": "{grid.columnSorterIcon.Id_Trabajador}",
+                "toolbarTemplate": "{grid.RecordNavigatorButtons}",
+                "overrideSettings": "",
+                "detailViewTemplate": "",
+                "detailViewToolbarTemplate": "",
+                "display": "aa"
+            }
+        ],
+        "alternateLayoutIndex": 1
+    }
+}

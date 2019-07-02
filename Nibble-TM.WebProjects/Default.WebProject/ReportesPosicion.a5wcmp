@@ -1,0 +1,528 @@
+{
+    "$schema": "UX",
+    "$definition": {
+        "style_name": "<ProjectStyle>",
+        "style_type": "Alpha Five",
+        "resolveAbstractClassNames": true,
+        "builderVersionNumber": 1,
+        "overrideStyleName": "Default",
+        "FontSize": "Medium",
+        "A5ContainerClassPadding": "4px",
+        "layoutType": "ControlWidth",
+        "pageTitle": "PageLayout",
+        "activeLanguage": "<Default>",
+        "clientSideDateFormat": "MM/dd/yyyy",
+        "info": {
+            "createdBy": "ASUS",
+            "dateCreated": "2018-8-29",
+            "dateLastEdited": "2018-9-4"
+        },
+        "page_fields": [
+            {
+                "controlType": "layout_directive_TabControl",
+                "display": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{Data=8d05e739-eaaa-4543-8824-e054107ff9fe}{I:'$a5_control_tab'} [Tab Control: TAB_1]",
+                "displayODFlat": "{Data=8d05e739-eaaa-4543-8824-e054107ff9fe}{I:'$a5_control_tab'} [Tab Control: TAB_1]",
+                "idInternal": "8d05e739-eaaa-4543-8824-e054107ff9fe",
+                "lastIndex": 6,
+                "parentContainer": -1,
+                "displayOD": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{Data=8d05e739-eaaa-4543-8824-e054107ff9fe}{I:'$a5_control_tab'} [Tab Control: TAB_1]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{Data=8d05e739-eaaa-4543-8824-e054107ff9fe}{I:'$a5_control_tab'} [Tab Control: TAB_1]",
+                "indentTree": 0,
+                "precalc": {
+                    "ControlHTML": "<div class=\"A5container [theme:tab.base.className|{grid.style}TabT]\" id=\"{grid.componentname}.TAB_1\"><!--Tab Start {grid.componentname}.TAB_1-->\n\t<div id=\"{grid.componentname}.TAB_1.TABBAND\" class=\"[theme:tab.base.tabsClassName|{grid.style}TabTBand]\"><!--Tab Buttons Start {grid.componentname}.TAB_1-->\n\t\t<a id=\"{grid.componentname}.TAB_1.0.TAB\" class=\"\" href=\"#\">Multimodal</a>\n\t\t<a id=\"{grid.componentname}.TAB_1.1.TAB\" class=\"\" href=\"#\">Alquiler de Medios</a>\n\t<br style=\"clear: both;\" />\n\t</div><!--Tab Buttons Start {grid.componentname}.TAB_1-->\n\t<div id=\"{grid.componentname}.TAB_1.PANES\" class=\"[theme:tab.base.panesClassName|{grid.style}TabTPanes]\"><!--Tab Panes Start {grid.componentname}.TAB_1-->",
+                    "controlJS": "window['{grid.componentName}.TAB_1Obj'] = new A5.Tab('{grid.componentName}.TAB_1',[\n{ \thtml: 'Multimodal', \tvalue: '1', \tonDynamicLoadDelay: 0, \tshow: true, \tdisabled: false, \tonDynamicLoad: function() {action_{alias}_405f77ed_aa94_46a7_84ff_ffd11d8a2379();} }, \n{ \thtml: 'Alquiler de Medios', \tvalue: '2', \tonDynamicLoadDelay: 0, \tshow: true, \tdisabled: false, \tonDynamicLoad: function() {action_{alias}_e45cab9b_15b8_4bde_99fb_b5d6a943466c();} }\n],\n\t{\n\ttheme: '{grid.style}'\n}\n\n);\n\n\twindow['{grid.componentName}.TAB_1Obj'].select('1');\n\n"
+                },
+                "errorInDefinition": false,
+                "childTabPanes": "2\n4\n",
+                "v": {
+                    "TabControl": {
+                        "useModernTabs": true,
+                        "ID": "TAB_1",
+                        "Type": "Tab",
+                        "TabPosition": "Top",
+                        "AccordionType": "Single",
+                        "InitialPane": 1,
+                        "animation": {
+                            "show": {
+                                "method": "Suggested",
+                                "speed": "Slow"
+                            },
+                            "hide": {
+                                "method": "Suggested",
+                                "speed": "Slow"
+                            }
+                        },
+                        "methodForSelectingActivePane": "UserClicksOnTabButton",
+                        "timerInterval": "5",
+                        "useSystemClassNamesForPanes": true,
+                        "genie": {
+                            "progressBarPosition": "Bottom"
+                        }
+                    },
+                    "securityGroups": "",
+                    "showHideExpn": "",
+                    "ShowExpression": "",
+                    "javascript": {
+                        "onChange": "",
+                        "onBeforeChange": "",
+                        "onRightClick": "",
+                        "onLeave": "",
+                        "onBeforeLeave": ""
+                    },
+                    "precalc": {
+                        "javascriptClientSideWatches": ""
+                    }
+                }
+            },
+            {
+                "controlType": "layout_directive_TabPane",
+                "display": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{I:'vertLine'}{Data=bb879b63-55b3-4f98-8555-45a1937c6d89}{I:'$$control.tab.pane'} [TabPane: Multimodal]",
+                "displayODFlat": "{Data=bb879b63-55b3-4f98-8555-45a1937c6d89}{I:'$$control.tab.pane'} [TabPane: Multimodal]",
+                "idInternal": "bb879b63-55b3-4f98-8555-45a1937c6d89",
+                "lastIndex": 3,
+                "parentContainer": 1,
+                "displayOD": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{I:'vertLine'}{Data=bb879b63-55b3-4f98-8555-45a1937c6d89}{I:'$$control.tab.pane'} [TabPane: Multimodal]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{I:'vertLine'}{Data=bb879b63-55b3-4f98-8555-45a1937c6d89}{I:'$$control.tab.pane'} [TabPane: Multimodal]",
+                "v": {
+                    "title": "Multimodal",
+                    "tabPane": {
+                        "show": true,
+                        "JS": {
+                            "onDynamicLoad": "action_{alias}_405f77ed_aa94_46a7_84ff_ffd11d8a2379();"
+                        },
+                        "id": "PANE_1"
+                    },
+                    "javascript": {
+                        "renderChildren": "action_{alias}_405f77ed_aa94_46a7_84ff_ffd11d8a2379();\n"
+                    }
+                },
+                "indentTree": 1,
+                "precalc": {
+                    "ControlHTML": "<div id=\"{grid.componentName}.TAB_1.0.PANE\"><!--TabPaneBegin {grid.componentName}.TAB_1.0-->\n",
+                    "DesignViewHTML": "<div id=\"{grid.componentName}.TAB_1.0.PANE\"><!--TabPaneBegin {grid.componentName}.TAB_1.0-->\n"
+                },
+                "parentTabIndex": 1,
+                "tabPaneNumber": 1
+            },
+            {
+                "controlType": "PageLayoutPart",
+                "display": "{B=White,Light Blue}{I:'vertLine'}{I:'vertLine'}{Data=405f77ed-aa94-46a7-84ff-ffd11d8a2379}{I:'$$control.html.advButton'} [Page Layout Part: ReportePosicion_Multimodal (Grid Component)] �",
+                "displayODFlat": "{Data=405f77ed-aa94-46a7-84ff-ffd11d8a2379}{I:'$$control.html.advButton'} [Page Layout Part: ReportePosicion_Multimodal]",
+                "idInternal": "405f77ed-aa94-46a7-84ff-ffd11d8a2379",
+                "parentContainer": 1,
+                "parentTabPaneIndex": 2,
+                "displayOD": "{B=White,Light Blue}{I:'vertLine'}{I:'vertLine'}{Data=405f77ed-aa94-46a7-84ff-ffd11d8a2379}{I:'$$control.html.advButton'} [Page Layout Part: ReportePosicion_Multimodal]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{B=White,Light Blue}{I:'vertLine'}{I:'vertLine'}{Data=405f77ed-aa94-46a7-84ff-ffd11d8a2379}{I:'$$control.html.advButton'} [Page Layout Part: ReportePosicion_Multimodal (Grid Component)] �",
+                "v": {
+                    "pageLayoutPart": {
+                        "showMode": "When page is loaded",
+                        "objectPosition": "To right of button",
+                        "freeformButtonLayout": "{button}<br />\n{object}\n",
+                        "windowType": "On page",
+                        "closeWindowHyperlink": "Close",
+                        "windowIsResizable": true,
+                        "paneTitle": "Pane",
+                        "reuseExistingPane": true,
+                        "buttonType": "Button",
+                        "buttonText": "ReportePosicion_Multimodal",
+                        "actionType": "Component",
+                        "optimization": {
+                            "method": "AjaxCallback"
+                        },
+                        "grid": {
+                            "gridName": "ReportePosicion_Multimodal",
+                            "componentType": "Grid",
+                            "alias": "<DefaultAlias>",
+                            "useMasterStyle": true,
+                            "workingMessage": "<img src=\"css/A5System/Images/wait.gif\" /> Working...",
+                            "customSettingOverridesJSON": ""
+                        },
+                        "report": {
+                            "workingMessage": "<img src=\"css/A5System/Images/wait.gif\" /> Working...",
+                            "moreRecordsTemplate": "<hr />Showing first [DisplayRecords] of [TotalRecords] records in query",
+                            "moreRecordsStyle": "text-align: center;",
+                            "initialView": "PDF",
+                            "HTMLToolbar": {
+                                "buttons": {
+                                    "pdf": true,
+                                    "excel": true,
+                                    "printHTML": true,
+                                    "word": true,
+                                    "pdfButton": {
+                                        "text": "PDF",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$application.adobe.pdf.png.a5image",
+                                        "bubbleHelp": "Print report as a PDF document."
+                                    },
+                                    "excelButton": {
+                                        "text": "Excel",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$application.ms.excel.png.a5image",
+                                        "bubbleHelp": "Export report to Excel."
+                                    },
+                                    "printHTMLButton": {
+                                        "text": "Print HTML",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$device.printer.png.a5image",
+                                        "bubbleHelp": "Print the HTML report."
+                                    },
+                                    "WordButton": {
+                                        "text": "Word",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$application.ms.word.png.a5image",
+                                        "bubbleHelp": "Export report to Word."
+                                    },
+                                    "textButton": {
+                                        "text": "Text",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$control.text.png.a5image",
+                                        "bubbleHelp": "Export data in report to a text file."
+                                    },
+                                    "bookmarksButton": {
+                                        "buttonType": "Text",
+                                        "text": "Bookmarks",
+                                        "imageName": "images/$$generic.book.png.a5image"
+                                    }
+                                },
+                                "bookMarkPanelSize": "3in"
+                            }
+                        }
+                    },
+                    "controlContainerPreventFloat": true,
+                    "class": "<Default>",
+                    "style": "width:1.5in;",
+                    "BreakType": "After",
+                    "breakHeight": ".1in",
+                    "breakHorizontalSpace": ".1in",
+                    "breakHeight2": "",
+                    "breakHorizontalSpace2": "",
+                    "securityGroups": "",
+                    "showHideExpn": "",
+                    "javascript": {
+                        "onclick": "",
+                        "ondblclick": "",
+                        "onmousedown": "",
+                        "onmouseup": "",
+                        "onmouseover": "",
+                        "onmousemove": "",
+                        "onmouseout": "",
+                        "onkeypress": "",
+                        "onkeydown": "",
+                        "onkeyup": "",
+                        "onBlur": "",
+                        "onChange": "",
+                        "onFocus": "",
+                        "onSelect": "",
+                        "immediate": "action_{alias}_405f77ed_aa94_46a7_84ff_ffd11d8a2379();"
+                    },
+                    "Window": {
+                        "onInitialize": "",
+                        "onBeforeShow": "",
+                        "onShow": "",
+                        "onBeforeHide": "",
+                        "onHide": "",
+                        "onFocus": "",
+                        "onMove": "",
+                        "onResize": "",
+                        "hasCustomButtons": false,
+                        "buttonsArrayString": "",
+                        "buttonCount": 0,
+                        "customButtonsInLineStyle": "",
+                        "tbar": {
+                            "show": false,
+                            "html": "",
+                            "style": ""
+                        },
+                        "header": {
+                            "show": false,
+                            "html": "",
+                            "style": ""
+                        },
+                        "footer": {
+                            "show": false,
+                            "html": "",
+                            "style": ""
+                        },
+                        "bbar": {
+                            "show": false,
+                            "html": "",
+                            "style": ""
+                        }
+                    },
+                    "tabbedUI": {
+                        "autoRefreshOnFocus": false
+                    }
+                },
+                "indentTree": 2,
+                "precalc": {
+                    "ControlHTML": "\t<div class=\"A5container\">\n\t\t<div id=\"{alias}_DIVCONTAINER_405f77ed_aa94_46a7_84ff_ffd11d8a2379\"   ><img src=\"css/A5System/Images/wait.gif\" /> Working...</div>\n\t</div><!--breakbegin--><br  style=\"clear:both; \" /><div  style=\"height:.1in; font: 0pt;\"></div><!--breakend-->\n\t\t",
+                    "pageLayoutPartJavascript": "window['action_{alias}_405f77ed_aa94_46a7_84ff_ffd11d8a2379'] = function() {\n\t\n\t\n\tvar onCompleteCode = '';\n\tvar callbackId = A5.UUID();\n\tif(typeof objx == 'undefined') objx = {};\n\tobjx[callbackId] = Function(onCompleteCode);\n\t\n\n\n\tvar go = new Object();\n\tgo.gridName = 'ReportePosicion_Multimodal';\n\tgo.alias = '{alias}_REPORTEPOS_175744GQEJ';\n\tgo.workingMessage = '<img src=\"css/A5System/Images/wait.gif\" /> Working...';\n\tgo.flagTimer = 'F';\n\tgo.flagQueryEcho = 'F';\n\tgo.flagDebugMode = 'F';\n\tgo.userFilter = '';\n\tgo.baseFilter = '';\n\tgo.userOrder = '';\n\tgo.overrideSettings = 'style_name=`{pageLayout.style}`'+'||';\n\tgo.arguments = '';\n\t\n\t\n\tgo.localArguments = '';\n\tgo.linkDefinition = '';\n\tgo.placeHolderValues = '';\n\tgo.parameterBucket = $gvs('{alias}.PARAMETERBUCKET');\n\tgo.argumentValueBucket = $gvs('{alias}.ARGUMENTVALUES');\n\tgo.a5_default_path = '{PageLayout.a5_default_path}';\n\tgo.onLoadCompleteJavascript = 'run:'+callbackId;\n\t\n\t\n\n\n\n\tgo.gridDiv = '{alias}_DIVCONTAINER_405f77ed_aa94_46a7_84ff_ffd11d8a2379';\n\tA5.component.runGrid(go);\n\t\n}\n"
+                },
+                "inPanelCard": false,
+                "inTreeControl": false,
+                "hasParentTab": true,
+                "parentTabId": "bb879b63-55b3-4f98-8555-45a1937c6d89"
+            },
+            {
+                "controlType": "layout_directive_TabPane",
+                "display": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{I:'vertLine'}{Data=c869a6f5-9ce0-439b-89d0-01897139fea2}{I:'$$control.tab.pane'} [TabPane: Alquiler de Medios]",
+                "displayODFlat": "{Data=c869a6f5-9ce0-439b-89d0-01897139fea2}{I:'$$control.tab.pane'} [TabPane: Otros Tipos Transportacion]",
+                "idInternal": "c869a6f5-9ce0-439b-89d0-01897139fea2",
+                "lastIndex": 5,
+                "parentContainer": 1,
+                "displayOD": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{I:'vertLine'}{Data=c869a6f5-9ce0-439b-89d0-01897139fea2}{I:'$$control.tab.pane'} [TabPane: Otros Tipos Transportacion]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{I:'vertLine'}{Data=c869a6f5-9ce0-439b-89d0-01897139fea2}{I:'$$control.tab.pane'} [TabPane: Alquiler de Medios]",
+                "indentTree": 1,
+                "precalc": {
+                    "ControlHTML": "<div id=\"{grid.componentName}.TAB_1.1.PANE\"><!--TabPaneBegin {grid.componentName}.TAB_1.1-->\n",
+                    "DesignViewHTML": "<div id=\"{grid.componentName}.TAB_1.1.PANE\"><!--TabPaneBegin {grid.componentName}.TAB_1.1-->\n"
+                },
+                "parentTabIndex": 1,
+                "tabPaneNumber": 2,
+                "v": {
+                    "title": "Alquiler de Medios",
+                    "tabPane": {
+                        "show": true,
+                        "JS": {
+                            "onDynamicLoad": "action_{alias}_e45cab9b_15b8_4bde_99fb_b5d6a943466c();"
+                        },
+                        "id": "PANE_2"
+                    },
+                    "javascript": {
+                        "renderChildren": "action_{alias}_e45cab9b_15b8_4bde_99fb_b5d6a943466c();\n"
+                    }
+                }
+            },
+            {
+                "controlType": "PageLayoutPart",
+                "display": "{B=White,Light Blue}{I:'vertLine'}{I:'vertLine'}{Data=e45cab9b-15b8-4bde-99fb-b5d6a943466c}{I:'$$control.html.advButton'} [Page Layout Part: ReportePosicion (Grid Component)] �",
+                "displayODFlat": "{Data=e45cab9b-15b8-4bde-99fb-b5d6a943466c}{I:'$$control.html.advButton'} [Page Layout Part: ReportePosicion]",
+                "idInternal": "e45cab9b-15b8-4bde-99fb-b5d6a943466c",
+                "parentContainer": 1,
+                "parentTabPaneIndex": 4,
+                "displayOD": "{B=White,Light Blue}{I:'vertLine'}{I:'vertLine'}{Data=e45cab9b-15b8-4bde-99fb-b5d6a943466c}{I:'$$control.html.advButton'} [Page Layout Part: ReportePosicion]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{B=White,Light Blue}{I:'vertLine'}{I:'vertLine'}{Data=e45cab9b-15b8-4bde-99fb-b5d6a943466c}{I:'$$control.html.advButton'} [Page Layout Part: ReportePosicion (Grid Component)] �",
+                "v": {
+                    "pageLayoutPart": {
+                        "showMode": "When page is loaded",
+                        "objectPosition": "To right of button",
+                        "freeformButtonLayout": "{button}<br />\n{object}\n",
+                        "windowType": "On page",
+                        "closeWindowHyperlink": "Close",
+                        "windowIsResizable": true,
+                        "paneTitle": "Pane",
+                        "reuseExistingPane": true,
+                        "buttonType": "Button",
+                        "buttonText": "ReportePosicion",
+                        "actionType": "Component",
+                        "optimization": {
+                            "method": "AjaxCallback"
+                        },
+                        "grid": {
+                            "gridName": "ReportePosicion",
+                            "componentType": "Grid",
+                            "alias": "<DefaultAlias>",
+                            "useMasterStyle": true,
+                            "workingMessage": "<img src=\"css/A5System/Images/wait.gif\" /> Working...",
+                            "customSettingOverridesJSON": ""
+                        },
+                        "report": {
+                            "workingMessage": "<img src=\"css/A5System/Images/wait.gif\" /> Working...",
+                            "moreRecordsTemplate": "<hr />Showing first [DisplayRecords] of [TotalRecords] records in query",
+                            "moreRecordsStyle": "text-align: center;",
+                            "initialView": "PDF",
+                            "HTMLToolbar": {
+                                "buttons": {
+                                    "pdf": true,
+                                    "excel": true,
+                                    "printHTML": true,
+                                    "word": true,
+                                    "pdfButton": {
+                                        "text": "PDF",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$application.adobe.pdf.png.a5image",
+                                        "bubbleHelp": "Print report as a PDF document."
+                                    },
+                                    "excelButton": {
+                                        "text": "Excel",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$application.ms.excel.png.a5image",
+                                        "bubbleHelp": "Export report to Excel."
+                                    },
+                                    "printHTMLButton": {
+                                        "text": "Print HTML",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$device.printer.png.a5image",
+                                        "bubbleHelp": "Print the HTML report."
+                                    },
+                                    "WordButton": {
+                                        "text": "Word",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$application.ms.word.png.a5image",
+                                        "bubbleHelp": "Export report to Word."
+                                    },
+                                    "textButton": {
+                                        "text": "Text",
+                                        "buttonType": "Image followed by text",
+                                        "imageName": "images/$$control.text.png.a5image",
+                                        "bubbleHelp": "Export data in report to a text file."
+                                    },
+                                    "bookmarksButton": {
+                                        "buttonType": "Text",
+                                        "text": "Bookmarks",
+                                        "imageName": "images/$$generic.book.png.a5image"
+                                    }
+                                },
+                                "bookMarkPanelSize": "3in"
+                            }
+                        }
+                    },
+                    "controlContainerPreventFloat": true,
+                    "class": "<Default>",
+                    "style": "width:1.5in;",
+                    "BreakType": "After",
+                    "breakHeight": ".1in",
+                    "breakHorizontalSpace": ".1in",
+                    "breakHeight2": "",
+                    "breakHorizontalSpace2": "",
+                    "securityGroups": "",
+                    "showHideExpn": "",
+                    "javascript": {
+                        "onclick": "",
+                        "ondblclick": "",
+                        "onmousedown": "",
+                        "onmouseup": "",
+                        "onmouseover": "",
+                        "onmousemove": "",
+                        "onmouseout": "",
+                        "onkeypress": "",
+                        "onkeydown": "",
+                        "onkeyup": "",
+                        "onBlur": "",
+                        "onChange": "",
+                        "onFocus": "",
+                        "onSelect": "",
+                        "immediate": "action_{alias}_e45cab9b_15b8_4bde_99fb_b5d6a943466c();"
+                    },
+                    "Window": {
+                        "onInitialize": "",
+                        "onBeforeShow": "",
+                        "onShow": "",
+                        "onBeforeHide": "",
+                        "onHide": "",
+                        "onFocus": "",
+                        "onMove": "",
+                        "onResize": "",
+                        "hasCustomButtons": false,
+                        "buttonsArrayString": "",
+                        "buttonCount": 0,
+                        "customButtonsInLineStyle": "",
+                        "tbar": {
+                            "show": false,
+                            "html": "",
+                            "style": ""
+                        },
+                        "header": {
+                            "show": false,
+                            "html": "",
+                            "style": ""
+                        },
+                        "footer": {
+                            "show": false,
+                            "html": "",
+                            "style": ""
+                        },
+                        "bbar": {
+                            "show": false,
+                            "html": "",
+                            "style": ""
+                        }
+                    },
+                    "tabbedUI": {
+                        "autoRefreshOnFocus": false
+                    }
+                },
+                "indentTree": 2,
+                "precalc": {
+                    "ControlHTML": "\t<div class=\"A5container\">\n\t\t<div id=\"{alias}_DIVCONTAINER_e45cab9b_15b8_4bde_99fb_b5d6a943466c\"   ><img src=\"css/A5System/Images/wait.gif\" /> Working...</div>\n\t</div><!--breakbegin--><br  style=\"clear:both; \" /><div  style=\"height:.1in; font: 0pt;\"></div><!--breakend-->\n\t\t",
+                    "pageLayoutPartJavascript": "window['action_{alias}_e45cab9b_15b8_4bde_99fb_b5d6a943466c'] = function() {\n\t\n\t\n\tvar onCompleteCode = '';\n\tvar callbackId = A5.UUID();\n\tif(typeof objx == 'undefined') objx = {};\n\tobjx[callbackId] = Function(onCompleteCode);\n\t\n\n\n\tvar go = new Object();\n\tgo.gridName = 'ReportePosicion';\n\tgo.alias = '{alias}_REPORTEPOS_1808TPGV';\n\tgo.workingMessage = '<img src=\"css/A5System/Images/wait.gif\" /> Working...';\n\tgo.flagTimer = 'F';\n\tgo.flagQueryEcho = 'F';\n\tgo.flagDebugMode = 'F';\n\tgo.userFilter = '';\n\tgo.baseFilter = '';\n\tgo.userOrder = '';\n\tgo.overrideSettings = 'style_name=`{pageLayout.style}`'+'||';\n\tgo.arguments = '';\n\t\n\t\n\tgo.localArguments = '';\n\tgo.linkDefinition = '';\n\tgo.placeHolderValues = '';\n\tgo.parameterBucket = $gvs('{alias}.PARAMETERBUCKET');\n\tgo.argumentValueBucket = $gvs('{alias}.ARGUMENTVALUES');\n\tgo.a5_default_path = '{PageLayout.a5_default_path}';\n\tgo.onLoadCompleteJavascript = 'run:'+callbackId;\n\t\n\t\n\n\n\n\tgo.gridDiv = '{alias}_DIVCONTAINER_e45cab9b_15b8_4bde_99fb_b5d6a943466c';\n\tA5.component.runGrid(go);\n\t\n}\n"
+                },
+                "inPanelCard": false,
+                "inTreeControl": false,
+                "hasParentTab": true,
+                "parentTabId": "c869a6f5-9ce0-439b-89d0-01897139fea2"
+            },
+            {
+                "controlType": "layout_directive_TabControlEnd",
+                "display": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{Data=4af7e599-3b36-491e-b622-9474a276657d}{I:'vertLineCap'} [Tab Control End - TAB_1] �",
+                "displayODFlat": "{Data=4af7e599-3b36-491e-b622-9474a276657d}{I:'$a5_control_tab'} [Tab Control End]",
+                "idInternal": "4af7e599-3b36-491e-b622-9474a276657d",
+                "parentContainer": -1,
+                "displayOD": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{Data=4af7e599-3b36-491e-b622-9474a276657d}{I:'vertLineCap'} [Tab Control End]",
+                "repeatingSectionParentId": -1,
+                "displayODtree": "{C=#0+0+127,White}{B=White,Light Blue}{F=+B}{Data=4af7e599-3b36-491e-b622-9474a276657d}{I:'vertLineCap'} [Tab Control End - TAB_1] �",
+                "v": {
+                    "TabControl": {
+                        "BreakType": "After",
+                        "BreakHeight": ".1in",
+                        "breakHorizontalSpace": ".1in"
+                    }
+                },
+                "indentTree": 0,
+                "precalc": {
+                    "ControlHTML": "</div><!--Tab Panes End {grid.componentName}.TAB_1-->\n</div><!--Tab End {grid.componentName}.TAB_1--><!--breakbegin--><br  style=\"clear:both; \" /><div  style=\"height:.1in; font: 0pt;\"></div><!--breakend-->"
+                },
+                "containerStartIndex": 1
+            }
+        ],
+        "builderType": "PageLayout",
+        "guid": "2624884d-1420-4993-a97a-89aeb1d6f28b",
+        "componentName": "ReportesPosicion",
+        "componentFilename": "C:\\Users\\ASUS\\Desktop\\Nibble-TM\\Nibble-TM.WebProjects\\Default.WebProject\\ReportesPosicion.a5wcmp",
+        "_style_versionNumber": -1,
+        "_style_hasSassOverrides": false,
+        "_style_hasCSSTweaks": false,
+        "_style_hasCSS_or_subtheme_tweaks": false,
+        "useCompactTheme": false,
+        "SVGLinkedFiles": "",
+        "saveFileType": "Formatted JSON",
+        "selected": "c869a6f5-9ce0-439b-89d0-01897139fea2\n",
+        "designPaneIndex": 1,
+        "masterPaneC": "controls",
+        "clientSideEventIndexC": "",
+        "__WPhostName": "Chrome",
+        "embeddedMode": false,
+        "_style_hassubthemeTweaks": false,
+        "repeatingSectionsAreDirty": true,
+        "toolBox_value": "layout_directive_TabPane",
+        "addinBuildNumber": "5018",
+        "addinBuildNumberHighestUsed": "5018",
+        "alphaFiveBuildNumber": "12",
+        "openedFromTemplate": false,
+        "builtWithVersionNumer": 1,
+        "_buildCount": "5",
+        "securityEnabled": false,
+        "showHideIsUsed": false,
+        "precalc": {
+            "pageLayout": {
+                "HTML": "<div class=\"A5container [theme:tab.base.className|{grid.style}TabT]\" id=\"{pageLayout.alias}.TAB_1\"><!--Tab Start {pageLayout.alias}.TAB_1-->\n\t<div id=\"{pageLayout.alias}.TAB_1.TABBAND\" class=\"[theme:tab.base.tabsClassName|{grid.style}TabTBand]\"><!--Tab Buttons Start {pageLayout.alias}.TAB_1-->\n\t\t<a id=\"{pageLayout.alias}.TAB_1.0.TAB\" class=\"\" href=\"#\">Multimodal</a>\n\t\t<a id=\"{pageLayout.alias}.TAB_1.1.TAB\" class=\"\" href=\"#\">Alquiler de Medios</a>\n\t<br style=\"clear: both;\" />\n\t</div><!--Tab Buttons Start {pageLayout.alias}.TAB_1-->\n\t<div id=\"{pageLayout.alias}.TAB_1.PANES\" class=\"[theme:tab.base.panesClassName|{grid.style}TabTPanes]\"><!--Tab Panes Start {pageLayout.alias}.TAB_1-->\n<div id=\"{pageLayout.alias}.TAB_1.0.PANE\"><!--TabPaneBegin {pageLayout.alias}.TAB_1.0-->\n\t<div class=\"A5container\">\n\t\t<div id=\"{alias}_DIVCONTAINER_405f77ed_aa94_46a7_84ff_ffd11d8a2379\"   ><img src=\"css/A5System/Images/wait.gif\" /> Working...</div>\n\t</div><div style=\"clear: both; font: 0px arial; height: 0px; width: 0px;\"></div>\n</div><!--end DIV for tab pane-->\n<div id=\"{pageLayout.alias}.TAB_1.1.PANE\"><!--TabPaneBegin {pageLayout.alias}.TAB_1.1-->\n\t<div class=\"A5container\">\n\t\t<div id=\"{alias}_DIVCONTAINER_e45cab9b_15b8_4bde_99fb_b5d6a943466c\"   ><img src=\"css/A5System/Images/wait.gif\" /> Working...</div>\n\t</div><div style=\"clear: both; font: 0px arial; height: 0px; width: 0px;\"></div>\n</div><!--end DIV for tab pane-->\n</div><!--Tab Panes End {pageLayout.alias}.TAB_1-->\n</div><!--Tab End {pageLayout.alias}.TAB_1--><!--breakbegin--><br  style=\"clear:both; \" /><div  style=\"height:.1in; font: 0pt;\"></div><!--breakend-->",
+                "JS": "window['{pageLayout.alias}.TAB_1Obj'] = new A5.Tab('{pageLayout.alias}.TAB_1',[\n{ \thtml: 'Multimodal', \tvalue: '1', \tonDynamicLoadDelay: 0, \tshow: true, \tdisabled: false, \tonDynamicLoad: function() {action_{alias}_405f77ed_aa94_46a7_84ff_ffd11d8a2379();} }, \n{ \thtml: 'Alquiler de Medios', \tvalue: '2', \tonDynamicLoadDelay: 0, \tshow: true, \tdisabled: false, \tonDynamicLoad: function() {action_{alias}_e45cab9b_15b8_4bde_99fb_b5d6a943466c();} }\n],\n\t{\n\ttheme: '{grid.style}'\n}\n);\n\twindow['{pageLayout.alias}.TAB_1Obj'].select('1');"
+            },
+            "PageLayoutMasterTemplate": "<div id=\"{alias}.PAGELAYOUT\">\n\t<input type=\"hidden\" value=\"{parameterBucket}\" id=\"{alias}.PARAMETERBUCKET\"/>\n\t<input type=\"hidden\" value=\"{savedArgValues}\" id=\"{alias}.ARGUMENTVALUES\"/>\n\n\t{pageLayout.contentsHTML}\n</div>\n",
+            "PageSetupJavascript": ""
+        },
+        "componentType": "PageLayout",
+        "version": 1,
+        "linkedResources": "",
+        "A5SaveTimeStamp": "20180904110132116",
+        "minimumBuildNumber": "",
+        "masterTemplate": "",
+        "_flagDoTreeview": true,
+        "flagDropdownCascadingChanged": false
+    }
+}

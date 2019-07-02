@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+
+
+<%a5
+Delete tmpl_SALUDO
+DIM tmpl_SALUDO as P
+tmpl_SALUDO = a5w_load_component("saludo") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:saludo)
+
+'Override settings start -----------------------------------------
+with tmpl_SALUDO
+.alias = "SALUDO"
+_dialogFilename = "saludo"
+end with 
+'Override settings end -----------------------------------------
+
+delete x_SALUDO
+dim x_SALUDO as p
+x_SALUDO = a5w_run_Component(tmpl_SALUDO) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:saludo)
+
+?x_SALUDO.Output.Head.JavaScript
+?x_SALUDO.Output.Head.CSS_Link
+
+?x_SALUDO.Output.Head.Title 
+%>
+
+
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Program Files (x86)/a5V12/css/GrBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+
+	</head>
+	
+<%a5 ?x_SALUDO.Output.Body.Body_tag %>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--Body Tag for tmpl -->
+<body class="GrBluePage">
+<!--Alpha Five Temporary Code End -->	
+
+
+	
+<%a5 ?x_SALUDO.Output.Body.Dialog2_HTML %>
+<%a5 ?a5dialogHelper_generateCORSHeaders() %>
+
+	</body>
+</html>				
