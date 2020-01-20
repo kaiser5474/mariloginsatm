@@ -33,6 +33,8 @@
 <encryptConnectionStrings=.T.>
 <saveFileType="">
 <showPublishCompleteDialog=.F.>
+<livePreviewMachineName="Localhost">
+<lastselectedbuttonsubtheme="base">
 >
 <NamedResources="PZ4+/sQt/NuUzwoQIJkoilAWp4k9gB4q5xPFA/DVAPPbK1r76Gd8kIxT3Tg6UFOCALJpV0GnWM+TGtIbSpYzsNuz9s2LeJ7zoG73+wAzsYlTDLQFgqJG4rVrB4cVU9KW3eURQcd9m3CBxrG26RSllkE9clqlFmGYd+p/K5IFFgc8F29OHXRGst4z/VHQVPm7+eEPRfrm7oWbeode/Z3yah3T92CnKKH4KvYK3FGxFus3D2JXbxmMBbk75a3vDNwDdb8XXtqUFG3bX4sxW7u0lEkXnzH/mnwxbayGdID3/6itwz58RikY+sTYnC3MJJCW8IIFaQavyPg=">
 <email<smtp_server="">
@@ -101,7 +103,7 @@
 <beforePrint="">
 >
 <useBSONforSQLreporting=.T.>
-<PDFOptions="DIM Concatenate as L||DIM HasWatermark as L||DIM MultilingualSupport as L = .T.||DIM EmbedFonts as L = .T.||DIM LinearizeForWeb as L = .T.||DIM Colors2GrayScale as L||DIM ConvertHyperlinks as L||DIM WatermarkType as C = \"Text\"||DIM WatermarkText as C = \"D R A F T\"||DIM WatermarkFontName as C = \"Times New Roman\"||DIM WatermarkFontSize as N = 172||DIM WatermarkRotation as N = 450||DIM WatermarkColorHex as C = \"E8FED2\"||DIM WatermarkHorizPos as N = 120||DIM WatermarkVertPos as N = -120||DIM WatermarkOnTop as L||DIM WatermarkPDF as C||DIM Encrypt as L||DIM OwnerPassword as C||DIM UserPassword as C||DIM CanPrint as L = .T.||DIM CanModifyDocument as L = .T.||DIM CanCopy as L = .T.||DIM CanAddNotes as L = .T.||DIM Use128BitKey as L = .T.||DIM JpegQuality as C = \"Low\"||">
+<PDFOptions="DIM Concatenate as L||DIM HasWatermark as L||DIM MultilingualSupport as L = .T.||DIM EmbedFonts as L = .T.||DIM LinearizeForWeb as L = .T.||DIM Colors2GrayScale as L||DIM ConvertHyperlinks as L||DIM WatermarkType as C = \"Text\"||DIM WatermarkText as C = \"D R A F T\"||DIM WatermarkFontName as C = \"Times New Roman\"||DIM WatermarkFontSize as N = 172||DIM WatermarkRotation as N = 450||DIM WatermarkColorHex as C = \"E8FED2\"||DIM WatermarkHorizPos as N = 120||DIM WatermarkVertPos as N = -120||DIM WatermarkOnTop as L||DIM WatermarkPDF as C||DIM Encrypt as L||DIM OwnerPassword as C||DIM UserPassword as C||DIM CanPrint as L = .T.||DIM CanModifyDocument as L = .T.||DIM CanCopy as L = .T.||DIM CanAddNotes as L = .T.||DIM Use128BitKey as L = .T.||DIM JpegQuality as C = \"High\"||">
 <websocket<enable=.F.>
 <port="+10">
 <using="Redis">
@@ -155,3 +157,7 @@
 >
 <codenotvalidmessage="Code is not valid">
 >
+<oauthEvents<onGotAccessToken="">
+<library="">
+>
+<excelfilesExtension=".xls">

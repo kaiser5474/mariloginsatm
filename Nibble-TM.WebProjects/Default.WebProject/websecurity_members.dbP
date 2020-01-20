@@ -5,7 +5,7 @@ SELECT
 Group_Guid, 
 User_Guid, 
 Updweb, 
-Updlocal FROM dbo.WebSecurityMembers%str%>
+Updlocal FROM WebSecurityMembers%str%>
 <CountQuery="SELECT count(*) FROM WebSecurityMembers">
 <DBF<RowDef=<<%str%
 GROUP_GUID,C,36,0,"notnullable,updateable,initialize"
@@ -16,7 +16,7 @@ UPDLOCAL,T,17,0,"nullable,updateable,setnull,shownull"
 >
 <UpdateWhereCriteria=4>
 <InsertStatement=<<%str%
-INSERT INTO dbo.WebSecurityMembers (
+INSERT INTO WebSecurityMembers (
 Group_Guid, 
 User_Guid, 
 Updweb, 
@@ -30,14 +30,14 @@ SELECT
 Group_Guid, 
 User_Guid, 
 Updweb, 
-Updlocal FROM dbo.WebSecurityMembers
+Updlocal FROM WebSecurityMembers
 WHERE 	Group_Guid = :GROUP_GUID AND User_Guid = :USER_GUID%str%>
 <RowQualifiers=<<%str%
 GROUP_GUID	GROUP_GUID
 USER_GUID	USER_GUID%str%>
 <DeleteStatement="">
 <UpdateStatement="WHERE+MODIFIEDFIELDS Group_Guid = :old.GROUP_GUID AND User_Guid = :old.USER_GUID">
-<LocalTableFile="C:\Users\ASUS\Desktop\Nibble-TM\Nibble-TM.WebProjects\Default.WebProject\websecurity_members.dbf">
+<LocalTableFile="C:\4-Trabajos\Mariloginsa\Nibble-TM\Nibble-TM.WebProjects\Default.WebProject\websecurity_members.dbf">
 <Type="SQL">
 <API="SQLServer">
 <ConnectionString="::Name::Nibble">
@@ -286,7 +286,7 @@ USER_GUID	USER_GUID%str%>
 	</Column>
 	<Index Type="SQL::IndexInfo">
 	<SQLIndexInfo Type="SQL::IndexInfo">
-		<Name Type="C">PK__WebSecur__3823F69A6FF1A692</Name>
+		<Name Type="C">PK__WebSecur__3823F69A0B173EF4</Name>
 		<Comment Type="C"></Comment>
 		<Unique Type="L">1</Unique>
 		<PrimaryKey Type="L">1</PrimaryKey>
@@ -336,7 +336,7 @@ USER_GUID	USER_GUID%str%>
 <SQLArguments>
 </SQLArguments>
 %str%>
-<designInfo<LocalTableFile="C:\Users\ASUS\Desktop\Nibble-TM\WebSecurityMembers.dbf">
+<designInfo<LocalTableFile="C:\4-Trabajos\Mariloginsa\Nibble-TM\WebSecurityMembers.dbf">
 <ConnectionString="::Name::Nibble">
 <UseExplicitConnectionString=.F.>
 <BasicType="Table">

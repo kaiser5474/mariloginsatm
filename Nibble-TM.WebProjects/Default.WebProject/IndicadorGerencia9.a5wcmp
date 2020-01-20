@@ -1,0 +1,961 @@
+{
+    "$schema": "GRID",
+    "$definition": {
+        "_style_hasSassOverrides": false,
+        "SecurityModel": "Group Based",
+        "GUID": "a0b6f65e-5ca3-4cfe-9d98-4fab73cc9b42",
+        "DateFormatOnClient": "DD/MM/YY",
+        "clientSideDateFormat": "dd/MM/yyyy",
+        "flagTreeViewGrid": true,
+        "flagTreeViewDV": true,
+        "componentType": "Grid",
+        "Xbasic": "dim tmpl as p\ntmpl.ComponentName = \"IndicadorGerencia9\"\ntmpl.ComponentType = \"Grid\"\ntmpl.AjaxOn = .t.\ntmpl.LayoutColumns = 1\ntmpl.useCompactTheme = .t.\ntmpl.showPulseEffect = .t.\ntmpl.queryEcho = .f.\ntmpl.connectToWebSocketServer = .f.\ntmpl.flagAddPKToORDER = .t.\ntmpl.saveFileType = \"Formatted JSON\"\ntmpl.captureJSErrorStackTrace = .f.\ntmpl.SecurityModel = \"Group Based\"\ntmpl.SecurityMode = \"\"\ntmpl.PreCalcMode = \"Standard\"\ntmpl.clientSideDateFormat = \"dd/MM/yyyy\"\ntmpl.publishedServerVariables = \"\"\ntmpl.datePicker.dayNames = \"Sun,Mon,Tue,Wed,Thu,Fri,Sat\"\ntmpl.datePicker.firstDayOfWeek = 1\ntmpl.datePicker.monthNames = \"January,February,March,April,May,June,July,August,September,October,November,December\"\ntmpl.datePicker.todayButtonText = \"Today\"\ntmpl.datePicker.closeButtonText = \"Close\"\ntmpl.datePicker.closeButtonText = \"Close\"\ntmpl.friendlydatesCustomizationJSON = \"\"\ntmpl.customizationString.javascriptDialogs = \"\"\ntmpl.iconMapOverrides = \"\"\ntmpl.DataSourceType = \"CS\"\ntmpl.CS.database_type = \"CS\"\ntmpl.CS.type = \"connectionstring\"\ntmpl.cs.ConnectionString  = \"::name::Nibble\"\ntmpl.CS.SQL = \"SELECT [Id_Recorrido] FROM [N_Recorrido] WHERE Id_TipoFlete = 6  \"\nDIM tmpl.Arguments[1] AS P\nwith tmpl.Arguments[1]\n\t.Name = \"\"\n\t.DataType = \"\"\n\t.Source = \"\"\n\t.SourceDisplay = \"\"\n\t.VariableScope = \"\"\n\t.VariableName = \"\"\n\t.VariableWithScope = \"\"\n\t.DefaultValue = \"\"\n\t.Prompt = .f.\n\t.PromptText = \"\"\n\t.PromptControlType = \"\"\n\t.PromptChoices = \"\"\n\t.PromptDlgTitle = \"\"\n\t.PromptTextAbove = \"\"\n\t.PreviewValue = \"\"\nend with\nDIM tmpl.ArgumentsPage AS P\nwith tmpl.ArgumentsPage\n\t.PromptTextAbove = \"\"\nend with\ntmpl.CS.PrimaryKeyColumns = \"Id_Recorrido\"\ntmpl.CS.IdentitySequenceName  = \"\"\ntmpl.CS.primaryKeyTopAliasIsAutoIncrement  = .t.\ntmpl.search.has_search_component = .t.\ntmpl.search.title = \"Search \"\ntmpl.search.show_title = .t.\ntmpl.search.search_button_label = \"Search\"\ntmpl.search.include_sorting_listbox = .t.\ntmpl.search.sort.prompt = \"Sort&nbsp;by\"\ntmpl.search.sorting_listbox_Label_position = \"Left\"\ntmpl.search.sort.promptInLineStyle = \"\"\ntmpl.search.sort.listbox.fieldname_prompt = \"Select Field\"\ntmpl.search.sort.listbox.use_column_headings = .f.\ntmpl.search.customSortDefinition = \"\"\ntmpl.search.search_button.useIcon = .f.\ntmpl.search.clear_link.useIcon = .f.\ntmpl.search.sort.listbox.order_prompt = \"Select Order\"\ntmpl.search.sort.listbox.order_choices = \"Ascending,Descending\"\ntmpl.search.include_records_per_page_listbox = .t.\ntmpl.search.records_per_page.prompt = \"Records&nbsp;per&nbsp;page\"\ntmpl.search.records_per_page_Label_position = \"Left\"\ntmpl.search.records_per_page.promptInLineStyle = \"\"\ntmpl.search.records_per_page.listbox.value_prompt = \"Select Value\"\ntmpl.search.records_per_page.listbox.choices = \"1,2,5,10,25,50,75,100\"\ntmpl.search.orientation = \"Vertical\"\ntmpl.search.combine_criteria_using = 1\ntmpl.search.style = 2\ntmpl.search.allow_qbf_style = .t.\ntmpl.search.show_single_search_field = .f.\ntmpl.search.keyword_label = \"Search for?\"\ntmpl.search.has_Clear_link = .t.\ntmpl.search.Clear_link_Label = \"Clear Search Criteria\"\ntmpl.search.Clear_link_BubbleHelp = \"Clear Search\"\ntmpl.search.EnableShowHide  = .f.\ntmpl.search.InitialState = \"Open\"\ntmpl.search.title_when_hidden = \"Click here to search...\"\ntmpl.search.qbe_exclusions = \"\"\ntmpl.search.toolbarPosition = \"Below\"\ntmpl.search.disableAutoComplete = .f.\ntmpl.search.HideGridWhenNoActiveSearch = .f.\ntmpl.search.GridHTMLWhenHidden  = \"\"\ntmpl.EditRegion.Search.Top = \"\"\ntmpl.EditRegion.Search.Bottom = <<%txt%\n\n%txt%\ntmpl.EditRegion.Search.Left = \"\"\ntmpl.EditRegion.Search.Right = \"\"\ntmpl.search.allowSearchCriteriaSave = .f.\ntmpl.search.allowSearchCriteriaLoad = .f.\ntmpl.SearchFields = 1\nDIM tmpl.SearchField_Info[tmpl.SearchFields] as P \nwith tmpl.searchfield_info[1]\n\t.Fieldname = \"Id_Recorrido\"\n\t.SearchExpression = \"Id_Recorrido\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Recorrido\"\nend with\ntmpl.grid_layout_style = 1\ntmpl.add_records_only = .f.\ntmpl.rows = 10\ntmpl.maxRowsPerPage = 200\ntmpl.rowsWhenSearchActive = -1\ntmpl.suppress_empty_rows = .t.\ntmpl.has_row_separator = .t.\ntmpl.alternate_bands = .f.\ntmpl.even_band_size = 1\ntmpl.odd_band_size = 1\ntmpl.alternate_column_bands = .f.\ntmpl.even_column_band_size = 1\ntmpl.odd_column_band_size = 1\ntmpl.conditionalStyle = \"\"\ntmpl.clientSideConditionalStyle = \"\"\ntmpl.show_title = .f.\ntmpl.title = \"\"\ntmpl.FontSize = \"Medium\"\ntmpl.No_records_message = \"No records in query\"\ntmpl.total_records_row_position = 1\ntmpl.total_records_row = \"Records:&nbsp; {Total_Records}&nbsp;\"\ntmpl.show_column_titles = 1\ntmpl.suppress_titles_if_no_records = .f.\ntmpl.show_row_labels = .t.\ntmpl.snakingLayout_suppressRepeatedLabels = .f.\ntmpl.sort_style = 3\ntmpl.reset_page_number_when_sorting = .t.\ntmpl.allowGridBodyScrolling = .f.\ntmpl.scrollableRegionHeight = \"2in\"\ntmpl.scrollableRegionWidth = \"100%\"\ntmpl.fixedWidthColumns = .f.\ntmpl.defaultColumnWidth = \"1in\"\ntmpl.columnWidthSettings = \"\"\ntmpl.EditRegion.Grid.Top = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Bottom = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Left = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Right = <<%editregion%\n%editregion%\ntmpl.HasNewRecordsTitle = .f.\ntmpl.NewRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >New Records</td></tr>\"\ntmpl.HasExistingRecordsTitle = .f.\ntmpl.ExistingRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >Existing Records</td></tr>\"\ntmpl.Highlight_row_onHover =  .t.\ntmpl.Highlight_row_onSelect =  .t.\ntmpl.HasRecordsPerPageSelector = .t.\ntmpl.RecordsPerPageChoices =   \"1,2,5,10,25,50,75,100\"\ntmpl.RecordsPerPageSelectorTemplate = \"&nbsp;&nbsp;{Grid.RecordsPerPageSelector} Records per page\"\ntmpl.has_qbe_row = .f.\ntmpl.qbe.initial_display = \"Hidden\"\ntmpl.qbe.toggleQBERowHyperlinkText = \"Show/Hide QBE Row\"\ntmpl.has_advancedSearch = .f.\ntmpl.hasLinkedContent = .t.\ntmpl.linkedContentDefinition = \"\"\ntmpl.linkedContent.lockWindow = .f.\ntmpl.linkedContent.lockWindowText = \"<div style=\\\"padding: 5pt;\\\"><img style=\\\"vertical-align:middle;\\\" src=\\\"css/A5System/Images/wait.gif\\\" /> Please wait...</div>\"\ntmpl.linkedContent.lockWindowClassName = \"A5WindowLock\"\ntmpl.hasExternalNavigators = .f.\ntmpl.hasRowExpandColumn = .f.\ntmpl.hasSelectedRowColumn = .t.\ntmpl.hasCheckboxSelectColumn = .f.\ntmpl.AdditionalGridStyles = \"\"\ntmpl.LocalCss = \"\"\ntmpl.CSSLinkedFiles = \"\"\ntmpl.localsvg = \"\"\ntmpl.SVGLinkedFiles = \"\"\ntmpl.CSSIcons = \"\"\ntmpl.JavaScriptLinkedFiles = \"\"\ntmpl.useMasterTemplate = .f.\ntmpl.MasterTemplateStyle = \"Table - Vertical Layout\"\ntmpl.MasterLayoutTemplate = \"\"\ntmpl.MasterLayoutTemplateJavascript = \"\"\ntmpl.MasterLayout.PaneLabel.Search = \"Search\"\ntmpl.MasterLayout.PaneLabel.Grid = \"Grid\"\ntmpl.MasterLayout.PaneLabel.DetailView = \"Detail\"\ntmpl.MasterLayout.AccordionStyle = \"Multiple\"\ntmpl.MasterLayout.InitialOpenPanes = \"Search,Grid,DetailView\"\ntmpl.verticalAlignDataInColumns = \"Middle\"\ntmpl.CanCollapseGrid = .f.\ntmpl.CollapseBar.Title = \"Collapse Grid\"\ntmpl.CollapseBar.OpenIcon = \"\"\ntmpl.CollapseBar.ClosedIcon = \"\"\ntmpl.CollapseBar.Style = \"\"\ntmpl.Collapsebar.Class = \"\"\ntmpl.Collapsebar.ContainerStyle = \"\"\ntmpl.Collapsebar.ContainerClass = \"\"\ntmpl.Collapsebar.InitialState = \"open\"\ntmpl.languageTags_RemoveUnConsumedTags = .t.\ntmpl.activeLanguage = \"<Default>\"\ntmpl.search.highlightSearchStrings = .f.\ntmpl.autoRefreshGrid = .f.\ntmpl.autoRefreshInterval = 60\ntmpl.helpTableType = \"DBF\"\ntmpl.helpTableName = \"\"\ntmpl.helpConnectionString = \"\"\ntmpl.helpIDfield = \"\"\ntmpl.helpContentsField = \"\"\ntmpl.fieldHelpWindowStyle = \"modal-resizeable\"\ntmpl.fields = 1\nDIM tmpl.field_info[tmpl.fields] as P \nwith tmpl.field_info[1]\n\t.Fieldname = \"Id_Recorrido\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Recorrido\"\n\t.Column.Sort = \"Id_Recorrido\"\n\t.Column.FirstClickDirection = \"A\"\nend with\ntmpl.RecordNavigationStyle = \"NavigationButtons\"\ntmpl.fetchMoreRecordsButton.text = \"More Records\"\ntmpl.fetchMoreRecordsButton.style = \"\"\ntmpl.RecNav.SuppressIfOnlyOnePage = .t.\ntmpl.RecNav.First_Label = \"First\"\ntmpl.RecNav.Has_First_Button = .t.\ntmpl.RecNav.Has_Last_Button = .t.\ntmpl.RecNav.Has_Next_Button = .t.\ntmpl.RecNav.Has_Prev_Button = .t.\ntmpl.RecNav.HTML_Template_source = \"Computed\"\ntmpl.RecNav.Justify = \"Left\"\ntmpl.RecNav.Last_Label = \"Last\"\ntmpl.RecNav.Next_Label = \"Next\"\ntmpl.RecNav.Number_of_page_links = 10\ntmpl.RecNav.Page_Numbering_Style = 3\ntmpl.RecNav.PagesTemplate_w_PageCount = \"{PageNumber} of {PageCount}\"\ntmpl.RecNav.PagesTemplate_wout_PageCount = \"{PageNumber}\"\ntmpl.RecNav.Position = 1\ntmpl.RecNav.suppress_recNavBar_if_no_records = .f.\ntmpl.RecNav.Prev_Label = \"Prev\"\ntmpl.RecNav.Show_disabled_controls = .t.\ntmpl.RecNav.Show_Page_Count = .t.\ntmpl.RecNav.Use_Images = .f.\ntmpl.gridToolbarTemplate = <<%html%\n%html%\ntmpl.gridToolbarTemplateEditable = <<%html%\n%html%\ntmpl.style_name = \"GrBlue\"\ntmpl.resolveAbstractClassNames = .t.\ntmpl.style_type = \"Alpha Five\"\ntmpl.UseSimpleStyles = .f.\ntmpl.overrideStylesForJavascriptObjects = .f.\ntmpl.searchBehavior = \"\"\ntmpl.GUID = \"a0b6f65e-5ca3-4cfe-9d98-4fab73cc9b42\"\ntmpl.EventCode = <<%code%\n\nfunction BeforeSearch as v (SearchDataSubmitted as P, Args as p, PageVariables as p)\nwith PageVariables\ndim fechaInicio as d\ndim fechaFin as d\nfechaInicio = SearchDataSubmitted.FROM.FECHA\nfechaFin = SearchDataSubmitted._TO.FECHA\ndim valor1 as n\ndim Year as n\ndim Month as n\ndim Day as n\nYear = YEAR(fechaInicio)\nMonth = Month(fechaInicio)\nDay = Day(fechaInicio)\ndim Year2 as n\ndim Month2 as n\ndim Day2 as n\nYear2 = YEAR(fechaFin)\nMonth2 = Month(fechaFin)\nDay2 = Day(fechaFin)\nDIM cn as SQL::Connection\ndim flagResult as l \nflagResult = cn.open(\"::Name::Nibble\")\nif flagResult = .f. then \n\tui_msg_box(\"Error\",\"Could not connect to database. Error reported was: \" + crlf() + cn.CallResult.text)\n\tend \nend if\ndim sql as c\nsql = <<%sql%\nSELECT Id_Recorrido\nFROM RecMedTranspRepAct \nWHERE Id_Actividad IN (11, 14, 28, 55, 56, 84, 87, 89, 90, 92, 107, 109, 110, 120, 144, 170, 171, 180, 181, 192, 202, 204, \n206, 221, 242, 270, 280, 305, 308) \nAND Fecha >= :fechaInicio AND Fecha <= :fechaFin\nGROUP BY Id_Recorrido\n%sql%\n\n'Dim a SQL arguments object, create arguments and set their values\nDIM args2 as sql::arguments\nargs2.Add(\"fechaInicio\", Year + \"-\" + Month + \"-\" + Day)\nargs2.Add(\"fechaFin\", Year2 + \"-\" + Month2 + \"-\" + Day2)\nflag = cn.Execute(sql,args2)\nif flagResult = .f. then \n\tui_msg_box(\"Error\",cn.CallResult.text)\n\tcn.close()\n\tend \nend if \ndim rs as sql::resultset\nrs = cn.ResultSet\ndim cantidad as n\nwhile rs.NextRow()\n\tcantidad = cantidad + rs.RowCount\nend While \ncantidad = cantidad * (-1)\nsql = <<%sql%\nSELECT Id_Recorrido\nFROM RecMedTranspRepAct \nWHERE  Fecha >= :fechaInicio AND Fecha <= :fechaFin AND Id_TipoFlete = 6\nGROUP BY Id_Recorrido\nORDER BY Id_Recorrido\n%sql%\n\nflag = cn.Execute(sql,args2)\nif flagResult = .f. then \n\tui_msg_box(\"Error\",cn.CallResult.text)\n\tcn.close()\n\tend \nend if\ndim rs2 as sql::resultset\nrs2 = cn.ResultSet\ndim totalViajes as n\nwhile rs2.NextRow()\n\ttotalViajes = totalViajes + rs2.RowCount\nend While \n'debug(1)\ntotalViajes = totalViajes * (-1)\ndim valor2 as n\ndim calculoPoblacion as n\nif totalViajes > 0 then\n\tvalor1 = totalViajes * 1.645 * 1.645 * 0.5 * 0.5\t\n\tvalor2 = (0.05 * 0.05 * (totalViajes - 1)) + (1.645 * 1.645 * 0.5 * 0.5)\n\tcalculoPoblacion = round_up(valor1 / valor2 , 0)\nend if\nvalorFinalIndicador3 = (cantidad / calculoPoblacion) * 100 \nvalorFinalIndicador3 = alltrim(str( convert_type(valorFinalIndicador3,\"N\") ,250,2,\"B\"))\n'* aqui comienzo a buscar los valores de los recorridos\ndim Id_recorrido as n\nId_recorrido = session.Id_RecorridoValores'e.rowData.data(\"DescripcionActividad\")'e.rowData.data(\"Id_Recorrido\")\nDIM cn as SQL::Connection\ndim flagResult as l \nflagResult = cn.open(\"::Name::Nibble\")\nif flagResult = .f. then \n\tui_msg_box(\"Error\",\"Could not connect to database. Error reported was: \" + crlf() + cn.CallResult.text)\n\tend \nend if\ndim argsP as sql::Arguments\nargsP.Add(\"id_recorrido\", Id_recorrido)\n'Specify if you are using Portable SQL syntax, or not\ncn.PortableSQLEnabled = .t. \ndim sqlStatement as c \nsqlStatement = <<%sql%\nSELECT ValorFinal, ValorCompraFinal  FROM RecMedTranspRepAct  \nWHERE Id_Recorrido = :id_recorrido\n%sql%\n'Execute the Query\nflagResult = cn.Execute(sqlStatement, argsP)\nif flagResult = .f. then \n\tui_msg_box(\"Error\",cn.CallResult.text)\n\tcn.close()\n\tend \nend if \ndim rs as sql::resultset\nrs = cn.ResultSet\ndim valorCompra as n\ndim valorVenta as n\ndim valorCompraTotal as n\ndim valorVentaTotal as n\ndim ROI as n\nROI = 0\nwhile rs.NextRow()\n\tvalorVenta = rs.Data(1) \n\tvalorVentaTotal = valorVentaTotal + valorVenta\n\tvalorCompra = rs.Data(2)  \t\n\tvalorCompraTotal = valorCompraTotal + valorCompra\nend while\t\nif valorCompraTotal > 0 then\n\t\tROI = ((valorVentaTotal - valorCompraTotal)/valorCompraTotal)*100\n\t\t'ROI = (valorVentaTotal - valorCompraTotal)\t\t\nend if\nif Month = 12 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Diciembre = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 11 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Noviembre = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 10 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Octubre = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 9 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Septiembre = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 8 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Agosto = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 7 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Julio = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 6 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Junio = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 5 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Mayo = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 4 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Abril = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 3 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Marzo = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 2 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Febrero = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\nif Month = 1 then\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Enero = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\tcn.Close()\nend with\nend function\n%code%\n\ntmpl.onlyIncludeSelectedFieldsInQuery = .t.\ntmpl.hasGroupBreaks = .f.\ntmpl.groupBreaks.expression1 = \"\"\ntmpl.groupBreaks.direction1 = \"\"\ntmpl.groupBreaks.header1 = <<%HTML%\n%HTML%\ntmpl.groupBreaks.footer1 = <<%HTML%\n%HTML%\ntmpl.groupBreaks.collapseAllGroupsOnInitialDisplay = .f.\ntmpl.timestamp = \"2019-10-22:15-04-26.191\"\ntmpl.resolveAbstractClassNamesAtDesignTime  = .f.\ntmpl.resolveAbstractIconNamesAtDesignTime = .f. \ntmpl.useLegacyDatePicker = .f.\ntmpl.javascriptUnboundActionDefinitions = <<%javascriptActions%\n%javascriptActions%\n\ntmpl.precalc.sessionVarsInShowHideExpns = <<%sessionvars%\n%sessionvars%\ntmpl.precalc.unboundActionsXbasicFunctions = \"\"\ntmpl.precalc.includeS3Javascript = .f.",
+        "datasourceType": 3,
+        "componentName": "IndicadorGerencia9",
+        "query_ado": {
+            "mdb_or_cs": 1,
+            "connection_type": 1,
+            "base_on": 1,
+            "Arguments": [
+                {}
+            ]
+        },
+        "query_cs": {
+            "connection_type": 1,
+            "connection_name": "Nibble",
+            "base_on": 1,
+            "table_name": "N_Recorrido",
+            "table_alias": "N_Recorrido",
+            "filter": "Id_TipoFlete = 6  ",
+            "database_type": "CS",
+            "surrogate_primary_key": "Id_Recorrido",
+            "FieldInfo": "<a_expn<[1]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.T.>\n<identity=.T.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Recorrido\">\n<basecolumn=\"Id_Recorrido\">\n<varname=\"Id_Recorrido\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_Recorrido\">\n<searchExpression=\"Id_Recorrido\">\n>\n<[2]<a5_type=\"Date\">\n<a5_shorttype=\"D\">\n<CS_type=\"Date\">\n<portable_type=\"Date\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=8>\n<name=\"FechaSalida\">\n<basecolumn=\"FechaSalida\">\n<varname=\"FechaSalida\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=8>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"FechaSalida\">\n<searchExpression=\"FechaSalida\">\n>\n<[3]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Cliente\">\n<basecolumn=\"Id_Cliente\">\n<varname=\"Id_Cliente\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_Cliente\">\n<searchExpression=\"Id_Cliente\">\n>\n<[4]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Contrato\">\n<basecolumn=\"Id_Contrato\">\n<varname=\"Id_Contrato\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_Contrato\">\n<searchExpression=\"Id_Contrato\">\n>\n<[5]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_ContratoServicio\">\n<basecolumn=\"Id_ContratoServicio\">\n<varname=\"Id_ContratoServicio\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_ContratoServicio\">\n<searchExpression=\"Id_ContratoServicio\">\n>\n<[6]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_TipoTransportacion\">\n<basecolumn=\"Id_TipoTransportacion\">\n<varname=\"Id_TipoTransportacion\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_TipoTransportacion\">\n<searchExpression=\"Id_TipoTransportacion\">\n>\n<[7]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"NVARCHAR(MAX)\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=10>\n<name=\"Observaciones\">\n<basecolumn=\"Observaciones\">\n<varname=\"Observaciones\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=10>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.F.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Observaciones\">\n<searchExpression=\"Observaciones\">\n>\n<[8]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_TipoFlete\">\n<basecolumn=\"Id_TipoFlete\">\n<varname=\"Id_TipoFlete\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_TipoFlete\">\n<searchExpression=\"Id_TipoFlete\">\n>\n<[9]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_EstadoRecorrido\">\n<basecolumn=\"Id_EstadoRecorrido\">\n<varname=\"Id_EstadoRecorrido\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_EstadoRecorrido\">\n<searchExpression=\"Id_EstadoRecorrido\">\n>\n<[10]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_TipoEjecucion\">\n<basecolumn=\"Id_TipoEjecucion\">\n<varname=\"Id_TipoEjecucion\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_TipoEjecucion\">\n<searchExpression=\"Id_TipoEjecucion\">\n>\n<[11]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Origen\">\n<basecolumn=\"Id_Origen\">\n<varname=\"Id_Origen\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_Origen\">\n<searchExpression=\"Id_Origen\">\n>\n<[12]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Destino\">\n<basecolumn=\"Id_Destino\">\n<varname=\"Id_Destino\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_Destino\">\n<searchExpression=\"Id_Destino\">\n>\n<[13]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"nvarchar\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"UsuarioCreacion\">\n<basecolumn=\"UsuarioCreacion\">\n<varname=\"UsuarioCreacion\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"UsuarioCreacion\">\n<searchExpression=\"UsuarioCreacion\">\n>\n<[14]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"nvarchar\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"UsuarioEdicion\">\n<basecolumn=\"UsuarioEdicion\">\n<varname=\"UsuarioEdicion\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"UsuarioEdicion\">\n<searchExpression=\"UsuarioEdicion\">\n>\n<[15]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"datetime\">\n<portable_type=\"DateTime\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"fechaCreacion\">\n<basecolumn=\"fechaCreacion\">\n<varname=\"fechaCreacion\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"fechaCreacion\">\n<searchExpression=\"fechaCreacion\">\n>\n<[16]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"datetime\">\n<portable_type=\"DateTime\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"fechaEdicion\">\n<basecolumn=\"fechaEdicion\">\n<varname=\"fechaEdicion\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"fechaEdicion\">\n<searchExpression=\"fechaEdicion\">\n>\n<[17]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_RecorridoAnterior\">\n<basecolumn=\"Id_RecorridoAnterior\">\n<varname=\"Id_RecorridoAnterior\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_RecorridoAnterior\">\n<searchExpression=\"Id_RecorridoAnterior\">\n>\n<[18]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"datetime\">\n<portable_type=\"DateTime\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"fechaCompletado\">\n<basecolumn=\"fechaCompletado\">\n<varname=\"fechaCompletado\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"fechaCompletado\">\n<searchExpression=\"fechaCompletado\">\n>\n<[19]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"datetime\">\n<portable_type=\"DateTime\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"fechaTerminado\">\n<basecolumn=\"fechaTerminado\">\n<varname=\"fechaTerminado\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"fechaTerminado\">\n<searchExpression=\"fechaTerminado\">\n>\n<[20]<a5_type=\"Logical\">\n<a5_shorttype=\"L\">\n<CS_type=\"bit\">\n<portable_type=\"Boolean\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=1>\n<name=\"estaEnviadoCorreo\">\n<basecolumn=\"estaEnviadoCorreo\">\n<varname=\"estaEnviadoCorreo\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=1>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"estaEnviadoCorreo\">\n<searchExpression=\"estaEnviadoCorreo\">\n>\n<[21]<a5_type=\"ShortTime\">\n<a5_shorttype=\"S\">\n<CS_type=\"Time\">\n<portable_type=\"Time\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=9>\n<name=\"horaSalidaEstimada\">\n<basecolumn=\"horaSalidaEstimada\">\n<varname=\"horaSalidaEstimada\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=9>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"horaSalidaEstimada\">\n<searchExpression=\"horaSalidaEstimada\">\n>\n<[22]<a5_type=\"Date\">\n<a5_shorttype=\"D\">\n<CS_type=\"Date\">\n<portable_type=\"Date\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=8>\n<name=\"FechaLlegadaEstimada\">\n<basecolumn=\"FechaLlegadaEstimada\">\n<varname=\"FechaLlegadaEstimada\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=8>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"FechaLlegadaEstimada\">\n<searchExpression=\"FechaLlegadaEstimada\">\n>\n<[23]<a5_type=\"ShortTime\">\n<a5_shorttype=\"S\">\n<CS_type=\"Time\">\n<portable_type=\"Time\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=9>\n<name=\"horaLlegadaEstimada\">\n<basecolumn=\"horaLlegadaEstimada\">\n<varname=\"horaLlegadaEstimada\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=9>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"horaLlegadaEstimada\">\n<searchExpression=\"horaLlegadaEstimada\">\n>\n<[24]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Alcance\">\n<basecolumn=\"Id_Alcance\">\n<varname=\"Id_Alcance\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_Alcance\">\n<searchExpression=\"Id_Alcance\">\n>\n<[25]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"referenciaCliente\">\n<basecolumn=\"referenciaCliente\">\n<varname=\"referenciaCliente\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"referenciaCliente\">\n<searchExpression=\"referenciaCliente\">\n>\n<[26]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"numeroReferendo\">\n<basecolumn=\"numeroReferendo\">\n<varname=\"numeroReferendo\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"numeroReferendo\">\n<searchExpression=\"numeroReferendo\">\n>\n<[27]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_ContratoServicioRecorrido\">\n<basecolumn=\"Id_ContratoServicioRecorrido\">\n<varname=\"Id_ContratoServicioRecorrido\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_ContratoServicioRecorrido\">\n<searchExpression=\"Id_ContratoServicioRecorrido\">\n>\n<[28]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_PaisOrigen\">\n<basecolumn=\"Id_PaisOrigen\">\n<varname=\"Id_PaisOrigen\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_PaisOrigen\">\n<searchExpression=\"Id_PaisOrigen\">\n>\n<[29]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_PaisDestino\">\n<basecolumn=\"Id_PaisDestino\">\n<varname=\"Id_PaisDestino\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_PaisDestino\">\n<searchExpression=\"Id_PaisDestino\">\n>\n<[30]<a5_type=\"Logical\">\n<a5_shorttype=\"L\">\n<CS_type=\"bit\">\n<portable_type=\"Boolean\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=1>\n<name=\"aprobado\">\n<basecolumn=\"aprobado\">\n<varname=\"aprobado\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=1>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"aprobado\">\n<searchExpression=\"aprobado\">\n>\n<[31]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"datetime\">\n<portable_type=\"DateTime\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"FechaAprobacion\">\n<basecolumn=\"FechaAprobacion\">\n<varname=\"FechaAprobacion\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"FechaAprobacion\">\n<searchExpression=\"FechaAprobacion\">\n>\n<[32]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"usuarioAprobo\">\n<basecolumn=\"usuarioAprobo\">\n<varname=\"usuarioAprobo\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"usuarioAprobo\">\n<searchExpression=\"usuarioAprobo\">\n>\n<[33]<a5_type=\"Logical\">\n<a5_shorttype=\"L\">\n<CS_type=\"bit\">\n<portable_type=\"Boolean\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=1>\n<name=\"tieneZonaFranca\">\n<basecolumn=\"tieneZonaFranca\">\n<varname=\"tieneZonaFranca\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=1>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"tieneZonaFranca\">\n<searchExpression=\"tieneZonaFranca\">\n>\n<[34]<a5_type=\"Logical\">\n<a5_shorttype=\"L\">\n<CS_type=\"bit\">\n<portable_type=\"Boolean\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=1>\n<name=\"envioPrefactura\">\n<basecolumn=\"envioPrefactura\">\n<varname=\"envioPrefactura\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=1>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"envioPrefactura\">\n<searchExpression=\"envioPrefactura\">\n>\n<[35]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"usuarioEnvio\">\n<basecolumn=\"usuarioEnvio\">\n<varname=\"usuarioEnvio\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"usuarioEnvio\">\n<searchExpression=\"usuarioEnvio\">\n>\n<[36]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"datetime\">\n<portable_type=\"DateTime\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"fechaEnvioPrefactura\">\n<basecolumn=\"fechaEnvioPrefactura\">\n<varname=\"fechaEnvioPrefactura\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"fechaEnvioPrefactura\">\n<searchExpression=\"fechaEnvioPrefactura\">\n>\n<[37]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=10>\n<name=\"dashCarga\">\n<basecolumn=\"dashCarga\">\n<varname=\"dashCarga\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=10>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.F.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"dashCarga\">\n<searchExpression=\"dashCarga\">\n>\n<[38]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=10>\n<name=\"dashPickUp\">\n<basecolumn=\"dashPickUp\">\n<varname=\"dashPickUp\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=10>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.F.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"dashPickUp\">\n<searchExpression=\"dashPickUp\">\n>\n<[39]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=10>\n<name=\"dashValor\">\n<basecolumn=\"dashValor\">\n<varname=\"dashValor\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=10>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.F.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"dashValor\">\n<searchExpression=\"dashValor\">\n>\n<[40]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=10>\n<name=\"dashTiempo\">\n<basecolumn=\"dashTiempo\">\n<varname=\"dashTiempo\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=10>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.F.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"dashTiempo\">\n<searchExpression=\"dashTiempo\">\n>\n<[41]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=10>\n<name=\"dashTiempoAct\">\n<basecolumn=\"dashTiempoAct\">\n<varname=\"dashTiempoAct\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=10>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.F.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"dashTiempoAct\">\n<searchExpression=\"dashTiempoAct\">\n>\n<[42]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"float\">\n<portable_type=\"Double\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=20>\n<name=\"tiempoReal\">\n<basecolumn=\"tiempoReal\">\n<varname=\"tiempoReal\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=20>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"tiempoReal\">\n<searchExpression=\"tiempoReal\">\n>\n<[43]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"float\">\n<portable_type=\"Double\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=20>\n<name=\"tiempoEstimado\">\n<basecolumn=\"tiempoEstimado\">\n<varname=\"tiempoEstimado\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=20>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"tiempoEstimado\">\n<searchExpression=\"tiempoEstimado\">\n>\n<[44]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"varchar\">\n<portable_type=\"VaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=10>\n<name=\"dashDocumento\">\n<basecolumn=\"dashDocumento\">\n<varname=\"dashDocumento\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=10>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.F.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"dashDocumento\">\n<searchExpression=\"dashDocumento\">\n>\n<[45]<a5_type=\"Logical\">\n<a5_shorttype=\"L\">\n<CS_type=\"bit\">\n<portable_type=\"Boolean\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=1>\n<name=\"prefacturado\">\n<basecolumn=\"prefacturado\">\n<varname=\"prefacturado\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=1>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"prefacturado\">\n<searchExpression=\"prefacturado\">\n>\n<[46]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"horasExtras\">\n<basecolumn=\"horasExtras\">\n<varname=\"horasExtras\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"horasExtras\">\n<searchExpression=\"horasExtras\">\n>\n<[47]<a5_type=\"Logical\">\n<a5_shorttype=\"L\">\n<CS_type=\"bit\">\n<portable_type=\"Boolean\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=1>\n<name=\"tieneCargaSegura\">\n<basecolumn=\"tieneCargaSegura\">\n<varname=\"tieneCargaSegura\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=1>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"tieneCargaSegura\">\n<searchExpression=\"tieneCargaSegura\">\n>\n<[48]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"diasPrefactura\">\n<basecolumn=\"diasPrefactura\">\n<varname=\"diasPrefactura\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"diasPrefactura\">\n<searchExpression=\"diasPrefactura\">\n>\n<[49]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_EstadoRecorridoPago\">\n<basecolumn=\"Id_EstadoRecorridoPago\">\n<varname=\"Id_EstadoRecorridoPago\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_EstadoRecorridoPago\">\n<searchExpression=\"Id_EstadoRecorridoPago\">\n>\n<[50]<a5_type=\"Logical\">\n<a5_shorttype=\"L\">\n<CS_type=\"bit\">\n<portable_type=\"Boolean\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=1>\n<name=\"esServicioLogistico\">\n<basecolumn=\"esServicioLogistico\">\n<varname=\"esServicioLogistico\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=1>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"esServicioLogistico\">\n<searchExpression=\"esServicioLogistico\">\n>\n<[51]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"int\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_BancoPago\">\n<basecolumn=\"Id_BancoPago\">\n<varname=\"Id_BancoPago\">\n<basetable=\"N_Recorrido\">\n<alias_to_update=\"N_Recorrido\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"\">\n<searchSortExpression=\"Id_BancoPago\">\n<searchExpression=\"Id_BancoPago\">\n>\n>\n",
+            "SurrogatePrimaryKeyData": "<arrTables<[1]<Primary_Key=\"Id_Recorrido\">\n<Name=\"N_Recorrido\">\n<Alias=\"N_Recorrido\">\n>\n>\n",
+            "SQLBuilder": {
+                "ColumnAliases": "Id_Recorrido|||||||Id_Recorrido\nFechaSalida|||||||FechaSalida\nId_Cliente|||||||Id_Cliente\nId_Contrato|||||||Id_Contrato\nId_ContratoServicio|||||||Id_ContratoServicio\nId_TipoTransportacion|||||||Id_TipoTransportacion\nObservaciones|||||||Observaciones\nId_TipoFlete|||||||Id_TipoFlete\nId_EstadoRecorrido|||||||Id_EstadoRecorrido\nId_TipoEjecucion|||||||Id_TipoEjecucion\nId_Origen|||||||Id_Origen\nId_Destino|||||||Id_Destino\nUsuarioCreacion|||||||UsuarioCreacion\nUsuarioEdicion|||||||UsuarioEdicion\nfechaCreacion|||||||fechaCreacion\nfechaEdicion|||||||fechaEdicion\nId_RecorridoAnterior|||||||Id_RecorridoAnterior\nfechaCompletado|||||||fechaCompletado\nfechaTerminado|||||||fechaTerminado\nestaEnviadoCorreo|||||||estaEnviadoCorreo\nhoraSalidaEstimada|||||||horaSalidaEstimada\nFechaLlegadaEstimada|||||||FechaLlegadaEstimada\nhoraLlegadaEstimada|||||||horaLlegadaEstimada\nId_Alcance|||||||Id_Alcance\nreferenciaCliente|||||||referenciaCliente\nnumeroReferendo|||||||numeroReferendo\nId_ContratoServicioRecorrido|||||||Id_ContratoServicioRecorrido\nId_PaisOrigen|||||||Id_PaisOrigen\nId_PaisDestino|||||||Id_PaisDestino\naprobado|||||||aprobado\nFechaAprobacion|||||||FechaAprobacion\nusuarioAprobo|||||||usuarioAprobo\ntieneZonaFranca|||||||tieneZonaFranca\nenvioPrefactura|||||||envioPrefactura\nusuarioEnvio|||||||usuarioEnvio\nfechaEnvioPrefactura|||||||fechaEnvioPrefactura\ndashCarga|||||||dashCarga\ndashPickUp|||||||dashPickUp\ndashValor|||||||dashValor\ndashTiempo|||||||dashTiempo\ndashTiempoAct|||||||dashTiempoAct\ntiempoReal|||||||tiempoReal\ntiempoEstimado|||||||tiempoEstimado\ndashDocumento|||||||dashDocumento\nprefacturado|||||||prefacturado\nhorasExtras|||||||horasExtras\ntieneCargaSegura|||||||tieneCargaSegura\ndiasPrefactura|||||||diasPrefactura\nId_EstadoRecorridoPago|||||||Id_EstadoRecorridoPago\nesServicioLogistico|||||||esServicioLogistico\nId_BancoPago|||||||Id_BancoPago\n",
+                "ColumnTypes": "Id_Recorrido=N\nFechaSalida=D\nId_Cliente=N\nId_Contrato=N\nId_ContratoServicio=N\nId_TipoTransportacion=N\nObservaciones=C\nId_TipoFlete=N\nId_EstadoRecorrido=N\nId_TipoEjecucion=N\nId_Origen=N\nId_Destino=N\nUsuarioCreacion=C\nUsuarioEdicion=C\nfechaCreacion=T\nfechaEdicion=T\nId_RecorridoAnterior=N\nfechaCompletado=T\nfechaTerminado=T\nestaEnviadoCorreo=L\nhoraSalidaEstimada=S\nFechaLlegadaEstimada=D\nhoraLlegadaEstimada=S\nId_Alcance=N\nreferenciaCliente=C\nnumeroReferendo=C\nId_ContratoServicioRecorrido=N\nId_PaisOrigen=N\nId_PaisDestino=N\naprobado=L\nFechaAprobacion=T\nusuarioAprobo=C\ntieneZonaFranca=L\nenvioPrefactura=L\nusuarioEnvio=C\nfechaEnvioPrefactura=T\ndashCarga=C\ndashPickUp=C\ndashValor=C\ndashTiempo=C\ndashTiempoAct=C\ntiempoReal=N\ntiempoEstimado=N\ndashDocumento=C\nprefacturado=L\nhorasExtras=N\ntieneCargaSegura=L\ndiasPrefactura=N\nId_EstadoRecorridoPago=N\nesServicioLogistico=L\nId_BancoPago=N\n",
+                "ColumnNativeTypes": "Id_Recorrido=int\nFechaSalida=Date\nId_Cliente=int\nId_Contrato=int\nId_ContratoServicio=int\nId_TipoTransportacion=int\nObservaciones=NVARCHAR(MAX)\nId_TipoFlete=int\nId_EstadoRecorrido=int\nId_TipoEjecucion=int\nId_Origen=int\nId_Destino=int\nUsuarioCreacion=nvarchar\nUsuarioEdicion=nvarchar\nfechaCreacion=datetime\nfechaEdicion=datetime\nId_RecorridoAnterior=int\nfechaCompletado=datetime\nfechaTerminado=datetime\nestaEnviadoCorreo=bit\nhoraSalidaEstimada=Time\nFechaLlegadaEstimada=Date\nhoraLlegadaEstimada=Time\nId_Alcance=int\nreferenciaCliente=varchar\nnumeroReferendo=varchar\nId_ContratoServicioRecorrido=int\nId_PaisOrigen=int\nId_PaisDestino=int\naprobado=bit\nFechaAprobacion=datetime\nusuarioAprobo=varchar\ntieneZonaFranca=bit\nenvioPrefactura=bit\nusuarioEnvio=varchar\nfechaEnvioPrefactura=datetime\ndashCarga=varchar\ndashPickUp=varchar\ndashValor=varchar\ndashTiempo=varchar\ndashTiempoAct=varchar\ntiempoReal=float\ntiempoEstimado=float\ndashDocumento=varchar\nprefacturado=bit\nhorasExtras=int\ntieneCargaSegura=bit\ndiasPrefactura=int\nId_EstadoRecorridoPago=int\nesServicioLogistico=bit\nId_BancoPago=int\n",
+                "ColumnPortableTypes": "Id_Recorrido=Integer32\nFechaSalida=Date\nId_Cliente=Integer32\nId_Contrato=Integer32\nId_ContratoServicio=Integer32\nId_TipoTransportacion=Integer32\nObservaciones=NationalVaryingCharacter\nId_TipoFlete=Integer32\nId_EstadoRecorrido=Integer32\nId_TipoEjecucion=Integer32\nId_Origen=Integer32\nId_Destino=Integer32\nUsuarioCreacion=NationalVaryingCharacter\nUsuarioEdicion=NationalVaryingCharacter\nfechaCreacion=DateTime\nfechaEdicion=DateTime\nId_RecorridoAnterior=Integer32\nfechaCompletado=DateTime\nfechaTerminado=DateTime\nestaEnviadoCorreo=Boolean\nhoraSalidaEstimada=Time\nFechaLlegadaEstimada=Date\nhoraLlegadaEstimada=Time\nId_Alcance=Integer32\nreferenciaCliente=VaryingCharacter\nnumeroReferendo=VaryingCharacter\nId_ContratoServicioRecorrido=Integer32\nId_PaisOrigen=Integer32\nId_PaisDestino=Integer32\naprobado=Boolean\nFechaAprobacion=DateTime\nusuarioAprobo=VaryingCharacter\ntieneZonaFranca=Boolean\nenvioPrefactura=Boolean\nusuarioEnvio=VaryingCharacter\nfechaEnvioPrefactura=DateTime\ndashCarga=VaryingCharacter\ndashPickUp=VaryingCharacter\ndashValor=VaryingCharacter\ndashTiempo=VaryingCharacter\ndashTiempoAct=VaryingCharacter\ntiempoReal=Double\ntiempoEstimado=Double\ndashDocumento=VaryingCharacter\nprefacturado=Boolean\nhorasExtras=Integer32\ntieneCargaSegura=Boolean\ndiasPrefactura=Integer32\nId_EstadoRecorridoPago=Integer32\nesServicioLogistico=Boolean\nId_BancoPago=Integer32\n",
+                "AutoIncrementFields": "Id_Recorrido\n",
+                "CanBeUsedInWhereClauseFields": "Id_Recorrido\nFechaSalida\nId_Cliente\nId_Contrato\nId_ContratoServicio\nId_TipoTransportacion\nId_TipoFlete\nId_EstadoRecorrido\nId_TipoEjecucion\nId_Origen\nId_Destino\nUsuarioCreacion\nUsuarioEdicion\nfechaCreacion\nfechaEdicion\nId_RecorridoAnterior\nfechaCompletado\nfechaTerminado\nestaEnviadoCorreo\nhoraSalidaEstimada\nFechaLlegadaEstimada\nhoraLlegadaEstimada\nId_Alcance\nreferenciaCliente\nnumeroReferendo\nId_ContratoServicioRecorrido\nId_PaisOrigen\nId_PaisDestino\naprobado\nFechaAprobacion\nusuarioAprobo\ntieneZonaFranca\nenvioPrefactura\nusuarioEnvio\nfechaEnvioPrefactura\ntiempoReal\ntiempoEstimado\nprefacturado\nhorasExtras\ntieneCargaSegura\ndiasPrefactura\nId_EstadoRecorridoPago\nesServicioLogistico\nId_BancoPago\n"
+            },
+            "Arguments": [
+                {}
+            ],
+            "table_type": "Table",
+            "primaryKeyTopAliasIsAutoIncrement_AsDefinedInTableInfo": true,
+            "primaryKeyTopAliasIsAutoIncrement": true
+        },
+        "query_dbf": {
+            "type": "Table",
+            "Direction": "Ascending",
+            "JoinInfo": {
+                "a_tables": [
+                    {}
+                ]
+            },
+            "Arguments": [
+                {}
+            ]
+        },
+        "fields": {
+            "a_fields": [
+                {
+                    "fieldname": "Id_Recorrido",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "InLineStyle": "text-align: right;",
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "InLineStyle": "text-align: right;",
+                        "className": "",
+                        "Size": 20,
+                        "readonly": false,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "toolbaricons": "",
+                            "toolbardefinition": "",
+                            "editButtonText": "Edit..."
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Id Recorrido",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "Id_Recorrido",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "columnQBEOptionsJSON": "",
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "Id_Recorrido",
+                    "type": "N",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_Recorrido",
+                    "canBeUsedInWhereClause": true,
+                    "nativeType": "int",
+                    "autoincrement": true,
+                    "table": "N_Recorrido",
+                    "FieldToUpdate": "Id_Recorrido",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "Integer32",
+                    "width": 11,
+                    "varname": "Id_Recorrido",
+                    "Display": "Id_Recorrido",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_Recorrido}Id_Recorrido",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_Recorrido}Id_Recorrido",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Recorrido\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Recorrido\"\n\t.Column.Sort = \"Id_Recorrido\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n\n\n\n\n"
+                }
+            ]
+        },
+        "field_index": 1,
+        "DetailView": {
+            "LayoutColumns": 1,
+            "AddNewLinkLabel": "New Record",
+            "SaveRecordButtonLabel": "Save",
+            "DeleteRecordButtonLabel": "Delete",
+            "AddRecordButtonLabel": "Add",
+            "HasTitle": true,
+            "Title": "Detail View ",
+            "show_row_labels": true,
+            "edit": {
+                "Execute_Update_Commands": true,
+                "allow_update": true,
+                "allow_insert": true,
+                "allow_delete": true,
+                "validateFieldsSetting": "Dirty Fields Only",
+                "updateWhichFields": "Dirty Fields Only",
+                "Number_Of_Insert_Rows": 1,
+                "cancel_button_text": "Cancel",
+                "close_button_text": "Close",
+                "save_confirm_before_submit_message": "Update record?",
+                "delete_confirm_before_submit_message": "Delete record?",
+                "add_confirm_before_submit_message": "Add record?",
+                "check_for_write_conflicts": true,
+                "write_conflict_check_type": 2,
+                "save_original_values": true,
+                "Delete_TargetPage": "<Self>",
+                "Save_TargetPage": "<Self>",
+                "Add_TargetPage": "<Self>",
+                "field_error_style": {
+                    "type": "Icon",
+                    "icon": "images/$$generic.error.png.a5image"
+                },
+                "RefreshRowMethod": "AutoSelect",
+                "row_errors_window_title": "Errors",
+                "row_errors_window_style": "color: red; width: 6in; height: 2in;",
+                "FocusAfterFullPageRefreshForInsert": "First record",
+                "FocusAfterFullPageRefreshForUpdate": "Current page",
+                "FocusAfterFullPageRefreshForDelete": "Current page",
+                "Editable_GridRow_Options_Style": "Icons",
+                "RefreshRowOnDirty": true,
+                "RowEditStyle": "InitiallyEditable",
+                "LazyEdit": true
+            },
+            "HasCloseLink": true,
+            "CloseDetailViewLinkLabel": "Close",
+            "CanClose": true,
+            "Toolbar": {
+                "Position": "Below",
+                "showRecordNavigatorLinks": true
+            },
+            "UseSimpleStyles": true,
+            "SimpleStyleMode": "LayoutOnly",
+            "displayStyle": "OnPage",
+            "windowDragOpacity": 75,
+            "PopupWindowTitle": "Detail View",
+            "PopupWindowDirection": "ltr",
+            "OpenMethod": "Click a hyperlink field",
+            "window": {
+                "animation": {
+                    "show": {
+                        "method": "Fade",
+                        "speed": "Slow"
+                    },
+                    "hide": {
+                        "method": "None",
+                        "speed": "Fast"
+                    }
+                }
+            }
+        },
+        "detailfields": {
+            "a_fields": [
+                {}
+            ]
+        },
+        "EditRegion": {
+            "search": {
+                "Bottom": "\n"
+            }
+        },
+        "detailViewToolbar": {
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "HasSearchPart": true,
+        "search": {
+            "HTML_Template_source": "Computed",
+            "title": "Search ",
+            "title_when_hidden": "Click here to search...",
+            "show_title": true,
+            "search_button_label": "Search",
+            "form_method": "Get",
+            "include_sorting_listbox": true,
+            "sorting_listbox_label_position": "Left",
+            "sort": {
+                "prompt": "Sort&nbsp;by",
+                "listbox": {
+                    "fieldname_prompt": "Select Field",
+                    "order_prompt": "Select Order",
+                    "order_choices": "Ascending,Descending"
+                }
+            },
+            "include_records_per_page_listbox": true,
+            "records_per_page_label_position": "Left",
+            "records_per_page": {
+                "prompt": "Records&nbsp;per&nbsp;page",
+                "listbox": {
+                    "value_prompt": "Select Value",
+                    "choices": "1,2,5,10,25,50,75,100"
+                }
+            },
+            "orientation": "Vertical",
+            "combine_criteria_using": 1,
+            "style": 2,
+            "allow_qbf_style": true,
+            "keyword_label": "Search for?",
+            "has_Clear_link": true,
+            "Clear_link_Label": "Clear Search Criteria",
+            "Clear_link_BubbleHelp": "Clear Search",
+            "TargetPage": "<Self>",
+            "InitialState": "Open",
+            "embedInGridPosition": "Above Titles",
+            "embedded": {
+                "hasFreeformLayout": true,
+                "showHideEmbeddedSearchIcon": "images/$$filter.png.a5image",
+                "showHideEmbeddedSearchBubbleHelp": "Show/hide the Search Part",
+                "showSearchIconsInRowSelector": true,
+                "searchIconBubbleHelp": "Search for records",
+                "clearSearchIconBubbleHelp": "Clear search criteria",
+                "searchIcon": "images/$$filter.records.png.a5image",
+                "clearSearchIcon": "images/$$filter.clear.png.a5image"
+            },
+            "embeddedStyle": "Free-form region for each column",
+            "toolbarPosition": "Below",
+            "savedSearches": {
+                "loadSearchPrompt": "Saved search to load:",
+                "saveSearchPrompt": "Name:",
+                "listboxHeading": "Existing Saved Searches",
+                "promptToLoadChoices": "Click to load choices...",
+                "loadButtonLabel": "Load",
+                "saveButtonLabel": "Save",
+                "cancelButtonLabel": "Cancel",
+                "listBoxHeight": "1in",
+                "dialogWidth": "2in",
+                "executeSearchOnLoad": true,
+                "saveSearchBubbleHelp": "Save search criteria",
+                "loadSearchBubbleHelp": "Load search criteria",
+                "warningBlankName": "You have not specifed a name.",
+                "warningDuplicateName": "Search not saved. Please specify a unique name."
+            }
+        },
+        "searchToolbar": {
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "searchFields": {
+            "a_fields": [
+                {
+                    "fieldname": "Id_Recorrido",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "TextBox",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "InLineStyle": "text-align: right;",
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "InLineStyle": "text-align: right;",
+                        "className": "",
+                        "Size": 40,
+                        "readonly": false,
+                        "MaxLength": 200,
+                        "stylefieldiferror": true
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "Lookup": {
+                        "Type": "Edit-Combo List"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "css": "",
+                            "toolbaricons": "",
+                            "toolbardefinition": "",
+                            "editButtonText": "Edit..."
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add To List if Not Null",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add To List if Not Null",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "dbf": {
+                            "displayValueFieldType": ""
+                        },
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add To List if Not Null",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel"
+                    },
+                    "column": {
+                        "heading": "Id Recorrido",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "Id_Recorrido",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "columnQBEOptionsJSON": "",
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close",
+                        "DisplayValue": "",
+                        "TargetWindow": "",
+                        "TargetPage": ""
+                    },
+                    "BaseFieldExpression": "Id_Recorrido",
+                    "type": "N",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "N_Recorrido",
+                    "canBeUsedInWhereClause": true,
+                    "nativeType": "int",
+                    "autoincrement": true,
+                    "table": "N_Recorrido",
+                    "FieldToUpdate": "Id_Recorrido",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "PortableType": "Integer32",
+                    "varname": "Id_Recorrido",
+                    "Display": "Id_Recorrido",
+                    "displayOD": "{F=Tahoma,8}{I:'$a5_control_field'}{T=.2}{C=}{DATA=Id_Recorrido}Id_Recorrido",
+                    "displayODFlat": "{F=Tahoma,8}{I:'$a5_control_field'}{T=.2}{C=}{DATA=Id_Recorrido}Id_Recorrido",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.searchfield_info[_fieldNumber_]\n\t.Fieldname = \"Id_Recorrido\"\n\t.SearchExpression = \"Id_Recorrido\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Recorrido\"\nend with\n\n\n\n",
+                    "SearchExpression": "Id_Recorrido",
+                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
+                    "index": 2000,
+                    "repeatingSectionParentId": -1,
+                    "flagWindowContainer": false,
+                    "javascriptOnShow": ""
+                }
+            ]
+        },
+        "searchField_index": 1,
+        "events": {
+            "BeforeSearch": "function BeforeSearch as v (SearchDataSubmitted as P, Args as p, PageVariables as p)\nwith PageVariables\n\ndim fechaInicio as d\ndim fechaFin as d\n\nfechaInicio = SearchDataSubmitted.FROM.FECHA\nfechaFin = SearchDataSubmitted._TO.FECHA\n\ndim valor1 as n\n\ndim Year as n\ndim Month as n\ndim Day as n\n\nYear = YEAR(fechaInicio)\nMonth = Month(fechaInicio)\nDay = Day(fechaInicio)\n\ndim Year2 as n\ndim Month2 as n\ndim Day2 as n\n\nYear2 = YEAR(fechaFin)\nMonth2 = Month(fechaFin)\nDay2 = Day(fechaFin)\n\nDIM cn as SQL::Connection\ndim flagResult as l \nflagResult = cn.open(\"::Name::Nibble\")\nif flagResult = .f. then \n\tui_msg_box(\"Error\",\"Could not connect to database. Error reported was: \" + crlf() + cn.CallResult.text)\n\tend \nend if\n\ndim sql as c\nsql = <<%sql%\nSELECT Id_Recorrido\nFROM RecMedTranspRepAct \nWHERE Id_Actividad IN (11, 14, 28, 55, 56, 84, 87, 89, 90, 92, 107, 109, 110, 120, 144, 170, 171, 180, 181, 192, 202, 204, \n206, 221, 242, 270, 280, 305, 308) \nAND Fecha >= :fechaInicio AND Fecha <= :fechaFin\nGROUP BY Id_Recorrido\n%sql%\n\n'Dim a SQL arguments object, create arguments and set their values\nDIM args2 as sql::arguments\nargs2.Add(\"fechaInicio\", Year + \"-\" + Month + \"-\" + Day)\nargs2.Add(\"fechaFin\", Year2 + \"-\" + Month2 + \"-\" + Day2)\n\nflag = cn.Execute(sql,args2)\nif flagResult = .f. then \n\tui_msg_box(\"Error\",cn.CallResult.text)\n\tcn.close()\n\tend \nend if \n\ndim rs as sql::resultset\nrs = cn.ResultSet\n\ndim cantidad as n\n\nwhile rs.NextRow()\n\tcantidad = cantidad + rs.RowCount\nend While \n\ncantidad = cantidad * (-1)\n\nsql = <<%sql%\nSELECT Id_Recorrido\nFROM RecMedTranspRepAct \nWHERE  Fecha >= :fechaInicio AND Fecha <= :fechaFin AND Id_TipoFlete = 6\nGROUP BY Id_Recorrido\nORDER BY Id_Recorrido\n%sql%\n\nflag = cn.Execute(sql,args2)\nif flagResult = .f. then \n\tui_msg_box(\"Error\",cn.CallResult.text)\n\tcn.close()\n\tend \nend if\n\ndim rs2 as sql::resultset\nrs2 = cn.ResultSet\n\ndim totalViajes as n\n\nwhile rs2.NextRow()\n\ttotalViajes = totalViajes + rs2.RowCount\nend While \n\n'debug(1)\n\ntotalViajes = totalViajes * (-1)\n\ndim valor2 as n\ndim calculoPoblacion as n\n\nif totalViajes > 0 then\n\tvalor1 = totalViajes * 1.645 * 1.645 * 0.5 * 0.5\t\n\tvalor2 = (0.05 * 0.05 * (totalViajes - 1)) + (1.645 * 1.645 * 0.5 * 0.5)\n\tcalculoPoblacion = round_up(valor1 / valor2 , 0)\nend if\n\nvalorFinalIndicador3 = (cantidad / calculoPoblacion) * 100 \nvalorFinalIndicador3 = alltrim(str( convert_type(valorFinalIndicador3,\"N\") ,250,2,\"B\"))\n\n\n\n\n\n'* aqui comienzo a buscar los valores de los recorridos\ndim Id_recorrido as n\nId_recorrido = session.Id_RecorridoValores'e.rowData.data(\"DescripcionActividad\")'e.rowData.data(\"Id_Recorrido\")\n\nDIM cn as SQL::Connection\ndim flagResult as l \nflagResult = cn.open(\"::Name::Nibble\")\nif flagResult = .f. then \n\tui_msg_box(\"Error\",\"Could not connect to database. Error reported was: \" + crlf() + cn.CallResult.text)\n\tend \nend if\n\ndim argsP as sql::Arguments\nargsP.Add(\"id_recorrido\", Id_recorrido)\n'Specify if you are using Portable SQL syntax, or not\ncn.PortableSQLEnabled = .t. \ndim sqlStatement as c \nsqlStatement = <<%sql%\nSELECT ValorFinal, ValorCompraFinal  FROM RecMedTranspRepAct  \nWHERE Id_Recorrido = :id_recorrido\n%sql%\n'Execute the Query\nflagResult = cn.Execute(sqlStatement, argsP)\nif flagResult = .f. then \n\tui_msg_box(\"Error\",cn.CallResult.text)\n\tcn.close()\n\tend \nend if \ndim rs as sql::resultset\nrs = cn.ResultSet\n\ndim valorCompra as n\ndim valorVenta as n\n\ndim valorCompraTotal as n\ndim valorVentaTotal as n\ndim ROI as n\nROI = 0\n\nwhile rs.NextRow()\n\tvalorVenta = rs.Data(1) \n\tvalorVentaTotal = valorVentaTotal + valorVenta\n\tvalorCompra = rs.Data(2)  \t\n\tvalorCompraTotal = valorCompraTotal + valorCompra\nend while\t\n\nif valorCompraTotal > 0 then\n\t\tROI = ((valorVentaTotal - valorCompraTotal)/valorCompraTotal)*100\n\t\t'ROI = (valorVentaTotal - valorCompraTotal)\t\t\nend if\n\n\n\n\n\n\nif Month = 12 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Diciembre = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 11 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Noviembre = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 10 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Octubre = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 9 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Septiembre = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 8 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Agosto = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 7 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Julio = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 6 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Junio = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 5 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Mayo = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 4 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Abril = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 3 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Marzo = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 2 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Febrero = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\nif Month = 1 then\n\t\n\tDIM args3 as sql::arguments\n\targs3.Add(\"Mes\", valorFinalIndicador3)\n\targs3.Add(\"Anno\", Year)\n\tsql = <<%sql%\n\tUPDATE Objetivo_Proceso\n\tSET Enero = :Mes\n\tWHERE Id_ObjetivoAno = 1 AND NoObjetivo = 6\n\t%sql%\n\tcn.Execute(sql,args3)\t\nend if\n\n\tcn.Close()\n\nend with\nend function\n",
+            "canAjaxCallback": "",
+            "afterAjaxCallback": ""
+        },
+        "eventIndex": 3,
+        "activeLanguage": "<Default>",
+        "LayoutColumns": 1,
+        "DetailLayoutColumns": 1,
+        "style_name": "GrBlue",
+        "PreCalcMode": "Standard",
+        "FontSize": "Medium",
+        "style_type": "Alpha Five",
+        "useCompactTheme": true,
+        "showPulseEffect": true,
+        "overrideStyleName": "Default",
+        "resolveAbstractClassNames": true,
+        "odd_band_size": 1,
+        "even_band_size": 1,
+        "odd_column_band_size": 1,
+        "even_column_band_size": 1,
+        "rows": 10,
+        "maxRowsPerPage": 200,
+        "rowsWhenSearchActive": -1,
+        "suppress_empty_rows": true,
+        "has_row_separator": true,
+        "show_column_titles": 1,
+        "show_row_labels": true,
+        "sort_style": 3,
+        "reset_page_number_when_sorting": true,
+        "RepeatingColumns": 1,
+        "snaking": "TBLR",
+        "total_records_row_position": 1,
+        "total_records_row": "Records:&nbsp; {Total_Records}&nbsp;",
+        "grid_layout_style": 1,
+        "grid_layout_template_computation_method": "Automatic",
+        "No_records_message": "No records in query",
+        "Show_Add_Records_Confirmation_Message": true,
+        "summary": {
+            "total": {
+                "label": "Total",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "count": {
+                "label": "Count",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "average": {
+                "label": "Average",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "min": {
+                "label": "Minimum",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "max": {
+                "label": "Maximum",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "StdDev": {
+                "label": "Std. Dev.",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "Var": {
+                "label": "Variance",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "First": {
+                "label": "First",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "Last": {
+                "label": "Last",
+                "LblInlineStyle": "text-align: right;"
+            },
+            "RowOrder": "Total,Count,Average,Min,Max,StdDev,Var,First,Last",
+            "ShowOnLastPageOnly": true,
+            "repeatColumnHeadingAboveSummaryValues": false
+        },
+        "NewRecordsTitle": "<tr><td class=\"[class.gridData]\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" >New Records</td></tr>",
+        "ExistingRecordsTitle": "<tr><td class=\"[class.gridData]\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" >Existing Records</td></tr>",
+        "row_separator": "<tr><td class=\"{a5_style}SeparatorTD\" colspan=\"{a5_colspan}\" style=\"padding: 0px;\" ></td></tr>",
+        "highlight_row_onHover": true,
+        "highlight_row_onSelect": true,
+        "hasRecordsPerPageSelector": true,
+        "RecordsPerPageChoices": "1,2,5,10,25,50,75,100",
+        "RecordsPerPageSelectorTemplate": "&nbsp;&nbsp;{Grid.RecordsPerPageSelector} Records per page",
+        "alphabet_button": {
+            "style": "Hyperlink",
+            "has_ALL_option": true,
+            "ALL_Label": "All",
+            "alignment": "Left",
+            "SearchBarType": "Alphabet Buttons"
+        },
+        "has_advancedSearch": false,
+        "advancedSearch_jsondefinition": "",
+        "qbe": {
+            "menu_internationalization": "None",
+            "initial_display": "Hidden",
+            "toggleQBERowHyperlinkText": "Show/Hide QBE Row"
+        },
+        "SimpleStyleMode": "FieldsOnly",
+        "RowExpand": {
+            "ExpandMethod": "Click icon",
+            "Type": "LinkedContent",
+            "WorkingMessage": "<div style=\"width: 4in; height: .5in\">\n\t<img src=\"css/A5System/Images/wait.gif\" /> Working...\n</div> \n",
+            "Mode": "Multiple"
+        },
+        "hasLinkedContent": true,
+        "linkedContent": {
+            "lockWindowText": "<div style=\"padding: 5pt;\"><img style=\"vertical-align:middle;\" src=\"css/A5System/Images/wait.gif\" /> Please wait...</div>",
+            "lockWindowClassName": "A5WindowLock"
+        },
+        "hasSelectedRowColumn": true,
+        "CheckboxSelectType": "SinglePage",
+        "MasterTemplateStyle": "Table - Vertical Layout",
+        "MasterLayout": {
+            "PaneLabel": {
+                "Search": "Search",
+                "Grid": "Grid",
+                "DetailView": "Detail"
+            },
+            "AccordionStyle": "Multiple",
+            "InitialOpenPanes": "Search,Grid,DetailView"
+        },
+        "verticalAlignDataInColumns": "Middle",
+        "CollapseBar": {
+            "Title": "Collapse Grid",
+            "InitialState": "open"
+        },
+        "honorDBFFieldRules": true,
+        "languageTags_RemoveUnConsumedTags": true,
+        "onlyIncludeSelectedFieldsInQuery": true,
+        "flagAddPKToORDER": true,
+        "saveFileType": "Formatted JSON",
+        "captureJSErrorStackTrace": false,
+        "datePicker": {
+            "dayNames": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            "monthNames": "January,February,March,April,May,June,July,August,September,October,November,December",
+            "firstDayOfWeek": 1,
+            "todayButtonText": "Today",
+            "closeButtonText": "Close"
+        },
+        "friendlydatesCustomizationJSON": "",
+        "gridToolbar": {
+            "ExportButtonIcon": "images/$$application.ms.excel.png.a5image",
+            "ExportButtonHelp": "Export data in Grid to Excel",
+            "ExportButtonFormat": "Excel-XLSX",
+            "ExportButtonMaxRows": "10000",
+            "exportHiddenColumns": true,
+            "exportUseColumnHeadings": true,
+            "helpButtonIcon": "images/$$generic.help.png.a5image",
+            "helpButtonBubbleHelp": "Open help window."
+        },
+        "helpTableType": "DBF",
+        "fieldHelpWindowStyle": "modal-resizeable",
+        "autoRefreshInterval": 60,
+        "genericDataStoreTableType": "DBF",
+        "RecordNavigationStyle": "NavigationButtons",
+        "fetchMoreRecordsButton": {
+            "text": "More Records"
+        },
+        "namedLayout": {
+            "selectorPosition": "AboveGrid"
+        },
+        "scrollableRegionHeight": "2in",
+        "scrollableRegionWidth": "100%",
+        "defaultColumnWidth": "1in",
+        "RecNav": {
+            "HTML_Template_source": "Computed",
+            "Position": 1,
+            "Show_disabled_controls": true,
+            "Show_Page_Count": true,
+            "Page_Numbering_Style": 3,
+            "PagesTemplate_w_PageCount": "{PageNumber} of {PageCount}",
+            "PagesTemplate_wout_PageCount": "{PageNumber}",
+            "Has_First_Button": true,
+            "Has_Prev_Button": true,
+            "Has_Next_Button": true,
+            "Has_Last_Button": true,
+            "Number_of_page_links": 10,
+            "First_Label": "First",
+            "Prev_Label": "Prev",
+            "Next_Label": "Next",
+            "Last_Label": "Last",
+            "Justify": "Left",
+            "SuppressIfOnlyOnePage": true,
+            "First_on_Image_name": "{css_path_reference}/{a5_style}/FirstOn.png",
+            "First_off_Image_name": "{css_path_reference}/{a5_style}/FirstOff.png",
+            "Prev_on_Image_name": "{css_path_reference}/{a5_style}/PrevOn.png",
+            "Prev_off_Image_name": "{css_path_reference}/{a5_style}/PrevOff.png",
+            "Next_on_Image_name": "{css_path_reference}/{a5_style}/NextOn.png",
+            "Next_off_Image_name": "{css_path_reference}/{a5_style}/NextOff.png",
+            "Last_on_Image_name": "{css_path_reference}/{a5_style}/LastOn.png",
+            "Last_off_Image_name": "{css_path_reference}/{a5_style}/LastOff.png"
+        },
+        "edit": {
+            "Execute_Update_Commands": true,
+            "allow_update": true,
+            "allow_insert": true,
+            "number_of_insert_rows": 3,
+            "validateFieldsSetting": "Dirty Fields Only",
+            "delete_checkbox_label": "Delete",
+            "delete_checkbox_label_position": "Left",
+            "delete_checkbox_allowDeleteAll": false,
+            "cancel_button_text": "Cancel",
+            "submit_button_text": "Submit",
+            "confirm_before_submit_message": "Submit changes?",
+            "check_for_write_conflicts": true,
+            "write_conflict_check_type": 2,
+            "save_original_values": true,
+            "TargetPage": "<Self>",
+            "field_error_style": {
+                "type": "Icon",
+                "icon": "images/$$generic.error.png.a5image"
+            },
+            "RefreshRowMethod": "AutoSelect",
+            "Editable_GridRow_Options_Style": "Icons",
+            "RefreshRowOnFocus": true,
+            "RefreshRowOnDirty": true,
+            "row_errors_window_title": "Errors",
+            "row_errors_window_style": "color: red; width: 6in; height: 2in;",
+            "RowEditStyle": "AllRows",
+            "NewRecordsEditStyle": "AlwaysShown",
+            "NewRecordsButtonLabel": "New Records",
+            "DeleteRecordControl": "Checkbox",
+            "HasRowStatusColumn": true,
+            "OneEditableRowAtATime": true,
+            "LazyEdit": true
+        },
+        "ValidationSettingsErrorTemplate": "Field '{Fieldlabel}', Value '{Value}' : {Error}",
+        "ValidationSettingsMessage": "Click the 'Back' button and correct the errors.",
+        "ValidationErrorsRowColumnTitle": "Row",
+        "ValidationErrorsErrorColumnTitle": "Error",
+        "OnlyValidateEditedFields": true,
+        "AddNewRecordRowsPosition": "Bottom",
+        "autoNumberColumnLabel": "Auto",
+        "QuickSearch": {
+            "QuickSearchPosition": "In Grid",
+            "QuickSearchAlign": "Left",
+            "ControlType": "Textbox",
+            "AutoSubmit": true,
+            "Label": "Search for:",
+            "SearchButtonLabel": "Search",
+            "AllowQBFStyleSearch": true,
+            "SearchStyle": "Wildcard",
+            "Height": 1,
+            "SelectStyle": "Single",
+            "Size": 20,
+            "MaxLength": -1,
+            "Orientation": "Horizontal",
+            "choices": {
+                "type": "Static",
+                "datasource": "DBF-Table"
+            },
+            "connection_type": "Access Database",
+            "HasShowAllButton": true,
+            "ShowAllButtonLabel": "All"
+        },
+        "info": {
+            "createdBy": "ASUS",
+            "LastUpdatedBy": "ASUS",
+            "DateUpdated": "22-10-2019 03:04:26 07 pm",
+            "DateCreated": "22-10-2019 09:00:56 64 am"
+        },
+        "BuilderVersion": 2,
+        "current_pane_tree": "Code.Server-side Events",
+        "embeddedMode": false,
+        "_style_versionNumber": 2,
+        "AjaxOn": true,
+        "fpInstalled": "FtbXCTxOYL1FRPkhgxL04QosPo76ZUtXHPJOF9UzYkH3IIsShPZ0Fd3N8MdobMGEPNKHkALJ6GxGiqZFpdJyXd/kZc/UcvZLJOek/+m6lZwNLZQLl0OSUwGGWK3ctugjAHyJEwUXI4ue13o/Js4OE5sfgSvIt0gniH8lXxomp/IgZcI7k5pVu2ScAS2gUnP3sYKdnUgoJindfGhT/iVmBvtDjhA8bpDGGDwIUEDhzdKyG0ygwwAdRPpph8TEhK/Au/SXeueZI7XcCEDYwcjFO3aWCc9iXOc/wbgzjJo10rf7as6uWN5PYi/wEOFuVk5HnFuxRJJGMYnENUh0bx98cYnTafYbWHgWt7CVUA2Vla9HFUOWjSGGVKGQlacgC4cCi330KSxGFN7jwlsLGPRv7HvA025kd9JOSkVhf/0X1i3k4YG2hjhOgF525fyBbRywXTyxoKyozTmrm8Fgruo+Cvsqhm9vg4MxhtLNGBpHwCWv++9AY8k1sFDDD40ck118nIGEVzFGsASuzNZ83nwvz6OgsYEcMgaZapzsFbqzW8yEdlkztwL6crUvwJBbuZ/kNDcyVVwjIOLCPPmSfeGe8bcGD5paeIlw8nPibld0/NOYNxeOYRPRplkldYsnDJW46JA9CX3oYcP/7uDAwgpKmkxc0F3KKuvnedTWf01eWLsQGEyrD7wuOtrE5KRecCv5fv6GUdlYuuKKNQg9rgbxnRVfqDUDLGnmNv/Lq2w6Ot9sUKAj4a9YV5OeUR/yyYjSaDduH3Ln+m15S44JlGwZ0gLxoXg5wMPzMaGn7YGFNYzzT1ikA9DmGQn1SX5ODUxQSghZ6Z0m+55AFI6642VKKZ6G5c0w4p8njaFng9UhsnSLskUMp0YtYwtZV98++nCf++Tpei7khhaKDodlPh+mnmc7KDmL7ujkoRRH7RvqPcWJdxrgAcFvdVxrQxget/OaJQFS3MiWVU60YKcbcHfrT1jEttsfk/PMmcmBs85pieJq5tF4Lx7MEoWcrCXFdviktV8Rg7vQIq3GNUwxR0D3v6xv48DhTp2fIZNzJsID5yO4e4vqrTjMlDuvTL4RpkOh5ds6Sof1QEtfLdXo8bWA1+5qP6CLjjTbyGMxbE193pKk1R9Mg86zKpJPUSRKrvl7UkeI+sE2P+N/Rv1zPmLaHZrEaI1Jl8rF2gL0NF3Izdh2+GeFn1raRhtYKKLF4IZ/bdPOD5Gi9dSIlzVLUguZon1sOMW3JXsa0Af4dSe+E26T9OMC0SGh0fZEK+lr0hetZCL+1aACzIT8d3mu05EmJKDcc5D5lUPbsIk14QTqd6V9SItCLI81V11unPj4PoKwAqL2KQYImWzzaE5wsv2o6waON9reCx+LO2Rz2mV5+OltxuNK5d6V9rTnlslu6zNZHawoXJFNw1oqmh8DCgoht1ShyVfJZg0xfjgdpUy9IjWtCFiNNJoiK3Kk8xra8v6SjAj79gVa+h8A5ZKnIkx0jL2EyruvMPyPUK8RqQJmRcrEuk9Z6++IXoaI11Q5OZ3s84KiQeluM8qOOgQRE92P3EbpYHQOHO5zGc+UZMEOvlKqcMpRv05sdG+FYUJ7uyAC/m+cNraRrP8thXZeJaLhq6xissmywbNma7aV6E855DeXbHR6luvjJsqDxJhT9qlzyh8jCpFyJ8fSEzLLbHNyBxpWa9ChsIg6UHyO6EAAcE1Zi1sVUa/Uwy5WCoc2wCgjfgQFCT8MuyBbCXlChNswnRqVXtoXxWx9haDZLssBiaUdIbvkWBgEnvL1HuNOE329cuOgnLk57x41v5JSOtEU5jAic1idhjeCmyOcksSDy0oEbyUoIOLi1SaLUx/de4xUQDnk2F5NcjP+IOj1D5GkPGIL5Xh2iDdtAQl32toUOATwrMAuhod/RwXOHuY2j54p2V9JuQr2LVnmS6oe70J2YpTmDnsNFjzYt6CL4rT1TcCdyjri4JojtDNOCz7KU9rB4P4UrdPSMr3lQEih8ui6A/+gosXRg2ULvWXNE0iEe4uWg1A0aSeN1af6TtUmZHpVctofF5PmcO/D7MEVNCzFYGilVL+KlU5NMs2F2TxYylQh6v97WhJpToEXzoLdwhyygfQ9Tnf7X0J+8rFWfPhV6z875pPWfShWn6usIUdeexB8aKKnyIO775GauKcEvyCPRWzyZ4GDtPZ0MxLAblpMR4ScEw5Rcc1J/iz1grf+/UvWbTRXwKeqcAr/ufe7p/JbTHdrLUxNidid0f/z2uC+2TUBt4yUV5+o3oRO5Ak24pYk6CzZVKhiqKhltfPl9Zjl5uYLXfxjZSrxpidzqR+61u9Rd8k80BVr3zCuJ7xqtF3pXuvvDyR/VV5aIG1zueQ/zlne99L439pC3P6sv6LMKzHO1x3NbqkuJwCBhBiMY1trEjcDgC/ioxlcZSEdUsy0K7LozNRvzyI8CJ/PdLoKcXh9rOO42+5SB/l7/Hjz4YV1TcZf743R7spWbxj+HKUs46vurn7cV8JbZFRzuw3Sn96SeDLY2ldHSSrOAX+ZAiDhUoyhpb1RwUOExYBOzu7nUHiTgTURX1SssITyCg3ZPrzwT36A+yb9CM14phRFlrsfHitGNM1SYTq/ol9k7E9+4KwaGrFmHPtwqdbrgK8RvOWUQqXuNAc/RzQewzoLEsgMhOI30ZR49esBfKUw2qawHy3sOzB59GrOwfz7mO7xDCvFtuZvXW3ASbvCk0FyV9KyNzbU+Ft1ZgQGg7I6ElRqx2w6un6UayF/0+QHDx+GSyEHvJoOhwQe6DrRlFmZnirj9DzY7pf5crzcykDTesHDoHYRryIwo4OoUHW3tIha1bU1hziWy2PmC8gM4UsMpLxBZDf1+G0glu25+3UJfEYS7OZyW7rK58OJbO2EC6Edm8LQFA+gOhaCrzNg10YBY7BqJjMndUiFUhk3SPBdFkOcbk231syKZtxw6xxd6vmMs2kRftv9OZ3gVNFhX1L41IJaPACQVmsJSpCK1MrjILGtYwGif5L04qRB8IobVBNV3/OSkP2iJB5at/pbtcv125GIlXhUsVxDaimAzZdTIWXjesm2hz6U7f10ffnyw7AUN3Y3bXbPPoDLMtuF3IqkKtltlTbciFinldZzrJLV1j+U4jeqWdFn3v8VmXQEfyqc0X+pNK6QmUN65NwT9QpYwkNz3aHUWKXHBoAi2rAR9SoBXPEfl59Zow3MRZOGVYlVXN7KncA2+K0ITKugArB0C2+mlaVtZORKR9X8+XhAyJB6eNjfg9gkt5BxQ4CK7yY7Y5RjyrvJx16pr1JfMATb23626/jd9ufHz4snbOwRBV2BdsqjpnmSn+cPOTyl6/BQKUi81ZDCKYg6oHtxPKBbuI70yUBMJph0hqQxDWuQAoxxlJoltun8Z0x6Mk0ksGq7DPAuWL6b8Hn4MCU+RZdW0Kl4IgulmgCOH2ijY/RXZarhZ87Eb3IGvgxxIC6/IHzcjiP6uysDcJqoZFyVC56gLtNgcTQXZmwrOu+DRCJfoj4sDAQ6iwFPMQ/2Uo/aWmxJuCI1jafEav5nymeWf/q40Wdv44mWUF4GM34GgaAl6Yc0",
+        "componentFilename": "C:\\4-Trabajos\\Mariloginsa\\Nibble-TM\\Nibble-TM.WebProjects\\Default.WebProject\\IndicadorGerencia9.a5wcmp",
+        "PAliases": {
+            "alias": "[PathAlias.ADB_Path]\n",
+            "alias_expanded": "C:\\4-Trabajos\\Mariloginsa\\Nibble-TM\n",
+            "alias_aliasExpanded": "[PathAlias.ADB_Path]|C:\\4-Trabajos\\Mariloginsa\\Nibble-TM"
+        },
+        "_row_onHover": true,
+        "ADB_PATH": "C:\\4-Trabajos\\Mariloginsa\\Nibble-TM",
+        "EXE_PATH": "C:\\Program Files (x86)\\a5V12",
+        "VersionNumber": 4,
+        "__wphostname": "Chrome",
+        "A5SaveTimeStamp": "20191022150426119"
+    }
+}

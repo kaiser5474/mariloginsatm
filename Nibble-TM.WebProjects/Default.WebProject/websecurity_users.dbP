@@ -3,7 +3,9 @@
 <SelectStatement=<<%str%
 SELECT 
 Guid, 
+Id_Usuario, 
 Userid, 
+Nombre, 
 Password, 
 Rememberme, 
 Redirpage, 
@@ -14,11 +16,18 @@ Secques,
 Secans, 
 Updweb, 
 Updlocal, 
-Ulink FROM dbo.WebSecurityUsers%str%>
+Ulink, 
+Id_Empresa, 
+AprobarOF, 
+PieFirma, 
+Firma, 
+IMEI FROM WebSecurityUsers%str%>
 <CountQuery="SELECT count(*) FROM WebSecurityUsers">
 <DBF<RowDef=<<%str%
 GUID,C,36,0,"notnullable,updateable,initialize"
+ID_USUARIO,N,11,0,"notnullable,constant,setnull,showautonumber"
 USERID,C,250,0,"notnullable,updateable,initialize"
+NOMBRE,C,50,0,"nullable,updateable,setnull,shownull"
 PASSWORD,C,60,0,"nullable,updateable,setnull,shownull"
 REMEMBERME,L,1,0,"nullable,updateable,setnull,shownull"
 REDIRPAGE,C,60,0,"nullable,updateable,setnull,shownull"
@@ -30,13 +39,19 @@ SECANS,C,60,0,"nullable,updateable,setnull,shownull"
 UPDWEB,T,17,0,"nullable,updateable,setnull,shownull"
 UPDLOCAL,T,17,0,"nullable,updateable,setnull,shownull"
 ULINK,C,40,0,"nullable,updateable,setnull,shownull"
+ID_EMPRESA,N,11,0,"notnullable,updateable,initialize"
+APROBAROF,L,1,0,"nullable,updateable,setnull,shownull"
+PIEFIRMA,M,10,0,"nullable,updateable,setnull,shownull"
+FIRMA,B,10,0,"nullable,updateable,setnull,shownull"
+IMEI,C,50,0,"nullable,updateable,setnull,shownull"
 %str%>
 >
 <UpdateWhereCriteria=4>
 <InsertStatement=<<%str%
-INSERT INTO dbo.WebSecurityUsers (
+INSERT INTO WebSecurityUsers (
 Guid, 
 Userid, 
+Nombre, 
 Password, 
 Rememberme, 
 Redirpage, 
@@ -47,9 +62,15 @@ Secques,
 Secans, 
 Updweb, 
 Updlocal, 
-Ulink) VALUES (
+Ulink, 
+Id_Empresa, 
+AprobarOF, 
+PieFirma, 
+Firma, 
+IMEI) VALUES (
 :new.GUID, 
 :new.USERID, 
+:new.NOMBRE, 
 :new.PASSWORD, 
 :new.REMEMBERME, 
 :new.REDIRPAGE, 
@@ -60,11 +81,18 @@ Ulink) VALUES (
 :new.SECANS, 
 :new.UPDWEB, 
 :new.UPDLOCAL, 
-:new.ULINK)%str%>
+:new.ULINK, 
+:new.ID_EMPRESA, 
+:new.APROBAROF, 
+:new.PIEFIRMA, 
+:new.FIRMA, 
+:new.IMEI)%str%>
 <RefreshRowQuery=<<%str%
 SELECT 
 Guid, 
+Id_Usuario, 
 Userid, 
+Nombre, 
 Password, 
 Rememberme, 
 Redirpage, 
@@ -75,12 +103,17 @@ Secques,
 Secans, 
 Updweb, 
 Updlocal, 
-Ulink FROM dbo.WebSecurityUsers
+Ulink, 
+Id_Empresa, 
+AprobarOF, 
+PieFirma, 
+Firma, 
+IMEI FROM WebSecurityUsers
 WHERE 	Guid = :GUID%str%>
 <RowQualifiers="GUID	GUID">
 <DeleteStatement="">
 <UpdateStatement="WHERE+MODIFIEDFIELDS Guid = :old.GUID">
-<LocalTableFile="C:\Users\ASUS\Desktop\Nibble-TM\Nibble-TM.WebProjects\Default.WebProject\websecurity_users.dbf">
+<LocalTableFile="C:\4-Trabajos\Mariloginsa\Nibble-TM\Nibble-TM.WebProjects\Default.WebProject\websecurity_users.dbf">
 <Type="SQL">
 <API="SQLServer">
 <ConnectionString="::Name::Nibble">
@@ -108,7 +141,7 @@ WHERE 	Guid = :GUID%str%>
 	<Comment Type="C"></Comment>
 	<Alias Type="C"></Alias>
 	<Updateable Type="L">1</Updateable>
-	<CanUpdateInTransaction Type="L">1</CanUpdateInTransaction>
+	<CanUpdateInTransaction Type="L">0</CanUpdateInTransaction>
 	<SizeToFit Type="L">0</SizeToFit>
 	<SelectRowLimit Type="N">-1</SelectRowLimit>
 	<SelectRowStartingOffset Type="N">0</SelectRowStartingOffset>
@@ -168,6 +201,59 @@ WHERE 	Guid = :GUID%str%>
 		<RowUUID Type="L">0</RowUUID>
 	</SQLDataTypeInfo>
 	<SQLDataTypeInfo Type="SQL::DataTypeInfo">
+		<Name Type="C">Id_Usuario</Name>
+		<NativeAPI Type="C">SQLServer</NativeAPI>
+		<NativeSyntax Type="C">SQLServer</NativeSyntax>
+		<Comment Type="C"></Comment>
+		<AlphaType Type="C">N</AlphaType>
+		<NativeType Type="N">56</NativeType>
+		<NativeTypeName Type="C">int</NativeTypeName>
+		<IntermediateType>Integer32</IntermediateType>
+		<DecimalDigits Type="N">0</DecimalDigits>
+		<DisplayFormat Type="C"></DisplayFormat>
+		<ExternalFileNameExpression Type="C"></ExternalFileNameExpression>
+		<DataTransformExpression Type="C"></DataTransformExpression>
+		<Length Type="N">10</Length>
+		<Nullable Type="L">0</Nullable>
+		<ZeroFill Type="L">0</ZeroFill>
+		<AutoIncrement Type="L">1</AutoIncrement>
+		<EmptyStringIsNull Type="L">0</EmptyStringIsNull>
+		<Updateable Type="L">0</Updateable>
+		<HTMLEscapeFormattedData Type="L">0</HTMLEscapeFormattedData>
+		<Identity Type="L">1</Identity>
+		<IdentitySeed Type="N">1</IdentitySeed>
+		<IdentityIncrement Type="N">1</IdentityIncrement>
+		<IdentityReplicate Type="L">1</IdentityReplicate>
+		<IdentityMinimum Type="N">-1</IdentityMinimum>
+		<IdentityMaximum Type="N">-1</IdentityMaximum>
+		<IdentitySequenceName Type="C"></IdentitySequenceName>
+		<NamedFormatExpressions Type="C"></NamedFormatExpressions>
+		<DefaultValue Type="C"></DefaultValue>
+		<DefaultValueName Type="C"></DefaultValueName>
+		<SourceTableCatalog Type="C"></SourceTableCatalog>
+		<SourceTableSchema Type="C"></SourceTableSchema>
+		<SourceTableOwner Type="C"></SourceTableOwner>
+		<SourceTableName Type="C">WebSecurityUsers</SourceTableName>
+		<SourceColumnName Type="C">Id_Usuario</SourceColumnName>
+		<SourceTableAlias Type="C"></SourceTableAlias>
+		<FixedLength Type="L">0</FixedLength>
+		<ValidationText Type="C"></ValidationText>
+		<NativeValidationRule Type="C"></NativeValidationRule>
+		<NativeValidationRuleName Type="C"></NativeValidationRuleName>
+		<NativeCharacterSetName Type="C"></NativeCharacterSetName>
+		<AutoGenerate Type="L">0</AutoGenerate>
+		<ISAMNotLastColumn Type="L">0</ISAMNotLastColumn>
+		<OneBlobPerPage Type="L">0</OneBlobPerPage>
+		<CompressedUnicode Type="L">0</CompressedUnicode>
+		<HyperLink Type="L">0</HyperLink>
+		<CanBeUsedInWhereClause Type="L">1</CanBeUsedInWhereClause>
+		<SQLExpression Type="C"></SQLExpression>
+		<SizeToFit Type="L">0</SizeToFit>
+		<MaximumActualLength Type="N">-1</MaximumActualLength>
+		<Computed Type="L">0</Computed>
+		<RowUUID Type="L">0</RowUUID>
+	</SQLDataTypeInfo>
+	<SQLDataTypeInfo Type="SQL::DataTypeInfo">
 		<Name Type="C">Userid</Name>
 		<NativeAPI Type="C">SQLServer</NativeAPI>
 		<NativeSyntax Type="C">SQLServer</NativeSyntax>
@@ -202,6 +288,59 @@ WHERE 	Guid = :GUID%str%>
 		<SourceTableOwner Type="C"></SourceTableOwner>
 		<SourceTableName Type="C">WebSecurityUsers</SourceTableName>
 		<SourceColumnName Type="C">Userid</SourceColumnName>
+		<SourceTableAlias Type="C"></SourceTableAlias>
+		<FixedLength Type="L">0</FixedLength>
+		<ValidationText Type="C"></ValidationText>
+		<NativeValidationRule Type="C"></NativeValidationRule>
+		<NativeValidationRuleName Type="C"></NativeValidationRuleName>
+		<NativeCharacterSetName Type="C"></NativeCharacterSetName>
+		<AutoGenerate Type="L">0</AutoGenerate>
+		<ISAMNotLastColumn Type="L">0</ISAMNotLastColumn>
+		<OneBlobPerPage Type="L">0</OneBlobPerPage>
+		<CompressedUnicode Type="L">0</CompressedUnicode>
+		<HyperLink Type="L">0</HyperLink>
+		<CanBeUsedInWhereClause Type="L">1</CanBeUsedInWhereClause>
+		<SQLExpression Type="C"></SQLExpression>
+		<SizeToFit Type="L">0</SizeToFit>
+		<MaximumActualLength Type="N">-1</MaximumActualLength>
+		<Computed Type="L">0</Computed>
+		<RowUUID Type="L">0</RowUUID>
+	</SQLDataTypeInfo>
+	<SQLDataTypeInfo Type="SQL::DataTypeInfo">
+		<Name Type="C">Nombre</Name>
+		<NativeAPI Type="C">SQLServer</NativeAPI>
+		<NativeSyntax Type="C">SQLServer</NativeSyntax>
+		<Comment Type="C"></Comment>
+		<AlphaType Type="C">C</AlphaType>
+		<NativeType Type="N">231</NativeType>
+		<NativeTypeName Type="C">nvarchar</NativeTypeName>
+		<IntermediateType>NationalVaryingCharacter</IntermediateType>
+		<DecimalDigits Type="N">0</DecimalDigits>
+		<DisplayFormat Type="C"></DisplayFormat>
+		<ExternalFileNameExpression Type="C"></ExternalFileNameExpression>
+		<DataTransformExpression Type="C"></DataTransformExpression>
+		<Length Type="N">50</Length>
+		<Nullable Type="L">1</Nullable>
+		<ZeroFill Type="L">0</ZeroFill>
+		<AutoIncrement Type="L">0</AutoIncrement>
+		<EmptyStringIsNull Type="L">0</EmptyStringIsNull>
+		<Updateable Type="L">1</Updateable>
+		<HTMLEscapeFormattedData Type="L">0</HTMLEscapeFormattedData>
+		<Identity Type="L">0</Identity>
+		<IdentitySeed Type="N">0</IdentitySeed>
+		<IdentityIncrement Type="N">0</IdentityIncrement>
+		<IdentityReplicate Type="L">1</IdentityReplicate>
+		<IdentityMinimum Type="N">-1</IdentityMinimum>
+		<IdentityMaximum Type="N">-1</IdentityMaximum>
+		<IdentitySequenceName Type="C"></IdentitySequenceName>
+		<NamedFormatExpressions Type="C"></NamedFormatExpressions>
+		<DefaultValue Type="C"></DefaultValue>
+		<DefaultValueName Type="C"></DefaultValueName>
+		<SourceTableCatalog Type="C"></SourceTableCatalog>
+		<SourceTableSchema Type="C"></SourceTableSchema>
+		<SourceTableOwner Type="C"></SourceTableOwner>
+		<SourceTableName Type="C">WebSecurityUsers</SourceTableName>
+		<SourceColumnName Type="C">Nombre</SourceColumnName>
 		<SourceTableAlias Type="C"></SourceTableAlias>
 		<FixedLength Type="L">0</FixedLength>
 		<ValidationText Type="C"></ValidationText>
@@ -803,10 +942,275 @@ WHERE 	Guid = :GUID%str%>
 		<Computed Type="L">0</Computed>
 		<RowUUID Type="L">0</RowUUID>
 	</SQLDataTypeInfo>
+	<SQLDataTypeInfo Type="SQL::DataTypeInfo">
+		<Name Type="C">Id_Empresa</Name>
+		<NativeAPI Type="C">SQLServer</NativeAPI>
+		<NativeSyntax Type="C">SQLServer</NativeSyntax>
+		<Comment Type="C"></Comment>
+		<AlphaType Type="C">N</AlphaType>
+		<NativeType Type="N">56</NativeType>
+		<NativeTypeName Type="C">int</NativeTypeName>
+		<IntermediateType>Integer32</IntermediateType>
+		<DecimalDigits Type="N">0</DecimalDigits>
+		<DisplayFormat Type="C"></DisplayFormat>
+		<ExternalFileNameExpression Type="C"></ExternalFileNameExpression>
+		<DataTransformExpression Type="C"></DataTransformExpression>
+		<Length Type="N">10</Length>
+		<Nullable Type="L">0</Nullable>
+		<ZeroFill Type="L">0</ZeroFill>
+		<AutoIncrement Type="L">0</AutoIncrement>
+		<EmptyStringIsNull Type="L">0</EmptyStringIsNull>
+		<Updateable Type="L">1</Updateable>
+		<HTMLEscapeFormattedData Type="L">0</HTMLEscapeFormattedData>
+		<Identity Type="L">0</Identity>
+		<IdentitySeed Type="N">0</IdentitySeed>
+		<IdentityIncrement Type="N">0</IdentityIncrement>
+		<IdentityReplicate Type="L">1</IdentityReplicate>
+		<IdentityMinimum Type="N">-1</IdentityMinimum>
+		<IdentityMaximum Type="N">-1</IdentityMaximum>
+		<IdentitySequenceName Type="C"></IdentitySequenceName>
+		<NamedFormatExpressions Type="C"></NamedFormatExpressions>
+		<DefaultValue Type="C">((1))</DefaultValue>
+		<DefaultValueName Type="C">DF_WebSecurityUsers_Id_Empresa</DefaultValueName>
+		<SourceTableCatalog Type="C"></SourceTableCatalog>
+		<SourceTableSchema Type="C"></SourceTableSchema>
+		<SourceTableOwner Type="C"></SourceTableOwner>
+		<SourceTableName Type="C">WebSecurityUsers</SourceTableName>
+		<SourceColumnName Type="C">Id_Empresa</SourceColumnName>
+		<SourceTableAlias Type="C"></SourceTableAlias>
+		<FixedLength Type="L">0</FixedLength>
+		<ValidationText Type="C"></ValidationText>
+		<NativeValidationRule Type="C"></NativeValidationRule>
+		<NativeValidationRuleName Type="C"></NativeValidationRuleName>
+		<NativeCharacterSetName Type="C"></NativeCharacterSetName>
+		<AutoGenerate Type="L">0</AutoGenerate>
+		<ISAMNotLastColumn Type="L">0</ISAMNotLastColumn>
+		<OneBlobPerPage Type="L">0</OneBlobPerPage>
+		<CompressedUnicode Type="L">0</CompressedUnicode>
+		<HyperLink Type="L">0</HyperLink>
+		<CanBeUsedInWhereClause Type="L">1</CanBeUsedInWhereClause>
+		<SQLExpression Type="C"></SQLExpression>
+		<SizeToFit Type="L">0</SizeToFit>
+		<MaximumActualLength Type="N">-1</MaximumActualLength>
+		<Computed Type="L">0</Computed>
+		<RowUUID Type="L">0</RowUUID>
+	</SQLDataTypeInfo>
+	<SQLDataTypeInfo Type="SQL::DataTypeInfo">
+		<Name Type="C">AprobarOF</Name>
+		<NativeAPI Type="C">SQLServer</NativeAPI>
+		<NativeSyntax Type="C">SQLServer</NativeSyntax>
+		<Comment Type="C"></Comment>
+		<AlphaType Type="C">L</AlphaType>
+		<NativeType Type="N">104</NativeType>
+		<NativeTypeName Type="C">bit</NativeTypeName>
+		<IntermediateType>Boolean</IntermediateType>
+		<DecimalDigits Type="N">0</DecimalDigits>
+		<DisplayFormat Type="C"></DisplayFormat>
+		<ExternalFileNameExpression Type="C"></ExternalFileNameExpression>
+		<DataTransformExpression Type="C"></DataTransformExpression>
+		<Length Type="N">1</Length>
+		<Nullable Type="L">1</Nullable>
+		<ZeroFill Type="L">0</ZeroFill>
+		<AutoIncrement Type="L">0</AutoIncrement>
+		<EmptyStringIsNull Type="L">0</EmptyStringIsNull>
+		<Updateable Type="L">1</Updateable>
+		<HTMLEscapeFormattedData Type="L">0</HTMLEscapeFormattedData>
+		<Identity Type="L">0</Identity>
+		<IdentitySeed Type="N">0</IdentitySeed>
+		<IdentityIncrement Type="N">0</IdentityIncrement>
+		<IdentityReplicate Type="L">1</IdentityReplicate>
+		<IdentityMinimum Type="N">-1</IdentityMinimum>
+		<IdentityMaximum Type="N">-1</IdentityMaximum>
+		<IdentitySequenceName Type="C"></IdentitySequenceName>
+		<NamedFormatExpressions Type="C"></NamedFormatExpressions>
+		<DefaultValue Type="C">((0))</DefaultValue>
+		<DefaultValueName Type="C">DF_WebSecurityUsers_AprobarOF</DefaultValueName>
+		<SourceTableCatalog Type="C"></SourceTableCatalog>
+		<SourceTableSchema Type="C"></SourceTableSchema>
+		<SourceTableOwner Type="C"></SourceTableOwner>
+		<SourceTableName Type="C">WebSecurityUsers</SourceTableName>
+		<SourceColumnName Type="C">AprobarOF</SourceColumnName>
+		<SourceTableAlias Type="C"></SourceTableAlias>
+		<FixedLength Type="L">0</FixedLength>
+		<ValidationText Type="C"></ValidationText>
+		<NativeValidationRule Type="C"></NativeValidationRule>
+		<NativeValidationRuleName Type="C"></NativeValidationRuleName>
+		<NativeCharacterSetName Type="C"></NativeCharacterSetName>
+		<AutoGenerate Type="L">0</AutoGenerate>
+		<ISAMNotLastColumn Type="L">0</ISAMNotLastColumn>
+		<OneBlobPerPage Type="L">0</OneBlobPerPage>
+		<CompressedUnicode Type="L">0</CompressedUnicode>
+		<HyperLink Type="L">0</HyperLink>
+		<CanBeUsedInWhereClause Type="L">1</CanBeUsedInWhereClause>
+		<SQLExpression Type="C"></SQLExpression>
+		<SizeToFit Type="L">0</SizeToFit>
+		<MaximumActualLength Type="N">-1</MaximumActualLength>
+		<Computed Type="L">0</Computed>
+		<RowUUID Type="L">0</RowUUID>
+	</SQLDataTypeInfo>
+	<SQLDataTypeInfo Type="SQL::DataTypeInfo">
+		<Name Type="C">PieFirma</Name>
+		<NativeAPI Type="C">SQLServer</NativeAPI>
+		<NativeSyntax Type="C">SQLServer</NativeSyntax>
+		<Comment Type="C"></Comment>
+		<AlphaType Type="C">C</AlphaType>
+		<NativeType Type="N">99</NativeType>
+		<NativeTypeName Type="C">NVARCHAR(MAX)</NativeTypeName>
+		<IntermediateType>NationalVaryingCharacter</IntermediateType>
+		<DecimalDigits Type="N">0</DecimalDigits>
+		<DisplayFormat Type="C"></DisplayFormat>
+		<ExternalFileNameExpression Type="C"></ExternalFileNameExpression>
+		<DataTransformExpression Type="C"></DataTransformExpression>
+		<Length Type="N">134217728</Length>
+		<Nullable Type="L">1</Nullable>
+		<ZeroFill Type="L">0</ZeroFill>
+		<AutoIncrement Type="L">0</AutoIncrement>
+		<EmptyStringIsNull Type="L">0</EmptyStringIsNull>
+		<Updateable Type="L">1</Updateable>
+		<HTMLEscapeFormattedData Type="L">0</HTMLEscapeFormattedData>
+		<Identity Type="L">0</Identity>
+		<IdentitySeed Type="N">0</IdentitySeed>
+		<IdentityIncrement Type="N">0</IdentityIncrement>
+		<IdentityReplicate Type="L">1</IdentityReplicate>
+		<IdentityMinimum Type="N">-1</IdentityMinimum>
+		<IdentityMaximum Type="N">-1</IdentityMaximum>
+		<IdentitySequenceName Type="C"></IdentitySequenceName>
+		<NamedFormatExpressions Type="C"></NamedFormatExpressions>
+		<DefaultValue Type="C"></DefaultValue>
+		<DefaultValueName Type="C"></DefaultValueName>
+		<SourceTableCatalog Type="C"></SourceTableCatalog>
+		<SourceTableSchema Type="C"></SourceTableSchema>
+		<SourceTableOwner Type="C"></SourceTableOwner>
+		<SourceTableName Type="C">WebSecurityUsers</SourceTableName>
+		<SourceColumnName Type="C">PieFirma</SourceColumnName>
+		<SourceTableAlias Type="C"></SourceTableAlias>
+		<FixedLength Type="L">0</FixedLength>
+		<ValidationText Type="C"></ValidationText>
+		<NativeValidationRule Type="C"></NativeValidationRule>
+		<NativeValidationRuleName Type="C"></NativeValidationRuleName>
+		<NativeCharacterSetName Type="C"></NativeCharacterSetName>
+		<AutoGenerate Type="L">0</AutoGenerate>
+		<ISAMNotLastColumn Type="L">0</ISAMNotLastColumn>
+		<OneBlobPerPage Type="L">0</OneBlobPerPage>
+		<CompressedUnicode Type="L">0</CompressedUnicode>
+		<HyperLink Type="L">0</HyperLink>
+		<CanBeUsedInWhereClause Type="L">0</CanBeUsedInWhereClause>
+		<SQLExpression Type="C"></SQLExpression>
+		<SizeToFit Type="L">0</SizeToFit>
+		<MaximumActualLength Type="N">-1</MaximumActualLength>
+		<Computed Type="L">0</Computed>
+		<RowUUID Type="L">0</RowUUID>
+	</SQLDataTypeInfo>
+	<SQLDataTypeInfo Type="SQL::DataTypeInfo">
+		<Name Type="C">Firma</Name>
+		<NativeAPI Type="C">SQLServer</NativeAPI>
+		<NativeSyntax Type="C">SQLServer</NativeSyntax>
+		<Comment Type="C"></Comment>
+		<AlphaType Type="C">B</AlphaType>
+		<NativeType Type="N">34</NativeType>
+		<NativeTypeName Type="C">VARBINARY(MAX)</NativeTypeName>
+		<IntermediateType>VaryingBinary</IntermediateType>
+		<DecimalDigits Type="N">0</DecimalDigits>
+		<DisplayFormat Type="C"></DisplayFormat>
+		<ExternalFileNameExpression Type="C"></ExternalFileNameExpression>
+		<DataTransformExpression Type="C"></DataTransformExpression>
+		<Length Type="N">134217728</Length>
+		<Nullable Type="L">1</Nullable>
+		<ZeroFill Type="L">0</ZeroFill>
+		<AutoIncrement Type="L">0</AutoIncrement>
+		<EmptyStringIsNull Type="L">0</EmptyStringIsNull>
+		<Updateable Type="L">1</Updateable>
+		<HTMLEscapeFormattedData Type="L">0</HTMLEscapeFormattedData>
+		<Identity Type="L">0</Identity>
+		<IdentitySeed Type="N">0</IdentitySeed>
+		<IdentityIncrement Type="N">0</IdentityIncrement>
+		<IdentityReplicate Type="L">1</IdentityReplicate>
+		<IdentityMinimum Type="N">-1</IdentityMinimum>
+		<IdentityMaximum Type="N">-1</IdentityMaximum>
+		<IdentitySequenceName Type="C"></IdentitySequenceName>
+		<NamedFormatExpressions Type="C"></NamedFormatExpressions>
+		<DefaultValue Type="C"></DefaultValue>
+		<DefaultValueName Type="C"></DefaultValueName>
+		<SourceTableCatalog Type="C"></SourceTableCatalog>
+		<SourceTableSchema Type="C"></SourceTableSchema>
+		<SourceTableOwner Type="C"></SourceTableOwner>
+		<SourceTableName Type="C">WebSecurityUsers</SourceTableName>
+		<SourceColumnName Type="C">Firma</SourceColumnName>
+		<SourceTableAlias Type="C"></SourceTableAlias>
+		<FixedLength Type="L">0</FixedLength>
+		<ValidationText Type="C"></ValidationText>
+		<NativeValidationRule Type="C"></NativeValidationRule>
+		<NativeValidationRuleName Type="C"></NativeValidationRuleName>
+		<NativeCharacterSetName Type="C"></NativeCharacterSetName>
+		<AutoGenerate Type="L">0</AutoGenerate>
+		<ISAMNotLastColumn Type="L">0</ISAMNotLastColumn>
+		<OneBlobPerPage Type="L">0</OneBlobPerPage>
+		<CompressedUnicode Type="L">0</CompressedUnicode>
+		<HyperLink Type="L">0</HyperLink>
+		<CanBeUsedInWhereClause Type="L">0</CanBeUsedInWhereClause>
+		<SQLExpression Type="C"></SQLExpression>
+		<SizeToFit Type="L">0</SizeToFit>
+		<MaximumActualLength Type="N">-1</MaximumActualLength>
+		<Computed Type="L">0</Computed>
+		<RowUUID Type="L">0</RowUUID>
+	</SQLDataTypeInfo>
+	<SQLDataTypeInfo Type="SQL::DataTypeInfo">
+		<Name Type="C">IMEI</Name>
+		<NativeAPI Type="C">SQLServer</NativeAPI>
+		<NativeSyntax Type="C">SQLServer</NativeSyntax>
+		<Comment Type="C"></Comment>
+		<AlphaType Type="C">C</AlphaType>
+		<NativeType Type="N">167</NativeType>
+		<NativeTypeName Type="C">varchar</NativeTypeName>
+		<IntermediateType>VaryingCharacter</IntermediateType>
+		<DecimalDigits Type="N">0</DecimalDigits>
+		<DisplayFormat Type="C"></DisplayFormat>
+		<ExternalFileNameExpression Type="C"></ExternalFileNameExpression>
+		<DataTransformExpression Type="C"></DataTransformExpression>
+		<Length Type="N">50</Length>
+		<Nullable Type="L">1</Nullable>
+		<ZeroFill Type="L">0</ZeroFill>
+		<AutoIncrement Type="L">0</AutoIncrement>
+		<EmptyStringIsNull Type="L">0</EmptyStringIsNull>
+		<Updateable Type="L">1</Updateable>
+		<HTMLEscapeFormattedData Type="L">0</HTMLEscapeFormattedData>
+		<Identity Type="L">0</Identity>
+		<IdentitySeed Type="N">0</IdentitySeed>
+		<IdentityIncrement Type="N">0</IdentityIncrement>
+		<IdentityReplicate Type="L">1</IdentityReplicate>
+		<IdentityMinimum Type="N">-1</IdentityMinimum>
+		<IdentityMaximum Type="N">-1</IdentityMaximum>
+		<IdentitySequenceName Type="C"></IdentitySequenceName>
+		<NamedFormatExpressions Type="C"></NamedFormatExpressions>
+		<DefaultValue Type="C"></DefaultValue>
+		<DefaultValueName Type="C"></DefaultValueName>
+		<SourceTableCatalog Type="C"></SourceTableCatalog>
+		<SourceTableSchema Type="C"></SourceTableSchema>
+		<SourceTableOwner Type="C"></SourceTableOwner>
+		<SourceTableName Type="C">WebSecurityUsers</SourceTableName>
+		<SourceColumnName Type="C">IMEI</SourceColumnName>
+		<SourceTableAlias Type="C"></SourceTableAlias>
+		<FixedLength Type="L">0</FixedLength>
+		<ValidationText Type="C"></ValidationText>
+		<NativeValidationRule Type="C"></NativeValidationRule>
+		<NativeValidationRuleName Type="C"></NativeValidationRuleName>
+		<NativeCharacterSetName Type="C"></NativeCharacterSetName>
+		<AutoGenerate Type="L">0</AutoGenerate>
+		<ISAMNotLastColumn Type="L">0</ISAMNotLastColumn>
+		<OneBlobPerPage Type="L">0</OneBlobPerPage>
+		<CompressedUnicode Type="L">0</CompressedUnicode>
+		<HyperLink Type="L">0</HyperLink>
+		<CanBeUsedInWhereClause Type="L">1</CanBeUsedInWhereClause>
+		<SQLExpression Type="C"></SQLExpression>
+		<SizeToFit Type="L">0</SizeToFit>
+		<MaximumActualLength Type="N">-1</MaximumActualLength>
+		<Computed Type="L">0</Computed>
+		<RowUUID Type="L">0</RowUUID>
+	</SQLDataTypeInfo>
 	</Column>
 	<Index Type="SQL::IndexInfo">
 	<SQLIndexInfo Type="SQL::IndexInfo">
-		<Name Type="C">PK__WebSecur__A2B5777CBF06A87D</Name>
+		<Name Type="C">PK_WebSecurityUsers</Name>
 		<Comment Type="C"></Comment>
 		<Unique Type="L">1</Unique>
 		<PrimaryKey Type="L">1</PrimaryKey>
@@ -821,6 +1225,30 @@ WHERE 	Guid = :GUID%str%>
 		<Column Type="SQL::IndexColumnInfo">
 		<SQLIndexColumnInfo Type="SQL::IndexColumnInfo">
 			<Name Type="C">Guid</Name>
+			<ReferenceName Type="C"></ReferenceName>
+			<Ascending Type="L">1</Ascending>
+			<NullAllowed Type="L">1</NullAllowed>
+		</SQLIndexColumnInfo>
+		</Column>
+		<DeleteRule>Restrict</DeleteRule>
+		<UpdateRule>Restrict</UpdateRule>
+	</SQLIndexInfo>
+	<SQLIndexInfo Type="SQL::IndexInfo">
+		<Name Type="C">PK_WebSecurityUsers_IdUsuario</Name>
+		<Comment Type="C"></Comment>
+		<Unique Type="L">1</Unique>
+		<PrimaryKey Type="L">0</PrimaryKey>
+		<Reference Type="L">0</Reference>
+		<GroupingReference Type="L">0</GroupingReference>
+		<Clustered Type="L">0</Clustered>
+		<ReferenceTable Type="C"></ReferenceTable>
+		<ReferenceTableCatalog Type="C"></ReferenceTableCatalog>
+		<ReferenceTableSchema Type="C"></ReferenceTableSchema>
+		<ReferenceTableOwner Type="C"></ReferenceTableOwner>
+		<IndexMethod Type="C"></IndexMethod>
+		<Column Type="SQL::IndexColumnInfo">
+		<SQLIndexColumnInfo Type="SQL::IndexColumnInfo">
+			<Name Type="C">Id_Usuario</Name>
 			<ReferenceName Type="C"></ReferenceName>
 			<Ascending Type="L">1</Ascending>
 			<NullAllowed Type="L">1</NullAllowed>
@@ -850,7 +1278,7 @@ WHERE 	Guid = :GUID%str%>
 <SQLArguments>
 </SQLArguments>
 %str%>
-<designInfo<LocalTableFile="C:\Users\ASUS\Desktop\Nibble-TM\WebSecurityUsers.dbf">
+<designInfo<LocalTableFile="C:\4-Trabajos\Mariloginsa\Nibble-TM\WebSecurityUsers.dbf">
 <ConnectionString="::Name::Nibble">
 <UseExplicitConnectionString=.F.>
 <BasicType="Table">
@@ -896,7 +1324,9 @@ WHERE 	Guid = :GUID%str%>
 >
 <cachedInfo<fieldMap=<<%str%
 GUID|Guid|C
+ID_USUARIO|Id_Usuario|N
 USERID|Userid|C
+NOMBRE|Nombre|C
 PASSWORD|Password|C
 REMEMBERME|Rememberme|L
 REDIRPAGE|Redirpage|C
@@ -908,5 +1338,10 @@ SECANS|Secans|C
 UPDWEB|Updweb|T
 UPDLOCAL|Updlocal|T
 ULINK|Ulink|C
+ID_EMPRESA|Id_Empresa|N
+APROBAROF|AprobarOF|L
+PIEFIRMA|PieFirma|C
+FIRMA|Firma|B
+IMEI|IMEI|C
 %str%>
 >

@@ -3,7 +3,7 @@ function _phoneGapSettings() {
     "appId": "com.yourcompany.yourapp",
     "preferences": {
         "permissions": "",
-        "orientation": "default",
+        "orientation": "universal",
         "target-device": "universal",
         "fullscreen": "false",
         "webviewbounce": "true",
@@ -17,7 +17,7 @@ function _phoneGapSettings() {
         "disable-cursor": "false",
         "android-minSdkVersion": "19",
         "android-installLocation": "internalOnly",
-        "phonegap-version": "cli-7.1.0",
+        "phonegap-version": "cli-6.5.0",
         "FadeSplashScreen": "true",
         "FadeSplashScreenDuration": "2",
         "EnableViewportScale": "false",
@@ -47,14 +47,10 @@ function _phoneGapSettings() {
         "cordova-plugin-dialogs": "npm",
         "cordova-plugin-file": "npm",
         "cordova-plugin-file-transfer": "npm",
-        "cordova-plugin-android-permissions": "npm",
         "cordova-plugin-device": "npm",
-        "cordova-plugin-camera": "npm",
         "cordova-plugin-zip": "npm",
         "cordova-plugin-x-toast": "npm",
-        "https://github.com/zho/phonegap-imeiplugin.git": "git",
-        "https://github.com/hygieiasoft/cordova-plugin-uid.git": "git",
-        "pdf417-phonegap": "npm"
+        "https://github.com/hygieiasoft/cordova-plugin-uid.git": "git"
     }
 };
 }

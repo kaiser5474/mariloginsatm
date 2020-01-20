@@ -4,7 +4,7 @@
 SELECT 
 User_Guid, 
 Password, 
-Lastused FROM dbo.WebSecurityExpired%str%>
+Lastused FROM WebSecurityExpired%str%>
 <CountQuery="SELECT count(*) FROM WebSecurityExpired">
 <DBF<RowDef=<<%str%
 USER_GUID,C,36,0,"notnullable,updateable,initialize"
@@ -14,7 +14,7 @@ LASTUSED,T,17,0,"notnullable,updateable,initialize"
 >
 <UpdateWhereCriteria=4>
 <InsertStatement=<<%str%
-INSERT INTO dbo.WebSecurityExpired (
+INSERT INTO WebSecurityExpired (
 User_Guid, 
 Password, 
 Lastused) VALUES (
@@ -25,14 +25,14 @@ Lastused) VALUES (
 SELECT 
 User_Guid, 
 Password, 
-Lastused FROM dbo.WebSecurityExpired
+Lastused FROM WebSecurityExpired
 WHERE 	User_Guid = :USER_GUID AND Lastused = :LASTUSED%str%>
 <RowQualifiers=<<%str%
 USER_GUID	USER_GUID
 LASTUSED	LASTUSED%str%>
 <DeleteStatement="">
 <UpdateStatement="WHERE+MODIFIEDFIELDS User_Guid = :old.USER_GUID AND Lastused = :old.LASTUSED">
-<LocalTableFile="C:\Users\ASUS\Desktop\Nibble-TM\Nibble-TM.WebProjects\Default.WebProject\websecurity_expired.dbf">
+<LocalTableFile="C:\4-Trabajos\Mariloginsa\Nibble-TM\Nibble-TM.WebProjects\Default.WebProject\websecurity_expired.dbf">
 <Type="SQL">
 <API="SQLServer">
 <ConnectionString="::Name::Nibble">
@@ -228,7 +228,7 @@ LASTUSED	LASTUSED%str%>
 	</Column>
 	<Index Type="SQL::IndexInfo">
 	<SQLIndexInfo Type="SQL::IndexInfo">
-		<Name Type="C">PK__WebSecur__A2176BDC66D47091</Name>
+		<Name Type="C">PK__WebSecur__A2176BDC1F67D461</Name>
 		<Comment Type="C"></Comment>
 		<Unique Type="L">1</Unique>
 		<PrimaryKey Type="L">1</PrimaryKey>
@@ -278,7 +278,7 @@ LASTUSED	LASTUSED%str%>
 <SQLArguments>
 </SQLArguments>
 %str%>
-<designInfo<LocalTableFile="C:\Users\ASUS\Desktop\Nibble-TM\WebSecurityExpired.dbf">
+<designInfo<LocalTableFile="C:\4-Trabajos\Mariloginsa\Nibble-TM\WebSecurityExpired.dbf">
 <ConnectionString="::Name::Nibble">
 <UseExplicitConnectionString=.F.>
 <BasicType="Table">

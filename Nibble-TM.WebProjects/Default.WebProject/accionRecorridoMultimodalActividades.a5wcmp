@@ -9,7 +9,7 @@
         "flagTreeViewGrid": true,
         "flagTreeViewDV": true,
         "componentType": "Grid",
-        "Xbasic": "dim tmpl as p\ntmpl.ComponentName = \"accionRecorridoMultimodalActividades\"\ntmpl.ComponentType = \"Grid\"\ntmpl.AjaxOn = .t.\ntmpl.LayoutColumns = 1\ntmpl.useCompactTheme = .t.\ntmpl.showPulseEffect = .t.\ntmpl.queryEcho = .f.\ntmpl.connectToWebSocketServer = .f.\ntmpl.flagAddPKToORDER = .t.\ntmpl.saveFileType = \"Formatted JSON\"\ntmpl.captureJSErrorStackTrace = .f.\ntmpl.SecurityModel = \"Group Based\"\ntmpl.SecurityMode = \"\"\ntmpl.PreCalcMode = \"Standard\"\ntmpl.clientSideDateFormat = \"dd/MM/yyyy\"\ntmpl.publishedServerVariables = \"\"\ntmpl.datePicker.dayNames = \"Sun,Mon,Tue,Wed,Thu,Fri,Sat\"\ntmpl.datePicker.firstDayOfWeek = 1\ntmpl.datePicker.monthNames = \"January,February,March,April,May,June,July,August,September,October,November,December\"\ntmpl.datePicker.todayButtonText = \"Today\"\ntmpl.datePicker.closeButtonText = \"Close\"\ntmpl.datePicker.closeButtonText = \"Close\"\ntmpl.friendlydatesCustomizationJSON = \"\"\ntmpl.customizationString.javascriptDialogs = <<%txt%\n{text.javascript.deleteRowConfirmation}=\"<a5:t>Are you sure you want to delete this record?</a5:t>\"\n{text.javascript.cancelEditRowConfirmation}=\"<a5:t>Are you sure you want to cancel edits to this record?</a5:t>\"\n{text.javascript.UndoEditsConfirmation}=\"<a5:t>Are you sure you want to undo edits to this record?</a5:t>\"\n{text.javascript.UndoAllEditsConfirmation}=\"<a5:t>Are you sure you want to undo edits to all records?</a5:t>\"\n{text.javascript.dirtyRecordWarning}=\"<a5:t>You must first save or cancel your changes.</a5:t>\"\n{text.javascript.dlgTitle.deleteRowConfirmation}=\"<a5:t>Delete Record</a5:t>\"\n{text.javascript.dlgTitle.cancelEditRowConfirmation}=\"<a5:t>Cancel Edit</a5:t>\"\n{text.javascript.dlgTitle.UndoEditsConfirmation}=\"<a5:t>Undo Edit</a5:t>\"\n{text.javascript.dlgTitle.UndoAllEditsConfirmation}=\"<a5:t>Undo Edit</a5:t>\"\n{text.javascript.dlgTitle.dirtyRecordWarning}=\"<a5:t>Notice</a5:t>\"\n{text.javascript.okButton.html}=\"<a5:t>OK</a5:t>\"\n{text.javascript.cancelButton.html}=\"<a5:t>Cancel</a5:t>\"%txt%\ntmpl.iconMapOverrides = \"\"\ntmpl.DataSourceType = \"CS\"\ntmpl.CS.database_type = \"CS\"\ntmpl.CS.type = \"connectionstring\"\ntmpl.cs.ConnectionString  = \"::name::Nibble\"\ntmpl.CS.SQL = \"SELECT Accion_RecorridoMultimodal_Actividades.Id_Accion, Accion_RecorridoMultimodal_Actividades.usuario, Accion_RecorridoMultimodal_Actividades.fecha, Accion_RecorridoMultimodal_Actividades.accion, Accion_RecorridoMultimodal_Actividades.Id_Recorrido, Accion_RecorridoMultimodal_Actividades.Id_Actividad, Accion_RecorridoMultimodal_Actividades.Descripcion, Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct, N_Actividad.Descripcion AS Actividad \"+chr(13)+chr(10)+\"FROM Accion_RecorridoMultimodal_Actividades Accion_RecorridoMultimodal_Actividades\"+chr(13)+chr(10)+\"\t LEFT OUTER JOIN N_Actividad N_Actividad\"+chr(13)+chr(10)+\"\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_Actividad = N_Actividad.Id_Actividad\"\nDIM tmpl.Arguments[0] AS P\nDIM tmpl.ArgumentsPage AS P\nwith tmpl.ArgumentsPage\n\t.PromptTextAbove = \"\"\nend with\ntmpl.CS.PrimaryKeyColumns = <<%txt%\nAccion_RecorridoMultimodal_Actividades|Id_Accion\nN_Actividad|Id_Actividad%txt%\ntmpl.CS.IdentitySequenceName  = \"\"\ntmpl.CS.primaryKeyTopAliasIsAutoIncrement  = .t.\ntmpl.search.has_search_component = .t.\ntmpl.search.title = \"<a5:t>SearchB</a5:t>\"\ntmpl.search.show_title = .t.\ntmpl.search.search_button_label = \"<a:5>Search</a:5>\"\ntmpl.search.include_sorting_listbox = .f.\ntmpl.search.sort.prompt = \"Sort&nbsp;by\"\ntmpl.search.sorting_listbox_Label_position = \"Left\"\ntmpl.search.sort.promptInLineStyle = \"\"\ntmpl.search.sort.listbox.fieldname_prompt = \"Select Field\"\ntmpl.search.sort.listbox.use_column_headings = .f.\ntmpl.search.customSortDefinition = \"\"\ntmpl.search.search_button.useIcon = .f.\ntmpl.search.clear_link.useIcon = .f.\ntmpl.search.sort.listbox.order_prompt = \"Select Order\"\ntmpl.search.sort.listbox.order_choices = \"Ascending,Descending\"\ntmpl.search.include_records_per_page_listbox = .f.\ntmpl.search.records_per_page.prompt = \"Records&nbsp;per&nbsp;page\"\ntmpl.search.records_per_page_Label_position = \"Left\"\ntmpl.search.records_per_page.promptInLineStyle = \"\"\ntmpl.search.records_per_page.listbox.value_prompt = \"Select Value\"\ntmpl.search.records_per_page.listbox.choices = \"1,2,5,10,25,50,75,100\"\ntmpl.search.orientation = \"Vertical\"\ntmpl.search.combine_criteria_using = 1\ntmpl.search.style = 2\ntmpl.search.allow_qbf_style = .t.\ntmpl.search.show_single_search_field = .f.\ntmpl.search.keyword_label = \"Search for?\"\ntmpl.search.has_Clear_link = .t.\ntmpl.search.Clear_link_Label = \"<a5:t>Clear Search Criteria</a5:t>\"\ntmpl.search.Clear_link_BubbleHelp = \"<a5:t>Clear Search</a5:t>\"\ntmpl.search.EnableShowHide  = .t.\ntmpl.search.InitialState = \"Closed\"\ntmpl.search.title_when_hidden = \"<a5:t>Click here to search...</a5:t>\"\ntmpl.search.qbe_exclusions = \"\"\ntmpl.search.toolbarPosition = \"Below\"\ntmpl.search.disableAutoComplete = .f.\ntmpl.search.HideGridWhenNoActiveSearch = .f.\ntmpl.search.GridHTMLWhenHidden  = \"\"\ntmpl.EditRegion.Search.Top = \"\"\ntmpl.EditRegion.Search.Bottom = \"\"\ntmpl.EditRegion.Search.Left = \"\"\ntmpl.EditRegion.Search.Right = \"\"\ntmpl.search.allowSearchCriteriaSave = .f.\ntmpl.search.allowSearchCriteriaLoad = .f.\ntmpl.SearchFields = 6\nDIM tmpl.SearchField_Info[tmpl.SearchFields] as P \nwith tmpl.SearchField_Info[1]\n\t.Fieldname = \"Id_Recorrido\"\n\t.SearchExpression = \"Id_Recorrido\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod.Viaje\"\nend with\nwith tmpl.SearchField_Info[2]\n\t.Fieldname = \"usuario\"\n\t.SearchExpression = \"usuario\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"USUARIO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Dynamic\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropDownBox.Datasource = \"CS\"\n\t.DropDownBox.maxchoices = 0\n\t.DropDownBox.CS.ConnectionString = \"::name::Nibble\"\n\t.DropDownBox.CS.SQL = \"SELECT DISTINCT usuario FROM Accion_RecorridoMultimodal_Actividades ORDER BY usuario\"\n\t.DropDownBox.DisplayValueField = \"usuario\"\n\t.DropDownBox.DisplayValueFieldType = \"C\"\n\t.DropdownBox.noSelectionDisplayValue = \"\"\n\t.DropdownBox.hasCascadingChoices = .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Usuario\"\nend with\nwith tmpl.SearchField_Info[3]\n\t.Fieldname = \"fecha\"\n\t.SearchExpression = \"fecha\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"DateTime\"\n\t.nativeType = \"datetime\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"FECHA\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.DatePicker.Display = .t.\n\t.DatePicker.UseComboBoxes = .t.\n\t.DatePicker.DateFormat = \"<DefaultDateOnlyFormat>\"\n\t.DatePicker.LowYear = 1950\n\t.DatePicker.HighYear = 2050\n\t.DatePicker.SwitchYear = 20\n\t.DatePicker.IconNumber = 2\n\t.DatePicker.OpenMethod = \"ClickIcon\"\n\t.DatePicker.lowDate = \"\"\n\t.DatePicker.highDate = \"\"\n\t.DatePicker.disabledDays = \"\"\n\t.DatePicker.showDaysOfWeek = .t.\n\t.DatePicker.showTodayButton = .t.\n\t.DatePicker.showWeeksOfYear = .f.\n\t.DatePicker.OKButtonLabel = \"OK\"\n\t.DatePicker.CancelButtonLabel = \"Cancel\"\n\t.DatePicker.lockColumnWidths = .f.\n\t.DatePicker.userMustSelectFromDatePicker = .f.\n\t.DatePicker.hasEvents = .f.\n\t.DatePicker.event.onItemDraw = \"\"\n\t.DatePicker.event.onClick = \"\"\n\t.DatePicker.event.onRightClick = \"\"\n\t.DatePicker.event.onSelect = \"\"\n\t.DatePicker.event.onNavigate = \"\"\n\t.DatePicker.event.onMonthNavigate = \"\"\n\t.DatePicker.event.onYearNavigate = \"\"\n\t.DatePicker.showPreDefinedDates = .f.\n\t.DatePicker.preDefinedDatesJSON = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Fecha\"\nend with\nwith tmpl.SearchField_Info[4]\n\t.Fieldname = \"accion\"\n\t.SearchExpression = \"accion\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Dynamic\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropDownBox.Datasource = \"CS\"\n\t.DropDownBox.maxchoices = 0\n\t.DropDownBox.CS.ConnectionString = \"::name::Nibble\"\n\t.DropDownBox.CS.SQL = \"SELECT DISTINCT accion FROM Accion_RecorridoMultimodal_Actividades ORDER BY accion\"\n\t.DropDownBox.DisplayValueField = \"accion\"\n\t.DropDownBox.DisplayValueFieldType = \"C\"\n\t.DropdownBox.noSelectionDisplayValue = \"\"\n\t.DropdownBox.hasCascadingChoices = .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Accion\"\nend with\nwith tmpl.SearchField_Info[5]\n\t.Fieldname = \"Id_Accion\"\n\t.SearchExpression = \"Id_Accion\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Accion\"\nend with\nwith tmpl.searchField_info[6]\n\t.Fieldname = \"Id_RecMedTranspAct\"\n\t.SearchExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECMEDTRANSPACT\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 20\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 20\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Id Rec Med Transp Act\"\nend with\ntmpl.grid_layout_style = 1\ntmpl.add_records_only = .f.\ntmpl.rows = 10\ntmpl.maxRowsPerPage = 200\ntmpl.rowsWhenSearchActive = -1\ntmpl.suppress_empty_rows = .t.\ntmpl.has_row_separator = .t.\ntmpl.alternate_bands = .f.\ntmpl.even_band_size = 1\ntmpl.odd_band_size = 1\ntmpl.alternate_column_bands = .f.\ntmpl.even_column_band_size = 1\ntmpl.odd_column_band_size = 1\ntmpl.conditionalStyle = \"\"\ntmpl.clientSideConditionalStyle = \"\"\ntmpl.show_title = .f.\ntmpl.title = \"\"\ntmpl.FontSize = \"Medium\"\ntmpl.No_records_message = \"<a5:t>No records in query</a5:t>\"\ntmpl.total_records_row_position = 1\ntmpl.total_records_row = \"<a5:t>Records</a5:t>:&nbsp; {Total_Records}&nbsp;\"\ntmpl.show_column_titles = 1\ntmpl.suppress_titles_if_no_records = .f.\ntmpl.show_row_labels = .t.\ntmpl.snakingLayout_suppressRepeatedLabels = .f.\ntmpl.sort_style = 3\ntmpl.reset_page_number_when_sorting = .t.\ntmpl.allowGridBodyScrolling = .f.\ntmpl.scrollableRegionHeight = \"2in\"\ntmpl.scrollableRegionWidth = \"100%\"\ntmpl.fixedWidthColumns = .f.\ntmpl.defaultColumnWidth = \"1in\"\ntmpl.columnWidthSettings = \"\"\ntmpl.EditRegion.Grid.Top = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Bottom = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Left = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Right = <<%editregion%\n%editregion%\ntmpl.HasNewRecordsTitle = .f.\ntmpl.NewRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >New Records</td></tr>\"\ntmpl.HasExistingRecordsTitle = .f.\ntmpl.ExistingRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >Existing Records</td></tr>\"\ntmpl.Highlight_row_onHover =  .t.\ntmpl.Highlight_row_onSelect =  .t.\ntmpl.HasRecordsPerPageSelector = .t.\ntmpl.RecordsPerPageChoices =   \"1,2,5,10,25,50,75,100\"\ntmpl.RecordsPerPageSelectorTemplate = \"&nbsp;&nbsp;{Grid.RecordsPerPageSelector} <a5:t>Records per page</a5:t>\"\ntmpl.has_qbe_row = .f.\ntmpl.qbe.initial_display = \"Hidden\"\ntmpl.qbe.toggleQBERowHyperlinkText = \"Show/Hide QBE Row\"\ntmpl.has_advancedSearch = .f.\ntmpl.hasLinkedContent = .f.\ntmpl.hasExternalNavigators = .f.\ntmpl.hasRowExpandColumn = .f.\ntmpl.hasSelectedRowColumn = .t.\ntmpl.hasCheckboxSelectColumn = .f.\ntmpl.AdditionalGridStyles = \"\"\ntmpl.LocalCss = \"\"\ntmpl.CSSLinkedFiles = \"\"\ntmpl.localsvg = \"\"\ntmpl.SVGLinkedFiles = \"\"\ntmpl.CSSIcons = \"\"\ntmpl.JavaScriptLinkedFiles = \"\"\ntmpl.useMasterTemplate = .f.\ntmpl.MasterTemplateStyle = \"Table - Vertical Layout\"\ntmpl.MasterLayoutTemplate = \"\"\ntmpl.MasterLayoutTemplateJavascript = \"\"\ntmpl.MasterLayout.PaneLabel.Search = \"Search\"\ntmpl.MasterLayout.PaneLabel.Grid = \"Grid\"\ntmpl.MasterLayout.PaneLabel.DetailView = \"Detail\"\ntmpl.MasterLayout.AccordionStyle = \"Multiple\"\ntmpl.MasterLayout.InitialOpenPanes = \"Search,Grid,DetailView\"\ntmpl.verticalAlignDataInColumns = \"Middle\"\ntmpl.CanCollapseGrid = .f.\ntmpl.CollapseBar.Title = \"Collapse Grid\"\ntmpl.CollapseBar.OpenIcon = \"\"\ntmpl.CollapseBar.ClosedIcon = \"\"\ntmpl.CollapseBar.Style = \"\"\ntmpl.Collapsebar.Class = \"\"\ntmpl.Collapsebar.ContainerStyle = \"\"\ntmpl.Collapsebar.ContainerClass = \"\"\ntmpl.Collapsebar.InitialState = \"open\"\ntmpl.languageTags_RemoveUnConsumedTags = .t.\ntmpl.activeLanguage = \"<Default>\"\ntmpl.search.highlightSearchStrings = .f.\ntmpl.autoRefreshGrid = .f.\ntmpl.autoRefreshInterval = 60\ntmpl.helpTableType = \"DBF\"\ntmpl.helpTableName = \"\"\ntmpl.helpConnectionString = \"\"\ntmpl.helpIDfield = \"\"\ntmpl.helpContentsField = \"\"\ntmpl.fieldHelpWindowStyle = \"modal-resizeable\"\ntmpl.fields = 9\nDIM tmpl.field_info[tmpl.fields] as P \nwith tmpl.field_info[1]\n\t.Fieldname = \"Id_Accion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Accion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[2]\n\t.Fieldname = \"usuario\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"USUARIO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Usuario\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[3]\n\t.Fieldname = \"fecha\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"time(\\\"{grid.clientSideDateFormat}\\\",<value>)\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"DateTime\"\n\t.nativeType = \"datetime\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"FECHA\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Fecha\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[4]\n\t.Fieldname = \"accion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Accion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[5]\n\t.Fieldname = \"Id_Recorrido\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod.Viaje\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[6]\n\t.Fieldname = \"Id_Actividad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACTIVIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .t.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Actividad\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Id Actividad\"\nend with\nwith tmpl.field_info[7]\n\t.Fieldname = \"Actividad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACTIVIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_Actividad.Descripcion\"\n\t.SourceAlias = \"N_Actividad\"\n\t.Column.Heading = \"Actividad\"\n\t.Column.Sort = \"N_Actividad.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[8]\n\t.Fieldname = \"Descripcion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"DESCRIPCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Descripcion\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Descripcion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[9]\n\t.Fieldname = \"Id_RecMedTranspAct\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECMEDTRANSPACT\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Rec Med Transp Act\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.Column.FirstClickDirection = \"A\"\nend with\ntmpl.RecordNavigationStyle = \"NavigationButtons\"\ntmpl.fetchMoreRecordsButton.text = \"More Records\"\ntmpl.fetchMoreRecordsButton.style = \"\"\ntmpl.RecNav.SuppressIfOnlyOnePage = .t.\ntmpl.RecNav.First_Label = \"First\"\ntmpl.RecNav.Has_First_Button = .t.\ntmpl.RecNav.Has_Last_Button = .t.\ntmpl.RecNav.Has_Next_Button = .t.\ntmpl.RecNav.Has_Prev_Button = .t.\ntmpl.RecNav.HTML_Template_source = \"Computed\"\ntmpl.RecNav.Justify = \"Left\"\ntmpl.RecNav.Last_Label = \"Last\"\ntmpl.RecNav.Next_Label = \"Next\"\ntmpl.RecNav.Number_of_page_links = 10\ntmpl.RecNav.Page_Numbering_Style = 3\ntmpl.RecNav.PagesTemplate_w_PageCount = \"{PageNumber} of {PageCount}\"\ntmpl.RecNav.PagesTemplate_wout_PageCount = \"{PageNumber}\"\ntmpl.RecNav.Position = 1\ntmpl.RecNav.suppress_recNavBar_if_no_records = .f.\ntmpl.RecNav.Prev_Label = \"Prev\"\ntmpl.RecNav.Show_disabled_controls = .t.\ntmpl.RecNav.Show_Page_Count = .t.\ntmpl.RecNav.Use_Images = .t.\ntmpl.gridToolbarTemplate = <<%html%\n%html%\ntmpl.gridToolbarTemplateEditable = <<%html%\n%html%\ntmpl.ToolbarActionButtons = <<%html%\n{ActionButton:REFRESH}\n%html%\ntmpl.style_name = \"<ProjectStyle>\"\ntmpl.resolveAbstractClassNames = .t.\ntmpl.style_type = \"Alpha Five\"\ntmpl.UseSimpleStyles = .f.\ntmpl.overrideStylesForJavascriptObjects = .f.\ntmpl.searchBehavior = \"\"\ntmpl.GUID = \"247c97b4-4c30-4ab6-9273-fe554dd73fbc\"\ntmpl.onlyIncludeSelectedFieldsInQuery = .t.\nDIM tmpl.controls[1] as P\nwith  tmpl.controls[1]\n\t.idInternal = \"41e73e08-5f9d-48b0-bd7e-0a61698074b0\"\n\t.type = \"Button\"\n\t.Name = \"REFRESH\"\n\t.trailingSeparator = .T.\n\t.bubbleHelp = \"\"\n\t.readDataFrom = \"GridPart\"\n\t.actionJSAttribute = <<%str%\n/* actionJavascript:7879f270-b58d-48f7-9389-a7b8d267ee5e */\n{grid.object}.refresh();%str%\n\t.actionJSGlobal = \"\"\n\t.actionXbasic = \"\"\n\t.actionClientSideXbasic = \"\"\n\t.buttonStyle = \"Image only\"\n\t.buttonClass = \"[class.gridButton]\"\n\t.buttonClassHover = \"[class.gridButtonHover]\"\n\t.buttonClassPressed = \"[class.gridButtonPressed]\"\n\t.buttonClassDisabled = \"[class.gridButtonDisabled]\"\n\t.buttonInlineStyle = \"\"\n\t.buttonText = \"BUTTON\"\n\t.hyperlinkClass = \"[class.gridHyperlinkButton]\"\n\t.hyperlinkInlineStyle = \"\"\n\t.hyperlinkImagePosition = \"None\"\n\t.textClass = \"\"\n\t.textInlineStyle = \"\"\n\t.imageName = \"images/$$generic.refresh.color.png.a5image\"\n\t.hoverImageName = \"\"\n\t.pressedImageName = \"\"\n\t.disabledimageName = \"\"\n\t.imageClass = \"\"\n\t.imageInlineStyle = \"\"\n\t.securityGroups = \"\"\n\t.serverSideShowHideExpression = \"\"\n\t.readDataFromForClientSideExpns = \"GridPart\"\n\t.clientSideShowHideExpression = \"\"\n\t.clientSideEnableExpression = \"\"\n\t.precalc.watchJavascriptShowHide = \"\"\n\t.precalc.watchJavascriptEnable = \"\"\n\t.precalc.watchColumnsShowHide = \"\"\n\t.precalc.watchColumnsEnable = \"\"\n\t.precalc.JStoSetupWatchEvents = \"\"\n\t.precalc.buttonObjectJavascript = <<%str%\nwindow['{grid.componentName}_BUTTONS_REFRESH'] = new A5.Button({\n\tlayout: 'icon',\n\tclassName: '[class.gridButton]',\n\thoverClassName: '[class.gridButtonHover]',\n\tpressedClassName: '[class.gridButtonPressed]',\n\tdisabledClassName: '[class.gridButtonDisabled]',\n\thtml: 'BUTTON',\n\ticon: 'images/$$generic.refresh.color.png.a5image',\n\tdisabledIcon: 'images/disabled/$$generic.refresh.color.png.a5image',\n\tonClick: function() { /* actionJavascript:7879f270-b58d-48f7-9389-a7b8d267ee5e */\n{grid.object}.refresh();\n},\n\ttheme: '{grid.style}'\n});%str%\n\t.precalc.objectHTML = \"<button type=\\\"button\\\" id=\\\"{id}\\\"></button>&nbsp;\"\n\t.precalc.objectName = \"{grid.componentName}_BUTTONS_REFRESH\"\n\t.precalc.bindJS = \"{grid.componentName}_BUTTONS_REFRESH.bind({bindIdList});\"\nend with\ntmpl.hasGroupBreaks = .f.\ntmpl.groupBreaks.expression1 = \"\"\ntmpl.groupBreaks.direction1 = \"\"\ntmpl.groupBreaks.header1 = <<%HTML%\n%HTML%\ntmpl.groupBreaks.footer1 = <<%HTML%\n%HTML%\ntmpl.groupBreaks.collapseAllGroupsOnInitialDisplay = .f.\ntmpl.timestamp = \"2019-07-01:11-00-50.068\"\ntmpl.resolveAbstractClassNamesAtDesignTime  = .f.\ntmpl.resolveAbstractIconNamesAtDesignTime = .f. \ntmpl.useLegacyDatePicker = .f.\ntmpl.javascriptUnboundActionDefinitions = <<%javascriptActions%\n%javascriptActions%\n\ntmpl.precalc.sessionVarsInShowHideExpns = <<%sessionvars%\n%sessionvars%\ntmpl.precalc.unboundActionsXbasicFunctions = \"\"\ntmpl.precalc.includeS3Javascript = .f.",
+        "Xbasic": "dim tmpl as p\ntmpl.ComponentName = \"accionRecorridoMultimodalActividades\"\ntmpl.ComponentType = \"Grid\"\ntmpl.AjaxOn = .t.\ntmpl.LayoutColumns = 1\ntmpl.useCompactTheme = .t.\ntmpl.showPulseEffect = .t.\ntmpl.queryEcho = .f.\ntmpl.connectToWebSocketServer = .f.\ntmpl.flagAddPKToORDER = .t.\ntmpl.saveFileType = \"Formatted JSON\"\ntmpl.captureJSErrorStackTrace = .f.\ntmpl.SecurityModel = \"Group Based\"\ntmpl.SecurityMode = \"\"\ntmpl.PreCalcMode = \"Standard\"\ntmpl.clientSideDateFormat = \"dd/MM/yyyy\"\ntmpl.publishedServerVariables = \"\"\ntmpl.datePicker.dayNames = \"Sun,Mon,Tue,Wed,Thu,Fri,Sat\"\ntmpl.datePicker.firstDayOfWeek = 1\ntmpl.datePicker.monthNames = \"January,February,March,April,May,June,July,August,September,October,November,December\"\ntmpl.datePicker.todayButtonText = \"Today\"\ntmpl.datePicker.closeButtonText = \"Close\"\ntmpl.datePicker.closeButtonText = \"Close\"\ntmpl.friendlydatesCustomizationJSON = \"\"\ntmpl.customizationString.javascriptDialogs = <<%txt%\n{text.javascript.deleteRowConfirmation}=\"<a5:t>Are you sure you want to delete this record?</a5:t>\"\n{text.javascript.cancelEditRowConfirmation}=\"<a5:t>Are you sure you want to cancel edits to this record?</a5:t>\"\n{text.javascript.UndoEditsConfirmation}=\"<a5:t>Are you sure you want to undo edits to this record?</a5:t>\"\n{text.javascript.UndoAllEditsConfirmation}=\"<a5:t>Are you sure you want to undo edits to all records?</a5:t>\"\n{text.javascript.dirtyRecordWarning}=\"<a5:t>You must first save or cancel your changes.</a5:t>\"\n{text.javascript.dlgTitle.deleteRowConfirmation}=\"<a5:t>Delete Record</a5:t>\"\n{text.javascript.dlgTitle.cancelEditRowConfirmation}=\"<a5:t>Cancel Edit</a5:t>\"\n{text.javascript.dlgTitle.UndoEditsConfirmation}=\"<a5:t>Undo Edit</a5:t>\"\n{text.javascript.dlgTitle.UndoAllEditsConfirmation}=\"<a5:t>Undo Edit</a5:t>\"\n{text.javascript.dlgTitle.dirtyRecordWarning}=\"<a5:t>Notice</a5:t>\"\n{text.javascript.okButton.html}=\"<a5:t>OK</a5:t>\"\n{text.javascript.cancelButton.html}=\"<a5:t>Cancel</a5:t>\"%txt%\ntmpl.iconMapOverrides = \"\"\ntmpl.DataSourceType = \"CS\"\ntmpl.CS.database_type = \"CS\"\ntmpl.CS.type = \"connectionstring\"\ntmpl.cs.ConnectionString  = \"::name::Nibble\"\ntmpl.CS.SQL = \"SELECT Accion_RecorridoMultimodal_Actividades.Id_Accion, N_ActividadAnterior.Descripcion AS ActividadAnterior, Accion_RecorridoMultimodal_Actividades.usuario, Accion_RecorridoMultimodal_Actividades.fecha, Accion_RecorridoMultimodal_Actividades.accion, Accion_RecorridoMultimodal_Actividades.Id_Recorrido, Accion_RecorridoMultimodal_Actividades.Id_Actividad, Accion_RecorridoMultimodal_Actividades.Descripcion, Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct, N_Actividad.Descripcion AS Actividad \"+chr(13)+chr(10)+\"FROM (Accion_RecorridoMultimodal_Actividades Accion_RecorridoMultimodal_Actividades\"+chr(13)+chr(10)+\"\t LEFT OUTER JOIN N_Actividad N_Actividad\"+chr(13)+chr(10)+\"\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_Actividad = N_Actividad.Id_Actividad \"+chr(13)+chr(10)+\"\t LEFT OUTER JOIN N_Actividad N_ActividadAnterior\"+chr(13)+chr(10)+\"\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_ActividadAnterior = N_ActividadAnterior.Id_Actividad )\"\nDIM tmpl.Arguments[0] AS P\nDIM tmpl.ArgumentsPage AS P\nwith tmpl.ArgumentsPage\n\t.PromptTextAbove = \"\"\nend with\ntmpl.CS.PrimaryKeyColumns = <<%txt%\nAccion_RecorridoMultimodal_Actividades|Id_Accion\nN_Actividad|Id_Actividad\nN_ActividadAnterior|Id_Actividad%txt%\ntmpl.CS.IdentitySequenceName  = \"\"\ntmpl.CS.primaryKeyTopAliasIsAutoIncrement  = .t.\ntmpl.search.has_search_component = .t.\ntmpl.search.title = \"<a5:t>SearchB</a5:t>\"\ntmpl.search.show_title = .t.\ntmpl.search.search_button_label = \"<a:5>Search</a:5>\"\ntmpl.search.include_sorting_listbox = .f.\ntmpl.search.sort.prompt = \"Sort&nbsp;by\"\ntmpl.search.sorting_listbox_Label_position = \"Left\"\ntmpl.search.sort.promptInLineStyle = \"\"\ntmpl.search.sort.listbox.fieldname_prompt = \"Select Field\"\ntmpl.search.sort.listbox.use_column_headings = .f.\ntmpl.search.customSortDefinition = \"\"\ntmpl.search.search_button.useIcon = .f.\ntmpl.search.clear_link.useIcon = .f.\ntmpl.search.sort.listbox.order_prompt = \"Select Order\"\ntmpl.search.sort.listbox.order_choices = \"Ascending,Descending\"\ntmpl.search.include_records_per_page_listbox = .f.\ntmpl.search.records_per_page.prompt = \"Records&nbsp;per&nbsp;page\"\ntmpl.search.records_per_page_Label_position = \"Left\"\ntmpl.search.records_per_page.promptInLineStyle = \"\"\ntmpl.search.records_per_page.listbox.value_prompt = \"Select Value\"\ntmpl.search.records_per_page.listbox.choices = \"1,2,5,10,25,50,75,100\"\ntmpl.search.orientation = \"Vertical\"\ntmpl.search.combine_criteria_using = 1\ntmpl.search.style = 2\ntmpl.search.allow_qbf_style = .t.\ntmpl.search.show_single_search_field = .f.\ntmpl.search.keyword_label = \"Search for?\"\ntmpl.search.has_Clear_link = .t.\ntmpl.search.Clear_link_Label = \"<a5:t>Clear Search Criteria</a5:t>\"\ntmpl.search.Clear_link_BubbleHelp = \"<a5:t>Clear Search</a5:t>\"\ntmpl.search.EnableShowHide  = .t.\ntmpl.search.InitialState = \"Closed\"\ntmpl.search.title_when_hidden = \"<a5:t>Click here to search...</a5:t>\"\ntmpl.search.qbe_exclusions = \"\"\ntmpl.search.toolbarPosition = \"Below\"\ntmpl.search.disableAutoComplete = .f.\ntmpl.search.HideGridWhenNoActiveSearch = .f.\ntmpl.search.GridHTMLWhenHidden  = \"\"\ntmpl.EditRegion.Search.Top = \"\"\ntmpl.EditRegion.Search.Bottom = \"\"\ntmpl.EditRegion.Search.Left = \"\"\ntmpl.EditRegion.Search.Right = \"\"\ntmpl.search.allowSearchCriteriaSave = .f.\ntmpl.search.allowSearchCriteriaLoad = .f.\ntmpl.SearchFields = 6\nDIM tmpl.SearchField_Info[tmpl.SearchFields] as P \nwith tmpl.SearchField_Info[1]\n\t.Fieldname = \"Id_Recorrido\"\n\t.SearchExpression = \"Id_Recorrido\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod.Viaje\"\nend with\nwith tmpl.SearchField_Info[2]\n\t.Fieldname = \"usuario\"\n\t.SearchExpression = \"usuario\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"USUARIO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Dynamic\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropDownBox.Datasource = \"CS\"\n\t.DropDownBox.maxchoices = 0\n\t.DropDownBox.CS.ConnectionString = \"::name::Nibble\"\n\t.DropDownBox.CS.SQL = \"SELECT DISTINCT usuario FROM Accion_RecorridoMultimodal_Actividades ORDER BY usuario\"\n\t.DropDownBox.DisplayValueField = \"usuario\"\n\t.DropDownBox.DisplayValueFieldType = \"C\"\n\t.DropdownBox.noSelectionDisplayValue = \"\"\n\t.DropdownBox.hasCascadingChoices = .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Usuario\"\nend with\nwith tmpl.SearchField_Info[3]\n\t.Fieldname = \"fecha\"\n\t.SearchExpression = \"fecha\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"DateTime\"\n\t.nativeType = \"datetime\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"FECHA\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.DatePicker.Display = .t.\n\t.DatePicker.UseComboBoxes = .t.\n\t.DatePicker.DateFormat = \"<DefaultDateOnlyFormat>\"\n\t.DatePicker.LowYear = 1950\n\t.DatePicker.HighYear = 2050\n\t.DatePicker.SwitchYear = 20\n\t.DatePicker.IconNumber = 2\n\t.DatePicker.OpenMethod = \"ClickIcon\"\n\t.DatePicker.lowDate = \"\"\n\t.DatePicker.highDate = \"\"\n\t.DatePicker.disabledDays = \"\"\n\t.DatePicker.showDaysOfWeek = .t.\n\t.DatePicker.showTodayButton = .t.\n\t.DatePicker.showWeeksOfYear = .f.\n\t.DatePicker.OKButtonLabel = \"OK\"\n\t.DatePicker.CancelButtonLabel = \"Cancel\"\n\t.DatePicker.lockColumnWidths = .f.\n\t.DatePicker.userMustSelectFromDatePicker = .f.\n\t.DatePicker.hasEvents = .f.\n\t.DatePicker.event.onItemDraw = \"\"\n\t.DatePicker.event.onClick = \"\"\n\t.DatePicker.event.onRightClick = \"\"\n\t.DatePicker.event.onSelect = \"\"\n\t.DatePicker.event.onNavigate = \"\"\n\t.DatePicker.event.onMonthNavigate = \"\"\n\t.DatePicker.event.onYearNavigate = \"\"\n\t.DatePicker.showPreDefinedDates = .f.\n\t.DatePicker.preDefinedDatesJSON = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Fecha\"\nend with\nwith tmpl.SearchField_Info[4]\n\t.Fieldname = \"accion\"\n\t.SearchExpression = \"accion\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Dynamic\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropDownBox.Datasource = \"CS\"\n\t.DropDownBox.maxchoices = 0\n\t.DropDownBox.CS.ConnectionString = \"::name::Nibble\"\n\t.DropDownBox.CS.SQL = \"SELECT DISTINCT accion FROM Accion_RecorridoMultimodal_Actividades ORDER BY accion\"\n\t.DropDownBox.DisplayValueField = \"accion\"\n\t.DropDownBox.DisplayValueFieldType = \"C\"\n\t.DropdownBox.noSelectionDisplayValue = \"\"\n\t.DropdownBox.hasCascadingChoices = .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Accion\"\nend with\nwith tmpl.SearchField_Info[5]\n\t.Fieldname = \"Id_Accion\"\n\t.SearchExpression = \"Id_Accion\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Accion\"\nend with\nwith tmpl.searchfield_info[6]\n\t.Fieldname = \"Id_RecMedTranspAct\"\n\t.SearchExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECMEDTRANSPACT\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 20\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 20\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Id Rec Med Transp Act\"\nend with\ntmpl.grid_layout_style = 1\ntmpl.add_records_only = .f.\ntmpl.rows = 10\ntmpl.maxRowsPerPage = 200\ntmpl.rowsWhenSearchActive = -1\ntmpl.suppress_empty_rows = .t.\ntmpl.has_row_separator = .t.\ntmpl.alternate_bands = .f.\ntmpl.even_band_size = 1\ntmpl.odd_band_size = 1\ntmpl.alternate_column_bands = .f.\ntmpl.even_column_band_size = 1\ntmpl.odd_column_band_size = 1\ntmpl.conditionalStyle = \"\"\ntmpl.clientSideConditionalStyle = \"\"\ntmpl.show_title = .f.\ntmpl.title = \"\"\ntmpl.FontSize = \"Medium\"\ntmpl.No_records_message = \"<a5:t>No records in query</a5:t>\"\ntmpl.total_records_row_position = 1\ntmpl.total_records_row = \"<a5:t>Records</a5:t>:&nbsp; {Total_Records}&nbsp;\"\ntmpl.show_column_titles = 1\ntmpl.suppress_titles_if_no_records = .f.\ntmpl.show_row_labels = .t.\ntmpl.snakingLayout_suppressRepeatedLabels = .f.\ntmpl.sort_style = 3\ntmpl.reset_page_number_when_sorting = .t.\ntmpl.allowGridBodyScrolling = .f.\ntmpl.scrollableRegionHeight = \"2in\"\ntmpl.scrollableRegionWidth = \"100%\"\ntmpl.fixedWidthColumns = .f.\ntmpl.defaultColumnWidth = \"1in\"\ntmpl.columnWidthSettings = \"\"\ntmpl.EditRegion.Grid.Top = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Bottom = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Left = <<%editregion%\n%editregion%\ntmpl.EditRegion.Grid.Right = <<%editregion%\n%editregion%\ntmpl.HasNewRecordsTitle = .f.\ntmpl.NewRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >New Records</td></tr>\"\ntmpl.HasExistingRecordsTitle = .f.\ntmpl.ExistingRecordsTitle = \"<tr><td class=\\\"[class.gridData]\\\" colspan=\\\"{a5_colspan}\\\" style=\\\"padding: 0px;\\\" >Existing Records</td></tr>\"\ntmpl.Highlight_row_onHover =  .t.\ntmpl.Highlight_row_onSelect =  .t.\ntmpl.HasRecordsPerPageSelector = .t.\ntmpl.RecordsPerPageChoices =   \"1,2,5,10,25,50,75,100\"\ntmpl.RecordsPerPageSelectorTemplate = \"&nbsp;&nbsp;{Grid.RecordsPerPageSelector} <a5:t>Records per page</a5:t>\"\ntmpl.has_qbe_row = .f.\ntmpl.qbe.initial_display = \"Hidden\"\ntmpl.qbe.toggleQBERowHyperlinkText = \"Show/Hide QBE Row\"\ntmpl.has_advancedSearch = .f.\ntmpl.hasLinkedContent = .f.\ntmpl.hasExternalNavigators = .f.\ntmpl.hasRowExpandColumn = .f.\ntmpl.hasSelectedRowColumn = .t.\ntmpl.hasCheckboxSelectColumn = .f.\ntmpl.AdditionalGridStyles = \"\"\ntmpl.LocalCss = \"\"\ntmpl.CSSLinkedFiles = \"\"\ntmpl.localsvg = \"\"\ntmpl.SVGLinkedFiles = \"\"\ntmpl.CSSIcons = \"\"\ntmpl.JavaScriptLinkedFiles = \"\"\ntmpl.useMasterTemplate = .f.\ntmpl.MasterTemplateStyle = \"Table - Vertical Layout\"\ntmpl.MasterLayoutTemplate = \"\"\ntmpl.MasterLayoutTemplateJavascript = \"\"\ntmpl.MasterLayout.PaneLabel.Search = \"Search\"\ntmpl.MasterLayout.PaneLabel.Grid = \"Grid\"\ntmpl.MasterLayout.PaneLabel.DetailView = \"Detail\"\ntmpl.MasterLayout.AccordionStyle = \"Multiple\"\ntmpl.MasterLayout.InitialOpenPanes = \"Search,Grid,DetailView\"\ntmpl.verticalAlignDataInColumns = \"Middle\"\ntmpl.CanCollapseGrid = .f.\ntmpl.CollapseBar.Title = \"Collapse Grid\"\ntmpl.CollapseBar.OpenIcon = \"\"\ntmpl.CollapseBar.ClosedIcon = \"\"\ntmpl.CollapseBar.Style = \"\"\ntmpl.Collapsebar.Class = \"\"\ntmpl.Collapsebar.ContainerStyle = \"\"\ntmpl.Collapsebar.ContainerClass = \"\"\ntmpl.Collapsebar.InitialState = \"open\"\ntmpl.languageTags_RemoveUnConsumedTags = .t.\ntmpl.activeLanguage = \"<Default>\"\ntmpl.search.highlightSearchStrings = .f.\ntmpl.autoRefreshGrid = .f.\ntmpl.autoRefreshInterval = 60\ntmpl.helpTableType = \"DBF\"\ntmpl.helpTableName = \"\"\ntmpl.helpConnectionString = \"\"\ntmpl.helpIDfield = \"\"\ntmpl.helpContentsField = \"\"\ntmpl.fieldHelpWindowStyle = \"modal-resizeable\"\ntmpl.fields = 10\nDIM tmpl.field_info[tmpl.fields] as P \nwith tmpl.field_info[1]\n\t.Fieldname = \"Id_Accion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Accion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[2]\n\t.Fieldname = \"usuario\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"USUARIO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Usuario\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[3]\n\t.Fieldname = \"fecha\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"time(\\\"{grid.clientSideDateFormat}\\\",<value>)\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"DateTime\"\n\t.nativeType = \"datetime\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"FECHA\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Fecha\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[4]\n\t.Fieldname = \"accion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Accion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[5]\n\t.Fieldname = \"Id_Recorrido\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod.Viaje\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[6]\n\t.Fieldname = \"Id_Actividad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACTIVIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .t.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Actividad\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Id Actividad\"\nend with\nwith tmpl.field_info[7]\n\t.Fieldname = \"Actividad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACTIVIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_Actividad.Descripcion\"\n\t.SourceAlias = \"N_Actividad\"\n\t.Column.Heading = \"Actividad\"\n\t.Column.Sort = \"N_Actividad.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[8]\n\t.Fieldname = \"ActividadAnterior\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACTIVIDADANTERIOR\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_ActividadAnterior.Descripcion\"\n\t.SourceAlias = \"N_ActividadAnterior\"\n\t.Column.Heading = \"Actividad Anterior\"\n\t.Column.Sort = \"N_ActividadAnterior.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[9]\n\t.Fieldname = \"Descripcion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"DESCRIPCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Descripcion\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Descripcion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\nwith tmpl.field_info[10]\n\t.Fieldname = \"Id_RecMedTranspAct\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECMEDTRANSPACT\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Rec Med Transp Act\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.Column.FirstClickDirection = \"A\"\nend with\ntmpl.RecordNavigationStyle = \"NavigationButtons\"\ntmpl.fetchMoreRecordsButton.text = \"More Records\"\ntmpl.fetchMoreRecordsButton.style = \"\"\ntmpl.RecNav.SuppressIfOnlyOnePage = .t.\ntmpl.RecNav.First_Label = \"First\"\ntmpl.RecNav.Has_First_Button = .t.\ntmpl.RecNav.Has_Last_Button = .t.\ntmpl.RecNav.Has_Next_Button = .t.\ntmpl.RecNav.Has_Prev_Button = .t.\ntmpl.RecNav.HTML_Template_source = \"Computed\"\ntmpl.RecNav.Justify = \"Left\"\ntmpl.RecNav.Last_Label = \"Last\"\ntmpl.RecNav.Next_Label = \"Next\"\ntmpl.RecNav.Number_of_page_links = 10\ntmpl.RecNav.Page_Numbering_Style = 3\ntmpl.RecNav.PagesTemplate_w_PageCount = \"{PageNumber} of {PageCount}\"\ntmpl.RecNav.PagesTemplate_wout_PageCount = \"{PageNumber}\"\ntmpl.RecNav.Position = 1\ntmpl.RecNav.suppress_recNavBar_if_no_records = .f.\ntmpl.RecNav.Prev_Label = \"Prev\"\ntmpl.RecNav.Show_disabled_controls = .t.\ntmpl.RecNav.Show_Page_Count = .t.\ntmpl.RecNav.Use_Images = .t.\ntmpl.gridToolbarTemplate = <<%html%\n%html%\ntmpl.gridToolbarTemplateEditable = <<%html%\n%html%\ntmpl.ToolbarActionButtons = <<%html%\n{ActionButton:REFRESH}\n%html%\ntmpl.style_name = \"<ProjectStyle>\"\ntmpl.resolveAbstractClassNames = .t.\ntmpl.style_type = \"Alpha Five\"\ntmpl.UseSimpleStyles = .f.\ntmpl.overrideStylesForJavascriptObjects = .f.\ntmpl.searchBehavior = \"\"\ntmpl.GUID = \"247c97b4-4c30-4ab6-9273-fe554dd73fbc\"\ntmpl.onlyIncludeSelectedFieldsInQuery = .t.\nDIM tmpl.controls[1] as P\nwith  tmpl.controls[1]\n\t.idInternal = \"41e73e08-5f9d-48b0-bd7e-0a61698074b0\"\n\t.type = \"Button\"\n\t.Name = \"REFRESH\"\n\t.trailingSeparator = .T.\n\t.bubbleHelp = \"\"\n\t.readDataFrom = \"GridPart\"\n\t.actionJSAttribute = <<%str%\n/* actionJavascript:7879f270-b58d-48f7-9389-a7b8d267ee5e */\n{grid.object}.refresh();%str%\n\t.actionJSGlobal = \"\"\n\t.actionXbasic = \"\"\n\t.actionClientSideXbasic = \"\"\n\t.buttonStyle = \"Image only\"\n\t.buttonClass = \"[class.gridButton]\"\n\t.buttonClassHover = \"[class.gridButtonHover]\"\n\t.buttonClassPressed = \"[class.gridButtonPressed]\"\n\t.buttonClassDisabled = \"[class.gridButtonDisabled]\"\n\t.buttonInlineStyle = \"\"\n\t.buttonText = \"BUTTON\"\n\t.hyperlinkClass = \"[class.gridHyperlinkButton]\"\n\t.hyperlinkInlineStyle = \"\"\n\t.hyperlinkImagePosition = \"None\"\n\t.textClass = \"\"\n\t.textInlineStyle = \"\"\n\t.imageName = \"images/$$generic.refresh.color.png.a5image\"\n\t.hoverImageName = \"\"\n\t.pressedImageName = \"\"\n\t.disabledimageName = \"\"\n\t.imageClass = \"\"\n\t.imageInlineStyle = \"\"\n\t.securityGroups = \"\"\n\t.serverSideShowHideExpression = \"\"\n\t.readDataFromForClientSideExpns = \"GridPart\"\n\t.clientSideShowHideExpression = \"\"\n\t.clientSideEnableExpression = \"\"\n\t.precalc.watchJavascriptShowHide = \"\"\n\t.precalc.watchJavascriptEnable = \"\"\n\t.precalc.watchColumnsShowHide = \"\"\n\t.precalc.watchColumnsEnable = \"\"\n\t.precalc.JStoSetupWatchEvents = \"\"\n\t.precalc.buttonObjectJavascript = <<%str%\nwindow['{grid.componentName}_BUTTONS_REFRESH'] = new A5.Button({\n\tlayout: 'icon',\n\tclassName: '[class.gridButton]',\n\thoverClassName: '[class.gridButtonHover]',\n\tpressedClassName: '[class.gridButtonPressed]',\n\tdisabledClassName: '[class.gridButtonDisabled]',\n\thtml: 'BUTTON',\n\ticon: 'images/$$generic.refresh.color.png.a5image',\n\tdisabledIcon: 'images/disabled/$$generic.refresh.color.png.a5image',\n\tonClick: function() { /* actionJavascript:7879f270-b58d-48f7-9389-a7b8d267ee5e */\n{grid.object}.refresh();\n},\n\ttheme: '{grid.style}'\n});%str%\n\t.precalc.objectHTML = \"<button type=\\\"button\\\" id=\\\"{id}\\\"></button>&nbsp;\"\n\t.precalc.objectName = \"{grid.componentName}_BUTTONS_REFRESH\"\n\t.precalc.bindJS = \"{grid.componentName}_BUTTONS_REFRESH.bind({bindIdList});\"\nend with\ntmpl.hasGroupBreaks = .f.\ntmpl.groupBreaks.expression1 = \"\"\ntmpl.groupBreaks.direction1 = \"\"\ntmpl.groupBreaks.header1 = <<%HTML%\n%HTML%\ntmpl.groupBreaks.footer1 = <<%HTML%\n%HTML%\ntmpl.groupBreaks.collapseAllGroupsOnInitialDisplay = .f.\ntmpl.timestamp = \"2019-07-02:15-49-03.047\"\ntmpl.resolveAbstractClassNamesAtDesignTime  = .f.\ntmpl.resolveAbstractIconNamesAtDesignTime = .f. \ntmpl.useLegacyDatePicker = .f.\ntmpl.javascriptUnboundActionDefinitions = <<%javascriptActions%\n%javascriptActions%\n\ntmpl.precalc.sessionVarsInShowHideExpns = <<%sessionvars%\n%sessionvars%\ntmpl.precalc.unboundActionsXbasicFunctions = \"\"\ntmpl.precalc.includeS3Javascript = .f.",
         "datasourceType": 3,
         "componentName": "accionRecorridoMultimodalActividades",
         "query_ado": {
@@ -24,19 +24,19 @@
             "base_on": 2,
             "table_name": "Accion_RecorridoMultimodal_Actividades",
             "table_alias": "Accion_RecorridoMultimodal_Actividades",
-            "sql_select": "SELECT Accion_RecorridoMultimodal_Actividades.Id_Accion, Accion_RecorridoMultimodal_Actividades.usuario, Accion_RecorridoMultimodal_Actividades.fecha, Accion_RecorridoMultimodal_Actividades.accion, Accion_RecorridoMultimodal_Actividades.Id_Recorrido, Accion_RecorridoMultimodal_Actividades.Id_Actividad, Accion_RecorridoMultimodal_Actividades.Descripcion, Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct, N_Actividad.Descripcion AS Actividad \nFROM Accion_RecorridoMultimodal_Actividades Accion_RecorridoMultimodal_Actividades\n\t LEFT OUTER JOIN N_Actividad N_Actividad\n\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_Actividad = N_Actividad.Id_Actividad",
+            "sql_select": "SELECT Accion_RecorridoMultimodal_Actividades.Id_Accion, N_ActividadAnterior.Descripcion AS ActividadAnterior, Accion_RecorridoMultimodal_Actividades.usuario, Accion_RecorridoMultimodal_Actividades.fecha, Accion_RecorridoMultimodal_Actividades.accion, Accion_RecorridoMultimodal_Actividades.Id_Recorrido, Accion_RecorridoMultimodal_Actividades.Id_Actividad, Accion_RecorridoMultimodal_Actividades.Descripcion, Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct, N_Actividad.Descripcion AS Actividad \nFROM (Accion_RecorridoMultimodal_Actividades Accion_RecorridoMultimodal_Actividades\n\t LEFT OUTER JOIN N_Actividad N_Actividad\n\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_Actividad = N_Actividad.Id_Actividad \n\t LEFT OUTER JOIN N_Actividad N_ActividadAnterior\n\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_ActividadAnterior = N_ActividadAnterior.Id_Actividad )",
             "database_type": "CS",
             "surrogate_primary_key": "Id_Accion",
-            "FieldInfo": "<a_expn<[1]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Accion\">\n<basecolumn=\"Id_Accion\">\n<varname=\"Id_Accion\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Accion\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Accion\">\n>\n<[2]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"usuario\">\n<basecolumn=\"usuario\">\n<varname=\"usuario\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.usuario\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.usuario\">\n>\n<[3]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"\">\n<portable_type=\"TimeStamp\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"fecha\">\n<basecolumn=\"fecha\">\n<varname=\"fecha\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.fecha\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.fecha\">\n>\n<[4]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"accion\">\n<basecolumn=\"accion\">\n<varname=\"accion\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.accion\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.accion\">\n>\n<[5]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Recorrido\">\n<basecolumn=\"Id_Recorrido\">\n<varname=\"Id_Recorrido\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\">\n>\n<[6]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Actividad\">\n<basecolumn=\"Id_Actividad\">\n<varname=\"Id_Actividad\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Actividad\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Actividad\">\n>\n<[7]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=255>\n<name=\"Descripcion\">\n<basecolumn=\"Descripcion\">\n<varname=\"Descripcion\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=255>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Descripcion\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Descripcion\">\n>\n<[8]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_RecMedTranspAct\">\n<basecolumn=\"Id_RecMedTranspAct\">\n<varname=\"Id_RecMedTranspAct\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\">\n>\n<[9]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=255>\n<name=\"Actividad\">\n<basecolumn=\"Descripcion\">\n<varname=\"Actividad\">\n<basetable=\"N_Actividad\">\n<alias_to_update=\"N_Actividad\">\n<Precision=255>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_Actividad\">\n<searchSortExpression=\"N_Actividad.Descripcion\">\n<searchExpression=\"N_Actividad.Descripcion\">\n>\n>\n",
-            "SurrogatePrimaryKeyData": "<arrTables<[1]<Primary_Key=\"Id_Accion\">\n<Name=\"Accion_RecorridoMultimodal_Actividades\">\n<Alias=\"Accion_RecorridoMultimodal_Actividades\">\n>\n>\n",
+            "FieldInfo": "<a_expn<[1]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Accion\">\n<basecolumn=\"Id_Accion\">\n<varname=\"Id_Accion\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Accion\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Accion\">\n>\n<[2]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=255>\n<name=\"ActividadAnterior\">\n<basecolumn=\"Descripcion\">\n<varname=\"ActividadAnterior\">\n<basetable=\"N_Actividad\">\n<alias_to_update=\"N_Actividad\">\n<Precision=255>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_ActividadAnterior\">\n<searchSortExpression=\"N_ActividadAnterior.Descripcion\">\n<searchExpression=\"N_ActividadAnterior.Descripcion\">\n>\n<[3]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"usuario\">\n<basecolumn=\"usuario\">\n<varname=\"usuario\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.usuario\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.usuario\">\n>\n<[4]<a5_type=\"Time\">\n<a5_shorttype=\"T\">\n<CS_type=\"\">\n<portable_type=\"TimeStamp\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=17>\n<name=\"fecha\">\n<basecolumn=\"fecha\">\n<varname=\"fecha\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=17>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.fecha\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.fecha\">\n>\n<[5]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=50>\n<name=\"accion\">\n<basecolumn=\"accion\">\n<varname=\"accion\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=50>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.accion\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.accion\">\n>\n<[6]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Recorrido\">\n<basecolumn=\"Id_Recorrido\">\n<varname=\"Id_Recorrido\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\">\n>\n<[7]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_Actividad\">\n<basecolumn=\"Id_Actividad\">\n<varname=\"Id_Actividad\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Actividad\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Id_Actividad\">\n>\n<[8]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=255>\n<name=\"Descripcion\">\n<basecolumn=\"Descripcion\">\n<varname=\"Descripcion\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=255>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Descripcion\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Descripcion\">\n>\n<[9]<a5_type=\"Numeric\">\n<a5_shorttype=\"N\">\n<CS_type=\"\">\n<portable_type=\"Integer32\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=11>\n<name=\"Id_RecMedTranspAct\">\n<basecolumn=\"Id_RecMedTranspAct\">\n<varname=\"Id_RecMedTranspAct\">\n<basetable=\"Accion_RecorridoMultimodal_Actividades\">\n<alias_to_update=\"Accion_RecorridoMultimodal_Actividades\">\n<Precision=11>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"Accion_RecorridoMultimodal_Actividades\">\n<searchSortExpression=\"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\">\n<searchExpression=\"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\">\n>\n<[10]<a5_type=\"Character\">\n<a5_shorttype=\"C\">\n<CS_type=\"\">\n<portable_type=\"NationalVaryingCharacter\">\n<autoincrement=.F.>\n<identity=.F.>\n<identitySequenceName=\"\">\n<definedsize=255>\n<name=\"Actividad\">\n<basecolumn=\"Descripcion\">\n<varname=\"Actividad\">\n<basetable=\"N_Actividad\">\n<alias_to_update=\"N_Actividad\">\n<Precision=255>\n<NumericScale=0>\n<CanBeUsedInWhereClause=.T.>\n<SQLExpression=\"\">\n<basealias=\"N_Actividad\">\n<searchSortExpression=\"N_Actividad.Descripcion\">\n<searchExpression=\"N_Actividad.Descripcion\">\n>\n>\n",
+            "SurrogatePrimaryKeyData": "<arrTables<[1]<Primary_Key=\"Id_Accion\">\n<Name=\"Accion_RecorridoMultimodal_Actividades\">\n<alias=\"Accion_RecorridoMultimodal_Actividades\">\n>\n>\n",
             "SQLBuilder": {
-                "SQL": "SELECT Accion_RecorridoMultimodal_Actividades.Id_Accion, Accion_RecorridoMultimodal_Actividades.usuario, Accion_RecorridoMultimodal_Actividades.fecha, Accion_RecorridoMultimodal_Actividades.accion, Accion_RecorridoMultimodal_Actividades.Id_Recorrido, Accion_RecorridoMultimodal_Actividades.Id_Actividad, Accion_RecorridoMultimodal_Actividades.Descripcion, Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct, N_Actividad.Descripcion AS Actividad \nFROM Accion_RecorridoMultimodal_Actividades Accion_RecorridoMultimodal_Actividades\n\t LEFT OUTER JOIN N_Actividad N_Actividad\n\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_Actividad = N_Actividad.Id_Actividad",
-                "PrimaryKeyData": "<arrTables<[1]<Primary_Key=\"Id_Accion\">\n<Name=\"Accion_RecorridoMultimodal_Actividades\">\n<alias=\"Accion_RecorridoMultimodal_Actividades\">\n>\n<[2]<Primary_Key=\"Id_Actividad\">\n<Name=\"N_Actividad\">\n<alias=\"N_Actividad\">\n>\n>\n",
-                "ColumnAliases": "Id_Accion|||||||Accion_RecorridoMultimodal_Actividades.Id_Accion\nusuario|||||||Accion_RecorridoMultimodal_Actividades.usuario\nfecha|||||||Accion_RecorridoMultimodal_Actividades.fecha\naccion|||||||Accion_RecorridoMultimodal_Actividades.accion\nId_Recorrido|||||||Accion_RecorridoMultimodal_Actividades.Id_Recorrido\nId_Actividad|||||||Accion_RecorridoMultimodal_Actividades.Id_Actividad\nDescripcion|||||||Accion_RecorridoMultimodal_Actividades.Descripcion\nId_RecMedTranspAct|||||||Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\nActividad|||||||N_Actividad.Descripcion\n",
-                "ColumnTypes": "Id_Accion=N\nusuario=C\nfecha=T\naccion=C\nId_Recorrido=N\nId_Actividad=N\nDescripcion=C\nId_RecMedTranspAct=N\nActividad=C\n",
-                "ColumnNativeTypes": "Id_Accion=\nusuario=\nfecha=\naccion=\nId_Recorrido=\nId_Actividad=\nDescripcion=\nId_RecMedTranspAct=\nActividad=\n",
-                "ColumnPortableTypes": "Id_Accion=Integer32\nusuario=NationalVaryingCharacter\nfecha=TimeStamp\naccion=NationalVaryingCharacter\nId_Recorrido=Integer32\nId_Actividad=Integer32\nDescripcion=NationalVaryingCharacter\nId_RecMedTranspAct=Integer32\nActividad=NationalVaryingCharacter\n",
-                "CanBeUsedInWhereClauseFields": "Id_Accion\nusuario\nfecha\naccion\nId_Recorrido\nId_Actividad\nDescripcion\nId_RecMedTranspAct\nActividad\n",
+                "SQL": "SELECT Accion_RecorridoMultimodal_Actividades.Id_Accion, N_ActividadAnterior.Descripcion AS ActividadAnterior, Accion_RecorridoMultimodal_Actividades.usuario, Accion_RecorridoMultimodal_Actividades.fecha, Accion_RecorridoMultimodal_Actividades.accion, Accion_RecorridoMultimodal_Actividades.Id_Recorrido, Accion_RecorridoMultimodal_Actividades.Id_Actividad, Accion_RecorridoMultimodal_Actividades.Descripcion, Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct, N_Actividad.Descripcion AS Actividad \nFROM (Accion_RecorridoMultimodal_Actividades Accion_RecorridoMultimodal_Actividades\n\t LEFT OUTER JOIN N_Actividad N_Actividad\n\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_Actividad = N_Actividad.Id_Actividad \n\t LEFT OUTER JOIN N_Actividad N_ActividadAnterior\n\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_ActividadAnterior = N_ActividadAnterior.Id_Actividad )",
+                "PrimaryKeyData": "<arrTables<[1]<Primary_Key=\"Id_Accion\">\n<Name=\"Accion_RecorridoMultimodal_Actividades\">\n<alias=\"Accion_RecorridoMultimodal_Actividades\">\n>\n<[2]<Primary_Key=\"Id_Actividad\">\n<Name=\"N_Actividad\">\n<alias=\"N_Actividad\">\n>\n<[3]<Primary_Key=\"Id_Actividad\">\n<Name=\"N_Actividad\">\n<alias=\"N_ActividadAnterior\">\n>\n>\n",
+                "ColumnAliases": "Id_Accion|||||||Accion_RecorridoMultimodal_Actividades.Id_Accion\nActividadAnterior|||||||N_ActividadAnterior.Descripcion\nusuario|||||||Accion_RecorridoMultimodal_Actividades.usuario\nfecha|||||||Accion_RecorridoMultimodal_Actividades.fecha\naccion|||||||Accion_RecorridoMultimodal_Actividades.accion\nId_Recorrido|||||||Accion_RecorridoMultimodal_Actividades.Id_Recorrido\nId_Actividad|||||||Accion_RecorridoMultimodal_Actividades.Id_Actividad\nDescripcion|||||||Accion_RecorridoMultimodal_Actividades.Descripcion\nId_RecMedTranspAct|||||||Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\nActividad|||||||N_Actividad.Descripcion\n",
+                "ColumnTypes": "Id_Accion=N\nActividadAnterior=C\nusuario=C\nfecha=T\naccion=C\nId_Recorrido=N\nId_Actividad=N\nDescripcion=C\nId_RecMedTranspAct=N\nActividad=C\n",
+                "ColumnNativeTypes": "Id_Accion=\nActividadAnterior=\nusuario=\nfecha=\naccion=\nId_Recorrido=\nId_Actividad=\nDescripcion=\nId_RecMedTranspAct=\nActividad=\n",
+                "ColumnPortableTypes": "Id_Accion=Integer32\nActividadAnterior=NationalVaryingCharacter\nusuario=NationalVaryingCharacter\nfecha=TimeStamp\naccion=NationalVaryingCharacter\nId_Recorrido=Integer32\nId_Actividad=Integer32\nDescripcion=NationalVaryingCharacter\nId_RecMedTranspAct=Integer32\nActividad=NationalVaryingCharacter\n",
+                "CanBeUsedInWhereClauseFields": "Id_Accion\nActividadAnterior\nusuario\nfecha\naccion\nId_Recorrido\nId_Actividad\nDescripcion\nId_RecMedTranspAct\nActividad\n",
                 "lastbutton": "OK"
             },
             "Arguments": [],
@@ -187,12 +187,12 @@
                         "showTodayButton": true,
                         "OKButtonLabel": "OK",
                         "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
                         "friendlyDisplay": {
                             "settingsJSON": "",
                             "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": ""
+                        }
                     },
                     "column": {
                         "heading": "Id Accion",
@@ -266,7 +266,7 @@
                     "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_Accion}Id_Accion",
                     "scope": "Local",
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Accion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Accion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Accion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Accion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n",
                     "index": 1000,
                     "columnQBEOptionsJSON": ""
                 },
@@ -405,12 +405,12 @@
                         "showTodayButton": true,
                         "OKButtonLabel": "OK",
                         "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
                         "friendlyDisplay": {
                             "settingsJSON": "",
                             "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": ""
+                        }
                     },
                     "column": {
                         "heading": "Usuario",
@@ -483,7 +483,7 @@
                     "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=usuario}usuario",
                     "scope": "Local",
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"usuario\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"USUARIO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Usuario\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"usuario\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"USUARIO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Usuario\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n",
                     "index": 3000,
                     "columnQBEOptionsJSON": ""
                 },
@@ -623,12 +623,12 @@
                         "showTodayButton": true,
                         "OKButtonLabel": "OK",
                         "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
                         "friendlyDisplay": {
                             "settingsJSON": "",
                             "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": ""
+                        }
                     },
                     "column": {
                         "heading": "Fecha",
@@ -702,7 +702,7 @@
                     "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=fecha}fecha",
                     "scope": "Local",
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"fecha\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"time(\\\"{grid.clientSideDateFormat}\\\",<value>)\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"DateTime\"\n\t.nativeType = \"datetime\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"FECHA\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Fecha\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"fecha\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"time(\\\"{grid.clientSideDateFormat}\\\",<value>)\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"DateTime\"\n\t.nativeType = \"datetime\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"FECHA\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Fecha\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n",
                     "index": 4000,
                     "columnQBEOptionsJSON": ""
                 },
@@ -841,12 +841,12 @@
                         "showTodayButton": true,
                         "OKButtonLabel": "OK",
                         "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
                         "friendlyDisplay": {
                             "settingsJSON": "",
                             "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": ""
+                        }
                     },
                     "column": {
                         "heading": "Accion",
@@ -919,7 +919,7 @@
                     "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=accion}accion",
                     "scope": "Local",
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"accion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Accion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"accion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Accion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n",
                     "index": 5000,
                     "columnQBEOptionsJSON": ""
                 },
@@ -1060,12 +1060,12 @@
                         "showTodayButton": true,
                         "OKButtonLabel": "OK",
                         "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
                         "friendlyDisplay": {
                             "settingsJSON": "",
                             "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": ""
+                        }
                     },
                     "column": {
                         "heading": "Cod.Viaje",
@@ -1138,7 +1138,7 @@
                     "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_Recorrido}Id_Recorrido",
                     "scope": "Local",
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Recorrido\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod.Viaje\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Recorrido\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod.Viaje\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n",
                     "index": 6000,
                     "columnQBEOptionsJSON": ""
                 },
@@ -1209,11 +1209,11 @@
                     },
                     "TextBox": {
                         "InLineStyle": "text-align: right;",
-                        "className": "",
                         "Size": 20,
-                        "readonly": false,
                         "MaxLength": 20,
-                        "stylefieldiferror": true
+                        "stylefieldiferror": true,
+                        "className": "",
+                        "readonly": false
                     },
                     "Watermark": {
                         "text": "<FieldLabel>"
@@ -1230,9 +1230,9 @@
                                 "width": "2in"
                             },
                             "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
                             "toolbaricons": "",
-                            "toolbardefinition": "",
-                            "editButtonText": "Edit..."
+                            "toolbardefinition": ""
                         }
                     },
                     "radiobutton": {
@@ -1271,12 +1271,6 @@
                         "OpenMethod": "ClickIcon",
                         "UseComboBoxes": true,
                         "DateFormat": "<DefaultTimeFormat>",
-                        "friendlyDisplay": {
-                            "settingsJSON": "",
-                            "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": "",
                         "LowYear": 1950,
                         "HighYear": 2050,
                         "SwitchYear": 20,
@@ -1284,7 +1278,13 @@
                         "showDaysOfWeek": true,
                         "showTodayButton": true,
                         "OKButtonLabel": "OK",
-                        "CancelButtonLabel": "Cancel"
+                        "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        }
                     },
                     "column": {
                         "Hide": true,
@@ -1297,7 +1297,6 @@
                     "initial_value": "NULL",
                     "BreakType": "None",
                     "nCols": 1,
-                    "columnQBEOptionsJSON": "",
                     "link": {
                         "StaticImageInlineStyle": "border-style: none;",
                         "DisplayType": "Value in Field",
@@ -1312,21 +1311,15 @@
                         "ajaxWindowRefreshGridOnClose": "None",
                         "targetDIVHideHyperlink": "Close"
                     },
+                    "BaseFieldExpression": "Accion_RecorridoMultimodal_Actividades.Id_Actividad",
                     "type": "N",
-                    "SearchExpression": "Id_Recorrido",
                     "ConditionalStyleLevel": "Cell",
                     "ClientSideConditionalStyleLevel": "Cell",
-                    "display": "Id_Actividad",
+                    "Updateable": true,
                     "TableAlias": "Accion_RecorridoMultimodal_Actividades",
-                    "updateable": true,
+                    "canBeUsedInWhereClause": true,
                     "table": "Accion_RecorridoMultimodal_Actividades",
                     "FieldToUpdate": "Id_Actividad",
-                    "varname": "Id_Actividad",
-                    "DisplayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=#130,130,130}{DATA=Id_Actividad}Id_Actividad",
-                    "DisplayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=#130,130,130}{DATA=Id_Actividad}Id_Actividad",
-                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
-                    "scope": "Local",
-                    "BaseFieldExpression": "Accion_RecorridoMultimodal_Actividades.Id_Actividad",
                     "summary": {
                         "total": {
                             "inlinestyle": "text-align: right;"
@@ -1356,13 +1349,20 @@
                             "inlinestyle": "text-align: right;"
                         }
                     },
-                    "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Actividad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACTIVIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .t.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Actividad\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Id Actividad\"\nend with\n",
-                    "canBeUsedInWhereClause": true,
+                    "SourceAlias": "Accion_RecorridoMultimodal_Actividades",
                     "PortableType": "Integer32",
-                    "repeatingSectionParentId": -1,
+                    "varname": "Id_Actividad",
+                    "Display": "Id_Actividad",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=#130,130,130}{DATA=Id_Actividad}Id_Actividad",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=#130,130,130}{DATA=Id_Actividad}Id_Actividad",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Actividad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACTIVIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .t.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Actividad\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Id Actividad\"\nend with\n\n",
+                    "SearchExpression": "Id_Recorrido",
+                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
                     "index": 5000,
-                    "SourceAlias": "Accion_RecorridoMultimodal_Actividades"
+                    "repeatingSectionParentId": -1,
+                    "columnQBEOptionsJSON": ""
                 },
                 {
                     "fieldname": "Actividad",
@@ -1429,11 +1429,11 @@
                         "HighYear": 2050
                     },
                     "TextBox": {
-                        "className": "",
                         "Size": 20,
-                        "readonly": false,
                         "MaxLength": 20,
-                        "stylefieldiferror": true
+                        "stylefieldiferror": true,
+                        "className": "",
+                        "readonly": false
                     },
                     "Watermark": {
                         "text": "<FieldLabel>"
@@ -1450,9 +1450,9 @@
                                 "width": "2in"
                             },
                             "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
                             "toolbaricons": "",
-                            "toolbardefinition": "",
-                            "editButtonText": "Edit..."
+                            "toolbardefinition": ""
                         }
                     },
                     "radiobutton": {
@@ -1491,12 +1491,6 @@
                         "OpenMethod": "ClickIcon",
                         "UseComboBoxes": true,
                         "DateFormat": "<DefaultTimeFormat>",
-                        "friendlyDisplay": {
-                            "settingsJSON": "",
-                            "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": "",
                         "LowYear": 1950,
                         "HighYear": 2050,
                         "SwitchYear": 20,
@@ -1504,7 +1498,13 @@
                         "showDaysOfWeek": true,
                         "showTodayButton": true,
                         "OKButtonLabel": "OK",
-                        "CancelButtonLabel": "Cancel"
+                        "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        }
                     },
                     "column": {
                         "heading": "Actividad",
@@ -1516,7 +1516,6 @@
                     "initial_value": "NULL",
                     "BreakType": "None",
                     "nCols": 1,
-                    "columnQBEOptionsJSON": "",
                     "link": {
                         "StaticImageInlineStyle": "border-style: none;",
                         "DisplayType": "Value in Field",
@@ -1531,21 +1530,15 @@
                         "ajaxWindowRefreshGridOnClose": "None",
                         "targetDIVHideHyperlink": "Close"
                     },
+                    "BaseFieldExpression": "N_Actividad.Descripcion",
                     "type": "C",
-                    "SearchExpression": "Id_Recorrido",
                     "ConditionalStyleLevel": "Cell",
                     "ClientSideConditionalStyleLevel": "Cell",
-                    "display": "Actividad",
+                    "Updateable": true,
                     "TableAlias": "N_Actividad",
-                    "updateable": true,
+                    "canBeUsedInWhereClause": true,
                     "table": "N_Actividad",
                     "FieldToUpdate": "Descripcion",
-                    "varname": "Actividad",
-                    "DisplayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Actividad}Actividad",
-                    "DisplayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Actividad}Actividad",
-                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
-                    "scope": "Local",
-                    "BaseFieldExpression": "N_Actividad.Descripcion",
                     "summary": {
                         "total": {
                             "inlinestyle": "text-align: right;"
@@ -1575,16 +1568,23 @@
                             "inlinestyle": "text-align: right;"
                         }
                     },
-                    "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Actividad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACTIVIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_Actividad.Descripcion\"\n\t.SourceAlias = \"N_Actividad\"\n\t.Column.Heading = \"Actividad\"\n\t.Column.Sort = \"N_Actividad.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n",
-                    "canBeUsedInWhereClause": true,
+                    "SourceAlias": "N_Actividad",
                     "PortableType": "NationalVaryingCharacter",
-                    "repeatingSectionParentId": -1,
+                    "varname": "Actividad",
+                    "Display": "Actividad",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Actividad}Actividad",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Actividad}Actividad",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Actividad\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACTIVIDAD\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_Actividad.Descripcion\"\n\t.SourceAlias = \"N_Actividad\"\n\t.Column.Heading = \"Actividad\"\n\t.Column.Sort = \"N_Actividad.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n\n",
+                    "SearchExpression": "Id_Recorrido",
+                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
                     "index": 5000,
-                    "SourceAlias": "N_Actividad"
+                    "repeatingSectionParentId": -1,
+                    "columnQBEOptionsJSON": ""
                 },
                 {
-                    "fieldname": "Descripcion",
+                    "fieldname": "ActividadAnterior",
                     "showHelpIcon": "None",
                     "helpIconBehavior": "ShowHelpOnClick",
                     "onChange_ValidationOption": "None",
@@ -1726,10 +1726,10 @@
                         "CancelButtonLabel": "Cancel"
                     },
                     "column": {
-                        "heading": "Descripcion",
+                        "heading": "Actividad Anterior",
                         "LabelPosition": "Left",
                         "CanSort": true,
-                        "sort": "Accion_RecorridoMultimodal_Actividades.Descripcion",
+                        "sort": "N_ActividadAnterior.Descripcion",
                         "firstclickdirection": "Ascending"
                     },
                     "initial_value": "NULL",
@@ -1750,21 +1750,15 @@
                         "ajaxWindowRefreshGridOnClose": "None",
                         "targetDIVHideHyperlink": "Close"
                     },
+                    "BaseFieldExpression": "N_ActividadAnterior.Descripcion",
                     "type": "C",
-                    "SearchExpression": "Id_Recorrido",
                     "ConditionalStyleLevel": "Cell",
                     "ClientSideConditionalStyleLevel": "Cell",
-                    "display": "Descripcion",
-                    "TableAlias": "Accion_RecorridoMultimodal_Actividades",
-                    "updateable": true,
-                    "table": "Accion_RecorridoMultimodal_Actividades",
+                    "Updateable": true,
+                    "TableAlias": "N_ActividadAnterior",
+                    "canBeUsedInWhereClause": true,
+                    "table": "N_Actividad",
                     "FieldToUpdate": "Descripcion",
-                    "varname": "Descripcion",
-                    "DisplayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Descripcion}Descripcion",
-                    "DisplayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Descripcion}Descripcion",
-                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
-                    "scope": "Local",
-                    "BaseFieldExpression": "Accion_RecorridoMultimodal_Actividades.Descripcion",
                     "summary": {
                         "total": {
                             "inlinestyle": "text-align: right;"
@@ -1794,13 +1788,235 @@
                             "inlinestyle": "text-align: right;"
                         }
                     },
-                    "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Descripcion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"DESCRIPCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Descripcion\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Descripcion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n",
-                    "canBeUsedInWhereClause": true,
+                    "SourceAlias": "N_ActividadAnterior",
                     "PortableType": "NationalVaryingCharacter",
-                    "repeatingSectionParentId": -1,
+                    "width": 255,
+                    "varname": "ActividadAnterior",
+                    "Display": "ActividadAnterior",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=ActividadAnterior}ActividadAnterior",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=ActividadAnterior}ActividadAnterior",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"ActividadAnterior\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACTIVIDADANTERIOR\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"N_ActividadAnterior.Descripcion\"\n\t.SourceAlias = \"N_ActividadAnterior\"\n\t.Column.Heading = \"Actividad Anterior\"\n\t.Column.Sort = \"N_ActividadAnterior.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n"
+                },
+                {
+                    "fieldname": "Descripcion",
+                    "showHelpIcon": "None",
+                    "helpIconBehavior": "ShowHelpOnClick",
+                    "onChange_ValidationOption": "None",
+                    "Layout": {
+                        "Title": "Tab label",
+                        "TabPane": {
+                            "show": true
+                        },
+                        "TabControl": {
+                            "useModernTabs": true,
+                            "Type": "Tab",
+                            "TabPosition": "Top",
+                            "AccordionType": "Single",
+                            "InitialPane": 1,
+                            "BreakType": "After",
+                            "animation": {
+                                "show": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                },
+                                "hide": {
+                                    "method": "Suggested",
+                                    "speed": "Slow"
+                                }
+                            }
+                        },
+                        "FrameTitle": "Frame Label",
+                        "Frame": {
+                            "BreakType": "After",
+                            "type": "Simple",
+                            "initialState": "Shown"
+                        },
+                        "Container": {
+                            "BreakType": "After"
+                        },
+                        "ButtonText": "Button",
+                        "HyperlinkText": "Hyperlink",
+                        "Spacer": {
+                            "Horizontal": ".1in",
+                            "Vertical": ".1in"
+                        },
+                        "nCols": 1
+                    },
+                    "controltype": "Label",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "Label": {
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "calendar": {
+                        "DateFormat": "mm/dd/yy",
+                        "SwitchYear": 20,
+                        "UseComboBoxes": true,
+                        "LowYear": 1950,
+                        "HighYear": 2050
+                    },
+                    "TextBox": {
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true,
+                        "className": "",
+                        "readonly": false
+                    },
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "clientSideFormat": {
+                        "type": "Mask"
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "stylefieldiferror": true,
+                        "type": "Static"
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3,
+                        "initial_value": "False"
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "OpenMethod": "ClickIcon",
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "showDaysOfWeek": true,
+                        "showTodayButton": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        }
+                    },
+                    "column": {
+                        "heading": "Descripcion",
+                        "LabelPosition": "Left",
+                        "CanSort": true,
+                        "sort": "Accion_RecorridoMultimodal_Actividades.Descripcion",
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "BreakType": "None",
+                    "nCols": 1,
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close"
+                    },
+                    "BaseFieldExpression": "Accion_RecorridoMultimodal_Actividades.Descripcion",
+                    "type": "C",
+                    "ConditionalStyleLevel": "Cell",
+                    "ClientSideConditionalStyleLevel": "Cell",
+                    "Updateable": true,
+                    "TableAlias": "Accion_RecorridoMultimodal_Actividades",
+                    "canBeUsedInWhereClause": true,
+                    "table": "Accion_RecorridoMultimodal_Actividades",
+                    "FieldToUpdate": "Descripcion",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "SourceAlias": "Accion_RecorridoMultimodal_Actividades",
+                    "PortableType": "NationalVaryingCharacter",
+                    "varname": "Descripcion",
+                    "Display": "Descripcion",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Descripcion}Descripcion",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Descripcion}Descripcion",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Descripcion\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"NationalVaryingCharacter\"\n\t.nativeType = \"\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"DESCRIPCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Descripcion\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Descripcion\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Descripcion\"\n\t.Column.FirstClickDirection = \"A\"\nend with\n\n",
+                    "SearchExpression": "Id_Recorrido",
+                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
                     "index": 5000,
-                    "SourceAlias": "Accion_RecorridoMultimodal_Actividades"
+                    "repeatingSectionParentId": -1,
+                    "columnQBEOptionsJSON": ""
                 },
                 {
                     "fieldname": "Id_RecMedTranspAct",
@@ -1869,11 +2085,11 @@
                     },
                     "TextBox": {
                         "InLineStyle": "text-align: right;",
-                        "className": "",
                         "Size": 20,
-                        "readonly": false,
                         "MaxLength": 20,
-                        "stylefieldiferror": true
+                        "stylefieldiferror": true,
+                        "className": "",
+                        "readonly": false
                     },
                     "Watermark": {
                         "text": "<FieldLabel>"
@@ -1890,9 +2106,9 @@
                                 "width": "2in"
                             },
                             "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
                             "toolbaricons": "",
-                            "toolbardefinition": "",
-                            "editButtonText": "Edit..."
+                            "toolbardefinition": ""
                         }
                     },
                     "radiobutton": {
@@ -1931,12 +2147,6 @@
                         "OpenMethod": "ClickIcon",
                         "UseComboBoxes": true,
                         "DateFormat": "<DefaultTimeFormat>",
-                        "friendlyDisplay": {
-                            "settingsJSON": "",
-                            "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": "",
                         "LowYear": 1950,
                         "HighYear": 2050,
                         "SwitchYear": 20,
@@ -1944,7 +2154,13 @@
                         "showDaysOfWeek": true,
                         "showTodayButton": true,
                         "OKButtonLabel": "OK",
-                        "CancelButtonLabel": "Cancel"
+                        "CancelButtonLabel": "Cancel",
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        }
                     },
                     "column": {
                         "heading": "Id Rec Med Transp Act",
@@ -1956,7 +2172,6 @@
                     "initial_value": "NULL",
                     "BreakType": "None",
                     "nCols": 1,
-                    "columnQBEOptionsJSON": "",
                     "link": {
                         "StaticImageInlineStyle": "border-style: none;",
                         "DisplayType": "Value in Field",
@@ -1971,21 +2186,16 @@
                         "ajaxWindowRefreshGridOnClose": "None",
                         "targetDIVHideHyperlink": "Close"
                     },
+                    "BaseFieldExpression": "Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct",
                     "type": "N",
-                    "SearchExpression": "Id_Recorrido",
                     "ConditionalStyleLevel": "Cell",
                     "ClientSideConditionalStyleLevel": "Cell",
-                    "display": "Id_RecMedTranspAct",
+                    "Updateable": true,
                     "TableAlias": "Accion_RecorridoMultimodal_Actividades",
-                    "updateable": true,
+                    "canBeUsedInWhereClause": true,
+                    "nativeType": "int",
                     "table": "Accion_RecorridoMultimodal_Actividades",
                     "FieldToUpdate": "Id_RecMedTranspAct",
-                    "varname": "Id_RecMedTranspAct",
-                    "DisplayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_RecMedTranspAct}Id_RecMedTranspAct",
-                    "DisplayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_RecMedTranspAct}Id_RecMedTranspAct",
-                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
-                    "scope": "Local",
-                    "BaseFieldExpression": "Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct",
                     "summary": {
                         "total": {
                             "inlinestyle": "text-align: right;"
@@ -2015,13 +2225,27 @@
                             "inlinestyle": "text-align: right;"
                         }
                     },
-                    "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_RecMedTranspAct\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECMEDTRANSPACT\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Rec Med Transp Act\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n",
-                    "canBeUsedInWhereClause": true,
-                    "NativeType": "int",
                     "PortableType": "Integer32",
+                    "varname": "Id_RecMedTranspAct",
+                    "Display": "Id_RecMedTranspAct",
+                    "displayOD": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_RecMedTranspAct}Id_RecMedTranspAct",
+                    "displayODFlat": "{F=Tahoma,8}{I:'a5_blue_text'}{T=.2}{C=}{DATA=Id_RecMedTranspAct}Id_RecMedTranspAct",
+                    "scope": "Local",
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_RecMedTranspAct\"\n\t.Scope = \"Local\"\n\t.DisplayFormat = \"\"\n\t.DisplayUnFormat = \"\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECMEDTRANSPACT\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"Label\"\n\t.Label.InLineStyle = \"text-align: right;\"\n\t.Label.ClassName = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Rec Med Transp Act\"\n\t.Column.Sort = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.Column.FirstClickDirection = \"A\"\n\nend with\n\n",
+                    "SearchExpression": "Id_Recorrido",
+                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
+                    "index": 7001,
+                    "SQL": "SELECT Accion_RecorridoMultimodal_Actividades.Id_Accion, Accion_RecorridoMultimodal_Actividades.usuario, Accion_RecorridoMultimodal_Actividades.fecha, Accion_RecorridoMultimodal_Actividades.accion, Accion_RecorridoMultimodal_Actividades.Id_Recorrido, Accion_RecorridoMultimodal_Actividades.Id_Actividad, Accion_RecorridoMultimodal_Actividades.Descripcion, Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct, N_Actividad.Descripcion AS Actividad \nFROM Accion_RecorridoMultimodal_Actividades Accion_RecorridoMultimodal_Actividades\n\t LEFT OUTER JOIN N_Actividad N_Actividad\n\t\t ON  Accion_RecorridoMultimodal_Actividades.Id_Actividad = N_Actividad.Id_Actividad",
+                    "PrimaryKeyData": "<arrTables<[1]<Primary_Key=\"Id_Accion\">\n<Name=\"Accion_RecorridoMultimodal_Actividades\">\n<alias=\"Accion_RecorridoMultimodal_Actividades\">\n>\n<[2]<Primary_Key=\"Id_Actividad\">\n<Name=\"N_Actividad\">\n<alias=\"N_Actividad\">\n>\n>\n",
+                    "lastbutton": "OK",
+                    "ColumnAliases": "Id_Accion|||||||Accion_RecorridoMultimodal_Actividades.Id_Accion\nusuario|||||||Accion_RecorridoMultimodal_Actividades.usuario\nfecha|||||||Accion_RecorridoMultimodal_Actividades.fecha\naccion|||||||Accion_RecorridoMultimodal_Actividades.accion\nId_Recorrido|||||||Accion_RecorridoMultimodal_Actividades.Id_Recorrido\nId_Actividad|||||||Accion_RecorridoMultimodal_Actividades.Id_Actividad\nDescripcion|||||||Accion_RecorridoMultimodal_Actividades.Descripcion\nId_RecMedTranspAct|||||||Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\nActividad|||||||N_Actividad.Descripcion\n",
                     "repeatingSectionParentId": -1,
-                    "index": 7001
+                    "ColumnTypes": "Id_Accion=N\nusuario=C\nfecha=T\naccion=C\nId_Recorrido=N\nId_Actividad=N\nDescripcion=C\nId_RecMedTranspAct=N\nActividad=C\n",
+                    "ColumnNativeTypes": "Id_Accion=\nusuario=\nfecha=\naccion=\nId_Recorrido=\nId_Actividad=\nDescripcion=\nId_RecMedTranspAct=\nActividad=\n",
+                    "ColumnPortableTypes": "Id_Accion=Integer32\nusuario=NationalVaryingCharacter\nfecha=TimeStamp\naccion=NationalVaryingCharacter\nId_Recorrido=Integer32\nId_Actividad=Integer32\nDescripcion=NationalVaryingCharacter\nId_RecMedTranspAct=Integer32\nActividad=NationalVaryingCharacter\n",
+                    "CanBeUsedInWhereClauseFields": "Id_Accion\nusuario\nfecha\naccion\nId_Recorrido\nId_Actividad\nDescripcion\nId_RecMedTranspAct\nActividad\n",
+                    "columnQBEOptionsJSON": ""
                 }
             ]
         },
@@ -2344,7 +2568,7 @@
                         }
                     },
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Recorrido\"\n\t.SearchExpression = \"Id_Recorrido\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod.Viaje\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Recorrido\"\n\t.SearchExpression = \"Id_Recorrido\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECORRIDO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Recorrido\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Cod.Viaje\"\n\nend with\n\n",
                     "canBeUsedInWhereClause": true,
                     "NativeType": "int",
                     "PortableType": "Integer32",
@@ -2582,7 +2806,7 @@
                         }
                     },
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"usuario\"\n\t.SearchExpression = \"usuario\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"USUARIO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Dynamic\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropDownBox.Datasource = \"CS\"\n\t.DropDownBox.maxchoices = 0\n\t.DropDownBox.CS.ConnectionString = \"::name::Nibble\"\n\t.DropDownBox.CS.SQL = \"SELECT DISTINCT usuario FROM Accion_RecorridoMultimodal_Actividades ORDER BY usuario\"\n\t.DropDownBox.DisplayValueField = \"usuario\"\n\t.DropDownBox.DisplayValueFieldType = \"C\"\n\t.DropdownBox.noSelectionDisplayValue = \"\"\n\t.DropdownBox.hasCascadingChoices = .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Usuario\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"usuario\"\n\t.SearchExpression = \"usuario\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"USUARIO\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Dynamic\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropDownBox.Datasource = \"CS\"\n\t.DropDownBox.maxchoices = 0\n\t.DropDownBox.CS.ConnectionString = \"::name::Nibble\"\n\t.DropDownBox.CS.SQL = \"SELECT DISTINCT usuario FROM Accion_RecorridoMultimodal_Actividades ORDER BY usuario\"\n\t.DropDownBox.DisplayValueField = \"usuario\"\n\t.DropDownBox.DisplayValueFieldType = \"C\"\n\t.DropdownBox.noSelectionDisplayValue = \"\"\n\t.DropdownBox.hasCascadingChoices = .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.usuario\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Usuario\"\n\nend with\n\n",
                     "canBeUsedInWhereClause": true,
                     "NativeType": "varchar",
                     "PortableType": "VaryingCharacter",
@@ -2807,7 +3031,7 @@
                         }
                     },
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"fecha\"\n\t.SearchExpression = \"fecha\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"DateTime\"\n\t.nativeType = \"datetime\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"FECHA\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.DatePicker.Display = .t.\n\t.DatePicker.UseComboBoxes = .t.\n\t.DatePicker.DateFormat = \"<DefaultDateOnlyFormat>\"\n\t.DatePicker.LowYear = 1950\n\t.DatePicker.HighYear = 2050\n\t.DatePicker.SwitchYear = 20\n\t.DatePicker.IconNumber = 2\n\t.DatePicker.OpenMethod = \"ClickIcon\"\n\t.DatePicker.lowDate = \"\"\n\t.DatePicker.highDate = \"\"\n\t.DatePicker.disabledDays = \"\"\n\t.DatePicker.showDaysOfWeek = .t.\n\t.DatePicker.showTodayButton = .t.\n\t.DatePicker.showWeeksOfYear = .f.\n\t.DatePicker.OKButtonLabel = \"OK\"\n\t.DatePicker.CancelButtonLabel = \"Cancel\"\n\t.DatePicker.lockColumnWidths = .f.\n\t.DatePicker.userMustSelectFromDatePicker = .f.\n\t.DatePicker.hasEvents = .f.\n\t.DatePicker.event.onItemDraw = \"\"\n\t.DatePicker.event.onClick = \"\"\n\t.DatePicker.event.onRightClick = \"\"\n\t.DatePicker.event.onSelect = \"\"\n\t.DatePicker.event.onNavigate = \"\"\n\t.DatePicker.event.onMonthNavigate = \"\"\n\t.DatePicker.event.onYearNavigate = \"\"\n\t.DatePicker.showPreDefinedDates = .f.\n\t.DatePicker.preDefinedDatesJSON = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Fecha\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"fecha\"\n\t.SearchExpression = \"fecha\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"DateTime\"\n\t.nativeType = \"datetime\"\n\t.Type = \"T\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"FECHA\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.DatePicker.Display = .t.\n\t.DatePicker.UseComboBoxes = .t.\n\t.DatePicker.DateFormat = \"<DefaultDateOnlyFormat>\"\n\t.DatePicker.LowYear = 1950\n\t.DatePicker.HighYear = 2050\n\t.DatePicker.SwitchYear = 20\n\t.DatePicker.IconNumber = 2\n\t.DatePicker.OpenMethod = \"ClickIcon\"\n\t.DatePicker.lowDate = \"\"\n\t.DatePicker.highDate = \"\"\n\t.DatePicker.disabledDays = \"\"\n\t.DatePicker.showDaysOfWeek = .t.\n\t.DatePicker.showTodayButton = .t.\n\t.DatePicker.showWeeksOfYear = .f.\n\t.DatePicker.OKButtonLabel = \"OK\"\n\t.DatePicker.CancelButtonLabel = \"Cancel\"\n\t.DatePicker.lockColumnWidths = .f.\n\t.DatePicker.userMustSelectFromDatePicker = .f.\n\t.DatePicker.hasEvents = .f.\n\t.DatePicker.event.onItemDraw = \"\"\n\t.DatePicker.event.onClick = \"\"\n\t.DatePicker.event.onRightClick = \"\"\n\t.DatePicker.event.onSelect = \"\"\n\t.DatePicker.event.onNavigate = \"\"\n\t.DatePicker.event.onMonthNavigate = \"\"\n\t.DatePicker.event.onYearNavigate = \"\"\n\t.DatePicker.showPreDefinedDates = .f.\n\t.DatePicker.preDefinedDatesJSON = \"\"\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.fecha\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Fecha\"\n\nend with\n\n",
                     "canBeUsedInWhereClause": true,
                     "NativeType": "datetime",
                     "PortableType": "DateTime",
@@ -3043,7 +3267,7 @@
                         }
                     },
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"accion\"\n\t.SearchExpression = \"accion\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Dynamic\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropDownBox.Datasource = \"CS\"\n\t.DropDownBox.maxchoices = 0\n\t.DropDownBox.CS.ConnectionString = \"::name::Nibble\"\n\t.DropDownBox.CS.SQL = \"SELECT DISTINCT accion FROM Accion_RecorridoMultimodal_Actividades ORDER BY accion\"\n\t.DropDownBox.DisplayValueField = \"accion\"\n\t.DropDownBox.DisplayValueFieldType = \"C\"\n\t.DropdownBox.noSelectionDisplayValue = \"\"\n\t.DropdownBox.hasCascadingChoices = .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Accion\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"accion\"\n\t.SearchExpression = \"accion\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"VaryingCharacter\"\n\t.nativeType = \"varchar\"\n\t.Type = \"C\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"DropDownBox\"\n\t.DropdownBox.fieldNameOfFieldLinkedToParentControl = \"<Auto>\"\n\t.DropdownBox.fieldTypeOfFieldLinkedToParentControl = \"\"\n\t.DropdownBox.methodForComputingCascadingFilter = \"<Auto>\"\n\t.DropdownBox.explicitCasacadingFilter = \"\"\n\t.DropdownBox.InLineStyle = \"\"\n\t.DropdownBox.Type = \"Dynamic\"\n\t.DropdownBox.Size = 1\n\t.DropdownBox.selectStyle = \"Single\"\n\t.DropdownBox.NotInListRule = \"Add To List if Not Null\"\n\t.DropDownBox.Datasource = \"CS\"\n\t.DropDownBox.maxchoices = 0\n\t.DropDownBox.CS.ConnectionString = \"::name::Nibble\"\n\t.DropDownBox.CS.SQL = \"SELECT DISTINCT accion FROM Accion_RecorridoMultimodal_Actividades ORDER BY accion\"\n\t.DropDownBox.DisplayValueField = \"accion\"\n\t.DropDownBox.DisplayValueFieldType = \"C\"\n\t.DropdownBox.noSelectionDisplayValue = \"\"\n\t.DropdownBox.hasCascadingChoices = .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Accion\"\n\nend with\n\n",
                     "canBeUsedInWhereClause": true,
                     "NativeType": "varchar",
                     "PortableType": "VaryingCharacter",
@@ -3269,7 +3493,7 @@
                         }
                     },
                     "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Accion\"\n\t.SearchExpression = \"Id_Accion\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Accion\"\n\nend with\n",
+                    "tmplTxt": "with tmpl.field_info[_fieldNumber_]\n\t.Fieldname = \"Id_Accion\"\n\t.SearchExpression = \"Id_Accion\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .t.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"int\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_ACCION\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 40\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 200\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_Accion\"\n\t.SourceAlias = \"\"\n\t.Column.Heading = \"Id Accion\"\n\nend with\n\n",
                     "canBeUsedInWhereClause": true,
                     "NativeType": "int",
                     "PortableType": "Integer32",
@@ -3332,10 +3556,183 @@
                     "columnQBEOptionsJSON": ""
                 },
                 {
+                    "controltype": "TextBox",
+                    "Label": {
+                        "InLineStyle": "text-align: right;",
+                        "className": ""
+                    },
+                    "Image": {
+                        "noImageFoundImage": "<None>",
+                        "newRecordImage": "<None>"
+                    },
+                    "TextBox": {
+                        "InLineStyle": "text-align: right;",
+                        "Size": 20,
+                        "MaxLength": 20,
+                        "stylefieldiferror": true,
+                        "className": "",
+                        "readonly": false
+                    },
+                    "TextArea": {
+                        "rows": 2,
+                        "cols": 20,
+                        "RichText": {
+                            "display": {
+                                "height": "1in",
+                                "width": "2in"
+                            },
+                            "style": "font: 9pt Arial;",
+                            "editButtonText": "Edit...",
+                            "css": "",
+                            "toolbaricons": "",
+                            "toolbardefinition": ""
+                        }
+                    },
+                    "radiobutton": {
+                        "datasource": "DBF-Table",
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "stylefieldiferror": true,
+                        "type": "Static",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "CheckBox": {
+                        "type": "Static",
+                        "datasource": "DBF-Table",
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "orientation": "Horizontal",
+                        "initial_value": "False",
+                        "columnFlow": "LRTB",
+                        "columnCount": 3,
+                        "rowCount": 3
+                    },
+                    "connection_type": "Access Database",
+                    "dropdownbox": {
+                        "Size": 1,
+                        "type": "Static",
+                        "selectStyle": "Single",
+                        "datasource": "DBF-Table",
+                        "dbf": {
+                            "displayValueFieldType": ""
+                        },
+                        "stylefieldiferror": true,
+                        "NotInListRule": "Add to List",
+                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
+                        "methodForComputingCascadingFilter": "<Auto>"
+                    },
+                    "DatePicker": {
+                        "UseComboBoxes": true,
+                        "DateFormat": "<DefaultTimeFormat>",
+                        "LowYear": 1950,
+                        "HighYear": 2050,
+                        "SwitchYear": 20,
+                        "IconNumber": 2,
+                        "OpenMethod": "ClickIcon",
+                        "showDaysOfWeek": true,
+                        "OKButtonLabel": "OK",
+                        "CancelButtonLabel": "Cancel",
+                        "friendlyDisplay": {
+                            "settingsJSON": "",
+                            "enabled": false
+                        },
+                        "showPreDefinedDates": false,
+                        "preDefinedDatesJSON": "",
+                        "showTodayButton": true
+                    },
+                    "column": {
+                        "heading": "Id Rec Med Transp Act",
+                        "sort": "Id_Recmedtranspact",
+                        "LabelPosition": "Left",
+                        "canSort": true,
+                        "firstclickdirection": "Ascending"
+                    },
+                    "initial_value": "NULL",
+                    "link": {
+                        "StaticImageInlineStyle": "border-style: none;",
+                        "DisplayType": "Value in Field",
+                        "Type": "Field value is link address",
+                        "ajaxWindowType": "Modal-Popup",
+                        "ajaxWindowTitle": "Window",
+                        "ajaxWindowHeight": "3in",
+                        "ajaxWindowWidth": "4in",
+                        "ajaxWindowisResizable": true,
+                        "ajaxWindowWorkingMessage": "Working...",
+                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
+                        "ajaxWindowRefreshGridOnClose": "None",
+                        "targetDIVHideHyperlink": "Close",
+                        "DisplayValue": "",
+                        "TargetWindow": "",
+                        "TargetPage": ""
+                    },
+                    "type": "N",
+                    "display": "Id_RecMedTranspAct",
+                    "TableAlias": "Accion_RecorridoMultimodal_Actividades",
+                    "width": "11",
+                    "dec": "0",
+                    "updateable": true,
+                    "table": "Accion_RecorridoMultimodal_Actividades",
+                    "FieldToUpdate": "Id_RecMedTranspAct",
+                    "varname": "Id_RecMedTranspAct",
                     "fieldname": "Id_RecMedTranspAct",
+                    "BreakType": "None",
+                    "DisplayOD": "{F=Tahoma,8}{I:'$a5_control_field'}{T=.2}{C=}{DATA=Id_RecMedTranspAct}Id_RecMedTranspAct",
+                    "DisplayODFlat": "{F=Tahoma,8}{I:'$a5_control_field'}{T=.2}{C=}{DATA=Id_RecMedTranspAct}Id_RecMedTranspAct",
+                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
+                    "Search": {
+                        "FromLabel": "From:",
+                        "ToLabel": "To:"
+                    },
+                    "scope": "Local",
+                    "conditionalStyleLevel": "Cell",
+                    "clientSideconditionalStyleLevel": "Cell",
+                    "Watermark": {
+                        "text": "<FieldLabel>"
+                    },
+                    "lookup": {
+                        "type": "Edit-Combo List"
+                    },
+                    "nCols": 1,
+                    "BaseFieldExpression": "Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct",
+                    "summary": {
+                        "total": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "count": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "average": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "min": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "max": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "StdDev": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Var": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "First": {
+                            "inlinestyle": "text-align: right;"
+                        },
+                        "Last": {
+                            "inlinestyle": "text-align: right;"
+                        }
+                    },
+                    "tmplTxtComputed": true,
+                    "tmplTxt": "with tmpl.searchfield_info[_fieldNumber_]\n\t.Fieldname = \"Id_RecMedTranspAct\"\n\t.SearchExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECMEDTRANSPACT\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 20\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 20\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Id Rec Med Transp Act\"\nend with\n\n",
+                    "canBeUsedInWhereClause": true,
+                    "PortableType": "Integer32",
+                    "onChange_ValidationOption": "None",
+                    "repeatingSectionParentId": -1,
                     "showHelpIcon": "None",
                     "helpIconBehavior": "ShowHelpOnClick",
-                    "onChange_ValidationOption": "None",
                     "Layout": {
                         "Title": "Tab label",
                         "TabPane": {
@@ -3376,19 +3773,6 @@
                         },
                         "nCols": 1
                     },
-                    "controltype": "TextBox",
-                    "Search": {
-                        "FromLabel": "From:",
-                        "ToLabel": "To:"
-                    },
-                    "Label": {
-                        "InLineStyle": "text-align: right;",
-                        "className": ""
-                    },
-                    "Image": {
-                        "noImageFoundImage": "<None>",
-                        "newRecordImage": "<None>"
-                    },
                     "calendar": {
                         "DateFormat": "mm/dd/yy",
                         "SwitchYear": 20,
@@ -3396,173 +3780,13 @@
                         "LowYear": 1950,
                         "HighYear": 2050
                     },
-                    "TextBox": {
-                        "InLineStyle": "text-align: right;",
-                        "className": "",
-                        "Size": 20,
-                        "readonly": false,
-                        "MaxLength": 20,
-                        "stylefieldiferror": true
-                    },
-                    "Watermark": {
-                        "text": "<FieldLabel>"
-                    },
                     "clientSideFormat": {
                         "type": "Mask"
                     },
-                    "Lookup": {
-                        "Type": "Edit-Combo List"
-                    },
-                    "TextArea": {
-                        "rows": 2,
-                        "cols": 20,
-                        "RichText": {
-                            "display": {
-                                "height": "1in",
-                                "width": "2in"
-                            },
-                            "style": "font: 9pt Arial;",
-                            "css": "",
-                            "toolbaricons": "",
-                            "toolbardefinition": "",
-                            "editButtonText": "Edit..."
-                        }
-                    },
-                    "radiobutton": {
-                        "datasource": "DBF-Table",
-                        "NotInListRule": "Add to List",
-                        "orientation": "Horizontal",
-                        "columnFlow": "LRTB",
-                        "columnCount": 3,
-                        "rowCount": 3,
-                        "stylefieldiferror": true,
-                        "type": "Static"
-                    },
-                    "CheckBox": {
-                        "type": "Static",
-                        "datasource": "DBF-Table",
-                        "stylefieldiferror": true,
-                        "NotInListRule": "Add to List",
-                        "orientation": "Horizontal",
-                        "columnFlow": "LRTB",
-                        "columnCount": 3,
-                        "rowCount": 3,
-                        "initial_value": "False"
-                    },
-                    "connection_type": "Access Database",
-                    "dropdownbox": {
-                        "Size": 1,
-                        "type": "Static",
-                        "selectStyle": "Single",
-                        "datasource": "DBF-Table",
-                        "dbf": {
-                            "displayValueFieldType": ""
-                        },
-                        "stylefieldiferror": true,
-                        "NotInListRule": "Add to List",
-                        "fieldNameOfFieldLinkedToParentControl": "<Auto>",
-                        "methodForComputingCascadingFilter": "<Auto>"
-                    },
-                    "DatePicker": {
-                        "OpenMethod": "ClickIcon",
-                        "UseComboBoxes": true,
-                        "DateFormat": "<DefaultTimeFormat>",
-                        "friendlyDisplay": {
-                            "settingsJSON": "",
-                            "enabled": false
-                        },
-                        "showPreDefinedDates": false,
-                        "preDefinedDatesJSON": "",
-                        "LowYear": 1950,
-                        "HighYear": 2050,
-                        "SwitchYear": 20,
-                        "IconNumber": 2,
-                        "showDaysOfWeek": true,
-                        "showTodayButton": true,
-                        "OKButtonLabel": "OK",
-                        "CancelButtonLabel": "Cancel"
-                    },
-                    "column": {
-                        "heading": "Id Rec Med Transp Act",
-                        "LabelPosition": "Left",
-                        "CanSort": true,
-                        "sort": "Id_Recmedtranspact",
-                        "firstclickdirection": "Ascending"
-                    },
-                    "initial_value": "NULL",
-                    "BreakType": "None",
-                    "nCols": 1,
-                    "columnQBEOptionsJSON": "",
-                    "link": {
-                        "StaticImageInlineStyle": "border-style: none;",
-                        "DisplayType": "Value in Field",
-                        "Type": "Field value is link address",
-                        "ajaxWindowType": "Modal-Popup",
-                        "ajaxWindowTitle": "Window",
-                        "ajaxWindowHeight": "3in",
-                        "ajaxWindowWidth": "4in",
-                        "ajaxWindowisResizable": true,
-                        "ajaxWindowWorkingMessage": "Working...",
-                        "ajaxWindowWorkingMessageIcon": "css/A5System/Images/wait.gif",
-                        "ajaxWindowRefreshGridOnClose": "None",
-                        "targetDIVHideHyperlink": "Close",
-                        "DisplayValue": "",
-                        "TargetWindow": "",
-                        "TargetPage": ""
-                    },
-                    "type": "N",
                     "SearchExpression": "Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct",
-                    "ConditionalStyleLevel": "Cell",
-                    "ClientSideConditionalStyleLevel": "Cell",
-                    "display": "Id_RecMedTranspAct",
-                    "TableAlias": "Accion_RecorridoMultimodal_Actividades",
-                    "width": "11",
-                    "dec": "0",
-                    "updateable": true,
-                    "table": "Accion_RecorridoMultimodal_Actividades",
-                    "FieldToUpdate": "Id_RecMedTranspAct",
-                    "varname": "Id_RecMedTranspAct",
-                    "DisplayOD": "{F=Tahoma,8}{I:'$a5_control_field'}{T=.2}{C=}{DATA=Id_RecMedTranspAct}Id_RecMedTranspAct",
-                    "DisplayODFlat": "{F=Tahoma,8}{I:'$a5_control_field'}{T=.2}{C=}{DATA=Id_RecMedTranspAct}Id_RecMedTranspAct",
-                    "displayODtree": "{F=Tahoma,8}{I:'$a5_control_field'} {C=}{DATA=Id_Recorrido}Id_Recorrido",
-                    "scope": "Local",
-                    "BaseFieldExpression": "Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct",
-                    "summary": {
-                        "total": {
-                            "inlinestyle": "text-align: right;"
-                        },
-                        "count": {
-                            "inlinestyle": "text-align: right;"
-                        },
-                        "average": {
-                            "inlinestyle": "text-align: right;"
-                        },
-                        "min": {
-                            "inlinestyle": "text-align: right;"
-                        },
-                        "max": {
-                            "inlinestyle": "text-align: right;"
-                        },
-                        "StdDev": {
-                            "inlinestyle": "text-align: right;"
-                        },
-                        "Var": {
-                            "inlinestyle": "text-align: right;"
-                        },
-                        "First": {
-                            "inlinestyle": "text-align: right;"
-                        },
-                        "Last": {
-                            "inlinestyle": "text-align: right;"
-                        }
-                    },
-                    "tmplTxtComputed": true,
-                    "tmplTxt": "with tmpl.searchfield_info[_fieldNumber_]\n\t.Fieldname = \"Id_RecMedTranspAct\"\n\t.SearchExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.Initial_Value = \"NULL\"\n\t.Search_Style = 0\n\t.KeywordSearch = .f.\n\t.Scope = \"Local\"\n\t.ConditionalStyle = \"\"\n\t.ConditionalStyleLevel = \"Cell\"\n\t.ClientSideConditionalStyle = \"\"\n\t.ClientSideConditionalStyleLevel = \"Cell\"\n\t.QBEDisable = .f.\n\t.QBEInlineStyle = \"\"\n\t.QBEOptionsJSON = \"\"\n\t.canBeUsedInWhereClause = .t.\n\t.autoincrement = .f.\n\t.portableType = \"Integer32\"\n\t.nativeType = \"\"\n\t.Type = \"N\"\n\t.UserDefinedClientSideValidationJavascript = \"\"\n\t.onChange_ValidationOption = \"None\"\n\t.Varname = \"ID_RECMEDTRANSPACT\"\n\t.Column.LabelPosition = \"Left\"\n\t.Controltype = \"TextBox\"\n\t.Textbox.Size = 20\n\t.Textbox.HTML5Type = \"\"\n\t.Textbox.customAttributes = \"\"\n\t.Textbox.readonly = .f.\n\t.Textbox.MaxLength = 20\n\t.Textbox.InLineStyle = \"text-align: right;\"\n\t.Textbox.className = \"\"\n\t.Textbox.ContainerInlineStyle = \"\"\n\t.Textbox.IsPassword = .f.\n\t.hasWatermark= .f.\n\t.BreakType = \"None\"\n\t.nCols = 1\n\t.Column.Hide = .f.\n\t.BaseFieldExpression = \"Accion_RecorridoMultimodal_Actividades.Id_RecMedTranspAct\"\n\t.SourceAlias = \"Accion_RecorridoMultimodal_Actividades\"\n\t.Column.Heading = \"Id Rec Med Transp Act\"\nend with\n",
-                    "canBeUsedInWhereClause": true,
-                    "PortableType": "Integer32",
-                    "repeatingSectionParentId": -1,
                     "index": 6001,
                     "SourceAlias": "Accion_RecorridoMultimodal_Actividades",
+                    "columnQBEOptionsJSON": "",
                     "flagWindowContainer": false,
                     "javascriptOnShow": ""
                 }
@@ -3832,7 +4056,7 @@
         "info": {
             "createdBy": "ASUS",
             "LastUpdatedBy": "ASUS",
-            "DateUpdated": "01-07-2019 11:00:45 87 am",
+            "DateUpdated": "02-07-2019 03:49:02 89 pm",
             "DateCreated": "08-03-2019 03:48:06 54 pm"
         },
         "BuilderVersion": 2,
@@ -3885,6 +4109,6 @@
                 "scriptMetaData": "<a_ajs<[1]<display=\"{I:'a5_new_xbasic_script'}{F=Tahoma,10}{C=Dark Blue,White}{B=Blue White,Dark Blue}Inline-Javascript{T=4}{I:'a5_vertical_line'}refresh\">\n<action=\"Inline-Javascript\">\n<icon=\"a5_new_xbasic_script\">\n<isCommentedOut=.F.>\n<comment=\"refresh\">\n<builder=\"a5ajs_Inline(v,dlg_mode,wf)\">\n<metaData=<<%str%\n<inlineJavascript=\"{grid.object}.refresh();\">\n%str%>\n<javascriptAttribute=\"{grid.object}.refresh();\">\n<Javascriptdeclarations_row=\"\">\n<Javascriptdeclarations_global=\"\">\n<xbasicFunctions=\"\">\n>\n>\n<flagRunSynchronously=.F.>\n<flagWrapInTryCatch=.F.>\n<tryCatchJavascript=\"\">\n"
             }
         ],
-        "A5SaveTimeStamp": "20190701110045916"
+        "A5SaveTimeStamp": "20190702154902939"
     }
 }

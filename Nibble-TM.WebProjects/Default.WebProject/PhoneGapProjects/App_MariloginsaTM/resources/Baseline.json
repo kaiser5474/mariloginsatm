@@ -2365,7 +2365,7 @@
 		"name": "\\Images\\Pic6.jpg"
 	},
 	{
-		"crc": 4294935783,
+		"crc": 4294952089,
 		"name": "\\javascript\\a5.js"
 	},
 	{
@@ -2414,11 +2414,11 @@
 	}],
 	"rootfiles": [
 	{
-		"crc": 4294960125,
+		"crc": 4294962971,
 		"name": "\\baseline.zip"
 	},
 	{
-		"crc": 4294910981,
+		"crc": 4294928474,
 		"name": "\\config.xml"
 	},
 	{
@@ -2426,7 +2426,7 @@
 		"name": "\\icon.png"
 	},
 	{
-		"crc": 4294910079,
+		"crc": 4294961544,
 		"name": "\\index.html"
 	},
 	{
@@ -2454,15 +2454,15 @@
 		"name": "\\splash.png"
 	},
 	{
-		"crc": 4294948690,
+		"crc": 4294915467,
 		"name": "\\version.json"
 	},
 	{
-		"crc": 4294916382,
+		"crc": 4294909543,
 		"name": "\\_instantUpdateSettings.js"
 	},
 	{
-		"crc": 4294924930,
+		"crc": 4294923013,
 		"name": "\\_phoneGapSettings.js"
 	}],
 	"plugins": [
@@ -2497,19 +2497,9 @@
 		"version": "1.5.1"
 	},
 	{
-		"name": "cordova-plugin-android-permissions",
-		"source": "npm",
-		"version": ""
-	},
-	{
 		"name": "cordova-plugin-device",
 		"source": "npm",
 		"version": "1.1.7"
-	},
-	{
-		"name": "cordova-plugin-camera",
-		"source": "npm",
-		"version": "2.4.1"
 	},
 	{
 		"name": "cordova-plugin-zip",
@@ -2525,15 +2515,5 @@
 		"name": "",
 		"source": "git",
 		"version": ""
-	},
-	{
-		"name": "",
-		"source": "git",
-		"version": ""
-	},
-	{
-		"name": "pdf417-phonegap",
-		"source": "npm",
-		"version": "1.1.8"
 	}]
 }

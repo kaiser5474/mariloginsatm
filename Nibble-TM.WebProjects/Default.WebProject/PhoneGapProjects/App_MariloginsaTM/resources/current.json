@@ -2365,7 +2365,7 @@
 		"name": "\\Images\\Pic6.jpg"
 	},
 	{
-		"crc": 4294935783,
+		"crc": 4294952089,
 		"name": "\\javascript\\a5.js"
 	},
 	{
@@ -2414,11 +2414,11 @@
 	}],
 	"rootfiles": [
 	{
-		"crc": 4294960125,
+		"crc": 4294916842,
 		"name": "\\baseline.zip"
 	},
 	{
-		"crc": 4294910981,
+		"crc": 4294909470,
 		"name": "\\config.xml"
 	},
 	{
@@ -2426,7 +2426,7 @@
 		"name": "\\icon.png"
 	},
 	{
-		"crc": 4294913362,
+		"crc": 4294913080,
 		"name": "\\index.html"
 	},
 	{
@@ -2454,15 +2454,15 @@
 		"name": "\\splash.png"
 	},
 	{
-		"crc": 4294943253,
+		"crc": 4294917665,
 		"name": "\\version.json"
 	},
 	{
-		"crc": 4294916382,
+		"crc": 4294907056,
 		"name": "\\_instantUpdateSettings.js"
 	},
 	{
-		"crc": 4294924930,
+		"crc": 4294925144,
 		"name": "\\_phoneGapSettings.js"
 	}],
 	"plugins": [
@@ -2535,5 +2535,15 @@
 		"name": "pdf417-phonegap",
 		"source": "npm",
 		"version": "1.1.8"
+	},
+	{
+		"name": "cordova.plugins.uid",
+		"source": "npm",
+		"version": "1.3.0"
+	},
+	{
+		"name": "",
+		"source": "git",
+		"version": ""
 	}]
 }
